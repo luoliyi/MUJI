@@ -57,5 +57,4 @@ public class IAdministratorDaoTest {
         int result=administratorDao.update(map);
         System.out.println(result);
     }
-
 }

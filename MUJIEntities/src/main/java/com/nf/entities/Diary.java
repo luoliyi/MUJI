@@ -4,15 +4,17 @@ import java.util.Date;
 
 public class Diary {
     /*
-    *	dayid int primary key auto_increment,
-    daytname varchar(100),
+    *		dayid int primary key auto_increment,
+    daybftime datetime default now(),
     daypath varchar(200),
-    daytime datetime default now()
+    dayhytime datetime default now(),
+    daydesc varchar(256)
     * */
     private int dayid;
-    private String daytname;
+    private String daybftime;
     private String daypath;
-    private Date daytime;
+    private String dayhytime;
+    private String daydesc;
 
     public Diary() {
     }
@@ -21,9 +23,10 @@ public class Diary {
     public String toString() {
         return "Diary{" +
                 "dayid=" + dayid +
-                ", daytname='" + daytname + '\'' +
+                ", daybftime=" + daybftime +
                 ", daypath='" + daypath + '\'' +
-                ", daytime=" + daytime +
+                ", dayhytime=" + dayhytime +
+                ", daydesc='" + daydesc + '\'' +
                 '}';
     }
 
@@ -35,12 +38,12 @@ public class Diary {
         this.dayid = dayid;
     }
 
-    public String getDaytname() {
-        return daytname;
+    public String getDaybftime() {
+        return daybftime;
     }
 
-    public void setDaytname(String daytname) {
-        this.daytname = daytname;
+    public void setDaybftime(String daybftime) {
+        this.daybftime = daybftime;
     }
 
     public String getDaypath() {
@@ -51,24 +54,34 @@ public class Diary {
         this.daypath = daypath;
     }
 
-    public Date getDaytime() {
-        return daytime;
+    public String getDayhytime() {
+        return dayhytime;
     }
 
-    public void setDaytime(Date daytime) {
-        this.daytime = daytime;
+    public void setDayhytime(String dayhytime) {
+        this.dayhytime = dayhytime;
     }
 
-    public Diary(String daytname, String daypath, Date daytime) {
-        this.daytname = daytname;
+    public String getDaydesc() {
+        return daydesc;
+    }
+
+    public void setDaydesc(String daydesc) {
+        this.daydesc = daydesc;
+    }
+
+    public Diary(String daybftime, String daypath, String dayhytime, String daydesc) {
+        this.daybftime = daybftime;
         this.daypath = daypath;
-        this.daytime = daytime;
+        this.dayhytime = dayhytime;
+        this.daydesc = daydesc;
     }
 
-    public Diary(int dayid, String daytname, String daypath, Date daytime) {
+    public Diary(int dayid, String daybftime, String daypath, String dayhytime, String daydesc) {
         this.dayid = dayid;
-        this.daytname = daytname;
+        this.daybftime = daybftime;
         this.daypath = daypath;
-        this.daytime = daytime;
+        this.dayhytime = dayhytime;
+        this.daydesc = daydesc;
     }
 }

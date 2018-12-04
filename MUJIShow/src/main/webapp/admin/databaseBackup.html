@@ -18,6 +18,12 @@
     <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
     <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <style>
+        .layui-table td, .layui-table th{
+            padding: 15px 15px!important;
+        }
+    </style>
 </head>
 
 <body class="layui-anim layui-anim-up">
@@ -33,33 +39,28 @@
 </div>
 <div class="x-body">
     <div class="layui-row">
-        <input class="layui-input" placeholder="开始日" name="start" id="start">
-        <input class="layui-input" placeholder="截止日" name="end" id="end">
-        <input type="text" name="username"  placeholder="请输入用户名" autocomplete="off" class="layui-input">
-        <button class="layui-btn"  lay-submit="" lay-filter="sreach"><i class="layui-icon">&#xe615;</i></button>
+        <!--<input class="layui-input" placeholder="开始日" name="start" id="start">-->
+        <!--<input class="layui-input" placeholder="截止日" name="end" id="end">-->
+        <!--<input type="text" name="username"  placeholder="请输入用户名" autocomplete="off" class="layui-input">-->
+        <!-- <button class="layui-btn"  lay-submit="" lay-filter="sreach"><i class="layui-icon">&#xe615;</i></button>-->
     </div>
     <xblock>
-        <button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button>
-        <button class="layui-btn" onclick="x_admin_show('添加用户','./member-add.html',600,400)"><i class="layui-icon"></i>添加</button>
-        <span class="x-right" style="line-height:40px">共有数据：88 条</span>
+        <marquee style="color: orange;">数据库自动备份时间为每天15:00</marquee>
+        <button class="layui-btn"><i class="layui-icon">&#xe70c;</i>查询备份情况</button>
+        <button class="layui-btn layui-btn-danger" id="gotoBack"><i class="layui-icon">&#xe69e;</i>立即备份</button>
+        <span class="x-right" style="line-height:40px">共有：<span id="allDiaryCount">88</span> 条备份记录</span>
     </xblock>
     <table class="layui-table">
         <thead>
         <tr>
-            <th>
-                <div class="layui-unselect header layui-form-checkbox" lay-skin="primary"><i class="layui-icon">&#xe605;</i></div>
-            </th>
-            <th>用户名</th>
-            <th>头像</th>
-            <th>性别</th>
-            <th>电话号码</th>
-            <th>生日</th>
-            <th>注册日期</th>
-            <th>地址</th>
-            <th>状态</th>
+            <th>备份编号</th>
+            <th>备份时间</th>
+            <th>备份路径</th>
+            <th>还原时间</th>
+            <th>备注信息</th>
             <th>操作</th></tr>
         </thead>
-        <tbody>
+        <tbody id="tbody">
         <!--一条数据-->
         <tr>
             <td>
@@ -69,20 +70,9 @@
             <td>小明</td>
             <td>男</td>
             <td>13000000000</td>
-            <td>admin@mail.com</td>
-            <td>北京市 海淀区</td>
-            <td>2017-01-01 11:11:42</td>
-            <td class="td-status">
-                <span class="layui-btn layui-btn-normal layui-btn-mini">已启用</span></td>
             <td class="td-manage">
-                <a onclick="member_stop(this,'10001')" href="javascript:;"  title="启用">
-                    <i class="layui-icon">&#xe601;</i>
-                </a>
-                <a title="编辑"  onclick="x_admin_show('编辑','member-edit.html',600,400)" href="javascript:;">
+                <a title="一键还原"  onclick="x_admin_show('编辑','member-edit.html',600,400)" href="javascript:;">
                     <i class="layui-icon">&#xe642;</i>
-                </a>
-                <a onclick="x_admin_show('修改密码','member-password.html',600,400)" title="修改密码" href="javascript:;">
-                    <i class="layui-icon">&#xe631;</i>
                 </a>
                 <a title="删除" onclick="member_del(this,'要删除的id')" href="javascript:;">
                     <i class="layui-icon">&#xe640;</i>
@@ -91,19 +81,109 @@
         </tr>
         </tbody>
     </table>
-    <!--<div class="page">-->
-    <!--<div>-->
-    <!--<a class="prev" href="">&lt;&lt;</a>-->
-    <!--<a class="num" href="">1</a>-->
-    <!--<span class="current">2</span>-->
-    <!--<a class="num" href="">3</a>-->
-    <!--<a class="num" href="">489</a>-->
-    <!--<a class="next" href="">&gt;&gt;</a>-->
-    <!--</div>-->
-    <!--</div>-->
+    <!--分页组件-->
+    <div id="demo2-1"></div>
 
 </div>
 <script>
+
+    //app封装的增删改查
+    var app={
+        firstRequest(){
+
+            var objectInit=new Array();
+
+            $.ajax({
+                url:"mySQLDatabaseBackup/selectAllDiaryCount",
+                type:"POST",
+                data:JSON.stringify(objectInit),
+                contentType:"application/json;charset=utf-8",
+                success:function(sum) {
+                    console.log("sum:"+sum);
+                    $("#allDiaryCount").html(sum);
+                    //分页
+                    layui.use(['laypage', 'layer'], function () {
+                        var laypage = layui.laypage
+                            , layer = layui.layer;
+                        //总页数大于页码总数
+                        laypage.render({
+                            elem: 'demo2-1'
+                            , limit: 4
+                            , count: sum //数据总数
+                            //当前页
+                            , curr: location.hash.replace('#!fenye=', '') //获取起始页
+                            , hash: 'fenye' //自定义hash值
+                            , jump: function (obj) {
+                                var objlist = new Array();
+                                objlist.push(obj.curr);
+                                objlist.push(obj.limit);
+                                //请求数据
+                                $.ajax({
+                                    url: "mySQLDatabaseBackup/selectAllDiary",
+                                    type: "POST",
+                                    contentType: "application/json;charset=utf-8",
+                                    data: JSON.stringify(objlist),
+                                    beforeSend: function () {
+
+                                    },
+                                    success: function (jsdata) {
+                                        app.showData(jsdata);
+                                    }
+                                })
+                            }
+                        });
+                    })
+                }
+            });
+        }
+
+        /*
+        * 渲染数据
+        * */
+        ,showData(data) {
+            console.log(data);
+            $("#tbody tr").remove();
+            $.each(data,function (index,obj) {
+                var tr=$("<tr/>");
+                $("<td/>").html(obj.dayid).appendTo(tr);
+                $("<td/>").html(new Date(obj.daybftime).toLocaleString()).appendTo(tr);
+                $("<td/>").html(obj.daypath).appendTo(tr);
+                $("<td/>").html(obj.dayhytime==""?"没有还原记录":obj.dayhytime).appendTo(tr);
+                $("<td/>").html(obj.daydesc).appendTo(tr);
+                $("<td class='td-manage' />").html(
+                    "                <a title=\"一键还原\"  href=\"javascript:;\">\n" +
+                    "                    <i class=\"layui-icon\">&#xe642;</i>\n" +
+                    "                </a>\n" +
+                    "                <a title=\"删除\" href=\"javascript:;\">\n" +
+                    "                    <i class=\"layui-icon\">&#xe640;</i>\n" +
+                    "                </a>"
+                ).appendTo(tr);
+                $("#tbody").append(tr);
+            });
+        }
+        /*
+        * 立即备份
+        * */
+        ,backUpNow(){
+            $.ajax({
+                url:"mySQLDatabaseBackup/goToBackup",
+                type:"post",
+                contentType:"application/json;charset=utf-8"
+            }).done(function(msg){
+                console.log(msg);
+                layer.msg('备份成功!',{icon: 1,time:1000});
+                app.firstRequest();
+            })
+        }
+
+        ,init(){
+            app.firstRequest();
+            $("#gotoBack").click(app.backUpNow);
+        }
+    };
+    app.init();
+
+
     layui.use('laydate', function(){
         var laydate = layui.laydate;
 
@@ -150,7 +230,6 @@
             layer.msg('已删除!',{icon:1,time:1000});
         });
     }
-
 
 
     function delAll (argument) {
