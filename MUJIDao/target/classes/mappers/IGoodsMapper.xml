@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nf.interfaces.IGoodsDao">
+    <!--
+        对商品的操作，主要面向管理员
+    -->
+    <resultMap id="GoodsMap" type="Goods">
+        <id column="gid" property="gid"></id>
+        <result column="gno" property="gno"></result>
+        <result column="gname" property="gname"></result>
+        <result column="gcolor" property="gcolor"></result>
+        <result column="gsize" property="gsize"></result>
+        <result column="gpic" property="gpic"></result>
+        <result column="gnowprice" property="gnowprice"></result>
+        <result column="gprevPrice" property="gprevPrice"></result>
+        <result column="gdesc" property="gdesc"></result>
+        <result column="gstate" property="gstate"></result>
+        <result column="tid" property="tid"></result>
+        <result column="gtdid" property="gtdid"></result>
+        <association property="goodsTypeDetails" javaType="GoodsTypeDetails">
+            <id column="gtdid" property="gtdid"></id>
+            <result column="gtname" property="gtname"></result>
+            <result column="tid" property="tid"></result>
+            <result column="tdesc" property="tdesc"></result>
+        </association>
+        <association property="goodsType" javaType="GoodsType">
+            <id column="tid" property="tid"></id>
+            <result column="tname" property="tname"></result>
+            <result column="tdesc" property="tdesc"></result>
+        </association>
+    </resultMap>
+
+    <select id="selectAllGoods" resultMap="GoodsMap" parameterType="java.util.Map">
+        select * from goods as g join GoodsTypeDetails as td on g.gtdid=td.gtdid
+          join GoodsType as t on g.tid=t.tid
+          <where>
+              <if test="goodsname!='' and goodsname!=null">
+                  g.gname like '%${goodsname}%'
+              </if>
+              <if test="trueGoodNo!='' and trueGoodNo!=null">
+                and g.gno=#{trueGoodNo}
+              </if>
+              <if test="selectVal!=null and selectVal!=''">
+               and t.tname=#{selectVal}
+              </if>
+              <if test="gstate!=null and gstate!=''">
+                  and g.gstate=#{gstate}
+              </if>
+              and g.gnowprice between #{startprice} and #{endprice}
+          </where>
+        order by g.gid limit #{pageno},#{pagesize};
+    </select>
+
+    <insert id="insert" parameterType="java.util.Map">
+        insert into Goods(gno,gname,gcolor,gsize,gpic,gnowprice,gprevPrice,gdesc,gstate,tid,gtdid)values(
+        #{gno},#{gname},#{gcolor},#{gsize},#{gpic},#{gnowprice},#{gprevPrice},#{gdesc},#{gstate},#{tid},#{gtdid}
+        );
+    </insert>
+
+    <update id="update" parameterType="java.util.Map">
+        update Goods
+        <set>
+            <if test="gname!=''and gname!=null">
+                gname=#{gname},
+            </if>
+            <if test="gcolor!=''and gcolor!=null">
+                gcolor=#{gcolor},
+            </if>
+            <if test="gsize!=''and gsize!=null">
+                gsize=#{gsize},
+            </if>
+            <if test="gpic!=''and gpic!=null">
+                gpic=#{gpic},
+            </if>
+            <if test="gnowprice!=''and gnowprice!=null">
+                gnowprice=#{gnowprice},
+            </if>
+            <if test="gprevPrice!=''and gprevPrice!=null">
+                gprevPrice=#{gprevPrice},
+            </if>
+            <if test="gdesc!=''and gdesc!=null">
+                gdesc=#{gdesc},
+            </if>
+            <if test="gstate!=''and gstate>=0">
+                gstate=#{gstate},
+            </if>
+            <if test="tid!=''and tid!=null">
+                tid=#{tid},
+            </if>
+            <if test="gtdid!=''and gtdid!=null">
+                gtdid=#{gtdid}
+            </if>
+        </set>
+        where gno=#{gno} and gid=#{gid};
+    </update>
+
+    <!--
+        这里不做删除操作，只做修改状态
+    -->
+    <update id="delete" parameterType="String">
+         update Goods set gstate=1 where gno=#{goodno};
+    </update>
+
+</mapper>

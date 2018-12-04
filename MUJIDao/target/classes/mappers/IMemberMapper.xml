@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nf.interfaces.IMemberDao">
+
+    <!--
+        对用户自己的操作，主要面向用户
+    -->
+    <select id="selectAllMember" resultType="Member" parameterType="java.util.Map">
+        select * from Member
+         <where>
+             <if test="mstate!=null and mstate!=''">
+                 mstate=#{mstate}
+             </if>
+         </where>
+         limit #{pageno},#{pagesize};
+    </select>
+
+    <insert id="insert" parameterType="Member">
+        insert into Member(mphone,mpassword,mname,mbirthday,msex,mlocation,mpic,mstate)values(
+          #{mphone},#{mpassword},#{mname},#{mbirthday},#{msex},#{mlocation},#{mpic},#{mstate}
+        );
+    </insert>
+
+    <update id="update" parameterType="java.util.Map">
+        update Member
+        <set>
+            <if test="mphone!='' and mphone!=null">
+                mphone=#{mphone},
+            </if>
+            <if test="mpassword!='' and mpassword!=null">
+                mpassword=#{mpassword},
+            </if>
+            <if test="mname!='' and mname!=null">
+                mname=#{mname},
+            </if>
+            <if test="mbirthday!='' and mbirthday!=null">
+                mbirthday=#{mbirthday},
+            </if>
+            <if test="msex!='' and msex!=null">
+                msex=#{msex},
+            </if>
+            <if test="mlocation!='' and mlocation!=null">
+                mlocation=#{mlocation},
+            </if>
+            <if test="mpic!='' and mpic!=null">
+                mpic=#{mpic},
+            </if>
+            <if test="mstate!='' and mstate!=null">
+                mstate=#{mstate}
+            </if>
+        </set>
+        where mid=#{mid};
+    </update>
+
+    <!--
+        这里不做删除操作，只做修改状态
+    -->
+    <update id="delete" parameterType="String">
+         update Member set mstate=1 where mid=#{mid};
+    </update>
+
+</mapper>

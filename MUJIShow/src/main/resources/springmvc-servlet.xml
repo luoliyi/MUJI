@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-4.3.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd">
+
+    <!-- 自动扫描包，实现支持注解的IOC -->
+    <context:component-scan base-package="com.nf.impl,controller"/>
+
+    <!-- Spring MVC不处理静态资源 -->
+    <mvc:default-servlet-handler />
+
+    <!-- 支持mvc注解驱动 --><!--设置为true-->
+    <mvc:annotation-driven enable-matrix-variables="true"/>
+
+    <!--MVC cors跨域传输协议-->
+    <!--
+         allowed-origins：授权源控制
+    -->
+    <mvc:cors>
+        <mvc:mapping path="/**"
+                     allowed-origins="http://127.0.0.1:8020"
+                     allowed-methods="*"
+                     allowed-headers="*"
+                     allow-credentials="true"/>
+    </mvc:cors>
+
+    <!-- 视图解析器 -->
+<!--    <bean
+            class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+            id="internalResourceViewResolver">
+        &lt;!&ndash; 前缀 &ndash;&gt;
+        &lt;!&ndash;<property name="prefix" value="/WEB-INF/view/" />&ndash;&gt;
+        <property name="prefix" value="/WEB-INF/view/" />
+        &lt;!&ndash; 后缀 &ndash;&gt;
+        &lt;!&ndash;<property name="suffix" value=".jsp" />&ndash;&gt;
+        <property name="suffix" value=".jsp" />
+    </bean>-->
+
+    <!-- 配置映射媒体类型的策略 -->
+    <bean
+            class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping">
+        <property name="removeSemicolonContent" value="false" />
+    </bean>
+
+    <!--文件上传解析器3.0以上 -->
+    <bean id="multipartResolver"
+          class="org.springframework.web.multipart.support.StandardServletMultipartResolver">
+    </bean>
+    <!--拦截器-->
+    <!--配置拦截器 拦截除了exceptUrls内的所有请求-->
+   <mvc:interceptors>
+        <mvc:interceptor>
+            <!--http://localhost:8081/-->
+            <mvc:mapping path="/admin/*.html"/>
+            <bean class="controller.LoginInterceptor">
+                <property name="exceptUrls">
+                    <list>
+                        <!--html-->
+                        <value>/admin/login.html</value>
+                       <!-- <value>/register.html</value>-->
+                        <!--controller-->
+                        <!--<value>/PeopleServlet/login</value>
+                        <value>/PeopleServlet/insertPeople</value>
+                        <value>/PeopleServlet/selectPeopleCount</value>
+                        <value>/PeopleServlet/selectPeoplePageByIf</value>-->
+                    </list>
+                </property>
+            </bean>
+        </mvc:interceptor>
+    </mvc:interceptors>
+</beans>

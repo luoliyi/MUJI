@@ -1,0 +1,1 @@
+dialog模式对话框。导入dist目标文件和css文件即可，导入到WebContent下面

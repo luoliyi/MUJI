@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nf.interfaces.IPictureListDao">
+
+    <select id="selectAllPicture" parameterType="String" resultType="PictureList">
+      select * from PictureList where gid=#{gid}
+    </select>
+
+    <select id="selectOnePicture" parameterType="String" resultType="PictureList">
+        select * from PictureList where picid=#{picid}
+    </select>
+
+    <select id="selectAllGoods" resultType="Goods">
+        select * from Goods;
+    </select>
+
+    <insert id="insert" parameterType="java.util.Map">
+        insert  into PictureList (picpath,picdesc,gid) values (#{picpath},#{picdesc},#{gid})
+    </insert>
+
+    <update id="update" parameterType="java.util.Map">
+        update PictureList set picpath=#{picpath},picdesc=#{picdesc} where picid=#{picid}
+    </update>
+
+    <delete id="delete" parameterType="String">
+        delete from PictureList where picid=#{picid}
+    </delete>
+
+</mapper>

@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.nf.mujisystem</groupId>
+    <artifactId>MUJISystem</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>MUJIEntities</module>
+        <module>MUJIDao</module>
+        <module>MUJICommons</module>
+        <module>MUJIService</module>
+        <module>MUJIShow</module>
+    </modules>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.7</maven.compiler.target>
+
+        <spring.version>4.3.0.RELEASE</spring.version>
+        <junit.version>4.12</junit.version>
+        <MUJIEntities.version>1.0-SNAPSHOT</MUJIEntities.version>
+        <MUJIDao.version>1.0-SNAPSHOT</MUJIDao.version>
+        <MUJICommons.version>1.0-SNAPSHOT</MUJICommons.version>
+        <MUJIService.version>1.0-SNAPSHOT</MUJIService.version>
+        <MUJIShow.version>1.0-SNAPSHOT</MUJIShow.version>
+
+        <jackson.version>2.7.4</jackson.version>
+        <commons-lang3.version>3.4</commons-lang3.version>
+        <log4j.version>2.6.2</log4j.version>
+        <spring.version>4.3.0.RELEASE</spring.version>
+        <aspectjweaver.version>1.8.9</aspectjweaver.version>
+        <cglib.version>3.2.4</cglib.version>
+        <spring-mybatis.version>1.3.0</spring-mybatis.version>
+        <mysql-connector-java.version>8.0.11</mysql-connector-java.version>
+        <mybatis.version>3.4.1</mybatis.version>
+        <c3p0.version>0.9.5.2</c3p0.version>
+
+        <!--spring mvc-->
+        <jstl.version>1.2</jstl.version>
+        <servlet-api.version>3.0.1</servlet-api.version>
+        <jsp-api.version>2.1</jsp-api.version>
+        <hibernate.version>5.2.2.Final</hibernate.version>
+        <commons-io.version>2.4</commons-io.version>
+        <commons-fileupload.version>1.3.1</commons-fileupload.version>
+        <freemarker.version>2.3.23</freemarker.version>
+
+        <!--EXCEL-->
+        <poi-ooxml.version>3.17</poi-ooxml.version>
+        <!--spring-test-->
+        <spring-test.version>4.3.18.RELEASE</spring-test.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.nf.mujisystem</groupId>
+                <artifactId>MUJIEntities</artifactId>
+                <version>${MUJIEntities.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.nf.mujisystem</groupId>
+                <artifactId>MUJIDao</artifactId>
+                <version>${MUJIDao.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.nf.mujisystem</groupId>
+                <artifactId>MUJIService</artifactId>
+                <version>${MUJIService.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.nf.mujisystem</groupId>
+                <artifactId>MUJIShow</artifactId>
+                <version>${MUJIShow.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.nf.mujisystem</groupId>
+                <artifactId>MUJICommons</artifactId>
+                <version>${MUJICommons.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-core</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-annotations</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <!--apache-commons-->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-core</artifactId>
+                <version>${log4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-api</artifactId>
+                <version>${log4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjweaver</artifactId>
+                <version>${aspectjweaver.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cglib</groupId>
+                <artifactId>cglib</artifactId>
+                <version>${cglib.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis-spring</artifactId>
+                <version>${spring-mybatis.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-jdbc</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql-connector-java.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis</artifactId>
+                <version>${mybatis.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.mchange</groupId>
+                <artifactId>c3p0</artifactId>
+                <version>${c3p0.version}</version>
+            </dependency>
+
+            <!-- Spring MVC -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-webmvc</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context-support</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-test</artifactId>
+                <version>${spring-test.version}</version>
+            </dependency>
+            <!-- JSTL -->
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>jstl</artifactId>
+                <version>${jstl.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>${servlet-api.version}</version>
+            </dependency>
+            <!--JSP -->
+            <dependency>
+                <groupId>javax.servlet.jsp</groupId>
+                <artifactId>jsp-api</artifactId>
+                <version>${jsp-api.version}</version>
+            </dependency>
+            <!--JSR303 -->
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-validator</artifactId>
+                <version>${hibernate.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons-io.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-fileupload</groupId>
+                <artifactId>commons-fileupload</artifactId>
+                <version>${commons-fileupload.version}</version>
+            </dependency>
+            <!-- FreeMarker -->
+            <dependency>
+                <groupId>org.freemarker</groupId>
+                <artifactId>freemarker</artifactId>
+                <version>${freemarker.version}</version>
+            </dependency>
+
+            <!--EXCEL-->
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml</artifactId>
+                <version>${poi-ooxml.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>

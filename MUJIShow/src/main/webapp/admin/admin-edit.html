@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>欢迎页面-X-admin2.0</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/font.css">
+    <link rel="stylesheet" href="./css/xadmin.css">
+    <script src="js/jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="./lib/layui/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="./js/xadmin.js"></script>
+    <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+    <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+        #imgLoadDiv{
+            position: absolute;
+            top: 18px;
+            left: 450px;
+            width: 250px;
+            height: 250px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="x-body">
+
+    <!--保存aid-->
+    <input type="hidden" id="aid" />
+
+    <!--图片上传-->
+    <div id="imgLoadDiv" class="layui-form-item">
+        <label for="test10">上传图片：</label>
+        <div class="layui-upload-drag" id="test10">
+            <i class="layui-icon"></i>
+            <p>点击上传，或将文件拖拽到此处</p>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label for="aname" class="layui-form-label">
+            <span class="x-red">*</span>登录名
+        </label>
+        <div class="layui-input-inline">
+            <input type="text" id="aname" name="username" required="" lay-verify="required"
+                   autocomplete="off" class="layui-input">
+        </div>
+       <!-- <div class="layui-form-mid layui-word-aux">
+            <span class="x-red">*</span>将会成为您唯一的登入名
+        </div>-->
+    </div>
+    <div class="layui-form-item">
+        <label for="aphone" class="layui-form-label">
+            <span class="x-red">*</span>手机
+        </label>
+        <div class="layui-input-inline">
+            <input type="text" id="aphone" name="phone" required="" lay-verify="phone"
+                   autocomplete="off" class="layui-input">
+        </div>
+       <!-- <div class="layui-form-mid layui-word-aux">
+            <span class="x-red">*</span>将会成为您唯一的手机号
+        </div>-->
+    </div>
+    <div class="layui-form-item" id="ifisAdmin">
+        <label class="layui-form-label"><span class="x-red">*</span>角色</label>
+        <select id="adept" name="shipping" class="valid" style="width: 190px!important;margin-bottom: 3px!important;height: 38px!important;">
+            <option value="系统管理员">系统管理员</option>
+            <option value="普通管理员">普通管理员</option>
+            <option value="宣传人员">宣传人员</option>
+        </select>
+    </div>
+    <div class="layui-form-item">
+        <label for="apassword" class="layui-form-label">
+            <span class="x-red">*</span>密码
+        </label>
+        <div class="layui-input-inline">
+            <input type="password" id="apassword" name="pass" required="" lay-verify="pass"
+                   autocomplete="off" class="layui-input">
+        </div>
+        <div class="layui-form-mid layui-word-aux">
+            6到16个字符
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label for="rapassword" class="layui-form-label">
+            <span class="x-red">*</span>确认密码
+        </label>
+        <div class="layui-input-inline">
+            <input type="password" id="rapassword" name="repass" required="" lay-verify="repass"
+                   autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label for="btnUpd" class="layui-form-label">
+        </label>
+        <button  id="btnUpd" class="layui-btn" lay-filter="add" lay-submit="">
+            修改
+        </button>
+    </div>
+</div>
+<script>
+
+        function getRequest() {
+            var url = location.search; //获取url中"?"符后的字串
+            var theRequest = new Object();
+            if(url.indexOf("?") != -1) {
+                var str = url.substr(1);
+                strs = str.split("&");
+                for(var i = 0; i < strs.length; i++) {
+                    theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+                }
+            }
+            return strs;
+        }
+        var re=JSON.parse(getRequest());
+
+        if(re!=null) {
+            $.ajax({
+                url: "administratorController/selectOneAdministrator",
+                type:"post",
+                data: JSON.stringify(re),
+                contentType: "application/json;charset=utf-8"
+            }).done(function (data) {
+                console.log(data);
+                $("#aid").val(data.aid);
+                $("#aname").val(data.aname);
+                $("#aphone").val(data.aphone);
+                if(data.adept!="系统管理员"){
+                    $("#adept").val(data.adept);
+                    $("#adept").attr("disabled","disabled");
+                }else{
+                    $("#adept").val(data.adept);
+                }
+                $("#test10").css("backgroundImage", "url(img/adminpic/" + data.apic + ")");
+            });
+        }
+
+
+    var gpicture="";
+    /*
+     * 文件上传
+     * */
+    layui.use('upload', function() {
+
+        var $ = layui.jquery
+            , upload = layui.upload;
+
+        upload.render({
+            elem: '#test10'
+            ,url: 'administratorController/fileSave'
+            ,method:'post'
+            ,done: function(res){
+                console.log(res);
+                $("#test10").css("backgroundImage","url(img/adminpic/"+res.data+")");
+                gpicture=res.data;
+            }
+        });
+    });
+
+    /*
+    * 验证操作
+    * */
+    $("#btnUpd").click(function () {
+        var objectList=new Array();
+        objectList.push($("#aname").val());
+        objectList.push($("#aphone").val());
+        objectList.push($("#adept").val());
+        objectList.push($("#apassword").val());
+        objectList.push(gpicture);
+        objectList.push($("#aid").val());
+
+        $.ajax({
+            type:"post",
+            contentType:"application/json;charset=utf-8",
+            url:"administratorController/update",
+            data:JSON.stringify(objectList),
+            beforeSend:function () {
+                console.log(objectList);
+            },
+            success:function (msg) {
+                if(msg=="success"){
+                    // 获得frame索引
+                    var index = parent.layer.getFrameIndex(window.name);
+                    //表格重载 就相当于 刷新父页面的表格-dataTable是父页面的表格ID属性
+                    //parent.layui.table.reload('dataTable');
+                    //添加成功后刷新数据dataTable指的是父窗体的表格
+                    parent.location.reload('dataTable');
+                    //关闭当前frame
+                    parent.layer.close(index);
+                }
+            }
+        });
+    });
+
+</script>
+<script>var _hmt = _hmt || []; (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+})();</script>
+</body>
+
+</html>

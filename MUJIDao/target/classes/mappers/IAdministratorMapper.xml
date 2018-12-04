@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nf.interfaces.IAdministratorDao">
+
+    <!--
+        对管理员自己的操作，主要面向管理员
+    -->
+    <select id="selectOneAdministrator" resultType="administrator" parameterType="String">
+        select * from administrator where aid=#{aid}
+    </select>
+    <select id="selectAllAdministrator" resultType="administrator" parameterType="java.util.Map">
+        select * from administrator
+         <where>
+             <if test="astate!=null and astate!=''">
+                 astate=#{astate}
+             </if>
+             <if test="aphone!=null and aphone!=''">
+                 and aphone like '%${aphone}%'
+             </if>
+             <if test="adept!=null and adept!=''">
+                 and adept=#{adept}
+             </if>
+             <if test="aname!=null and aname!=''">
+                 and aname like '%${aname}%'
+             </if>
+             <if test="apassword!=null and apassword!=''">
+                 and apassword=#{apassword}
+             </if>
+         </where>
+        limit #{pageno},#{pagesize};
+    </select>
+
+    <insert id="insert" parameterType="administrator">
+        insert into administrator(aphone,aname,adept,apassword,apic,aregday,adesc,astate)values(
+          #{aphone},#{aname},#{adept},#{apassword},#{apic},#{aregday},#{adesc},#{astate}
+        );
+    </insert>
+
+    <update id="update" parameterType="java.util.Map">
+        update administrator
+        <set>
+            <if test="aphone!='' and aphone!=null">
+                aphone=#{aphone},
+            </if>
+            <if test="apassword!='' and apassword!=null">
+                apassword=#{apassword},
+            </if>
+            <if test="aname!='' and aname!=null">
+                aname=#{aname},
+            </if>
+            <if test="adept!='' and adept!=null">
+                adept=#{adept},
+            </if>
+            <if test="apic!='' and apic!=null">
+                apic=#{apic},
+            </if>
+            <if test="adesc!='' and adesc!=null">
+                adesc=#{adesc},
+            </if>
+        </set>
+        where aid=#{aid};
+    </update>
+
+    <!--
+        这里不做删除操作，只做修改状态
+    -->
+    <update id="delete" parameterType="String">
+         update administrator set astate=1 where aid=#{aid};
+    </update>
+
+</mapper>
