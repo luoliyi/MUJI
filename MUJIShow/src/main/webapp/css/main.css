@@ -1,0 +1,502 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0; }
+
+ul {
+  list-style: none; }
+
+a {
+  text-decoration: none;
+  color: #666; }
+
+html, body {
+  width: 100%;
+  height: 100%; }
+
+#header {
+  height: 70px;
+  position: relative;
+  z-index: 100;
+  width: 100%;
+  margin: 0 auto; }
+  #header .headerWrap {
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+    max-width: 1024px;
+    height: 100%; }
+    #header .headerWrap .icon {
+      z-index: 1001;
+      top: 0;
+      left: 0;
+      margin: 0;
+      position: absolute;
+      width: 130px; }
+      #header .headerWrap .icon .icon2 {
+        padding: 15px 0;
+        display: block;
+        line-height: 1;
+        margin-top: 10px; }
+        #header .headerWrap .icon .icon2 img {
+          max-width: 100%;
+          height: auto;
+          width: auto;
+          border: 0;
+          vertical-align: middle; }
+    #header .headerWrap ul {
+      padding-left: 15%;
+      margin: 0; }
+      #header .headerWrap ul li {
+        display: inline-block;
+        list-style: none;
+        float: left;
+        font-size: 13px;
+        padding: 28px 10px;
+        line-height: 1; }
+        #header .headerWrap ul li i {
+          position: relative;
+          cursor: pointer;
+          top: 8px; }
+        #header .headerWrap ul li #scarch {
+          border-radius: 20px;
+          right: 0;
+          width: 0px;
+          z-index: 1001;
+          border: 0;
+          background: url(../img/Images/icon_search.png) no-repeat 7px center rgba(0, 0, 0, 0.05);
+          background-color: lightgrey;
+          background-size: 16px 17px;
+          color: #000;
+          padding-left: 30px;
+          margin-top: -25px;
+          margin: 0;
+          box-sizing: border-box;
+          line-height: 2.3;
+          transition: all .7s; }
+      #header .headerWrap ul .lastchildli:hover #scarch {
+        width: 180px; }
+      #header .headerWrap ul li:last-child {
+        z-index: 8999;
+        margin-top: -10px; }
+  #header #topguide {
+    margin: 0 auto;
+    position: relative;
+    max-width: 1024px;
+    height: 44px;
+    background: #f9f9f9;
+    border-bottom: 1px solid lightgrey; }
+    #header #topguide #closeFrame {
+      position: absolute;
+      left: 0;
+      width: 45px;
+      height: 45px;
+      line-height: 45px;
+      text-align: center;
+      display: none; }
+      #header #topguide #closeFrame i {
+        font-size: 30px;
+        color: #7f0019;
+        cursor: pointer; }
+    #header #topguide #hiddenmujiing {
+      position: absolute;
+      display: none;
+      float: left;
+      height: 45px;
+      width: 200px; }
+      #header #topguide #hiddenmujiing img {
+        position: relative;
+        top: 10px;
+        left: 30px;
+        width: 130px;
+        height: 21px; }
+    #header #topguide #topguide_rightguide {
+      max-width: 450px;
+      width: auto;
+      height: 100%;
+      float: right;
+      position: relative;
+      top: -5px; }
+      
+      /*账号详情*/
+     .userdetailscontent{
+     	
+     	display: none;
+     	
+     		position: absolute;
+	     	width: 105px;
+	     	height: 70px;
+	     	background:white;
+	     	border-left: 1.5px solid lightgray;
+				border-right: 1.5px solid lightgray;
+				border-bottom: 1.5px solid lightgray;
+	     	top: 45px;
+	     	left: 239px;
+				z-index: 9;
+				border-radius: 4px;
+				text-align: center;
+     }
+     .userdetailscontent p{
+     		display: inline-block;
+     		width: 100%;
+     		color: #7f0019;
+     		cursor: pointer;
+     		padding: 7px 0px;
+     }
+     .userdetailscontent .myinfo{
+     		border-bottom: 1px dashed #F5DEB3;
+     }
+     .userdetailscontent:before{
+     		display: block;
+				content: '';
+				width: 70px;
+				border: .5px solid lightgray;
+     }
+     .userdetailscontent:after{
+     		display: block;
+				content: '';
+				width: 15px;
+				border: .5px solid lightgray;
+				position: absolute;
+				right: 0px;
+				top: -.5px;
+     }
+     #smallretangle{
+     	position: absolute;
+     	top: -6px;
+     	left: 74px;
+			/*//border-top: 20px solid red;
+			//border-left: 20px solid red;*/
+			width: 10px;
+			height: 10px;
+			border-top:1.5px solid lightgray ;
+			border-left:1.5px solid lightgray;
+			border-right:1px solid transparent;
+			border-bottom:1px solid transparent;
+			background: white;
+			transform: rotateZ(45deg);
+     	z-index: 1;
+     }
+     
+     
+     
+     
+     
+      #header #topguide #topguide_rightguide li {
+        float: left;
+        display: inline-block;
+        text-align: center;
+        line-height: 46px;
+        margin-right: 10px;
+        font-size: 15px; }
+        #header #topguide #topguide_rightguide li a, #header #topguide #topguide_rightguide li button {
+          padding: 4px 6px;
+          border: 1px solid #7f0019;
+          border-radius: 12px;
+          font-size: 10px;
+          line-height: 14px;
+          color: #7f0019;
+          font-weight: 300;
+          text-align: center;
+          background: none; }
+        #header #topguide #topguide_rightguide li i {
+        	 cursor: pointer;
+          font-size: 23px; }
+        #header #topguide #topguide_rightguide li #loginandregeist:hover {
+          cursor: pointer; }
+
+#center {
+  margin: 0 auto;
+  position: relative;
+  max-width: 1024px;
+  height: 100%; }
+  #center #center_container {
+    width: 100%;
+    margin: 0 auto;
+    height: 92%; }
+    #center #center_container #center_container_details .Wrapper_title {
+      width: 100%;
+      height: 30px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      line-height: 30px; }
+      #center #center_container #center_container_details .Wrapper_title h3 {
+        float: left;
+        position: relative;
+        left: 15px; }
+      #center #center_container #center_container_details .Wrapper_title a {
+        float: right;
+        position: relative;
+        right: 15px; }
+    #center #center_container #center_container_details .PageHomePartNewArrivals {
+      padding-top: 25px;
+      background: #fff;
+      width: 100%; }
+      #center #center_container #center_container_details .PageHomePartNewArrivals .MuSectionWrapper {
+        width: 100%;
+        overflow: hidden;
+        margin-top: 30px; }
+        #center #center_container #center_container_details .PageHomePartNewArrivals .MuSectionWrapper #MuSectionWrapper_details {
+          width: 100%;
+          overflow: hidden; }
+          #center #center_container #center_container_details .PageHomePartNewArrivals .MuSectionWrapper #MuSectionWrapper_details div {
+            margin: 0 0.7%;
+            display: inline-block;
+            float: left;
+            width: 15%;
+            height: 210px;
+            text-align: center;
+            font-family: "微软雅黑";
+            font-size: 15px;
+            overflow: hidden; }
+            #center #center_container #center_container_details .PageHomePartNewArrivals .MuSectionWrapper #MuSectionWrapper_details div .goodsname {
+              padding: 10px 0; }
+            #center #center_container #center_container_details .PageHomePartNewArrivals .MuSectionWrapper #MuSectionWrapper_details div img {
+              width: 100%;
+              height: 130px; }
+      #center #center_container #center_container_details .PageHomePartNewArrivals .PageHomePartCommodityCatalogs {
+        width: 100%;
+        margin-top: 20px;
+        padding-top: 20px;
+        padding-bottom: 4px;
+        background: #f3f3f3; }
+        #center #center_container #center_container_details .PageHomePartNewArrivals .PageHomePartCommodityCatalogs #center-product {
+          width: 100%;
+          margin-bottom: 40px;
+          padding: 0; }
+          #center #center_container #center_container_details .PageHomePartNewArrivals .PageHomePartCommodityCatalogs #center-product .productwrap {
+            width: 100%;
+            overflow: hidden;
+            max-width: 1024px;
+            margin: 0 auto; }
+            #center #center_container #center_container_details .PageHomePartNewArrivals .PageHomePartCommodityCatalogs #center-product .productwrap #product_garment, #center #center_container #center_container_details .PageHomePartNewArrivals .PageHomePartCommodityCatalogs #center-product .productwrap #product_household, #center #center_container #center_container_details .PageHomePartNewArrivals .PageHomePartCommodityCatalogs #center-product .productwrap #product_food {
+              border-bottom: 1px solid lightgrey;
+              overflow: hidden;
+              width: 100%;
+              max-width: 1024px;
+              margin: 0 auto;
+              padding-bottom: 10px;
+              margin-bottom: 15px; }
+              #center #center_container #center_container_details .PageHomePartNewArrivals .PageHomePartCommodityCatalogs #center-product .productwrap #product_garment li, #center #center_container #center_container_details .PageHomePartNewArrivals .PageHomePartCommodityCatalogs #center-product .productwrap #product_household li, #center #center_container #center_container_details .PageHomePartNewArrivals .PageHomePartCommodityCatalogs #center-product .productwrap #product_food li {
+                float: left;
+                position: relative;
+                height: 60px;
+                margin: 0 2% 5px 0;
+                width: 14.5%;
+                box-sizing: border-box;
+                border-radius: 4px;
+                font-size: 12px;
+                padding-right: 2px;
+                background-color: #fff;
+                background-size: auto 40px;
+                background-repeat: no-repeat;
+                background-position: 8px center; }
+                #center #center_container #center_container_details .PageHomePartNewArrivals .PageHomePartCommodityCatalogs #center-product .productwrap #product_garment li a, #center #center_container #center_container_details .PageHomePartNewArrivals .PageHomePartCommodityCatalogs #center-product .productwrap #product_household li a, #center #center_container #center_container_details .PageHomePartNewArrivals .PageHomePartCommodityCatalogs #center-product .productwrap #product_food li a {
+                  display: block;
+                  padding: 0 2px 0 55px;
+                  min-height: 60px;
+                  position: relative; }
+                  #center #center_container #center_container_details .PageHomePartNewArrivals .PageHomePartCommodityCatalogs #center-product .productwrap #product_garment li a span, #center #center_container #center_container_details .PageHomePartNewArrivals .PageHomePartCommodityCatalogs #center-product .productwrap #product_household li a span, #center #center_container #center_container_details .PageHomePartNewArrivals .PageHomePartCommodityCatalogs #center-product .productwrap #product_food li a span {
+                    position: absolute;
+                    top: 40%; }
+      #center #center_container #center_container_details .PageHomePartNewArrivals #newItem {
+        width: 100%;
+        margin-bottom: 40px;
+        padding: 0;
+        position: relative; }
+        #center #center_container #center_container_details .PageHomePartNewArrivals #newItem .newItemWrapper {
+          width: 100%;
+          overflow: hidden;
+          max-width: 1024px;
+          margin: 0 auto; }
+          #center #center_container #center_container_details .PageHomePartNewArrivals #newItem .newItemWrapper .newItemUl {
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 15px;
+            overflow: hidden; }
+            #center #center_container #center_container_details .PageHomePartNewArrivals #newItem .newItemWrapper .newItemUl li {
+              width: 15%;
+              margin-right: 2%;
+              float: left; }
+              #center #center_container #center_container_details .PageHomePartNewArrivals #newItem .newItemWrapper .newItemUl li a {
+                text-decoration: none;
+                color: #666; }
+                #center #center_container #center_container_details .PageHomePartNewArrivals #newItem .newItemWrapper .newItemUl li a .thumb {
+                  display: block;
+                  margin-top: 5px;
+                  font-size: 12px;
+                  text-align: center; }
+                  #center #center_container #center_container_details .PageHomePartNewArrivals #newItem .newItemWrapper .newItemUl li a .thumb img {
+                    width: 100%;
+                    height: auto; }
+                #center #center_container #center_container_details .PageHomePartNewArrivals #newItem .newItemWrapper .newItemUl li a .name {
+                  display: block;
+                  margin-top: 5px;
+                  font-size: 12px;
+                  text-align: center; }
+              #center #center_container #center_container_details .PageHomePartNewArrivals #newItem .newItemWrapper .newItemUl li p {
+                text-align: center;
+                font-size: 16px; }
+            #center #center_container #center_container_details .PageHomePartNewArrivals #newItem .newItemWrapper .newItemUl .lastchid {
+              margin-right: 0; }
+        #center #center_container #center_container_details .PageHomePartNewArrivals #newItem .MuVersionNumber {
+          margin-top: 30px;
+          padding-top: 10px;
+          padding-bottom: 10px;
+          font-size: 13px;
+          line-height: 17px;
+          color: #ccc;
+          text-align: center; }
+    #center #center_container #login, #center #center_container #regeistreadme, #center #center_container #regeist {
+      width: 100%;
+      height: 600px;
+      border-radius: 10px;
+      position: absolute;
+      bottom: 0;
+      display: none;
+      box-shadow: 6px 10px 20px #F4F4F4; }
+    #center #center_container #login, #center #center_container #regeist {
+      background: white; }
+      #center #center_container #login .toolbar_left, #center #center_container #regeist .toolbar_left {
+        flex-shrink: 0;
+        padding: 39px 36px 20px;
+        font-size: 20px;
+        color: #000;
+        line-height: 28px;
+        letter-spacing: .94px;
+        font-weight: 900;
+        width: 270px;
+        height: 45px;
+        line-height: 45px;
+        z-index: 888; }
+        #center #center_container #login .toolbar_left i, #center #center_container #regeist .toolbar_left i {
+          color: #7f0019;
+          font-size: 30px; }
+        #center #center_container #login .toolbar_left i:hover, #center #center_container #regeist .toolbar_left i:hover {
+          cursor: pointer; }
+      #center #center_container #login .heading-wrap, #center #center_container #regeist .heading-wrap {
+        flex-shrink: 0;
+        padding: 39px 36px 20px;
+        font-size: 20px;
+        color: #000;
+        line-height: 28px;
+        letter-spacing: .94px;
+        font-weight: 900; }
+      #center #center_container #login .form-wrap, #center #center_container #regeist .form-wrap {
+        padding-left: 15px;
+        padding-right: 15px; }
+        #center #center_container #login .form-wrap .MuInput, #center #center_container #regeist .form-wrap .MuInput {
+          padding: 11px 7px;
+          background: #f2f2f2;
+          font-size: 16px;
+          line-height: 22px;
+          color: #000;
+          border-radius: 22px;
+          display: block;
+          width: 100%;
+          border: none;
+          margin-bottom: 20px;
+          text-indent: 10px; }
+        #center #center_container #login .form-wrap .muinputbutton, #center #center_container #regeist .form-wrap .muinputbutton {
+          width: 101.5%;
+          opacity: .9;
+          min-height: 44px;
+          border: 0 solid rgba(0, 0, 0, 0);
+          background: #7f0019;
+          font-size: 16px;
+          color: #fff;
+          font-weight: 700;
+          line-height: 22px;
+          border-radius: 22px;
+          cursor: pointer; }
+      #center #center_container #login #logintips, #center #center_container #regeist #logintips {
+        margin-top: 20px;
+        padding: 0 21px; }
+        #center #center_container #login #logintips a, #center #center_container #regeist #logintips a {
+          display: inline-block;
+          font-size: 13px;
+          color: #60b3fa;
+          line-height: 18px;
+          letter-spacing: -.15px;
+          cursor: pointer; }
+        #center #center_container #login #logintips #userforgetpwd, #center #center_container #regeist #logintips #userforgetpwd {
+          float: right; }
+    #center #center_container #regeistreadme {
+      background: white; }
+      #center #center_container #regeistreadme .regeistreadme_head {
+        width: 100%;
+        height: 45px;
+        text-align: center;
+        line-height: 45px;
+        font-size: 18px;
+        color: #000;
+        font-weight: 1000;
+
+         }
+        #center #center_container #regeistreadme .regeistreadme_head i{
+	  			text-indent: 15px;
+
+         }
+        #center #center_container #regeistreadme .regeistreadme_head #gotologin {
+          font-size: 30px;
+          color: #7f0019;
+          float: left;
+          cursor: pointer; }
+      #center #center_container #regeistreadme .messagediv {
+        width: 100%;
+        height: 550px;
+        overflow: auto; }
+        #center #center_container #regeistreadme .messagediv .message {
+          padding: 24px 32px;
+          font-size: 13px;
+          color: #666;
+          line-height: 21px; }
+      #center #center_container #regeistreadme #iagree {
+        width: 100%;
+        margin-top: 15px; }
+        #center #center_container #regeistreadme #iagree #iagreebutton {
+          width: 100%;
+          min-height: 44px;
+          border: 0 solid rgba(0, 0, 0, 0);
+          background: #7f0019;
+          font-size: 16px;
+          color: #fff;
+          font-weight: 700;
+          line-height: 22px;
+          border-radius: 22px;
+          cursor: pointer; }
+    #center #center_container #regeist {
+      background: white; }
+      .arriveOne:hover{
+      	cursor: pointer;
+      }
+@media only screen and (max-width: 769px) {
+  #header .headerWrap {
+    display: none; }
+
+  #center #center_container #center_container_details .PageHomePartNewArrivals .MuSectionWrapper #MuSectionWrapper_details div {
+    width: 31%;
+    height: 230px; }
+
+  #center #center_container #center_container_details .PageHomePartNewArrivals .MuSectionWrapper #MuSectionWrapper_details div img {
+    height: 120px; }
+
+  #center #center_container #center_container_details .PageHomePartNewArrivals .PageHomePartCommodityCatalogs #center-product .productwrap #product_garment li,
+  #center #center_container #center_container_details .PageHomePartNewArrivals .PageHomePartCommodityCatalogs #center-product .productwrap #product_household li,
+  #center #center_container #center_container_details .PageHomePartNewArrivals .PageHomePartCommodityCatalogs #center-product .productwrap #product_food li {
+    width: 31%;
+    height: auto; }
+
+  #center #center_container #center_container_details .PageHomePartNewArrivals #newItem .newItemWrapper .newItemUl li {
+    width: 31%;
+    height: auto; }
+
+  #center #center_container #center_container_details #test1 {
+    height: 250px !important; } 
+ 	#center #center_container #center_container_details .PageHomePartNewArrivals .MuSectionWrapper{
+ 		margin-top: 0px;
+ 	}
+ }
+
+
+/*# sourceMappingURL=main.css.map */

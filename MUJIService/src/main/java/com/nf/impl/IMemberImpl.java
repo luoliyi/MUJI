@@ -37,4 +37,9 @@ public class IMemberImpl implements IMemberService {
     public int delete(String mid) {
         return memberDao.delete(mid);
     }
+
+    @Override
+    public Member selectOne(Map<String, Object> objectMap) {
+        return memberDao.selectOne(objectMap);
+    }
 }

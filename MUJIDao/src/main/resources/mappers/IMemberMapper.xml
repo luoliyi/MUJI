@@ -15,6 +15,22 @@
          limit #{pageno},#{pagesize};
     </select>
 
+    <!--查询单个用户-->
+    <select id="selectOne" resultType="Member" parameterType="java.util.Map">
+        select * from Member
+        <where>
+            <if test="mphone!=null and mphone!=''">
+                mphone=#{mphone}
+            </if>
+            <if test="mname!=null and mname!=''">
+               and mname=#{mname}
+            </if>
+            <if test="mpassword!=null and mpassword!=''">
+               and mpassword=#{mpassword}
+            </if>
+        </where>
+    </select>
+
     <insert id="insert" parameterType="Member">
         insert into Member(mphone,mpassword,mname,mbirthday,msex,mlocation,mpic,mstate)values(
           #{mphone},#{mpassword},#{mname},#{mbirthday},#{msex},#{mlocation},#{mpic},#{mstate}

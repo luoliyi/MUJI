@@ -37,4 +37,14 @@ public class IGoodsImpl implements IGoodsService {
     public int delete(String goodNo) {
         return goodsDao.delete(goodNo);
     }
+
+    @Override
+    public List<Goods> selectNewGoods(Map<String, Object> goodsLimitMap) {
+        return goodsDao.selectNewGoods(goodsLimitMap);
+    }
+
+    @Override
+    public Goods selectOneGood(int gid) {
+        return goodsDao.selectOneGood(gid);
+    }
 }

@@ -16,7 +16,7 @@ public class Member {
 * */
     private int mid;
     private String mphone;
-    private String mpassowrd;
+    private String mpassword;
     private String mname;
     private Date Mbirthday;
     private Date mregdate;
@@ -52,12 +52,12 @@ public class Member {
         this.mphone = mphone;
     }
 
-    public String getMpassowrd() {
-        return mpassowrd;
+    public String getMpassword() {
+        return mpassword;
     }
 
-    public void setMpassowrd(String mpassowrd) {
-        this.mpassowrd = mpassowrd;
+    public void setMpassword(String mpassword) {
+        this.mpassword = mpassword;
     }
 
     public String getMname() {
@@ -113,7 +113,7 @@ public class Member {
         return "Member{" +
                 "mid=" + mid +
                 ", mphone='" + mphone + '\'' +
-                ", mpassowrd='" + mpassowrd + '\'' +
+                ", mpassword='" + mpassword + '\'' +
                 ", mname='" + mname + '\'' +
                 ", Mbirthday=" + Mbirthday +
                 ", mregdate=" + mregdate.toLocaleString() +
@@ -126,7 +126,7 @@ public class Member {
 
     public Member(String mphone, String mpassowrd, String mname, Date mbirthday, Date mregdate, String msex, String mlocation, String mpic, int mstate) {
         this.mphone = mphone;
-        this.mpassowrd = mpassowrd;
+        this.mpassword = mpassowrd;
         this.mname = mname;
         Mbirthday = mbirthday;
         this.mregdate = mregdate;
@@ -139,7 +139,7 @@ public class Member {
     public Member(int mid, String mphone, String mpassowrd, String mname, Date mbirthday, Date mregdate, String msex, String mlocation, String mpic, int mstate) {
         this.mid = mid;
         this.mphone = mphone;
-        this.mpassowrd = mpassowrd;
+        this.mpassword = mpassowrd;
         this.mname = mname;
         Mbirthday = mbirthday;
         this.mregdate = mregdate;

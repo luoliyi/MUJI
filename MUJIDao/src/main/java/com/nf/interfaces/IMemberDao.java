@@ -15,4 +15,6 @@ public interface IMemberDao {
     int update(Map<String,Object> MemberList);
 
     int delete(@Param("mid") String mid);
+
+    Member selectOne(Map<String,Object> objectMap);
 }

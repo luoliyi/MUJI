@@ -43,4 +43,9 @@ public class IAdministratorImpl implements IAdministratorService {
     public Administrator selectOneAdministrator(String aid) {
         return administratorDao.selectOneAdministrator(aid);
     }
+
+    @Override
+    public Administrator selectOne(Map<String, Object> objectMap) {
+        return administratorDao.selectOne(objectMap);
+    }
 }

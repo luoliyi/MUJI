@@ -85,8 +85,11 @@
                     contentType:'application/json;charset=UTF-8',
                     data:JSON.stringify(loginList)
                 }).then(function(msg){
-                    if(msg=="登录成功") {
+                    if(msg=="success") {
                         location.href = 'index.html';
+                    }else {
+                        layer.msg('登录失败!',{icon: 5,time:1000});
+                        return false;
                     }
                 },function(err){
                     console.log(err)

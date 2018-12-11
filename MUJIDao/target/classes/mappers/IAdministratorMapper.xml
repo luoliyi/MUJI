@@ -30,6 +30,22 @@
         limit #{pageno},#{pagesize};
     </select>
 
+    <!--查询单个管理员-->
+    <select id="selectOne" resultType="administrator" parameterType="java.util.Map">
+        select * from administrator
+        <where>
+            <if test="aphone!=null and aphone!=''">
+                aphone=#{aphone}
+            </if>
+            <if test="aname!=null and aname!=''">
+                and aname=#{aname}
+            </if>
+            <if test="apassword!=null and apassword!=''">
+                and apassword=#{apassword}
+            </if>
+        </where>
+    </select>
+
     <insert id="insert" parameterType="administrator">
         insert into administrator(aphone,aname,adept,apassword,apic,aregday,adesc,astate)values(
           #{aphone},#{aname},#{adept},#{apassword},#{apic},#{aregday},#{adesc},#{astate}

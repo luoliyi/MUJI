@@ -2,6 +2,7 @@ package com.nf.dao.test;
 
 import com.nf.commons.MyUtils.MD5Util;
 import com.nf.entities.Administrator;
+import com.nf.entities.Member;
 import com.nf.interfaces.IAdministratorDao;
 import com.nf.interfaces.IMemberDao;
 import org.junit.Test;
@@ -14,9 +15,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 @ContextConfiguration({"classpath:applicationContext.xml"})
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -56,5 +57,14 @@ public class IAdministratorDaoTest {
         map.put("mname","大毛");
         int result=administratorDao.update(map);
         System.out.println(result);
+    }
+
+    @Test
+    public void selectOne() throws UnsupportedEncodingException, NoSuchAlgorithmException {
+        Map<String,Object> objectMap=new HashMap<>();
+        objectMap.put("aphone","13926901501");
+        objectMap.put("apassword",MD5Util.EncoderByMd5(".asamu.654"));
+        Administrator administrator=administratorDao.selectOne(objectMap);
+        System.out.println(administrator);
     }
 }

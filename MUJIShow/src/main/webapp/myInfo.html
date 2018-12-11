@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>无印良品</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+		<!--图标-->
+		<link rel="shortcut icon" href="//www.suning.com/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="css/myinfo.css" />
+		<link rel="stylesheet" type="text/css" href="js/layui/css/layui.css" />
+	</head>
+
+	<body>
+		<div id="maxdiv">
+			<!--容器-->
+			<div id="maxdivcontainer">
+
+				<!--头部-->
+				<div id="myorder">
+					<div class="MuListItem has-content">
+						<!--头像-->
+						<div class="myimg">
+							<img src="img/myinfo/tx2.jpg" />
+						</div>
+						<div class="heading">139******06</div>
+						<!--查看我的信息-->
+						<i id="lookmoremyinfo" class="layui-icon layui-icon-right" title="设置我的信息"></i>
+					</div>
+					<!--我的订单-->
+					<div class="list-group-header">
+						<h2><strong>我的订单</strong></h2>
+						<a id="lookallmyorders" title="查看我的全部订单">查看全部</a>
+					</div>
+					<!--订单详情-->
+					<div class="listitem-content">
+						<ul>
+							<li title="待付款">
+								<i class="layui-icon layui-icon-rmb"></i>
+								<p>待付款</p>
+							</li>
+							<li title="待发货">
+								<i class="layui-icon layui-icon-component"></i>
+								<p>待发货</p>
+							</li>
+							<li title="待收货">
+								<i class="layui-icon layui-icon-release"></i>
+								<p>待收货</p>
+							</li>
+							<li title="已完成">
+								<i class="layui-icon layui-icon-face-smile-fine"></i>
+								<p>已完成</p>
+							</li>
+							<li title="售后">
+								<i class="layui-icon layui-icon-chat"></i>
+								<p>售后</p>
+							</li>
+						</ul>
+					</div>
+					<!--售后-->
+					<div class="MuListItem listitem-wrap">
+						<div class="listitem-title">客服中心</div>
+					</div>
+					<div class="MuListItem has-title" tappable="">
+						<div class="listitem-wrap">
+							<div class="listitem-title">常见问题</div>
+						</div>
+					</div>
+				</div>
+
+				<!--设置我的信息-->
+				<div id="myinformation">
+					<!--关闭按钮-->
+					<div class="divClose">
+						<i class="layui-icon layui-icon-close btnColse" title="返回我的信息"></i>
+					</div>
+					<!--地址管理-->
+					<div class="list-group-header">
+						<div class="list-group-title">
+							地址管理
+						</div>
+					</div>
+					<div class="listitem-wrap"><div class="listitem-title" title="编辑我的收货地址">我的收货地址</div>
+						<i class="layui-icon layui-icon-right" id="morePlace"></i>  
+					</div>
+					<!--账户安全-->
+					<div class="list-group-header">
+						<div class="list-group-title">
+							账户与安全
+						</div>
+					</div>
+					<div class="listitem-wrap"><div class="listitem-title" title="设置登录密码">设置登录密码</div>
+						<i class="layui-icon layui-icon-right" id="myloginpwd"></i>  
+					</div>
+					<!--退出登录-->
+					<div class="footbar-wrap">
+						<div class="action-wrap">
+							<button id="btnExit" type="button" class="mu-button">退出登录</button>
+						</div>
+					</div>
+				</div>
+				
+				<!--管理收货地址-->
+				<div id="controlMyplace">
+					<!--关闭按钮-->
+					<div class="divClose">
+						<i class="layui-icon layui-icon-close btnColse" title="返回我的信息"></i>
+					</div>
+					
+					<!--我的信息-->
+					<div class="placeitem">
+						<!--姓名-->
+						<div class="subject">
+							罗立一
+						</div>
+						<!--主体-->
+						<div class="placebody">
+							<div class="palcelist">
+								<label>联系方式：</label>
+								<span>13926901506</span>
+								<br />
+								<label>详细地址：</label>
+								<span>广东省珠海市白蕉镇白蕉南路29号南方IT学院</span>
+							</div>
+						</div>
+						<!--设置-->
+						<div class="placeactions">
+							<span class="isdefault" title="设为默认">
+								<i class="layui-icon layui-icon-circle"></i> 
+								<span>默认地址</span>
+							</span>
+							<!--删除-->
+							<span class="isEdit">
+								<i class="layui-icon layui-icon-delete"></i> 
+								<span title="删除" id="delMyPlace">删除</span>
+							</span>
+							<!--编辑 -->
+							<span class="isEdit">
+								<i class="layui-icon layui-icon-edit"></i> 
+								<span title="编辑" id="editMyPlace">编辑</span>
+							</span>
+						</div>
+					</div>
+					<!--这里插入新的地址-->
+					
+					<!--新增收货地址-->
+					<div class="footbar-wrap">
+						<div class="action-wrap">
+							<button id="btnAddNewPlace" type="button" class="mu-button">新增收货地址</button>
+						</div>
+					</div>
+				</div>
+				
+				<!--新增地址-->
+				<div id="addAndEditPlace">
+					<!--关闭按钮-->
+					<div class="divClose">
+						<i class="layui-icon layui-icon-close btnColse" title="返回我的信息"></i>
+					</div>
+					<!--填写-->
+					<div class="list-group-wrap">
+						<div class="MuListItem has-title has-content">
+							<label>收货客人</label>
+							<input type="text" placeholder="请输入收件人姓名" />
+						</div>
+						<div class="MuListItem has-title has-content">
+							<label>联系电话</label>
+							<input type="text" placeholder="请输入联系电话" />
+						</div>
+						<div class="MuListItem has-title has-content">
+							<label>所在地区</label>
+							<select class="sheng">
+								<option>省</option>
+							</select>
+							<select class="shi">
+								<option>市</option>
+							</select>
+							<select class="xian">
+								<option>县/区</option>
+							</select>
+						</div>
+						<div class="MuListItem has-title has-content">
+							<label class="mydetailplace">详细地址</label>
+							<textarea placeholder="请输入详细地址，不少于5个字。"></textarea>
+						</div>
+					</div>
+					<!--设为默认地址-->
+					<div class="MuListItem has-title has-content">
+						<div class="listitem-wrap" title="设为默认地址">
+							<span>设为默认地址</span>
+							<i id="checkDefaultPlace" class="layui-icon layui-icon-circle"></i> 
+						</div>
+					</div>
+					<!--保存-->
+					<div class="footbar-wrap">
+						<div class="action-wrap">
+							<button id="btnSaveNewPlace" type="button" class="mu-button" title="保存">保存</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="js/layui/layui.js"></script>
+	<script type="text/javascript" src="js/myinfo.js"></script>
+
+</html>

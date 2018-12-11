@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>无印良品</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+	<!--图标-->
+	<link rel="shortcut icon" href="//www.suning.com/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="css/goodDetails.css" />
+	<link rel="stylesheet" type="text/css" href="js/layui/css/layui.css" />
+	<link rel="stylesheet" type="text/css" href="3DGallery/css/style.css">
+
+	<!--放大镜-->
+
+	<style>
+		#dg-container .dg-wrapper a{
+			background: none!important;
+			box-shadow: none!important;
+		}
+		.dg-container{
+			width: 99% !important;
+		}
+		#navCon{
+			position: relative;
+			top: 135px;
+		}
+	</style>
+</head>
+
+<body>
+<div id="maxdiv">
+	<!--容器-->
+	<div id="maxdivcontainer" class="container">
+
+
+		<!--详细（轮播图）-->
+		<section id="dg-container" class="dg-container">
+			<div class="dg-wrapper">
+				<!--<a href="#">
+					<img src="img/main/mian.jpg">
+				</a>-->
+
+			</div>
+			<nav id="navCon">
+				<span class="dg-prev"><</span>
+				<span class="dg-next">></span>
+			</nav>
+		</section>
+
+		<!--商品详情介绍-->
+		<div class="commodity-meta-wrap">
+			<p class="title">美利奴羊毛_拉链夹克衫</p>
+			<p class="MuPriceTag">
+				<span>¥</span>
+				<span id="nowPrice">548</span>
+				<!--<span class="muted">¥<span id="prevPrice"></span></span>-->
+			</p>
+		</div>
+		<!--商品详情备注信息-->
+		<div class="section section-brief">
+			<p>商品编号：<span class="UserSelectArea">4550002036508</span></p>
+
+			<p class="gdesc">采用具有良好弹水性不易潮湿闷热的 面料制成。有效防止雨水 从拉链及缝头部分侵入。
+			</p>
+		</div>
+		<!--商品参数-->
+		<div class="section section-normal">
+			<a href="javascript:void(0);" class="section-link">产品参数</a>
+		</div>
+		<!--尺寸-->
+		<div class="section section-description">
+			<div class="specs">
+				<table>
+					<thead>
+					<tr>
+						<th>尺码</th>
+						<th>衣长</th>
+						<th>肩宽</th>
+						<th>胸围</th>
+						<th>腰围</th>
+						<th>袖长</th>
+						<!--<th>袖长（领中央至袖口长度）</th>
+                        <th>下摆围</th>-->
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<th>男式_S</th>
+						<td>70.0cm</td>
+						<td>43.0cm</td>
+						<td>106.0cm</td>
+						<td>100.0cm</td>
+						<td>60.6cm</td>
+						<!--<td>82.0cm</td>
+                        <td>101.00</td>-->
+					</tr>
+					<tr>
+						<th>男式_M</th>
+						<td>72.0cm</td>
+						<td>44.5cm</td>
+						<td>111.0cm</td>
+						<td>105.0cm</td>
+						<td>61.8cm</td>
+						<!--<td>84.0cm</td>
+                        <td>106.00</td>-->
+					</tr>
+					<tr>
+						<th>男式_L</th>
+						<td>74.0cm</td>
+						<td>46.0cm</td>
+						<td>116.0cm</td>
+						<td>110.0cm</td>
+						<td>63.0cm</td>
+						<!--<td>86.0cm</td>
+                        <td>111.00</td>-->
+					</tr>
+					<tr>
+						<th>男式_XL</th>
+						<td>76.0cm</td>
+						<td>48.0cm</td>
+						<td>122.0cm</td>
+						<td>116.0cm</td>
+						<td>64.8cm</td>
+						<!--<td>88.0cm</td>
+                        <td>117.00</td>-->
+					</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<!--底部-->
+	<div id="footbar-wrap">
+		<!--选择框-->
+		<div id="chooseAlltoCar">
+			<!--关闭-->
+			<div class="chooseClose">
+				<i id="chooseClose" class="layui-icon layui-icon-close" title="关闭"></i>
+			</div>
+			<div class="part_options">
+				<div class="image-wrap">
+					<img src="img/goodsdetails/untitled.png" />
+					<div class="image-wrap-right">
+						<span class="title">棉水洗平纹衬衫</span><br />
+						<span><span>￥</span><span class="image-wrap-right-price">78</span></span>
+					</div>
+				</div>
+			</div>
+			<!--选择参数-->
+			<div class="part-options-options">
+				<div class="option">
+					<div class="option-div">
+						<label class="option-label">颜色</label>	<span><a href="javascript:void(0);" class="type-text active">白色</a></span>
+					</div>
+					<div class="option-div">
+						<label class="option-label">尺码</label>
+						<span>
+									<a href="javascript:void(0);" class="type-text active">男式XS</a>
+								</span>
+					</div>
+					<div class="option-div">
+						<label class="option-label">数量</label>
+						<span id="chooseCount">
+									<a href="javascript:void(0);" id="countDel" class="type-text active">-</a>
+									<input type="text" value="1" id="countValue" />
+									<a href="javascript:void(0);" id="countAdd" class="type-text active">+</a>
+								</span>
+					</div>
+				</div>
+			</div>
+
+			<div id="chooseAlltoCar_car">
+				<button type="button" class="mu-button" id="btnChooseAlltoCar_car" title="加入购物车">加入购物车</button>
+			</div>
+		</div>
+		<div class="PageCommodityDetailPartActions">
+
+			<div class="part-actions-wrap">
+				<i class="layui-icon layui-icon-reply-fill" style="font-size: 30px; color: green;"></i>
+				<p>客服</p>
+				<button type="button" class="mu-button" id="muji_btn_add_commodity_to_cart">加入购物车</button>
+				<button type="button" class="mu-button" id="buyNow">立即购买</button>
+			</div>
+		</div>
+	</div>
+
+	<div id="CoveringLayer"></div>
+</div>
+</body>
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/layui/layui.js"></script>
+<script type="text/javascript" src="js/goodDetails.js"></script>
+<!--画廊轮播-->
+<script type="text/javascript" src="3DGallery/js/jquery.gallery.js"></script>
+<script type="text/javascript" src="3DGallery/js/modernizr.custom.53451.js"></script>
+<!--放大镜-->
+<script src='glass/js/okzoom.js'></script>
+<script>
+    /*
+    * 获取url传过来的gid
+    * */
+    /*function getRequest() {
+        var url = location.search; //获取url中"?"符后的字串
+        var theRequest = new Object();
+        if(url.indexOf("?") != -1) {
+            var str = url.substr(1);
+            strs = str.split("&");
+            for(var i = 0; i < strs.length; i++) {
+                theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+            }
+        }
+        return strs;
+    }
+    var gid=getRequest();
+    console.log("传过来的gid:"+gid);*/
+
+
+    $(function () {
+
+        var gid=$("#saveGid",parent.document).val();
+        console.log("父窗体的gid:"+gid);
+        if(gid!=null&&gid!="") {
+            $.ajax({
+                url: "mainController/getOneGood",
+                data: JSON.stringify(gid),
+                type: "post",
+                contentType: "application/json;charset=utf-8"
+            }).done(function (obj) {
+                console.log(obj);
+
+                /*
+                * 不是衣服
+                * */
+                if(obj.tid==14){
+                    $(".section-description").css("display","none");
+                }
+
+                $("#nowPrice").html(obj.gnowprice);
+                //$("#prevPrice").html(obj.gprevPrice==""?"":obj.gprevPrice);
+                $(".title").html(obj.gname);
+                $(".UserSelectArea").html(obj.gno);
+                $(".gdesc").html(obj.gdesc);
+
+                /*
+                * 添加图片
+                * */
+                var  mdiv=$(".dg-wrapper");
+                if(obj.pictureLists) {
+
+                   $(".dg-wrapper a").remove();
+                     $.each(obj.pictureLists, function (index, pic) {
+                         $("<a href='#'><img class=\"louped\" data-image='admin/img/PictureList/" + pic.picpath +
+							 "' src='admin/img/PictureList/" + pic.picpath + "' /></a>").appendTo($(mdiv));
+                     });
+                     /*
+                     * 当图片全部加载完毕再渲染轮播图
+                     * */
+                    $('#dg-container').gallery();
+
+                    /*
+                    * 当图片全部加载完毕再渲染放大镜
+                    * */
+                    $('.dg-wrapper a img').okzoom({
+                        width: 200,
+                        height: 200,
+                        round: true,
+						/*
+						* 缩放比例
+						* */
+                        scaleWidth:480,
+                        background: "#fff",
+                        backgroundRepeat: "repeat",
+                        shadow: "0 0 5px #000",
+                        border: "1px solid #f3f3f3"
+                    });
+                }
+            })
+        }
+    });
+
+</script>
+
+</html>

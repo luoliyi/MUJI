@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>无印良品</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+		<!--图标-->
+		<link rel="shortcut icon" href="//www.suning.com/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
+		<link rel="stylesheet" type="text/css" href="js/layui/css/layui.css"/>
+	</head>
+	<body>
+		<!--用一个input来保存是否登录-->
+		<input type="hidden" value="" id="checkIfSignIn" />
+		
+		<header id="header">
+			<div class="headerWrap">
+				<div class="icon">
+					<a class="icon2">
+						<img src="img/Picture/logo_muji_b.png"/>
+					</a>
+				</div>
+				<ul>
+					<li><a href="//www.muji.com.cn/cn/store/">网络商城</a></li>
+					<li><a href="http://www.muji.com/storelocator/?c=cn">店铺信息</a></li>
+					<li><a href="https://www.muji.net/lab/zh-cn/">生活良品研究所</a></li>
+					<li><a href="https://www.muji.com.cn/cn/net/contents/contact/faq/">问题咨询</a></li>
+					<li><a href="https://zp.muji.com.cn/MujiRecruitment/Pager/index.aspx?referrer=https://www.muji.com.cn/">人才招聘</a></li>
+					<li><a href="https://www.muji.com.cn/cn/net/contents/corporate/partner.html">店铺合作伙伴</a></li>
+					<li><a href="https://www.muji.com.cn/cn/net/contents/corporate/">企业情报</a></li>
+					<li><a href="https://www.muji.com.cn/cn/about/">何谓无印良品</a></li>
+					<li class="lastchildli"><input id="scarch" autofocus="autofocus" type="search" placeholder="产品搜索" name="qtext" value=""></li>
+				</ul>
+			</div>
+			<!--导航栏-->
+			<div id="topguide">
+				
+				<!--iframe关闭页面-->
+				<div id="closeFrame">
+					<i id="gotoCloseFrame" class="layui-icon layui-icon-left" title="关闭"></i>  
+				</div>
+				<!--隐藏的muji图片-->
+				<div id="hiddenmujiing">
+					<img data-original="img/Picture/logo_muji_b.png" />
+				</div>
+				<div id="topguide_rightguide">
+					<ul>
+						<li><i class="layui-icon layui-icon-search"></i>   </li>
+						<li><i class="layui-icon layui-icon-app"></i>   </li>
+						<li><i class="layui-icon layui-icon-chat"></i>   </li>
+						<li><i id="buyCar" class="layui-icon layui-icon-cart-simple" title="查看购物车"></i>   </li>
+						<li id="downLoadApp"><a href="">下载移动端App</a></li>
+						<li><button id="loginandregeist">登录/注册</button></li>
+						<!--账号详情-->
+						<li><i class="layui-icon layui-icon-username" id="userdetails" title="账号详情"></i>	</li>	
+						<!--账号详情-->
+						<div class="userdetailscontent">
+							<!--小三角-->
+							<div id="smallretangle"></div>
+							<p class="myinfo" title="账号详情">账号详情</p>
+							<p class="exit" title="退出账号">退出</p>
+						</div>
+							
+					</ul>
+				</div>
+			</div>
+		</header>
+		<!--center-->
+		<div id="center">
+			<!--里面的容器-->
+			<div id="center_container">
+				<!--嵌入网页-->
+				<iframe id="iframe1" data-msg="ok" src="" style="display: none;border: none; width: 100%;height: 673px;"></iframe>
+				<!--容器里面的详细-->
+				<div id="center_container_details">
+					<!--轮播图-->
+					<div class="layui-carousel" id="test1">
+					  <div carousel-item>
+						  <div><img src="img/main/shengdan.jpg" width="100%" ></div>
+					    <div><img src="img/main/1537494906recommend_1200.png" width="100%" ></div>
+						  <div><img src="img/main/pu.jpg" width="100%"></div>
+						  <div><img src="img/main/1535075296sale_cn_pc.jpg"width="100%" ></div>
+					    <div><img src="img/main/1535075281sock3s66y_1200.jpg"width="100%"></div>
+					  </div>
+					</div>
+					<!--展示商品-->
+					<div class="PageHomePartNewArrivals">
+						<!--第一框商品-->
+						<div class="MuSectionWrapper">
+							<!--新到商品-->
+							<div class="Wrapper_title">
+								<h3><strong>新到商品</strong></h3>
+								<a href="">查看更多<i class="layui-icon layui-icon-right"></i></a>
+							</div>
+							<div id="MuSectionWrapper_details">
+								<!--动态生成的数据-->
+								<!--<div class="arriveOne" title="点击我">
+									<img data-original="img/main/4945247937749_400.jpg" />
+									<br />
+									<p class="goodsname">棉圆领短袖T恤·2件装</p>
+									<p><strong><span>￥</span><span>78</span></strong></p>
+								</div>
+									<div  class="arriveOne" title="点击我">
+									<img data-original="img/main/4945247937749_400.jpg" />
+									<br />
+									<p class="goodsname">棉圆领短袖T恤·2件装</p>
+									<p><strong><span>￥</span><span>78</span></strong></p>
+								</div>
+								<div class="arriveOne" title="点击我">
+									<img data-original="img/main/4945247937749_400.jpg" />
+									<br />
+									<p class="goodsname">棉圆领短袖T恤·2件装</p>
+									<p><strong><span>￥</span><span>78</span></strong></p>
+								</div>
+								<div class="arriveOne" title="点击我">
+									<img data-original="img/main/4945247937749_400.jpg" />
+									<br />
+									<p class="goodsname">棉圆领短袖T恤·2件装</p>
+									<p><strong><span>￥</span><span>78</span></strong></p>
+								</div >
+								<div class="arriveOne" title="点击我">
+									<img data-original="img/main/4945247937749_400.jpg" />
+									<br />
+									<p class="goodsname">棉圆领短袖T恤·2件装</p>
+									<p><strong><span>￥</span><span>78</span></strong></p>
+								</div>
+								<div class="arriveOne" title="点击我">
+									<img data-original="img/main/4945247937749_400.jpg" />
+									<br />
+									<p class="goodsname">棉圆领短袖T恤·2件装</p>
+									<p><strong><span>￥</span><span>78</span></strong></p>
+								</div>-->
+								<!---->
+							</div>
+						</div>
+					
+						<!--第二框商品-->
+						<div class="PageHomePartCommodityCatalogs">
+							<!--衣服杂货-->
+							<div class="Wrapper_title">
+								<h3><strong>衣服杂货</strong></h3>
+								<a href="">查看更多<i class="layui-icon layui-icon-right"></i></a>
+							</div>
+							<!--衣服杂货信息-->
+							<!--主产品功能区-->
+							<div id="center-product">	
+								<!--产品-->
+								<div class="productwrap">
+									<!--产品1-->
+									<ul id="product_garment" class="productwrap_ul">
+					                    <li id="manClost" style="background-image: url(img/Images/15277725051527499851man.jpg)"><a><span class="title">男装</span></a></li>
+					                    <li style="background-image: url(img/Images/15277724651527499866woman.jpg)"><a href="//www.muji.com.cn/cn/store/category/3"><span class="title">女装</span></a></li>
+					                    <li style="background-image: url(img/Images/15277724871527499878kids.jpg)"><a href="//www.muji.com.cn/cn/store/category/4"><span class="title">童装</span></a></li>
+					                    <li style="background-image: url(img/Images/15277725391527499903bag.jpg)"><a href="//www.muji.com.cn/cn/store/category/5"><span class="title">鞋包</span></a></li>
+					                    <li style="background-image: url(img/Images/15277725241527499890acc.jpg)"><a href="//www.muji.com.cn/cn/store/category/33"><span class="title">服装杂货</span></a></li>
+					                    <li style="background-image: url(img/Images/15277725541527499916106.jpg)"><a href="//www.muji.com.cn/cn/store/category/6"><span class="title">内衣</span></a></li>
+					                </ul>
+					                <!--产品2-->
+									<ul id="product_household" class="productwrap_ul">
+					                    <li style="background-image: url(img/Images/15277726341527499928109.jpg)"><a href="//www.muji.com.cn/cn/store/category/8"><span class="title">织品</span></a></li>
+					                    <li style="background-image: url(img/Images/15277726501527499939110.jpg)"><a href="//www.muji.com.cn/cn/store/category/9"><span class="title">家具</span></a></li>
+					                    <li style="background-image: url(img/Images/15277726751527499951111.jpg)"><a href="//www.muji.com.cn/cn/store/category/10"><span class="title">电子产品</span></a></li>
+					                    <li style="background-image: url(img/Images/15277727021527499966112.jpg)"><a href="//www.muji.com.cn/cn/store/category/11"><span class="title">居家用品</span></a></li>
+					                    <li style="background-image: url(img/Images/15277727311527499978113.jpg)"><a href="//www.muji.com.cn/cn/store/category/12"><span class="title">文具</span></a></li>
+					                    <li style="background-image: url(img/Images/15277727581527499989114.jpg)"><a href="//www.muji.com.cn/cn/store/category/13"><span class="title">卫生 &amp; 美容用品</span></a></li>
+					                    <li style="background-image: url(img/Images/15277727871527500002115.jpg)"><a href="//www.muji.com.cn/cn/store/category/14"><span class="title">户外用品</span></a></li>
+					                </ul>
+					                <!--產品3-->
+					                <ul id="product_food" class="productwrap_ul">
+					                    <li style="background-image: url(img/Images/15277728051527057055food.jpg)"><a href="//www.muji.com.cn/cn/store/category/16"><span class="title">食品</span></a></li>
+					                </ul>
+								</div>
+							</div>
+						</div>
+						<!--第三框，推荐食品-->
+						<div id="newItem">
+							<!--衣服杂货-->
+							<div class="Wrapper_title">
+								<h3><strong>推荐商品</strong></h3>
+								<a href="">查看更多<i class="layui-icon layui-icon-right"></i></a>
+							</div>
+							<!--推荐商品-->
+							<div class="newItemWrapper">
+								<ul class="newItemUl">
+									<li><a href="//www.muji.com.cn/cn/store/goods/173159"><span class="thumb"><img data-original="img/main/4547315901166_400.jpg" data-bd-imgshare-binded="1"></span><span class="name">凝胶墨水圆珠笔</span></a>
+										<p><strong><span>￥</span><span>8</span></p></strong>
+									</li>
+									<li><a href="//www.muji.com.cn/cn/store/goods/149918"><span class="thumb"><img data-original="img/main/xiangpi.jpg" data-bd-imgshare-binded="1"></span><span class="name">塑料橡皮</span> </a>
+										<p><strong><span>￥</span><span>4</span></p></strong>
+									</li>
+									<li><a href="//www.muji.com.cn/cn/store/goods/137530"><span class="thumb"><img data-original="img/main/bijiben.jpg" data-bd-imgshare-binded="1"></span><span class="name">原浆纸笔记本5册组</span> </a>
+										<p><strong><span>￥</span><span>23</span></p></strong>
+									</li>
+									<li><a href="//www.muji.com.cn/cn/store/goods/172679"><span class="thumb"><img data-original="img/main/mian.jpg" data-bd-imgshare-binded="1"></span><span class="name">迷你脆脆面_焦香酱油味</span> </a>
+										<p><strong><span>￥</span><span>3</span></p></strong>
+									</li>
+									<li><a href="//www.muji.com.cn/cn/store/goods/155053"><span class="thumb"><img data-original="img/main/mian2.jpg" data-bd-imgshare-binded="1"></span><span>迷你脆脆面_鸡汁味</span> </a>
+										<p><strong><span>￥</span><span>3</span></p></strong>
+									</li>
+									<li class="lastchid"><a href="//www.muji.com.cn/cn/store/goods/167067"><span class="thumb"><img data-original="img/main/yijia.jpg" data-bd-imgshare-binded="1"></span><span class="name">PP洗涤用衣架·衬衫用·3个装</span> </a>
+										<p><strong><span>￥</span><span>16</span></p></strong>
+									</li>
+								</ul>
+								<ul class="newItemUl">
+									<li><a href="//www.muji.com.cn/cn/store/goods/173159"><span class="thumb"><img data-original="img/Picture/4550002509668_400.jpg" data-bd-imgshare-binded="1"></span><span class="name">米果组合</span> </a>
+										<p><strong><span>￥</span><span>18</span></p></strong>
+									</li>
+									<li><a href="//www.muji.com.cn/cn/store/goods/149918"><span class="thumb"><img data-original="img/Picture/4549738673095_400.jpg" data-bd-imgshare-binded="1"></span><span class="name">柚子金桔夹心棉花糖</span> </a>
+										<p><strong><span>￥</span><span>22</span></p></strong>
+									</li>
+									<li><a href="//www.muji.com.cn/cn/store/goods/137530"><span class="thumb"><img data-original="img/Picture/4549738330165_400.jpg" data-bd-imgshare-binded="1"></span><span class="name">芝士味玉米片</span> </a>
+										<p><strong><span>￥</span><span>10</span></p></strong>
+									</li>
+									<li><a href="//www.muji.com.cn/cn/store/goods/172679"><span class="thumb"><img data-original="img/Picture/4550002460433_400.jpg" data-bd-imgshare-binded="1"></span><span class="name">棉圆领短袖T恤</span> </a>
+										<p><strong><span>￥</span><span>80</span></p></strong>
+									</li>
+									<li><a href="//www.muji.com.cn/cn/store/goods/155053"><span class="thumb"><img data-original="img/Picture/4549738857877_400.jpg" data-bd-imgshare-binded="1"></span><span>棉_七分袖T恤</span> </a>
+										<p><strong><span>￥</span><span>88</span></p></strong>
+									</li>
+									<li class="lastchid"><a href="//www.muji.com.cn/cn/store/goods/167067"><span class="thumb"><img data-original="img/Picture/4550002279868_400.jpg" data-bd-imgshare-binded="1"></span><span class="name">棉圆领短袖T恤</span> </a>
+										<p><strong><span>￥</span><span>68</span></p></strong>
+									</li>
+								</ul>
+							</div>	
+							
+							<!--分享-->
+							<ul class="sns">
+<!--	                <li class="weibo"><a href="/cn/net/contents/social/link_sina_weibo.html" target="_blank"><img src="img/Picture/misc_weibo.png" alt="weibo"></a></li>
+	               		 <li class="wechat"><a href="/cn/net/contents/social/link_wechat_sns.html" target="_blank"><img src="img/Picture/misc_wechat.png" alt="wechat"></a></li>-->
+	              				<div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>
+								<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"32"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+	            			</ul>
+							<!--提示版本信息-->
+							<div class="MuVersionNumber">
+							  	ver 1.0.0-beta.36
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--登录注册框-->
+				<div id="maxscrollbardiv">
+					<div id="login">
+						<!--关闭框-->
+						<div class="toolbar_left">
+							<i class="layui-icon layui-icon-close" id="loginclose" title="关闭"></i> 
+						</div>
+						<div class="heading-wrap">
+					      登录<br>商城账号
+					    </div>
+					    <div class="form-wrap">
+					    	<input type="tel" class="MuInput" placeholder="输入手机号" id="loginPhone">
+					    	<input type="password" class="MuInput" placeholder="请输入密码" id="loginPassword">
+					    	<span id="shortMessageLogin" title="短信登录" style="position: absolute;float: right;right: 15px;display: block;
+					    		border: 1px solid #7f0019;border-radius: 15px;padding: 5px;color:#7f0019;cursor:pointer;width: 72px;text-align:center;
+					    		top: 290px;">短信登录</span>
+					    	<input id="buttonlogin" type="button" class="MuInput muinputbutton" value="登录">
+					    </div>
+					    <div id="logintips">
+					    	<a id="userregeist">新用户注册</a>
+					    	<a id="userforgetpwd">忘记密码</a>
+					    </div>
+					</div>
+					<!--注册阅读-->
+					<div id="regeistreadme">
+						<!--MUJI服务协议-->
+						<div class="regeistreadme_head">
+							<h3><i id="gotologin" class="layui-icon layui-icon-left"></i> MUJI 服务协议</h3>
+						</div>
+						<!--信息-->
+						<div class="messagediv">
+							<div class="message"><p>特别提示：<b>在使用 MUJI passport 服务之前，您应当认真阅读并遵守《MUJI passport 服务使用协议》（以下简称“本协议”），请您务必充分理解各条款内容。当您按照注册页面提示填写信息、阅读并同意本协议且完成注册程序后，或者您按照其他无印良品（上海）商业有限公司（以下简称“本公司”）允许的方式使用 MUJI passport 服务时，即表示您已充分理解并接受本协议的全部内容，并与本公司达成协议。若您不同意本协议的内容及其相关变更，应当立即停止使用本服务。</b></p> <p>1 定义</p> <ul><li>1.1 本协议是用户与本公司之间关于用户完成 MUJI passport 注册程序并使用本公司相关软件及服务（以下简称“本服务”）所订立的协议。</li> <li>1.2 “MUJI passport”是指用户注册后，可以通过在本公司的实体店铺、官方网络商城消费累积里程并享有相应的积分服务，同时具有购物、店铺或商品搜索、签到等功能的应用软件。</li> <li>1.3 “里程”是指用户在使用本服务时，由本公司发行并授予用户的应用点数。用户需在本公司的实体店铺产生消费或使用签到功能；在官方网络商城产生消费，实体店铺需在结账前出示 MUJI passport 账号条形码并通过店铺 POS 终端设备扫描，按照消费 1 元人民币或签到 1 次均获得 1 里程的标准累积相应的里程。活动期间所获得的里程可能有所变化，实际请以里程记录画面或由本公司公布的正式文件为准。本里程不能抵换现金。</li> <li>1.4 “积分”是指本公司根据用户累积的里程数给予相应的应用积分，用户可以在本服务应用软件中，在本公司公布的礼品兑换清单内，以相应的积分兑换礼品。(礼品兑换的周期为每天可多次申请，但单品（同一条码）兑换申请 7 天内最多 5 个。未完成兑换的，将失效并返还积分，再兑换需重新申请。兑换的礼品除质量问题外，恕不退换。)</li> <li>1.5 “里程有效期限”是指里程存在的有效期限，从产生里程之日起至当自然年度 12 月 31 日为止有效。“积分有效期限”是指积分可以使用的有效期限，从产生积分之日起至次年 12 月 31 日为止有效。</li></ul> <p>2 用户资格及用户信息</p> <ul><li>2.1 使用本服务的用户，应当为具备完全民事权利能力和完全民事行为能力的自然人、法人或其他组织。</li> <li>2.2 若该用户不具备第 2.1 条所述的主体资格，则需征得监护人同意方可使用，监护人需代表用户同意相应条款的法律约束，并应承担因此而导致的一切后果，且本公司无需通知该用户，即有权暂停或终止该用户的账号。</li> <li>2.3 原则上一个用户只能注册并使用一个账号。仅限您个人使用，不得将其账号、PIN 以任何形式买卖、转让、赠与、租用、借用或继承，否则，因此产生的用户或任何第三人的损失，由该用户自行承担。如对本公司造成损失的，由该用户向本公司承担的所有赔偿责任，除非有法律明确规定或司法裁定，并经本公司同意，且按照本公司制定的操作流程办理。</li> <li>2.4 用户应保证用户注册或使用本服务时向本公司提供的信息的真实、准确、完整，否则由此造成的一切后果由用户自行承担，如用户注册时提供的信息有任何变更，应及时登录账号并更新个人信息，否则由此造成的一切后果由用户自行承担。</li></ul> <p>3 <b>隐私政策</b></p> <ul><li>3.1 本协议所称之个人信息是指符合国家法律、法规及相关规定，并符合下述范围的信息：</li> <li>3.1.1 用户注册或使用本服务时向本公司提供的个人资料（包括但不限于用户名、密码、地址、邮箱地址、电话、性别、年龄、生日等信息）；</li> <li>3.1.2 用户在使用本服务时，本公司自动接收并记录用户客户端数据；</li> <li>3.1.3 其他本公司通过合法途径获取的用户信息；</li> <li>3.2 本公司不公开或向任何第三方提供用户的个人资料以及用户在使用本服务时存储的非公开内容，<b>但下列情况除外：</b></li> <li>3.2.1 事先获得用户的明确授权的情形；</li> <li>3.2.2 根据国家法律、法规的相关规定，或者行政、司法机关要求的情形；</li> <li>3.2.3 用户出现违反国家有关法律、法规或者本协议相关规定的情形；</li> <li>3.2.4 为用户提供多样化的产品和服务时，在法律允许的范围内和第三方分享用户信息的情形。本公司将要求第三方对您的个人资料保密，并且只将信息用于为本公司行使职能，同时遵守本公司及法律法规的相关规定。</li> <li>3.2.5 为维护社会公众利益的情形；</li> <li>3.2.6 其他本公司根据国家法律、法规或者本协议相关规定认为合适的情形。</li> <li>3.3 个人信息保护</li> <li>3.3.1 本公司采取各种必要、合理的措施，以保障您的个人信息的安全。</li></ul> <p>4 里程和里程的授予</p> <ul><li>4.1 用户需在本公司的实体店铺产生消费或使用签到功能；在官方网络商城产生消费，实体店铺需在结账前出示 MUJI passport 账号条形码并通过店铺 POS 终端设备扫描，按照消费 1 元人民币或签到 1 次均获得 1 里程的标准累积相应的里程。</li> <li>4.2 里程数累积只限于用户所消费的商品金额，不包括用户购买的纸袋费、支付安装费、运输费、服务费等除商品本身以外的费用。</li> <li>4.3 如因各种原因导致用户消费未成功，包括但不限于用户消费后退回所购商品的情形，本公司有权撤销该用户账号中因此次消费而累积的里程。</li> <li>4.4 用户在实体店铺消费后的第二日获得相应的里程。用户在官方网络商城消费后，货物送达后第二日获得相应的里程。</li> <li>4.5 用户账号中的里程在每个自然年度 12 月 31 日结束后全部清零。 </li> <li>4.6 本公司根据用户累积的里程数给予相应的应用积分，用户可以在本服务应用软件中，在本公司公布的礼品兑换清单内，以相应的积分兑换礼品。积分的使用方法由本公司另行规定。</li> <li>4.7 禁止以任何形式将里程或积分买卖、转让、赠与、租用、借用、共享、抵押，同一用户重复注册多个会员账号，本公司不会将各账号中的里程或积分进行合并。</li> <li>4.8 用户可以随时暂停或终止使用本服务。其所属账号中的里程和积分及与本服务有关的一切权利均终止，本公司不因此承担任何责任。</li></ul> <p>5 税款和手续费</p> <ul><li>用户在使用本服务的过程中，因获得里程以及使用积分产生的应纳税赋以及其他硬件、软件、服务及其他方面的费用，由用户自行承担。</li></ul> <p>6 本服务的变更和终止</p> <ul><li>6.1 用户接受本协议即视为同意无条件接受包括本公司的网站上正式发布或者基于其他方法正式设定的关于本服务的相关补充协议以及其他追加规则。本协议内容包括本公司的网站上正式发布或者基于其他方法正式设定的关于本服务的相关补充协议以及其他追加规则，均为本协议不可分割的组成部分，与本协议具有同等法律效力。</li> <li>6.2 变更后的规定和条款，除非本公司另有规定，一经在本公司的网站公布后自动生效。</li> <li>6.3 本协议内容与相关补充协议和其他追加规则存在冲突时，以相关补充协议和其他追加规则为准。</li> <li>6.4 本公司有权根据需要变更、修订和补充本协议的各项条款、使用规则，且毋须另行通知用户。若用户在变更后继续使用本服务的，即表示该用户已接受修订后的条款和使用规则。由此对用户造成的一切后果，本公司不承担任何责任。</li> <li>6.5 本公司有权自行决定以合理且并非针对特定用户的理由，在不经过事先通知的情形下，暂停或终止向用户提供部分或全部服务；增补或删除用户的里程和积分；暂停或终止用户的账号，并无须因此向该用户或者任何第三方承担任何责任。</li> <li>6.6 <b>用户存在下列情形的，本公司有权直接终止提供服务</b>：</li> <li>6.6.1 提供的用户信息中主要内容不真实、不准确或不完整的情形；</li> <li>6.6.2 冒用他人身份或使用伪造、编造的身份证明使用本服务的情形；</li> <li>6.6.3 在本公司公布的获得渠道之外使用本服务的情形；</li> <li>6.6.4 删除“MUJI passport”应用程序的情形；</li> <li>6.6.5 在使用本服务时存在欺诈行为的情形；</li> <li>6.6.6 在使用本服务时存在违反本协议的情形；</li> <li>6.6.7 违反国家法律、法规进行非法交易的情形；</li> <li>6.6.8 用户的行为对本公司造成损害或者不利后果的情形；</li> <li>6.6.9 其他本公司有合理理由认为应当终止的情形。</li></ul> <p>7 本服务的临时中断</p> <ul><li>7.1 本公司不对下述任一情形所导致的用户损害承担赔偿责任，且有权在未事先通知用户的情况下暂停或终止本服务的部分或全部：</li> <li>7.1.1 本服务相关系统或设备的定期维护、保养、检修或紧急维修等情形；</li> <li>7.1.2 第三方对本服务相关系统或设备实施的破坏、妨害等行为（包括对数据和源代码的篡改）；</li> <li>7.1.3 电力、通讯出现故障、不稳定或升级维护，导致停电或数据传输不稳定、中断的情形；</li> <li>7.1.4 台风、火灾、地震、火山、洪水、海啸、恐怖袭击、暴动、游行示威及其他不可抗力导致本公司无法控制的情形；</li> <li>7.1.5 其他本公司认为有必要临时中断本服务的情形。</li></ul> <p>8 <b>免责条款</b></p> <ul><li>8.1 用户根据其自身需求选择使用本服务，因本服务所存在的风险或导致的一切后果将全部由用户自行承担。</li> <li>8.2 由于用户通过本服务而对其他任何第三人造成任何直接或间接的损失时（包括但不限于资金损失、优惠损失、数据损失等），本公司不对此承担任何赔偿责任，由用户承担由此引起的全部法律责任。</li> <li>8.3 用户应妥善保管 MUJI passport 账号(包括其他绑定账号)和密码并对其安全性负全部责任，定期更改密码以保证账号的安全性。如因用户保管不善等非本公司原因导致账号或密码泄露或被他人非法使用，由此造成的一切后果由用户自行承担，本公司不承担任何责任。</li> <li>8.4 任何非经本公司正规渠道获得的中奖，优惠等活动或信息，本公司具有拒绝兑现的权利，对任何由此产生的后果不承担法律责任。</li></ul> <p>9 法律适用及管辖与其他</p> <ul><li>9.1 本协议的成立、生效、解释、变更、履行及争议解决，均适用中华人民共和国法律法规。</li> <li>9.2 用户与本公司之间发生任何纠纷或争议时，首先应友好协商解决。协商不成的，用户有权将纠纷或争议提交本公司所在地有管辖权的人民法院管辖。</li> <li>9.3 本协议项下的所有通知，除本公司另行规定外，均可通过本公司的网站相关页面公告、电子邮件或常规的信件传送等方式进行。该通知于发布日视为已经送达所有用户。</li> <li>9.4 本协议与日文版本产生冲突的，以中文版本为最终生效版本。</li></ul> <p>本协议生效时间：2018年6月30日</p></div>
+						</div>
+						<!--我确定-->
+						<div id="iagree">
+							<button type="button" class="mu-button" id="iagreebutton">
+            					同意<!----></button>
+						</div>
+					</div>
+					<!--注册-->
+					<div id="regeist">
+						<!--关闭框-->
+						<div class="toolbar_left">
+							<i id="gotoreadme" class="layui-icon layui-icon-left"></i> 
+						</div>
+						<div class="heading-wrap">
+					      注册<br>商城账号
+					    </div>
+					    <div class="form-wrap">
+					    	<input type="tel" class="MuInput" placeholder="输入手机号">
+					    	<input type="password" class="MuInput" placeholder="请输入密码">
+					    	<input type="password" class="MuInput" placeholder="请再次确认密码">
+					    	<input id="successregeist" type="button" class="MuInput muinputbutton" value="注册">
+					    </div>
+					</div>
+				</div>
+
+				<!--保存gid-->
+				<input type="hidden" id="saveGid">
+
+			</div>
+		</div>
+	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="js/jquery.lazyload.js" ></script>
+	<script type="text/javascript" src="js/layui/layui.js"></script>
+	<script type="text/javascript" src="js/mainControl.js"></script>
+	<script>
+		$(function(){
+
+		    var app={
+
+				getNewGoods(){
+					$.ajax({
+						url:"mainController/getNewGoods",
+						type:"post"
+					}).done(function (data) {
+						console.log(data);
+						$.each(data,function (index,obj) {
+							var div=$("<div class='arriveOne' title='点击我' />").data("gid",obj.gid);
+							var img=$("<img src='admin/img/goodsdetails/" + obj.gname + ".jpg'/>");
+							var br=$("<br/>");
+							var p1=$("<p class='goodsname'>"+obj.gname+"</p>");
+                            var p2=$("<p><strong><span>￥</span><span>"+obj.gnowprice+"</span></strong></p>");
+                            div.append(img).append(br).append(p1).append(p2).appendTo($("#MuSectionWrapper_details"));
+                        })
+                    })
+				}
+				,init(){
+				    app.getNewGoods();
+				}
+			};
+			app.init();
+		});
+	</script>
+	</body>
+</html>

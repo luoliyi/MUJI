@@ -1,0 +1,306 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+ul {
+  list-style: none; }
+
+a {
+  text-decoration: none;
+  color: #666; }
+
+html,
+body {
+  width: 100%;
+  height: 100%; }
+
+#maxdiv,
+#maxdivcontainer {
+  max-width: 1024px;
+  height: 550px;
+  margin: 0 auto;
+  position: relative; }
+  #maxdiv #maxdivcontainer,
+  #maxdivcontainer #maxdivcontainer {
+    overflow: auto; }
+    #maxdiv #maxdivcontainer .MuListItem,
+    #maxdivcontainer #maxdivcontainer .MuListItem {
+      padding-top: 11px;
+      padding-bottom: 10px;
+      position: relative;
+      padding-left: 16px;
+      background: #fff;
+      overflow: hidden; }
+      #maxdiv #maxdivcontainer .MuListItem .myimg,
+      #maxdivcontainer #maxdivcontainer .MuListItem .myimg {
+        width: 77px;
+        height: 77px;
+        margin-right: 18px;
+        margin-top: 11px;
+        margin-bottom: 11px;
+        border-radius: 50px;
+        z-index: 9;
+        float: left; }
+        #maxdiv #maxdivcontainer .MuListItem .myimg img,
+        #maxdivcontainer #maxdivcontainer .MuListItem .myimg img {
+          width: 100%;
+          height: 100%;
+          border-radius: 50px; }
+      #maxdiv #maxdivcontainer .MuListItem .heading,
+      #maxdivcontainer #maxdivcontainer .MuListItem .heading {
+        float: left;
+        position: relative;
+        top: 45px;
+        font-size: 16px;
+        color: #000;
+        line-height: 20px;
+        letter-spacing: -.1px; }
+      #maxdiv #maxdivcontainer .MuListItem #lookmoremyinfo,
+      #maxdivcontainer #maxdivcontainer .MuListItem #lookmoremyinfo {
+        float: right;
+        position: relative;
+        top: 45px;
+        right: 20px; 
+        cursor: pointer;
+        }
+    #maxdiv #maxdivcontainer .list-group-header,
+    #maxdivcontainer #maxdivcontainer .list-group-header {
+      padding-left: 15px;
+      padding-right: 15px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      background: #f3f3f3; }
+      #maxdiv #maxdivcontainer .list-group-header #lookallmyorders,
+      #maxdivcontainer #maxdivcontainer .list-group-header #lookallmyorders {
+        float: right;
+        position: relative;
+        top: -20px;
+        cursor: pointer;
+        color: #60b3fa; }
+    #maxdiv #maxdivcontainer .listitem-content,
+    #maxdivcontainer #maxdivcontainer .listitem-content {
+      font-size: 14px;
+      line-height: 22px;
+      color: #000;
+      letter-spacing: -.34px;
+      text-align: center;
+      margin-left: 3%;
+      margin-top: 20px;
+      overflow: hidden;
+      padding: 10px 0px;
+      border-bottom: 10px solid #F3F3F3; }
+      #maxdiv #maxdivcontainer .listitem-content li,
+      #maxdivcontainer #maxdivcontainer .listitem-content li {
+        display: inline-block;
+        float: left;
+        width: 19%;
+        height: 56px;
+        line-height: 27px;
+        cursor: pointer; }
+        #maxdiv #maxdivcontainer .listitem-content li i,
+        #maxdivcontainer #maxdivcontainer .listitem-content li i {
+          font-weight: 800;
+          font-size: 30px;
+          position: relative;
+          top: 6px;
+          color: #7f0019; }
+        #maxdiv #maxdivcontainer .listitem-content li p,
+        #maxdivcontainer #maxdivcontainer .listitem-content li p {
+          color: #030303; }
+    #maxdiv #maxdivcontainer .listitem-wrap,
+    #maxdivcontainer #maxdivcontainer .listitem-wrap {
+      margin-top: 10px;
+      padding-top: 11px;
+      padding-bottom: 10px;
+      position: relative;
+      border-bottom: 1px solid #F1F1F1;
+      cursor: pointer; }
+
+		
+		/*myorder*/
+		#myorder{
+			display: block;
+		}
+
+		/*追加的样式，我的住址*/
+		#myinformation,#controlMyplace,#addAndEditPlace{
+
+			width: 99%;
+			height: 99%;
+			/*滚动条*/
+			overflow: auto;
+			
+			/*隐藏不可见*/
+			display: none;
+			
+		}
+		
+		.divClose{
+
+			width: 99%;
+			height: 50px;
+			line-height: 50px;
+			margin-bottom: 20px;
+		}
+		
+		.divClose .btnColse{
+			font-size: 30px!important;
+			color: #7f0019;
+			cursor: pointer;
+			position: relative;
+			left: 20px;
+		}
+		
+		.list-group-header{
+			padding-left: 15px;
+    padding-right: 15px;
+			
+		}
+		.list-group-title{
+			    font-size: 20px;
+	    color: #030303;
+	    line-height: 48px;
+	    letter-spacing: -.15px;
+	    font-weight: 900;
+		}
+		.listitem-wrap{
+			padding-top: 11px;
+   	 padding-bottom: 10px;
+   	 background: white;
+		}
+		.listitem-title{
+			font-size: 14px;
+	    color: #000;
+	    line-height: 22px;
+	    letter-spacing: -.34px;
+	    text-indent: 17px;
+		}
+		#morePlace,#myloginpwd{
+			position: absolute;
+			float: right;
+			top: 13px;
+			right: 13px;
+			cursor: pointer;
+		}
+		.action-wrap{
+			    padding: 15px;
+			    margin-top: 20px;
+		}
+		#btnExit,#btnAddNewPlace,#btnSaveNewPlace{
+			width: 100%;
+	    min-height: 44px;
+	    border: 0 solid rgba(0,0,0,0);
+	    background: #7f0019;
+	    font-size: 16px;
+	    color: #fff;
+	    font-weight: 700;
+	    line-height: 22px;
+	    border-radius: 22px;
+	    cursor: pointer;
+		}
+		.placeitem{
+			    background: #fff;
+		}
+		.subject{
+		    padding: 8px 37px 8px 41px;
+	    font-size: 14px;
+	    color: #000;
+	    letter-spacing: 1.17px;
+	    font-weight: 700;
+		}
+		.palcelist{
+			font-size: 12px;
+	    color: #585858;
+	    line-height: 24px;
+	    letter-spacing: -.14px;
+	 
+		}
+		.placebody{
+			    border-top: 1px solid rgba(188,187,193,.5);
+			    padding: 28.5px 41px 24.5px;
+		}
+		.placeactions{
+			   border-top: 1px solid rgba(188,187,193,.5);
+			    padding: 18px 37px 17px 41px;
+			       border-bottom: 1px solid rgba(188,187,193,.5);
+		}
+		.isdefault{
+			color: #7f0019;
+			font-size: 15px;
+	    line-height: 17px;
+	    letter-spacing: 1px;
+	    font-weight: 700;
+	    cursor: pointer;
+		}
+		.isEdit{
+			float: right;
+			color: #585858;
+	    line-height: 17px;
+	    letter-spacing: 1px;
+	    font-weight: 300;
+	    font-size: 13px;
+	    cursor: pointer;
+		}
+		
+		.list-group-wrap{
+
+			width: 99%;
+			height: 216px;
+		}
+		.MuListItem{
+			padding-left: 16px;
+	    background: #fff;
+	    position: relative;
+	        border-top: .5px solid rgba(188,187,193,.5);
+		}
+		.MuListItem label{
+			margin-right: 30px;
+		}
+		.MuListItem input[type='text']{
+			    font-size: 14px;
+		    line-height: 22px;
+		    color: #585858;
+		    letter-spacing: 1.17px;
+		}
+		.MuListItem input[type='text'],.MuListItem textarea,.MuListItem select{
+			border: none;
+		}
+		.MuListItem textarea{
+		    width: 85%;
+		    margin: 0;
+		    padding: 0;
+		    border: 0 solid rgba(0,0,0,0);
+		    border-radius: 0;
+    	font-size: 14px;
+	    line-height: 22px;
+	    color: #585858;
+	    letter-spacing: 1.17px;
+		}
+		/*详细地址*/
+		.mydetailplace{
+			position: relative;
+			top: -28px;
+		}
+		.sheng{
+			width: 113px;
+		}
+		.shi{
+			width: 60px;
+		}
+		.xian{
+			width: 60px;
+		}
+		#checkDefaultPlace{
+			float: right;
+			color: #7f0019;
+			position: relative;
+			right: 20px;
+		}
+
+@media only screen and (max-width:660px ) {
+	.mydetailplace{
+		top: 0px;
+	}
+}		
+
+/*# sourceMappingURL=myinfo.css.map */

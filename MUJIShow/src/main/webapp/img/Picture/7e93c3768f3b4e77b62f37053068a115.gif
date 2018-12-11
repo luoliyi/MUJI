@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="zh-cn" lang="zh-cn">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta property="og:url" content="https://www.muji.com/cn/">
+    <meta property="og:image" content="https://www.muji.com/cn/img/ogimage.png">
+    <!-- bootstrap css框架 -->
+
+    <link src="https://cdn.bootcss.com/bootstrap/4.1.0/css/bootstrap.css" rel="stylesheet">
+    <link src="https://cdn.bootcss.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- bootstrap js框架 -->
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+
+    <title>無印良品</title>
+
+    <style type="text/css">
+        h1 {
+            text-align: center;
+        }
+
+        a, a:hover {
+            color: #333;
+        }
+
+        body {
+            color: #000;
+            width: 100%;
+            height: 100%;
+        }
+
+        #content {
+            width: 700px;
+            height: 530px;
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            margin-left: -350px;
+            margin-top: -265px;
+        }
+
+        #cols {
+            font-size: 24px;
+            margin: 0 auto;
+        }
+
+        #bk {
+            border: 2px solid #000;
+            padding: 12px;
+            border-radius: 10px;
+            font: 12px/1.4 "Lucida Grande", "Lucida Sans Unicode", "Hiragino Sans GB W3", "Source Han Sans", Helvetica, Arial, sans-serif;
+            font-weight: bold;
+        }
+
+        .part {
+            font: 18px "Lucida Grande", "Lucida Sans Unicode", "Hiragino Sans GB W3", "Source Han Sans", Helvetica, Arial, sans-serif;
+            font-weight: bold;
+        }
+    </style>
+    <!--.lead {font-size: 21px; text-align: center; line-height: 150%;}-->
+</head>
+
+<body>
+    <div id="content">
+        <h1><img src="//img.muji.com.cn/img/cn/common/maintenance/logo.png" alt="無印良品" /></h1>
+        <div id="bk" class="container-fluid">
+            <div class="row">
+                <div id="cols" class="col" style="background-color:transparent;" align="center">
+                    HTTP 404或Not Found
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <p class="part">
+                无印良品客服中心（网络商城）<br />
+                邮箱：<a href="mailto:EC-Service@muji.com.cn"><font style="font-family:Helvetica">EC-Service@muji.com.cn</font></a><br />
+                电话：<a href="tel:4009209299"><font style="font-family:Helvetica">400 920 9299</font></a>
+            </p>
+        </div>
+        <br>
+        <br>
+        <br>
+
+    </div><!-- /#content -->
+</body>
+</html>

@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+ul {
+  list-style: none; }
+
+a {
+  text-decoration: none;
+  color: #666; }
+
+html, body {
+  width: 100%;
+  height: 100%; }
+
+#maxdiv {
+  max-width: 1024px;
+  height: 600px;
+  margin: 0 auto;
+  position: relative; }
+  #maxdiv #maxdivcontainer_details_head, #maxdiv .MuCommodityFilterOrderby {
+    width: 100%;
+    height: 45px;
+    margin: 0 auto;
+    border-bottom: 1px solid #ddd;
+    background: #fff; }
+    #maxdiv #maxdivcontainer_details_head ul, #maxdiv .MuCommodityFilterOrderby ul {
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+      list-style: none;
+      padding: 0;
+      z-index: 1;
+      line-height: 45px; }
+      #maxdiv #maxdivcontainer_details_head ul li, #maxdiv .MuCommodityFilterOrderby ul li {
+        display: inline-block;
+        float: left;
+        width: auto; }
+        #maxdiv #maxdivcontainer_details_head ul li a, #maxdiv .MuCommodityFilterOrderby ul li a {
+          padding: 11px 15px;
+          font-size: 16px;
+          color: #ddd;
+          letter-spacing: .7px; }
+      #maxdiv #maxdivcontainer_details_head ul .active a, #maxdiv .MuCommodityFilterOrderby ul .active a {
+        font-weight: 500;
+        color: #000; }
+  #maxdiv .MuCommodityFilterOrderby ul {
+    text-align: center; }
+  #maxdiv #maxdivcontainer {
+    width: 100%;
+    height: 85%;
+    position: relative; }
+    #maxdiv #maxdivcontainer #maxdivcontainer_details {
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      padding: 30px 0px;
+      position: relative; }
+      #maxdiv #maxdivcontainer #maxdivcontainer_details .details_list {
+        padding-left: 12.5px;
+        padding-right: 12.5px;
+        width: 100%; }
+        #maxdiv #maxdivcontainer #maxdivcontainer_details .details_list li {
+          width: 19%;
+          height: 272px;
+          float: left;
+          display: inline-block;
+          margin-left: 2.5px;
+          margin-right: 2.5px; }
+          #maxdiv #maxdivcontainer #maxdivcontainer_details .details_list li .detail_img {
+            text-align: center; }
+            #maxdiv #maxdivcontainer #maxdivcontainer_details .details_list li .detail_img img {
+              width: 100%;
+              height: 186px; }
+            #maxdiv #maxdivcontainer #maxdivcontainer_details .details_list li .detail_img .title {
+              margin-top: 9px;
+              font-size: 13px;
+              color: #030303;
+              line-height: 18px;
+              letter-spacing: -.15px; }
+            #maxdiv #maxdivcontainer #maxdivcontainer_details .details_list li .detail_img .MuPriceTag {
+              margin-top: 2px;
+              font-size: 15px;
+              line-height: 21px;
+              color: #000;
+              letter-spacing: -.17px;
+              font-weight: 900; }
+
+@media only screen and (max-width: 990px) {
+  #maxdiv #maxdivcontainer #maxdivcontainer_details .details_list li {
+    width: 23.7%; } }
+@media only screen and (max-width: 769px) {
+  #maxdiv #maxdivcontainer #maxdivcontainer_details .details_list li {
+    width: 32%; } }
+@media only screen and (max-width: 500px) {
+  #maxdiv #maxdivcontainer #maxdivcontainer_details .details_list li {
+    width: 43%; }
+
+  #maxdiv #maxdivcontainer #maxdivcontainer_details {
+    margin-left: 10px; }
+
+  #maxdiv #maxdivcontainer_details_head ul li, #maxdiv .MuCommodityFilterOrderby ul li {
+    width: auto; }
+
+  #maxdiv #maxdivcontainer_details_head ul li a {
+    padding: 8px; } }
+
+/*# sourceMappingURL=showType.css.map */

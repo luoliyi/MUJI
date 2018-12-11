@@ -1,8 +1,6 @@
 package controller;
 import com.nf.entities.Diary;
 import com.nf.service.IDiaryService;
-import com.nf.service.IGoodsService;
-import org.apache.xmlbeans.impl.xb.xsdschema.Public;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -12,6 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.*;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
@@ -103,8 +102,12 @@ public class MySQLDatabaseBackup {
         objectMap.put("daydesc","备份记录");
 
         List<Object> objects=new ArrayList<>();
+
+        SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd-HH时mm分ss秒");
+        String bfday=sdf.format(new Date());
+
         try {
-            if (backup("127.0.0.1", "root", ".asamu.654", basurl, "mujisystem2.sql", "mujisystem")&&diaryService.insert(objectMap)>0) {
+            if (backup("127.0.0.1", "root", ".asamu.654", basurl, bfday+".sql", "mujisystem")&&diaryService.insert(objectMap)>0) {
                 objects.add("success");
                 objects.add(basurl);
             } else {
@@ -164,7 +167,6 @@ public class MySQLDatabaseBackup {
     @RequestMapping(value = "/selectAllDiaryCount",method = RequestMethod.POST)
     @ResponseBody
     public int selectAllDiaryCount(@RequestBody List<Object> objectInit){
-
         Map<String,Object>objectMap=new HashMap<>();
         objectMap.put("pageno",0);
         objectMap.put("pagesize",99999);

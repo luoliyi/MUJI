@@ -17,4 +17,6 @@ public interface IAdministratorService {
     int delete(@Param("aid") String aid);
 
     Administrator selectOneAdministrator(@Param("aid") String aid);
+
+    Administrator selectOne(Map<String,Object> objectMap);
 }

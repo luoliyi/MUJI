@@ -1,5 +1,6 @@
 package com.nf.dao.test;
 
+import com.nf.commons.MyUtils.MD5Util;
 import com.nf.entities.Goods;
 import com.nf.entities.Member;
 import com.nf.interfaces.IGoodsDao;
@@ -12,6 +13,8 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.io.UnsupportedEncodingException;
+import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -32,6 +35,8 @@ public class IMemberDaoTest {
 //            System.out.println(member);
 //        }
     }
+
+
 
     @Test
     public void delete(){

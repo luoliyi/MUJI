@@ -51,6 +51,11 @@
         order by g.gid limit #{pageno},#{pagesize};
     </select>
 
+    <select id="selectNewGoods" resultMap="GoodsMap" parameterType="java.util.Map">
+        select * from goods as g join GoodsTypeDetails as td on g.gtdid=td.gtdid
+        join GoodsType as t on g.tid=t.tid   order by g.gid desc limit #{pageno},#{pagesize};
+    </select>
+
     <insert id="insert" parameterType="java.util.Map">
         insert into Goods(gno,gname,gcolor,gsize,gpic,gnowprice,gprevPrice,gdesc,gstate,tid,gtdid)values(
         #{gno},#{gname},#{gcolor},#{gsize},#{gpic},#{gnowprice},#{gprevPrice},#{gdesc},#{gstate},#{tid},#{gtdid}
@@ -100,5 +105,37 @@
     <update id="delete" parameterType="String">
          update Goods set gstate=1 where gno=#{goodno};
     </update>
+
+
+
+    <!--
+        查询单个商品
+
+    -->
+    <resultMap id="OneGoodMap" type="Goods">
+        <id column="gid" property="gid"></id>
+        <result column="gno" property="gno"></result>
+        <result column="gname" property="gname"></result>
+        <result column="gcolor" property="gcolor"></result>
+        <result column="gsize" property="gsize"></result>
+        <result column="gpic" property="gpic"></result>
+        <result column="gnowprice" property="gnowprice"></result>
+        <result column="gprevPrice" property="gprevPrice"></result>
+        <result column="gdesc" property="gdesc"></result>
+        <result column="gstate" property="gstate"></result>
+        <result column="tid" property="tid"></result>
+        <result column="gtdid" property="gtdid"></result>
+        <collection property="pictureLists" ofType="PictureList">
+            <id column="picid" property="picid"></id>
+            <result column="picpath" property="picpath"></result>
+            <result column="picdesc" property="picdesc"></result>
+            <result column="gid" property="gid"></result>
+        </collection>
+    </resultMap>
+
+    <select id="selectOneGood" parameterType="int" resultMap="OneGoodMap">
+        select * from Goods as g join PictureList as p on g.gid=p.gid where g.gid=#{gid};
+    </select>
+
 
 </mapper>

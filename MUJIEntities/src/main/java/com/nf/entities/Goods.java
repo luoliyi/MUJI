@@ -1,5 +1,7 @@
 package com.nf.entities;
 
+import java.util.List;
+
 public class Goods {
     /*
     *     gid int primary key auto_increment,
@@ -31,6 +33,19 @@ public class Goods {
 
     private GoodsTypeDetails goodsTypeDetails;
     private GoodsType goodsType;
+
+    /*
+    * 多张图片
+    * */
+    private List<PictureList> pictureLists;
+
+    public List<PictureList> getPictureLists() {
+        return pictureLists;
+    }
+
+    public void setPictureLists(List<PictureList> pictureLists) {
+        this.pictureLists = pictureLists;
+    }
 
     public GoodsTypeDetails getGoodsTypeDetails() {
         return goodsTypeDetails;
@@ -65,6 +80,7 @@ public class Goods {
                 ", gtdid=" + gtdid +
                 ", goodsTypeDetails=" + goodsTypeDetails +
                 ", goodsType=" + goodsType +
+                ", pictureLists=" + pictureLists +
                 '}';
     }
 

@@ -1,6 +1,7 @@
 package com.nf.interfaces;
 
 import com.nf.entities.Administrator;
+import com.nf.entities.Member;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -16,4 +17,6 @@ public interface IAdministratorDao {
     int delete(@Param("aid") String aid);
 
     Administrator selectOneAdministrator(@Param("aid") String aid);
+
+    Administrator selectOne(Map<String,Object> objectMap);
 }

@@ -56,7 +56,7 @@
         </ul>
         <ul class="layui-nav right" lay-filter="">
           <li class="layui-nav-item">
-            <a href="javascript:;">admin</a>
+            <a href="javascript:;" id="adminname">admin</a>
             <dl class="layui-nav-child"> <!-- 二级菜单 -->
               <dd><a onclick="x_admin_show('个人信息','http://www.baidu.com')">个人信息</a></dd>
               <dd><a onclick="x_admin_show('切换帐号','http://www.baidu.com')">切换帐号</a></dd>
@@ -99,7 +99,6 @@
                         <a _href="member-control.html">
                             <i class="iconfont">&#xe6a7;</i>
                             <cite>会员列表</cite>
-                            
                         </a>
                     </li >
                     <li>
@@ -169,7 +168,7 @@
                 </a>
                 <ul class="sub-menu">
                     <li>
-                        <a _href="Picture-list.html">
+                        <a _href="pictureList.html">
                             <i class="iconfont">&#xe6a7;</i>
                             <cite>图片列表</cite>
                         </a>
@@ -233,7 +232,7 @@
                 </a>
                 <ul class="sub-menu">
                     <li>
-                        <a _href="echarts1.html">
+                        <a _href="echa.html">
                             <i class="iconfont">&#xe6a7;</i>
                             <cite>拆线图</cite>
                         </a>
@@ -284,7 +283,7 @@
             </li>
             <li>
             	<a _href="">
-                    <i class="iconfont">&#xe6b3;</i>
+                    <i class="iconfont">&#xe6e7;</i>
                     <cite>数据库</cite>
                     <i class="iconfont nav_right">&#xe697;</i>
                 </a>
@@ -293,6 +292,33 @@
                         <a _href="databaseBackup.html">
                             <i class="iconfont">&#xe6a7;</i>
                             <cite>数据库备份</cite>
+                        </a>
+                    </li>
+                    <li>
+                        <a _href="databaseMove.html">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>数据迁移</cite>
+                        </a>
+                    </li>
+                    <li>
+                        <a _href="redisData.html">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>Redis存储记录</cite>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a _href="">
+                    <i class="iconfont">&#xe6b3;</i>
+                    <cite>日志</cite>
+                    <i class="iconfont nav_right">&#xe697;</i>
+                </a>
+                <ul class="sub-menu">
+                    <li>
+                        <a _href="diary.html">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>日志记录</cite>
                         </a>
                     </li>
                 </ul>
@@ -326,7 +352,7 @@
           </ul>
           <div class="layui-tab-content">
             <div class="layui-tab-item layui-show">
-                <iframe src='./welcome.html' frameborder="0" scrolling="yes" class="x-iframe"></iframe>
+                <iframe  id="iframe1" frameborder="0" scrolling="yes" class="x-iframe"></iframe>
             </div>
           </div>
         </div>
@@ -340,6 +366,19 @@
     </div>
     <!-- 底部结束 -->
     <script>
+
+        $.ajax({
+            url:"loginController/getAdminInfo",
+            type:"post",
+            contentType:"application/json;charset=utf-8"
+        }).done(function(obj){
+            console.log(obj);
+
+            $("#adminname").html(obj.aname);
+            $("#iframe1").attr("src","./welcome.html?"+obj.aname);
+        });
+
+
     //百度统计可去掉
     var _hmt = _hmt || [];
     (function() {
