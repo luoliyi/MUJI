@@ -11,6 +11,7 @@
 	<link rel="shortcut icon" href="//www.suning.com/favicon.ico" type="image/x-icon">
 	<link rel="stylesheet" type="text/css" href="css/goodDetails.css" />
 	<link rel="stylesheet" type="text/css" href="js/layui/css/layui.css" />
+	<!--轮播图-->
 	<link rel="stylesheet" type="text/css" href="3DGallery/css/style.css">
 
 	<!--放大镜-->
@@ -35,14 +36,12 @@
 	<!--容器-->
 	<div id="maxdivcontainer" class="container">
 
-
 		<!--详细（轮播图）-->
 		<section id="dg-container" class="dg-container">
 			<div class="dg-wrapper">
 				<!--<a href="#">
 					<img src="img/main/mian.jpg">
 				</a>-->
-
 			</div>
 			<nav id="navCon">
 				<span class="dg-prev"><</span>
@@ -142,10 +141,10 @@
 			</div>
 			<div class="part_options">
 				<div class="image-wrap">
-					<img src="img/goodsdetails/untitled.png" />
+					<img src="img/goodsdetails/untitled.png" class="carImg" />
 					<div class="image-wrap-right">
 						<span class="title">棉水洗平纹衬衫</span><br />
-						<span><span>￥</span><span class="image-wrap-right-price">78</span></span>
+						<span><span>￥</span><span class="image-wrap-right-price carPrice">78</span></span>
 					</div>
 				</div>
 			</div>
@@ -153,12 +152,12 @@
 			<div class="part-options-options">
 				<div class="option">
 					<div class="option-div">
-						<label class="option-label">颜色</label>	<span><a href="javascript:void(0);" class="type-text active">白色</a></span>
+						<label class="option-label">颜色</label>	<span><a href="javascript:void(0);" class="type-text active carColor">白色</a></span>
 					</div>
 					<div class="option-div">
 						<label class="option-label">尺码</label>
 						<span>
-									<a href="javascript:void(0);" class="type-text active">男式XS</a>
+									<a href="javascript:void(0);" class="type-text active carSize">男式XS</a>
 								</span>
 					</div>
 					<div class="option-div">
@@ -238,12 +237,22 @@
                     $(".section-description").css("display","none");
                 }
 
+                /*
+                * 商品详情的
+                * */
                 $("#nowPrice").html(obj.gnowprice);
                 //$("#prevPrice").html(obj.gprevPrice==""?"":obj.gprevPrice);
                 $(".title").html(obj.gname);
                 $(".UserSelectArea").html(obj.gno);
                 $(".gdesc").html(obj.gdesc);
 
+                /*
+                * 加入购物车
+                * */
+                $(".carImg").attr("src",'admin/img/PictureList/' +obj.pictureLists[0].picpath);
+				$(".carPrice").html(obj.gnowprice);
+				$(".carSize").html("无");
+				$(".carColor").html(obj.gcolor==""?"无":obj.gcolor);
                 /*
                 * 添加图片
                 * */
@@ -264,8 +273,8 @@
                     * 当图片全部加载完毕再渲染放大镜
                     * */
                     $('.dg-wrapper a img').okzoom({
-                        width: 200,
-                        height: 200,
+                        width: 150,
+                        height: 150,
                         round: true,
 						/*
 						* 缩放比例
@@ -273,8 +282,8 @@
                         scaleWidth:480,
                         background: "#fff",
                         backgroundRepeat: "repeat",
-                        shadow: "0 0 5px #000",
-                        border: "1px solid #f3f3f3"
+                        shadow: "5px  7px 25px #000",
+                        border: "1px solid lightgray"
                     });
                 }
             })

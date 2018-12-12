@@ -218,7 +218,7 @@ html, body {
 }
 #countValue{
 	width: 48px;
-	height: 27.px;
+	height: 27px;
 	line-height: 28px;
 	text-align: center;
 }
@@ -255,6 +255,8 @@ html, body {
 	font-size: 30px;
 	color: #7f0019;
 	cursor: pointer;
+    position: relative;
+    top: 10px;
 }
 #chooseAlltoCar_car{
 	width: 100%;

@@ -26,21 +26,26 @@ $(function() {
 			});
 			return false;
 		}
-	
-		
+
 		//$("#chooseAlltoCar").css("transition", "all .7s").css("height", "445px");
 		$("#chooseAlltoCar").css("height", "460px").fadeIn(1000);
-		$("#CoveringLayer").css("display","block")
+		$("#CoveringLayer").css("display","block");
 
 		$(".PageCommodityDetailPartActions").fadeOut(500);
 		return false;
-	})
+	});
 	$("#chooseClose").click(function(){
 		$("#chooseAlltoCar").fadeOut(500);
 		$(".PageCommodityDetailPartActions").fadeIn(500);
 		$("#CoveringLayer").css("display","none");
-	})
+	});
 	$("#btnChooseAlltoCar_car").click(function(){
+
+		/*
+		* 发起ajax请求
+		* */
+
+
 		layui.use('layer', function(){
 		  var layer = layui.layer;
 		  layer.msg('加入购物车成功',{time: 1500});
@@ -48,7 +53,7 @@ $(function() {
 		$("#CoveringLayer").css("display","none");
 		$("#chooseAlltoCar").fadeOut(1000);
 		$(".PageCommodityDetailPartActions").fadeIn(1000);
-	})
+	});
 	
 	$("#countAdd").click(function(){
 		var value=parseInt($("#countValue").val());
@@ -67,5 +72,4 @@ $(function() {
 		value--;
 		$("#countValue").val(value);
 	})
-
 });
