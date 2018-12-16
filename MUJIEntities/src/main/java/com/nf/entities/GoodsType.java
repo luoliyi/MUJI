@@ -1,5 +1,7 @@
 package com.nf.entities;
 
+import java.util.List;
+
 public class GoodsType {
     /*
     * 	tid int primary key auto_increment,
@@ -11,19 +13,20 @@ public class GoodsType {
     private String tname;
     private String tdesc;
 
+    private List<GoodsTypeDetails> goodsTypeDetailsList;
+
+    public List<GoodsTypeDetails> getGoodsTypeDetails() {
+        return goodsTypeDetailsList;
+    }
+
+    public void setGoodsTypeDetails(List<GoodsTypeDetails> goodsTypeDetails) {
+        this.goodsTypeDetailsList = goodsTypeDetails;
+    }
+
     public GoodsType(int tid, String tname, String tdesc) {
         this.tid = tid;
         this.tname = tname;
         this.tdesc = tdesc;
-    }
-
-    @Override
-    public String toString() {
-        return "GoodsType{" +
-                "tid=" + tid +
-                ", tname='" + tname + '\'' +
-                ", tdesc='" + tdesc + '\'' +
-                '}';
     }
 
     public GoodsType(String tname, String tdesc) {
@@ -32,6 +35,16 @@ public class GoodsType {
     }
 
     public GoodsType() {
+    }
+
+    @Override
+    public String toString() {
+        return "GoodsType{" +
+                "tid=" + tid +
+                ", tname='" + tname + '\'' +
+                ", tdesc='" + tdesc + '\'' +
+                ", goodsTypeDetailsList=" + goodsTypeDetailsList +
+                '}';
     }
 
     public int getTid() {

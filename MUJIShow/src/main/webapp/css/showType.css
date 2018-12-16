@@ -33,6 +33,7 @@ html, body {
       z-index: 1;
       line-height: 45px; }
       #maxdiv #maxdivcontainer_details_head ul li, #maxdiv .MuCommodityFilterOrderby ul li {
+        cursor: pointer;
         display: inline-block;
         float: left;
         width: auto; }
@@ -59,7 +60,7 @@ html, body {
       #maxdiv #maxdivcontainer #maxdivcontainer_details .details_list {
         padding-left: 12.5px;
         padding-right: 12.5px;
-        width: 100%; }
+        width: 97%}
         #maxdiv #maxdivcontainer #maxdivcontainer_details .details_list li {
           width: 19%;
           height: 272px;
@@ -100,6 +101,7 @@ html, body {
     margin-left: 10px; }
 
   #maxdiv #maxdivcontainer_details_head ul li, #maxdiv .MuCommodityFilterOrderby ul li {
+    cursor: pointer;
     width: auto; }
 
   #maxdiv #maxdivcontainer_details_head ul li a {

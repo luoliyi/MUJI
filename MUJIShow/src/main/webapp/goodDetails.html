@@ -15,7 +15,6 @@
 	<link rel="stylesheet" type="text/css" href="3DGallery/css/style.css">
 
 	<!--放大镜-->
-
 	<style>
 		#dg-container .dg-wrapper a{
 			background: none!important;
@@ -27,6 +26,17 @@
 		#navCon{
 			position: relative;
 			top: 135px;
+		}
+		.dg-wrapper a img:before{
+			content: '';
+			display: block;
+			position: relative;
+			width: 100px;
+			height: 5px;
+			background: black;
+			box-shadow: 6px 10px 20px black;
+			top: 0px;
+			left: 0px;
 		}
 	</style>
 </head>
@@ -143,6 +153,9 @@
 				<div class="image-wrap">
 					<img src="img/goodsdetails/untitled.png" class="carImg" />
 					<div class="image-wrap-right">
+						<!--隐藏gid-->
+						<input type="hidden" id="gid">
+
 						<span class="title">棉水洗平纹衬衫</span><br />
 						<span><span>￥</span><span class="image-wrap-right-price carPrice">78</span></span>
 					</div>
@@ -249,24 +262,25 @@
                 /*
                 * 加入购物车
                 * */
+                $("#gid").val(obj.gid);
                 $(".carImg").attr("src",'admin/img/PictureList/' +obj.pictureLists[0].picpath);
-				$(".carPrice").html(obj.gnowprice);
-				$(".carSize").html("无");
-				$(".carColor").html(obj.gcolor==""?"无":obj.gcolor);
+                $(".carPrice").html(obj.gnowprice);
+                $(".carSize").html("无");
+                $(".carColor").html(obj.gcolor==""?"无":obj.gcolor);
                 /*
                 * 添加图片
                 * */
                 var  mdiv=$(".dg-wrapper");
                 if(obj.pictureLists) {
 
-                   $(".dg-wrapper a").remove();
-                     $.each(obj.pictureLists, function (index, pic) {
-                         $("<a href='#'><img class=\"louped\" data-image='admin/img/PictureList/" + pic.picpath +
-							 "' src='admin/img/PictureList/" + pic.picpath + "' /></a>").appendTo($(mdiv));
-                     });
-                     /*
-                     * 当图片全部加载完毕再渲染轮播图
-                     * */
+                    $(".dg-wrapper a").remove();
+                    $.each(obj.pictureLists, function (index, pic) {
+                        $("<a href='#'><img class=\"louped\" data-image='admin/img/PictureList/" + pic.picpath +
+                            "' src='admin/img/PictureList/" + pic.picpath + "' /></a>").appendTo($(mdiv));
+                    });
+                    /*
+                    * 当图片全部加载完毕再渲染轮播图
+                    * */
                     $('#dg-container').gallery();
 
                     /*
@@ -276,9 +290,9 @@
                         width: 150,
                         height: 150,
                         round: true,
-						/*
-						* 缩放比例
-						* */
+                        /*
+                        * 缩放比例
+                        * */
                         scaleWidth:480,
                         background: "#fff",
                         backgroundRepeat: "repeat",
@@ -288,6 +302,45 @@
                 }
             })
         }
+
+        /*
+        * 加入到购物车
+        * */
+        $("#btnChooseAlltoCar_car").click(function(){
+
+            var objectList=new Array();
+            objectList.push($("#gid").val());
+            objectList.push($("#countValue").val());
+            /*
+            * 计算总价
+            * */
+            var carPrice=$(".carPrice").html();
+            var carCount=$("#countValue").val();
+            var sumprice=parseInt(carPrice)*parseInt(carCount);
+            objectList.push(sumprice);
+
+            /*
+            * 发起ajax请求
+            * */
+            $.ajax({
+                url:"shoppingCarController/insert",
+                type:"post",
+                data:JSON.stringify(objectList),
+                contentType:"application/json;charset=utf-8"
+            }).done(function (msg) {
+                if(msg=="success"){
+                    layui.use('layer', function(){
+                        var layer = layui.layer;
+                        layer.msg('加入购物车成功',{time: 1500});
+                    });
+                    $("#CoveringLayer").css("display","none");
+                    $("#chooseAlltoCar").fadeOut(1000);
+                    $(".PageCommodityDetailPartActions").fadeIn(1000);
+                }else {
+                    return false;
+                }
+            });
+        });
     });
 
 </script>

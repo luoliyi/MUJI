@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nf.interfaces.IGoodsTypeDetailsDao">
+
+    <resultMap id="allGoodsTypeDetailsByGtdidMap" type="GoodsTypeDetails">
+        <id column="gtdid" property="gtdid"></id>
+        <result property="gtdname" column="gtdname"></result>
+        <result property="tid" column="tid"></result>
+        <result property="tdesc" column="tdesc"></result>
+        <collection property="goodsList" ofType="Goods">
+            <id column="gid" property="gid"></id>
+            <result column="gno" property="gno"></result>
+            <result column="gname" property="gname"></result>
+            <result column="gcolor" property="gcolor"></result>
+            <result column="gsize" property="gsize"></result>
+            <result column="gpic" property="gpic"></result>
+            <result column="gnowprice" property="gnowprice"></result>
+            <result column="gdesc" property="gdesc"></result>
+            <result column="gstate" property="gstate"></result>
+            <result column="tid" property="tid"></result>
+            <result column="gtdid" property="gtdid"></result>
+        </collection>
+    </resultMap>
+    <!--
+        查询全部商品详细类型下面的商品
+    -->
+    <select id="selectAllGoodsTypeDetailsByGtdid" parameterType="java.util.Map" resultMap="allGoodsTypeDetailsByGtdidMap">
+        select * from GoodsTypeDetails as gt join goods as g on gt.gtdid=g.gtdid
+        <where>
+            <if test="gtdid!='' and gtdid!=null and gtdid gt 0">
+                g.gtdid=#{gtdid};
+            </if>
+            <if test="tid!='' and tid!=null and tid gt 0">
+                gt.tid=#{tid};
+            </if>
+        </where>
+    </select>
+</mapper>

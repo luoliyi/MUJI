@@ -90,10 +90,16 @@ $("#buttonlogin").click(function(){
 });
 
 //男装
-$("#manClost").click(function(){
+$(".productwrap_ul").on("click","li",function(){
 	$("#center_container_details").css("display","none");
 	$("#topguide #closeFrame").css("display","block");
-	$("#center_container iframe:eq(0)").css("display","block").attr("src","showType.html?id=1");
+	$("#center_container iframe:eq(0)").css("display","block").attr("src","showType3.html");
+
+	/*
+	* 保存图片tid
+	* */
+	$("#saveTid").val($(this).data("tid"));
+
 });
 
 //关闭，返回主页面

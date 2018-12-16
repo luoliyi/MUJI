@@ -45,20 +45,19 @@
         <!-- <button class="layui-btn"  lay-submit="" lay-filter="sreach"><i class="layui-icon">&#xe615;</i></button>-->
     </div>
     <xblock>
-        <marquee style="color: orange;">当达到一定的数据量时，您可以选择迁移数据。</marquee>
-        <button class="layui-btn"><i class="layui-icon"></i>查询备份情况</button>
-        <button class="layui-btn layui-btn-warm" id="gotoBack"><i class="layui-icon"></i>立即备份</button>
-        <span class="x-right" style="line-height:40px">共有：<span id="allDiaryCount">88</span> 条备份记录</span>
+        <marquee style="color: orange;">当达到1000条数据量时，您可以选择迁移数据。</marquee>
+        <button class="layui-btn"><i class="layui-icon"></i>查询迁移数据</button>
+        <button class="layui-btn layui-btn-warm" id="gotoBack"><i class="layui-icon"></i>立即迁移</button>
+        <span class="x-right" style="line-height:40px">共有：<span id="allMoveCount">88</span> 条迁移记录</span>
     </xblock>
     <table class="layui-table">
         <thead>
         <tr>
-            <th>备份编号</th>
-            <th>备份时间</th>
-            <th>备份路径</th>
-            <th>还原时间</th>
-            <th>备注信息</th>
-            <th>操作</th>
+            <th>迁移编号</th>
+            <th>迁移时间</th>
+            <th>迁移数量</th>
+            <th>当前数据表状态</th>
+            <th>操作员</th>
         </tr>
         </thead>
         <tbody id="tbody">
@@ -90,14 +89,32 @@
 
     //app封装的增删改查
     var app={
-        firstRequest(){
+        firstRequest() {
+            $.ajax({
+                url: "historyOrdersController/selectCount",
+                type: "POST",
+                contentType: "application/json;charset=utf-8",
+                success: function (count) {
+                    console.log("count:" + count);
+                    if (count > 10) {
+                        layui.use('layer', function () {
+                            var layer = layui.layer;
+                            layer.msg('数据量已经达到10条,现在您可以选择迁移数据啦~', {time: 2000});
+                        });
+                    }
+                }
+            });
+        },
 
-            var objectInit=new Array();
+        bindData() {
+            /*
+            * 查询迁移记录
+            * */
+
 
             $.ajax({
-                url:"mySQLDatabaseBackup/selectAllDiaryCount",
+                url:"historyOrdersController/selectHistoryOrdersDiaryCount",
                 type:"POST",
-                data:JSON.stringify(objectInit),
                 contentType:"application/json;charset=utf-8",
                 success:function(sum) {
                     console.log("sum:"+sum);
@@ -115,15 +132,15 @@
                             , curr: location.hash.replace('#!fenye=', '') //获取起始页
                             , hash: 'fenye' //自定义hash值
                             , jump: function (obj) {
-                                var objlist = new Array();
-                                objlist.push(obj.curr);
-                                objlist.push(obj.limit);
+                                var objectList = new Array();
+                                objectList.push(obj.curr);
+                                objectList.push(obj.limit);
                                 //请求数据
                                 $.ajax({
-                                    url: "mySQLDatabaseBackup/selectAllDiary",
+                                    url: "historyOrdersController/selectHistoryOrdersDiary",
                                     type: "POST",
                                     contentType: "application/json;charset=utf-8",
-                                    data: JSON.stringify(objlist),
+                                    data: JSON.stringify(objectList),
                                     beforeSend: function () {
 
                                     },
@@ -144,105 +161,44 @@
         ,showData(data) {
             console.log(data);
             $("#tbody tr").remove();
+
             $.each(data,function (index,obj) {
-                var tr=$("<tr/>");
-                $("<td/>").html(obj.dayid).appendTo(tr);
-                $("<td/>").html(new Date(obj.daybftime).toLocaleString()).appendTo(tr);
-                $("<td/>").html(obj.daypath).appendTo(tr);
-                $("<td/>").html(obj.dayhytime==""?"没有还原记录":obj.dayhytime).appendTo(tr);
-                $("<td/>").html(obj.daydesc).appendTo(tr);
-                $("<td class='td-manage' />").html(
-                    "                <a title=\"一键还原\"  href=\"javascript:;\">\n" +
-                    "                    <i class=\"layui-icon\">&#xe642;</i>\n" +
-                    "                </a>\n" +
-                    "                <a title=\"删除\" href=\"javascript:;\">\n" +
-                    "                    <i class=\"layui-icon\">&#xe640;</i>\n" +
-                    "                </a>"
-                ).appendTo(tr);
+               var tr=$("<tr/>");
+               $("<td/>").html(obj.moveid).appendTo(tr);
+                $("<td/>").html(obj.movetime).appendTo(tr);
+                $("<td/>").html(obj.movecount).appendTo(tr);
+                $("<td/>").html(obj.movestatus=="0"?"内存充足":"内存不足").appendTo(tr);
+                $("<td/>").html(obj.movepeople).appendTo(tr);
                 $("#tbody").append(tr);
             });
         }
+
         /*
-        * 立即备份
+        * 立即迁移
         * */
         ,backUpNow(){
+            var objects=new Array();
+
             $.ajax({
-                url:"mySQLDatabaseBackup/goToBackup",
+                url:"historyOrdersController/insert",
                 type:"post",
+                data:JSON.stringify(objects),
                 contentType:"application/json;charset=utf-8"
-            }).done(function(msg){
-                console.log(msg);
-                layer.msg('备份成功!',{icon: 1,time:1000});
-                app.firstRequest();
+            }).done(function(count){
+                if(parseInt(count)>0) {
+                    layer.msg('迁移成功!', {icon: 1, time: 1000});
+                    app.bindData();
+                }
             })
         }
-
         ,init(){
             app.firstRequest();
+            app.bindData();
             $("#gotoBack").click(app.backUpNow);
         }
     };
     app.init();
 
-
-    layui.use('laydate', function(){
-        var laydate = layui.laydate;
-
-        //执行一个laydate实例
-        laydate.render({
-            elem: '#start' //指定元素
-        });
-
-        //执行一个laydate实例
-        laydate.render({
-            elem: '#end' //指定元素
-        });
-    });
-
-    /*用户-停用*/
-    function member_stop(obj,id){
-        layer.confirm('确认要停用吗？',function(index){
-
-            if($(obj).attr('title')=='启用'){
-
-                //发异步把用户状态进行更改
-                $(obj).attr('title','停用')
-                $(obj).find('i').html('&#xe62f;');
-
-                $(obj).parents("tr").find(".td-status").find('span').addClass('layui-btn-disabled').html('已停用');
-                layer.msg('已停用!',{icon: 5,time:1000});
-
-            }else{
-                $(obj).attr('title','启用')
-                $(obj).find('i').html('&#xe601;');
-
-                $(obj).parents("tr").find(".td-status").find('span').removeClass('layui-btn-disabled').html('已启用');
-                layer.msg('已启用!',{icon: 5,time:1000});
-            }
-
-        });
-    }
-
-    /*用户-删除*/
-    function member_del(obj,id){
-        layer.confirm('确认要删除吗？',function(index){
-            //发异步删除数据
-            $(obj).parents("tr").remove();
-            layer.msg('已删除!',{icon:1,time:1000});
-        });
-    }
-
-
-    function delAll (argument) {
-
-        var data = tableCheck.getData();
-
-        layer.confirm('确认要删除吗？'+data,function(index){
-            //捉到所有被选中的，发异步进行删除
-            layer.msg('删除成功', {icon: 1});
-            $(".layui-form-checked").not('.header').parents('tr').remove();
-        });
-    }
 </script>
 <script>var _hmt = _hmt || []; (function() {
     var hm = document.createElement("script");

@@ -278,6 +278,7 @@ html, body {
               padding-bottom: 10px;
               margin-bottom: 15px; }
               #center #center_container #center_container_details .PageHomePartNewArrivals .PageHomePartCommodityCatalogs #center-product .productwrap #product_garment li, #center #center_container #center_container_details .PageHomePartNewArrivals .PageHomePartCommodityCatalogs #center-product .productwrap #product_household li, #center #center_container #center_container_details .PageHomePartNewArrivals .PageHomePartCommodityCatalogs #center-product .productwrap #product_food li {
+                cursor: pointer;
                 float: left;
                 position: relative;
                 height: 60px;
@@ -291,12 +292,12 @@ html, body {
                 background-size: auto 40px;
                 background-repeat: no-repeat;
                 background-position: 8px center; }
-                #center #center_container #center_container_details .PageHomePartNewArrivals .PageHomePartCommodityCatalogs #center-product .productwrap #product_garment li a, #center #center_container #center_container_details .PageHomePartNewArrivals .PageHomePartCommodityCatalogs #center-product .productwrap #product_household li a, #center #center_container #center_container_details .PageHomePartNewArrivals .PageHomePartCommodityCatalogs #center-product .productwrap #product_food li a {
+                #center #center_container #center_container_details .PageHomePartNewArrivals .PageHomePartCommodityCatalogs #center-product .productwrap #product_garment li , #center #center_container #center_container_details .PageHomePartNewArrivals .PageHomePartCommodityCatalogs #center-product .productwrap #product_household li , #center #center_container #center_container_details .PageHomePartNewArrivals .PageHomePartCommodityCatalogs #center-product .productwrap #product_food li  {
                   display: block;
                   padding: 0 2px 0 55px;
                   min-height: 60px;
                   position: relative; }
-                  #center #center_container #center_container_details .PageHomePartNewArrivals .PageHomePartCommodityCatalogs #center-product .productwrap #product_garment li a span, #center #center_container #center_container_details .PageHomePartNewArrivals .PageHomePartCommodityCatalogs #center-product .productwrap #product_household li a span, #center #center_container #center_container_details .PageHomePartNewArrivals .PageHomePartCommodityCatalogs #center-product .productwrap #product_food li a span {
+                  #center #center_container #center_container_details .PageHomePartNewArrivals .PageHomePartCommodityCatalogs #center-product .productwrap #product_garment li  span, #center #center_container #center_container_details .PageHomePartNewArrivals .PageHomePartCommodityCatalogs #center-product .productwrap #product_household li  span, #center #center_container #center_container_details .PageHomePartNewArrivals .PageHomePartCommodityCatalogs #center-product .productwrap #product_food li  span {
                     position: absolute;
                     top: 40%; }
       #center #center_container #center_container_details .PageHomePartNewArrivals #newItem {

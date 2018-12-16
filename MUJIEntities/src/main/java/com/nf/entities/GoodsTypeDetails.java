@@ -1,5 +1,7 @@
 package com.nf.entities;
 
+import java.util.List;
+
 public class GoodsTypeDetails {
     /*
     *
@@ -10,22 +12,32 @@ public class GoodsTypeDetails {
     * */
 
     private int gtdid;
-    private String gtname;
+    private String gtdname;
     private int tid;
     private String tdesc;
+
+    private List<Goods> goodsList;
+
+    public List<Goods> getGoodsList() {
+        return goodsList;
+    }
+
+    public void setGoodsList(List<Goods> goodsList) {
+        this.goodsList = goodsList;
+    }
 
     public GoodsTypeDetails() {
     }
 
     public GoodsTypeDetails(String gtname, int tid, String tdesc) {
-        this.gtname = gtname;
+        this.gtdname = gtname;
         this.tid = tid;
         this.tdesc = tdesc;
     }
 
     public GoodsTypeDetails(int gtdid, String gtname, int tid, String tdesc) {
         this.gtdid = gtdid;
-        this.gtname = gtname;
+        this.gtdname = gtname;
         this.tid = tid;
         this.tdesc = tdesc;
     }
@@ -34,9 +46,10 @@ public class GoodsTypeDetails {
     public String toString() {
         return "GoodsTypeDetails{" +
                 "gtdid=" + gtdid +
-                ", gtname='" + gtname + '\'' +
+                ", gtdname='" + gtdname + '\'' +
                 ", tid=" + tid +
                 ", tdesc='" + tdesc + '\'' +
+                ", goodsList=" + goodsList +
                 '}';
     }
 
@@ -48,12 +61,12 @@ public class GoodsTypeDetails {
         this.gtdid = gtdid;
     }
 
-    public String getGtname() {
-        return gtname;
+    public String getGtdname() {
+        return gtdname;
     }
 
-    public void setGtname(String gtname) {
-        this.gtname = gtname;
+    public void setGtdname(String gtname) {
+        this.gtdname = gtname;
     }
 
     public int getTid() {

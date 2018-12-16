@@ -1,6 +1,5 @@
 package controller;
 
-
 import com.nf.commons.MyUtils.MD5Util;
 import com.nf.entities.Administrator;
 import com.nf.entities.Member;

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nf.interfaces.IHistoryOrdersDao">
+
+
+    <!--
+        查询表格总数
+    -->
+    <select id="selectCount" resultType="int">
+         select count(*) from Orders as o join CreateOrders as co on o.cono=co.cono
+         where o.ostate=3 and co.costatus=3 ;
+    </select>
+
+
+    <!--
+        查询历史备份记录表
+    -->
+    <select id="selectHistoryOrdersDiary" resultType="HistoryOrdersDiary" parameterType="java.util.Map">
+        select * from HistoryOrdersDiary limit #{pageno},#{pagesize};
+    </select>
+
+
+    <!--
+        插入记录表
+    -->
+    <insert id="insertOrdersDiary" parameterType="java.util.Map">
+        insert into HistoryOrdersDiary(movetime,movecount,movestatus,movepeople)
+        values(#{movetime},#{movecount},#{movestatus},#{movepeople});
+    </insert>
+
+
+    <!--
+    查询历史备份记录表总数
+-->
+    <select id="selectHistoryOrdersDiaryCount" resultType="int">
+        select count(*) from HistoryOrdersDiary;
+    </select>
+
+    <!--
+        添加到历史记录表
+    -->
+    <insert id="insert" parameterType="java.util.Map">
+        insert into HistoryOrders
+        select o.orderid,o.mphone,o.gid,o.ocount,o.osumprice,o.cono,o.ostate from Orders as o join CreateOrders as co on o.cono=co.cono
+         where o.ostate=3 and co.costatus=3 order by o.orderid desc limit 10,100000;
+
+    </insert>
+
+    <!--
+        删除原表的数据
+    -->
+    <!--<delete id="delete" parameterType="java.util.Map">
+        delete from orders where orderid in (select o.orderid from Orders as o join CreateOrders as co on o.cono=co.cono
+         where o.ostate=3 and co.costatus=3 order by o.orderid desc limit 10,#{limitsize});
+    </delete>-->
+
+</mapper>

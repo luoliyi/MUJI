@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nf.interfaces.IShoppingCartDao">
+
+    <resultMap id="selectAllCartByMphoneMap" type="ShoppingCart">
+        <id column="scid" property="scid"></id>
+        <result property="mphone" column="mphone"></result>
+        <result property="gid" column="gid"></result>
+        <result property="sccount" column="sccount"></result>
+        <result property="sumprice" column="sumprice"></result>
+        <result property="sctate" column="sctate"></result>
+        <association property="member" javaType="Member">
+            <id column="mid" property="mid"></id>
+            <result column="mphone" property="mphone"></result>
+            <result column="mpassword" property="mpassword"></result>
+            <result column="mname" property="mname"></result>
+            <result column="Mbirthday" property="Mbirthday"></result>
+            <result column="mregdate" property="mregdate"></result>
+            <result column="msex" property="msex"></result>
+            <result column="mlocation" property="mlocation"></result>
+            <result column="mpic" property="mpic"></result>
+            <result column="mstate" property="mstate"></result>
+        </association>
+        <association property="goods" javaType="Goods">
+            <id column="gid" property="gid"></id>
+            <result column="gno" property="gno"></result>
+            <result column="gname" property="gname"></result>
+            <result column="gcolor" property="gcolor"></result>
+            <result column="gsize" property="gsize"></result>
+            <result column="gpic" property="gpic"></result>
+            <result column="gnowprice" property="gnowprice"></result>
+            <result column="gdesc" property="gdesc"></result>
+            <result column="gstate" property="gstate"></result>
+            <result column="tid" property="tid"></result>
+            <result column="gtdid" property="gtdid"></result>
+        </association>
+    </resultMap>
+
+    <select id="selectAllCartByMphone" resultMap="selectAllCartByMphoneMap" parameterType="java.util.Map">
+        select * from ShoppingCart as c join goods as g on c.gid=g.gid join member as m on c.mphone=m.mphone
+        <where>
+            <if test="mphone!='' and mphone!=null">
+                c.mphone=#{mphone}
+            </if>
+        </where>
+    </select>
+
+    <insert id="insert" parameterType="java.util.Map">
+        insert into ShoppingCart(mphone,gid,sccount,sumprice,sctate)values(
+            #{mphone},#{gid},#{sccount},#{sumprice},#{sctate}
+        );
+    </insert>
+
+    <update id="update" parameterType="java.util.Map">
+        update ShoppingCart set sccount=#{sccount},sumprice=#{sumprice} where scid=#{scid};
+    </update>
+
+    <!--
+        删除，实际上是改变购物车状态
+    -->
+    <update id="delete" parameterType="java.util.Map">
+        update ShoppingCart set sctate=1 where scid=#{scid} ;
+    </update>
+
+</mapper>

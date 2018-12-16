@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nf.interfaces.IGoodsTypeDao">
+
+    <resultMap id="GoodsTypeDetailsMap" type="GoodsType">
+        <id property="tid" column="tid"></id>
+        <result column="tname" property="tname"></result>
+        <result column="tdesc" property="tdesc"></result>
+        <collection property="goodsTypeDetailsList" ofType="GoodsTypeDetails">
+            <id property="gtdid" column="gtdid"></id>
+            <result column="gtdname" property="gtdname"></result>
+            <result column="tid" property="tid"></result>
+            <result column="tdesc" property="tdesc"></result>
+        </collection>
+    </resultMap>
+
+    <!--
+        查询全部商品详细类型
+    -->
+    <select id="selectAllGoodsTypeDetailsByTid" resultMap="GoodsTypeDetailsMap" parameterType="java.util.Map">
+        select * from goodstype as t join GoodsTypeDetails as d on t.tid=d.tid
+          <where>
+              <if test="tid!='' and tid!=null">
+                  t.tid=#{tid};
+              </if>
+          </where>
+    </select>
+
+</mapper>

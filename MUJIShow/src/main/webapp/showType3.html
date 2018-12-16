@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>无印良品</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!--图标-->
+    <link rel="shortcut icon" href="//www.suning.com/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="css/showType.css" />
+    <link rel="stylesheet" type="text/css" href="js/layui/css/layui.css"/>
+
+    <style>
+        .details_list img:hover{
+            transform: scale(1.1,1.1);
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+<div id="maxdiv">
+    <!--头部导航栏-->
+    <div id="maxdivcontainer_details_head">
+        <ul id="details_head_li_Container">
+            <li class="active" data-gtdid="0"><a>全部</a></li>
+            <li><a href="">针织衫</a></li>
+            <li><a href="">T恤·罩衫</a></li>
+            <li><a href="">衬衫</a></li>
+            <li><a href="">外套</a></li>
+            <li><a href="">裤子</a></li>
+            <li><a href="">LABO</a></li>
+        </ul>
+    </div>
+    <!--头部导航栏2-->
+    <div class="MuCommodityFilterOrderby">
+        <ul><li class="active"><a href="javascript:void(0);">综合排序</a></li>
+            <li class=""><a href="javascript:void(0);">按新品</a></li>
+            <li class=""><a href="javascript:void(0);">按销量</a></li>
+            <li class=""><a href="javascript:void(0);">按价格</a></li>
+        </ul>
+    </div>
+    <!--maxdivcontainer-->
+    <div id="maxdivcontainer">
+        <!--商品details-->
+        <div id="maxdivcontainer_details">
+            <ul class="details_list" style="width: 97%!important;">
+                <!--<li>
+                    <div class="detail_img">
+                        <img src="img/showType/4550002731878_400.jpg" />
+                        <p class="title">美利奴羊毛_拉链夹克衫</p>
+                        <p class="MuPriceTag">
+                            <span>￥</span>
+                            <span>548</span>
+                        </p>
+                    </div>
+                </li>-->
+
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/layui/layui.js"></script>
+<script type="text/javascript">
+    $(function(){
+
+        var tid=$("#saveTid",parent.document).val();
+        /*
+        * 拿到tid去做查询
+        * */
+        if(tid!=null){
+            /*
+            * ajax请求
+            * */
+
+            var objectList=new Array();
+            objectList.push(tid);
+
+            $.ajax({
+                url:"goodsTypeController/selectAllGoodsTypeDetailsByTid",
+                type:"post",
+                data:JSON.stringify(objectList),
+                contentType:"application/json;charset=utf-8"
+            }).done(function (jsdata) {
+                console.log(jsdata);
+                if(jsdata!=""&&jsdata!=null&&jsdata.length>0) {
+                    var ul = $("#details_head_li_Container");
+                    $("#details_head_li_Container li:gt(0)").remove();
+                    $.each(jsdata[0].goodsTypeDetails, function (index, obj2) {
+                        $("<li><a>" + obj2.gtdname + "</a></li>").data("gtdid", obj2.gtdid).appendTo(ul);
+                    });
+
+
+                    /*
+                * 赋值
+                * */
+                    $("#details_head_li_Container li:eq(0)").data("gtdid", tid);
+                    initData(tid);
+                }else {
+                    layui.use('layer', function(){
+                        var layer = layui.layer;
+                        layer.msg("没有该类型相关数据~",{time: 1500});
+                    });
+                    return false;
+                }
+            })
+
+        }else {
+            layui.use('layer', function(){
+                var layer = layui.layer;
+                layer.msg("没有该类型相关数据~",{time: 1500});
+            });
+            return false;
+        }
+        /*
+        * 点击查询详细的商品
+        * */
+        $("#details_head_li_Container").on("click","li:gt(0)",function () {
+            var gtdid=$(this).data("gtdid");
+            console.log(gtdid);
+            /*
+            * 加减类
+            * */
+            $("#details_head_li_Container li").removeClass("active");
+            $(this).addClass("active");
+
+            var objectList=new Array();
+            objectList.push(gtdid);
+            $.ajax({
+                url:"goodsTypeController/selectAllGoodsTypeDetailsByGtdid",
+                type:"post",
+                data:JSON.stringify(objectList),
+                contentType:"application/json;charset=utf-8"
+            }).done(function (jsdata) {
+                showData(jsdata);
+
+            })
+        });
+
+        $("#details_head_li_Container").on("click","li:eq(0)",function () {
+            var gtdid=$(this).data("gtdid");
+            console.log(gtdid);
+            /*
+            * 加减类
+            * */
+            $("#details_head_li_Container li").removeClass("active");
+            $(this).addClass("active");
+            initData(gtdid);
+        });
+
+        /*
+        * 查询一次
+        * */
+        function initData(tid) {
+            /*
+               * 默认查询一次
+               * */
+            var objectList=new Array();
+            objectList.push(tid);
+            $.ajax({
+                url:"goodsTypeController/initSelectAllGoodsTypeDetailsByTid",
+                type:"post",
+                data:JSON.stringify(objectList),
+                contentType:"application/json;charset=utf-8"
+            }).done(function (jsdata) {
+                showData(jsdata);
+
+            })
+        }
+
+        /*
+        * 渲染数据
+        * */
+        function showData(jsdata) {
+            console.log(jsdata);
+            var ul=$(".details_list");
+
+            if(jsdata!=""&&jsdata!=null&&jsdata.length==1) {
+                $(".details_list li").remove();
+
+                $.each(jsdata[0].goodsList, function (index, obj) {
+                    var li = $("<li title='click me' />").data("gid", obj.gid);
+                    $(
+                        "<div class=\"detail_img\">\n" +
+                        "                      <img src='admin/img/goodsdetails/" + obj.gpic + ".jpg'/>\n" +
+                        "                        <p class=\"title\">" + obj.gname + "</p>\n" +
+                        "                        <p class=\"MuPriceTag\">\n" +
+                        "                            <span>￥</span>\n" +
+                        "                            <span>" + obj.gnowprice + "</span>\n" +
+                        "                        </p>\n" +
+                        "                    </div>"
+                    ).appendTo(li);
+                    li.appendTo(ul);
+                })
+            }else if(jsdata!=""&&jsdata!=null&&jsdata.length>1){
+                $(".details_list li").remove();
+                for (var i=0;i<jsdata.length;i++){
+                    $.each(jsdata[i].goodsList,function (inx,obj) {
+                        var li = $("<li/>").data("gid", obj.gid);
+
+                        $(
+                            "<div class=\"detail_img\">\n" +
+                            "                      <img src='admin/img/goodsdetails/" + obj.gpic + ".jpg '/>\n" +
+                            "                        <p class=\"title\">" + obj.gname + "</p>\n" +
+                            "                        <p class=\"MuPriceTag\">\n" +
+                            "                            <span>￥</span>\n" +
+                            "                            <span>" + obj.gnowprice + "</span>\n" +
+                            "                        </p>\n" +
+                            "                    </div>"
+                        ).appendTo(li);
+                        li.appendTo(ul);
+                    })
+                }
+            }
+            else {
+                layui.use('layer', function(){
+                    var layer = layui.layer;
+                    layer.msg("没有该类型相关数据~",{time: 1500});
+                });
+                return false;
+            }
+        }
+
+        /*
+        * 点击img保存值， 跳转
+        * */
+        $(".details_list").on("click","li",function () {
+            var gid=$(this).data("gid");
+            $("#saveGid",parent.document).val(gid);
+            $("#center_container iframe:eq(0)",parent.document).css("display","block").attr("src","goodDetails.html");
+        })
+    })
+</script>
+</html>

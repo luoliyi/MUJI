@@ -66,6 +66,7 @@ public class LoginController {
         if(administrator!=null){
             HttpSession session=request.getSession();
             session.setAttribute("loginSuccess","loginSuccess");
+            session.setAttribute("administrator",administrator);
             System.out.println("登录成功，欢饮您："+administrator.getAname());
             response.getWriter().print("success");
         }else {
