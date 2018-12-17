@@ -49,9 +49,9 @@
     <!--
         删除原表的数据
     -->
-    <!--<delete id="delete" parameterType="java.util.Map">
-        delete from orders where orderid in (select o.orderid from Orders as o join CreateOrders as co on o.cono=co.cono
-         where o.ostate=3 and co.costatus=3 order by o.orderid desc limit 10,#{limitsize});
-    </delete>-->
+    <delete id="delete" parameterType="int">
+        delete from orders where orderid in(
+        select orderid from historyorders where orderid in(select orderid from historyorders));
+    </delete>
 
 </mapper>

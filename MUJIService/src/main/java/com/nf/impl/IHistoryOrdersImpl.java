@@ -27,8 +27,8 @@ public class IHistoryOrdersImpl implements IHistoryOrdersService {
     }
 
     @Override
-    public int delete(Map<String, Object> objectMap) {
-        return historyOrdersDao.delete(objectMap);
+    public int delete() {
+        return historyOrdersDao.delete();
     }
 
     @Override

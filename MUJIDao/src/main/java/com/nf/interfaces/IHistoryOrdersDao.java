@@ -7,7 +7,7 @@ import java.util.Map;
 
 public interface IHistoryOrdersDao {
     int insert(Map<String,Object>objectMap);
-    int delete(Map<String,Object>objectMap);
+    int delete();
 
     int selectCount();
 

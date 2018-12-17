@@ -100,15 +100,17 @@ public class HistoryOrdersController {
             /*
             * 插入迁移记录
             * */
-           return historyOrdersService.insertOrdersDiary(adminObj);
+           if (historyOrdersService.insertOrdersDiary(adminObj)>0){
+               /*
+               * 删除历史数据
+               * */
+               if (historyOrdersService.delete()>0){
+                   return movecount;
+               }
+           }
 
         }
         return 0;
     }
-
-    /*
-    * 迁移成功，删除当前表格里面相同的数据
-    * */
-
 
 }

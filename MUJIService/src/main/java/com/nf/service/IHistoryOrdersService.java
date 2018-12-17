@@ -9,7 +9,7 @@ import java.util.Map;
 
 public interface IHistoryOrdersService {
     int insert(Map<String,Object>objectMap);
-    int delete(Map<String,Object>objectMap);
+    int delete();
     int selectCount();
     List<HistoryOrdersDiary>selectHistoryOrdersDiary(Map<String,Object>objectMap);
 

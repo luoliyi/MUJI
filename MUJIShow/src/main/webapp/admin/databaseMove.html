@@ -118,7 +118,7 @@
                 contentType:"application/json;charset=utf-8",
                 success:function(sum) {
                     console.log("sum:"+sum);
-                    $("#allDiaryCount").html(sum);
+                    $("#allMoveCount").html(sum);
                     //分页
                     layui.use(['laypage', 'layer'], function () {
                         var laypage = layui.laypage
@@ -166,8 +166,8 @@
                var tr=$("<tr/>");
                $("<td/>").html(obj.moveid).appendTo(tr);
                 $("<td/>").html(obj.movetime).appendTo(tr);
-                $("<td/>").html(obj.movecount).appendTo(tr);
-                $("<td/>").html(obj.movestatus=="0"?"内存充足":"内存不足").appendTo(tr);
+                $("<td/>").html(obj.movecount+"条").appendTo(tr);
+                $("<td/>").html(obj.movestatus=="0"?"<span class=\"layui-btn layui-btn-normal layui-btn-mini\">内存充足</span>":"内存不足").appendTo(tr);
                 $("<td/>").html(obj.movepeople).appendTo(tr);
                 $("#tbody").append(tr);
             });
@@ -186,8 +186,10 @@
                 contentType:"application/json;charset=utf-8"
             }).done(function(count){
                 if(parseInt(count)>0) {
-                    layer.msg('迁移成功!', {icon: 1, time: 1000});
+                    layer.msg('迁移成功!', {time: 1500});
                     app.bindData();
+                }else {
+                    layer.msg('内存充足,无需迁移!', { time: 1500});
                 }
             })
         }

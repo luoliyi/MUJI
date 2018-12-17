@@ -35,6 +35,10 @@
 						</div>
 					</div>
 				</div>
+
+				<!--隐藏总价-->
+				<input type="hidden" id="hideSumPrice" value="0">
+
 				<!--推荐商品-->
 				<h3 style="text-indent: 17px;">推荐商品</h3><br />
 				<!--推荐商品-->
@@ -119,16 +123,28 @@
 	<script type="text/javascript" src="js/layui/layui.js"></script>
 	<script>
 		var i=0;
-		$(".part_options .oneGoods").on("click",".checkBuy",function(){
-			if(i==0){
-				$(this).attr("class","layui-icon layui-icon-radio checkBuy");
-				i=1;
-			}else{
-				$(this).attr("class","layui-icon layui-icon-circle checkBuy");
-				i=0;
+        var j=0;
+        $(".part_options").on("click",".oneGoods",function () {
+		    if (i==0) {
+                $(this).find(".checkBuy:eq(0)").attr("class", "layui-icon layui-icon-radio checkBuy");
+                /*
+                * 总价
+                * */
+
+                i=1;
+            }else {
+                $(this).find(".checkBuy:eq(0)").attr("class", "layui-icon layui-icon-circle checkBuy");
+                /*
+                * 总价
+                * */
+                console.log($(this).data("onePrice"));
+                console.log($(this).data("oneCount"));
+
+
+		        i=0;
 			}
-		});
-		var j=0;
+        });
+
 		$("#selectAll").click(function(){
 			if(j==0){
 				$(this).attr("class","layui-icon layui-icon-radio");
@@ -137,8 +153,7 @@
 				/*
 				* 计算总价
 				* */
-
-
+				$("#allPrice").html($("#hideSumPrice").val()+".00");
 			}else{
 				$(this).attr("class","layui-icon layui-icon-circle");
 				$(".part_options .oneGoods .checkBuy").attr("class","layui-icon layui-icon-circle checkBuy");
@@ -146,7 +161,7 @@
                 /*
 				* 计算总价
 				* */
-
+                $("#allPrice").html("0.00");
 			}
 		});
 
@@ -174,9 +189,15 @@
 						$(".part_options div").remove();
 
 						$.each(jsdata,function (index,obj) {
+
+
+						    var sumprice=parseInt(obj.goods.gnowprice*obj.sccount);
+						    var hidePirce=parseInt($("#hideSumPrice").val());
+						    $("#hideSumPrice").val(sumprice+hidePirce);
+
                             $(
                                 "\t\t\t\t\t<div class=\"oneGoods\">\n" +
-                                "\t\t\t\t\t\t<i class=\"layui-icon layui-icon-circle checkBuy\"></i>  \n" +
+                                "\t\t\t\t\t\t<i data-onePrice=\"+obj.goods.gnowprice+\"  data-oneCount=\"+obj.sccount+\"  class=\"layui-icon layui-icon-circle checkBuy\"></i>  \n" +
                                 "\t\t\t\t\t\t<div class=\"image-wrap\">\n" +
                                 "\t\t\t\t\t\t\t<img src='admin/img/goodsdetails/" + obj.goods.gname + ".jpg'/>\n" +
                                 "\t\t\t\t\t\t\t<div class=\"image-wrap-right\">\n" +
