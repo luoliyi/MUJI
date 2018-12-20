@@ -43,7 +43,6 @@ public class ShoppingCarController {
         /*
          * 从session获取用户信息
          * */
-
         HttpSession session=request.getSession();
         member= (Member) session.getAttribute("member");
         System.out.println("member的信息如下：");
@@ -96,4 +95,40 @@ public class ShoppingCarController {
         }
         return "error";
     }
+
+
+    /*
+    * 减数量
+    * */
+    @RequestMapping(value = "/delCount",method = RequestMethod.POST)
+    @ResponseBody
+    public List<ShoppingCart> delCount(@RequestBody List<Object>objectList){
+        Map<String,Object>objectMap=new HashMap<>();
+        objectMap.put("sccount",objectList.get(0).toString());
+        objectMap.put("scid",objectList.get(1).toString());
+        if(shoppingCartService.delCount(objectMap)>0){
+            Map<String,Object>objectMap1=new HashMap<>();
+            objectMap1.put("mphone",member.getMphone());
+            return shoppingCartService.selectAllCartByMphone(objectMap1);
+        }
+        return null;
+    }
+
+    /*
+     * 加数量
+     * */
+    @RequestMapping(value = "/addCount",method = RequestMethod.POST)
+    @ResponseBody
+    public List<ShoppingCart> addCount(@RequestBody List<Object>objectList){
+        Map<String,Object>objectMap=new HashMap<>();
+        objectMap.put("sccount",objectList.get(0).toString());
+        objectMap.put("scid",objectList.get(1).toString());
+        if(shoppingCartService.addCount(objectMap)>0){
+            Map<String,Object>objectMap1=new HashMap<>();
+            objectMap1.put("mphone",member.getMphone());
+            return shoppingCartService.selectAllCartByMphone(objectMap1);
+        }
+        return null;
+    }
+
 }

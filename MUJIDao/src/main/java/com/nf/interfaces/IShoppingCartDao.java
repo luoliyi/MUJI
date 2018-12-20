@@ -13,4 +13,6 @@ public interface IShoppingCartDao {
     int update(Map<String ,Object>objectMap);
     int delete(Map<String ,Object>objectMap);
 
+    int delCount(Map<String,Object>objectMap);
+    int addCount(Map<String,Object>objectMap);
 }

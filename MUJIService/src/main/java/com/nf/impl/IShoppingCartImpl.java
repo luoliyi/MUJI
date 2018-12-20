@@ -36,4 +36,14 @@ public class IShoppingCartImpl implements IShoppingCartService {
     public int delete(Map<String, Object> objectMap) {
         return shoppingCartDao.delete(objectMap);
     }
+
+    @Override
+    public int delCount(Map<String, Object> objectMap) {
+        return shoppingCartDao.delCount(objectMap);
+    }
+
+    @Override
+    public int addCount(Map<String, Object> objectMap) {
+        return shoppingCartDao.addCount(objectMap);
+    }
 }

@@ -62,4 +62,19 @@
         update ShoppingCart set sctate=1 where scid=#{scid} ;
     </update>
 
+
+    <!--
+        减一个数量
+    -->
+    <update id="delCount" parameterType="java.util.Map">
+        update ShoppingCart set sccount=#{sccount} where scid=#{scid};
+    </update>
+
+    <!--
+        加一个数量
+    -->
+    <update id="addCount" parameterType="java.util.Map">
+        update ShoppingCart set sccount=#{sccount} where scid=#{scid};
+    </update>
+
 </mapper>

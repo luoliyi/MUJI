@@ -165,7 +165,7 @@ $(".myinfo").click(function(){
 		});
 		return false;
 	}
-	$("#center_container iframe:eq(0)").css("display","block").attr("src","myInfo.html?id=1");
+	$("#center_container iframe:eq(0)").css("display","block").attr("src","myInfo.html");
 	$("#topguide #closeFrame").css("display","block");
 	$("#center_container_details").css("display","none");
 });

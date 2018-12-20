@@ -11,6 +11,12 @@
 		<link rel="shortcut icon" href="//www.suning.com/favicon.ico" type="image/x-icon">
 		<link rel="stylesheet" type="text/css" href="css/myinfo.css" />
 		<link rel="stylesheet" type="text/css" href="js/layui/css/layui.css" />
+		<style>
+			body{
+				font-family: "微软雅黑";
+				font-weight: 340;
+			}
+		</style>
 	</head>
 
 	<body>
@@ -169,17 +175,19 @@
 							<label>联系电话</label>
 							<input type="text" placeholder="请输入联系电话" />
 						</div>
-						<div class="MuListItem has-title has-content">
+						<div class="MuListItem has-title has-content" style="position: relative;">
 							<label>所在地区</label>
-							<select class="sheng">
-								<option>省</option>
-							</select>
-							<select class="shi">
-								<option>市</option>
-							</select>
-							<select class="xian">
-								<option>县/区</option>
-							</select>
+							<div class="info" style="position: absolute;top: 5px;left: 103px;">
+								<select name="province" id="province">
+									<option value="请选择">请选择</option>
+								</select>
+								<select name="city" id="city">
+									<option value="请选择">请选择</option>
+								</select>
+								<select name="town" id="town">
+									<option value="请选择">请选择</option>
+								</select>
+							</div>
 						</div>
 						<div class="MuListItem has-title has-content">
 							<label class="mydetailplace">详细地址</label>
@@ -206,5 +214,9 @@
 	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
 	<script type="text/javascript" src="js/layui/layui.js"></script>
 	<script type="text/javascript" src="js/myinfo.js"></script>
+	<script type="text/javascript" src="js/area.js"></script>
+	<script type="text/javascript" src="js/select.js"></script>
+	<script type="text/javascript">
+	</script>
 
 </html>
