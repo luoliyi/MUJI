@@ -214,7 +214,9 @@
 
 		</div>
 		<div id="chatBottomContainer">
-
+            <div id="editor">
+                <p>欢迎使用 <b>wangEditor</b> 富文本编辑器</p>
+            </div>
 		</div>
 	</div>
 
@@ -230,25 +232,15 @@
 <script type="text/javascript" src="3DGallery/js/modernizr.custom.53451.js"></script>
 <!--放大镜-->
 <script src='glass/js/okzoom.js'></script>
+<!--富文本-->
+<script type="text/javascript" src="js/wangEditor.js"></script>
 
 <script>
-    /*
-    * 获取url传过来的gid
-    * */
-    /*function getRequest() {
-        var url = location.search; //获取url中"?"符后的字串
-        var theRequest = new Object();
-        if(url.indexOf("?") != -1) {
-            var str = url.substr(1);
-            strs = str.split("&");
-            for(var i = 0; i < strs.length; i++) {
-                theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
-            }
-        }
-        return strs;
-    }
-    var gid=getRequest();
-    console.log("传过来的gid:"+gid);*/
+    var E = window.wangEditor
+    var editor = new E('#editor')
+    // 或者 var editor = new E( document.getElementById('editor') )
+    editor.create()
+
 
     $(function () {
 
@@ -258,6 +250,13 @@
         $("#chatWithOrder").click(function () {
            alert("ok")
         });
+
+
+
+
+
+
+
 
 
         var gid=$("#saveGid",parent.document).val();
