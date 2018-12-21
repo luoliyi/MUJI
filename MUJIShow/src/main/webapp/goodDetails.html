@@ -197,7 +197,7 @@
 		<div class="PageCommodityDetailPartActions">
 
 			<div class="part-actions-wrap">
-				<i id="chatWithOrder" class="layui-icon layui-icon-reply-fill" style="cursor: pointer;font-size: 30px; color: #357bff;"></i>
+				<i id="chatWithOrder" class="layui-icon layui-icon-reply-fill" style="cursor: pointer;font-size: 30px; color: #2ab382;"></i>
 				<p>客服</p>
 				<button type="button" class="mu-button" id="muji_btn_add_commodity_to_cart">加入购物车</button>
 				<button type="button" class="mu-button" id="buyNow">立即购买</button>
@@ -209,14 +209,22 @@
 	<!--
 		聊天的窗口
 	-->
-	<div id="chatDiv">
+	<div id="chatDiv" style="display: none;background: url(img/bg1.jpg);background-size: 100% 100%;background-repeat: no-repeat">
+		<!--关闭按钮-->
+		<i id="closeChat" class="layui-icon layui-icon-close"></i>
 		<div id="chatContainer">
+			<div id="message"></div>
 
 		</div>
 		<div id="chatBottomContainer">
             <div id="editor">
-                <p>欢迎使用 <b>wangEditor</b> 富文本编辑器</p>
+               <!-- <p>欢迎使用 <b>wangEditor</b> 富文本编辑器</p>-->
             </div>
+			<!--关闭，发送按钮-->
+			<div id="btnRight">
+				<button id="btnClose" onclick="closeWebSocket()">关闭(C)</button>
+				<button id="btnSend" onclick="send()">发送(S)</button>
+			</div>
 		</div>
 	</div>
 
@@ -235,20 +243,34 @@
 <!--富文本-->
 <script type="text/javascript" src="js/wangEditor.js"></script>
 
+<!--在线聊天-->
+<script type="text/javascript" src="js/chat.js"></script>
+
 <script>
-    var E = window.wangEditor
-    var editor = new E('#editor')
+    var E = window.wangEditor;
+    var editor = new E('#editor');
     // 或者 var editor = new E( document.getElementById('editor') )
-    editor.create()
+    editor.create();
 
 
     $(function () {
-
         /*
         * 和客服小姐姐聊天
         * */
+        var chatDia=null;
         $("#chatWithOrder").click(function () {
-           alert("ok")
+
+            $("#CoveringLayer").css("display","block");
+
+/*
+			chatDia=dialog({
+				title:"chatting",
+				content:$("#chatDiv"),
+				width:750,
+				height:550
+			});
+			chatDia.show();*/
+            $("#chatDiv").css("display","block");
         });
 
 

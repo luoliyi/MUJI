@@ -57,7 +57,10 @@ public class WebsocketController {
         // 群发消息
         for (WebsocketController item : webSocketSet) {
             try {
-                item.sendMessage(message + "，当前在线人数：" + getOnlineCount());
+                /*
+                * 当前在线人数： item.sendMessage(message + "，当前在线人数：" + getOnlineCount());
+                * */
+                item.sendMessage(message);
             } catch (IOException e) {
                 e.printStackTrace();
                 continue;
