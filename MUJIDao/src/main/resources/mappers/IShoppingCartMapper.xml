@@ -58,23 +58,23 @@
     <!--
         删除，实际上是改变购物车状态
     -->
-    <update id="delete" parameterType="java.util.Map">
-        update ShoppingCart set sctate=1 where scid=#{scid} ;
-    </update>
+    <delete id="delete" parameterType="java.util.Map">
+        delete  from ShoppingCart where scid=#{scid} ;
+    </delete>
 
 
     <!--
         减一个数量
     -->
     <update id="delCount" parameterType="java.util.Map">
-        update ShoppingCart set sccount=#{sccount} where scid=#{scid};
+        update ShoppingCart set sccount=#{sccount},sumprice=#{sumprice} where scid=#{scid};
     </update>
 
     <!--
         加一个数量
     -->
     <update id="addCount" parameterType="java.util.Map">
-        update ShoppingCart set sccount=#{sccount} where scid=#{scid};
+        update ShoppingCart set sccount=#{sccount},sumprice=#{sumprice} where scid=#{scid};
     </update>
 
 </mapper>

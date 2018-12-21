@@ -70,7 +70,7 @@
 		</div>
 
 		<!--隐藏总价-->
-		<input type="hidden" id="hideSumPrice" value="0">
+		<!--<input type="hidden" id="hideSumPrice" value="0">-->
 
 		<!--推荐商品-->
 		<h3 style="text-indent: 17px;">推荐商品</h3><br />
@@ -181,6 +181,11 @@
     /*跳转到订单页面*/
     $(".mu-button").click(function(){
         $("#iframe1:eq(0)",parent.document).attr("src","balance.html");
+        /*
+        * 跳转到结算单
+        * */
+
+
     });
 
     /*
@@ -208,16 +213,14 @@
 				  * */
                 $("#countGoods").html(jsdata.length);
                 $(".part_options div").remove();
-
+                var sumprice=0;
                 $.each(jsdata,function (index,obj) {
 
-                    var sumprice=parseInt(obj.goods.gnowprice*obj.sccount);
-                    var hidePirce=parseInt($("#hideSumPrice").val());
-                    $("#hideSumPrice").val(sumprice+hidePirce);
+                    sumprice+=obj.sumprice;
 
                     $(
                         "<div class=\"oneGoods\">\n" +
-                        "<i class=\"layui-icon layui-icon-close-fill\"></i>\n" +
+                        "<i data-scid="+obj.scid+"  class=\"layui-icon layui-icon-close-fill deleOne\"></i>\n" +
                         "<div class=\"image-wrap\">\n" +
                         "<img src='admin/img/goodsdetails/" + obj.goods.gname + ".jpg'/>\n" +
                         "<div class=\"image-wrap-right\">\n" +
@@ -225,9 +228,9 @@
                         "<div class=\"options\">颜色：白色、尺码：男式175/100A</div>\n" +
                         "<span><span>￥</span><span class=\"image-wrap-right-price\">"+obj.goods.gnowprice+"</span></span>\n" +
                         "<div class=\"quantity\">数量：\n" +
-                        "<button data-scid="+obj.scid+"  data-ind="+index+" class='btnDelCount'>-</button>\n" +
+                        "<button data-gnowprice="+obj.goods.gnowprice+" data-scid="+obj.scid+"  data-ind="+index+" class='btnDelCount'>-</button>\n" +
                         "<input type=\"text\" class='countVal' readonly='readonly' value="+obj.sccount+" />\n" +
-                        "<button data-scid="+obj.scid+" data-ind="+index+" class='btnAddCount'>+</button>\n" +
+                        "<button data-gnowprice="+obj.goods.gnowprice+" data-scid="+obj.scid+" data-ind="+index+" class='btnAddCount'>+</button>\n" +
                         /*"<i class=\"layui-icon layui-icon-cancel\"></i>"+*/
                         "</div>\n" +
                         "</div>\n" +
@@ -237,19 +240,19 @@
                 /*
                 * 总价
                 * */
-                $("#allPrice").html($("#hideSumPrice").val()+".00")
+                $("#allPrice").html(sumprice+".00")
 			},
 
 			/*
 			* 减数量
 			* */
 			delCount:function(){
+			    var gnowprice=$(this).data("gnowprice");
 
                 var scid=$(this).data("scid");
-                console.log("scid:"+scid);
-
 			    var ind=$(this).data("ind");
 			    var countval=$(".countVal:eq("+ind+")").val();
+
 			    if(countval<=1){
                     layui.use('layer', function(){
                         var layer = layui.layer;
@@ -257,14 +260,20 @@
 				    });
                     return false;
 				}
-				countval-=1;
+
+                countval-=1;
                 $(".countVal:eq("+ind+")").val(countval);
+                var sumprice=parseInt(gnowprice)*countval;
+                //console.log("countval:"+countval);
+               //console.log("sumprice:"+sumprice);
+
                 /*
                 * 发ajax请求
                 * */
                 var objectList=new Array();
                 objectList.push(countval);
                 objectList.push(scid);
+                objectList.push(sumprice);
 
                 $.ajax({
 					url:"shoppingCarController/delCount",
@@ -272,7 +281,7 @@
 					contentType:"application/json;charset=utf-8",
 					data:JSON.stringify(objectList)
 				}).done(function (data) {
-				    console.log(data)
+				    console.log(data);
 				    /*
 				    * 成功
 				    * */
@@ -284,21 +293,23 @@
 			* 加数量
 			* */
             addCount:function(){
-
+                var gnowprice=$(this).data("gnowprice");
                 var scid=$(this).data("scid");
-                console.log("scid:"+scid);
-
                 var ind=$(this).data("ind");
                 var countval=parseInt($(".countVal:eq("+ind+")").val());
                 countval+=1;
                 $(".countVal:eq("+ind+")").val(countval);
+                var sumprice=parseInt(gnowprice)*countval;
 
+                //console.log("countval:"+countval);
+                //console.log("sumprice:"+sumprice);
                 /*
-             * 发ajax请求
-             * */
+				 * 发ajax请求
+				 * */
                 var objectList=new Array();
                 objectList.push(countval);
                 objectList.push(scid);
+                objectList.push(sumprice);
 
                 $.ajax({
                     url:"shoppingCarController/addCount",
@@ -306,7 +317,7 @@
                     contentType:"application/json;charset=utf-8",
                     data:JSON.stringify(objectList)
                 }).done(function (data) {
-                    console.log(data)
+                    console.log(data);
                     /*
                     * 成功
                     * */
@@ -314,10 +325,46 @@
                 })
 
             },
+
+			/*
+			* 删除一个商品
+			* */
+			delOneGood:function(){
+			    var scid=$(this).data("scid");
+			    console.log(scid);
+
+                layui.use('layer', function(){
+                    var layer = layui.layer;
+                    layer.confirm('确认要删除该商品吗?', {
+                        btn : [ '确定', '取消' ]//按钮
+                    }, function(index) {
+                        layer.close(index);
+                        /*
+                        * ajax删除
+                        * */
+                        var objectList=new Array();
+                        objectList.push(scid);
+                        $.ajax({
+                            url:"shoppingCarController/delete",
+                            type:"post",
+                            contentType:"application/json;charset=utf-8",
+                            data:JSON.stringify(objectList)
+                        }).done(function (data) {
+                            console.log(data);
+                            /*
+                            * 成功
+                            * */
+                            app.renderData(data);
+                        })
+
+                    });
+                });
+            },
             init(){
                 app.selectAllCartsByMphone();
                 $(".part_options").on("click",".btnDelCount",app.delCount);
                 $(".part_options").on("click",".btnAddCount",app.addCount);
+                $(".part_options").on("click",".deleOne",app.delOneGood);
             }
         };
         app.init();

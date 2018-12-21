@@ -11,6 +11,8 @@
 	<link rel="shortcut icon" href="//www.suning.com/favicon.ico" type="image/x-icon">
 	<link rel="stylesheet" type="text/css" href="css/goodDetails.css" />
 	<link rel="stylesheet" type="text/css" href="js/layui/css/layui.css" />
+
+	<link rel="stylesheet" type="text/css" href="artDialog/css/dialog.css" />
 	<!--轮播图-->
 	<link rel="stylesheet" type="text/css" href="3DGallery/css/style.css">
 
@@ -195,25 +197,40 @@
 		<div class="PageCommodityDetailPartActions">
 
 			<div class="part-actions-wrap">
-				<i class="layui-icon layui-icon-reply-fill" style="font-size: 30px; color: green;"></i>
+				<i id="chatWithOrder" class="layui-icon layui-icon-reply-fill" style="cursor: pointer;font-size: 30px; color: #357bff;"></i>
 				<p>客服</p>
 				<button type="button" class="mu-button" id="muji_btn_add_commodity_to_cart">加入购物车</button>
 				<button type="button" class="mu-button" id="buyNow">立即购买</button>
 			</div>
 		</div>
 	</div>
-
 	<div id="CoveringLayer"></div>
+
+	<!--
+		聊天的窗口
+	-->
+	<div id="chatDiv">
+		<div id="chatContainer">
+
+		</div>
+		<div id="chatBottomContainer">
+
+		</div>
+	</div>
+
 </div>
 </body>
 <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
 <script type="text/javascript" src="js/layui/layui.js"></script>
 <script type="text/javascript" src="js/goodDetails.js"></script>
+<!--artDialog-->
+<script type="text/javascript" src="artDialog/dist/dialog.js"></script>
 <!--画廊轮播-->
 <script type="text/javascript" src="3DGallery/js/jquery.gallery.js"></script>
 <script type="text/javascript" src="3DGallery/js/modernizr.custom.53451.js"></script>
 <!--放大镜-->
 <script src='glass/js/okzoom.js'></script>
+
 <script>
     /*
     * 获取url传过来的gid
@@ -233,8 +250,15 @@
     var gid=getRequest();
     console.log("传过来的gid:"+gid);*/
 
-
     $(function () {
+
+        /*
+        * 和客服小姐姐聊天
+        * */
+        $("#chatWithOrder").click(function () {
+           alert("ok")
+        });
+
 
         var gid=$("#saveGid",parent.document).val();
         console.log("父窗体的gid:"+gid);

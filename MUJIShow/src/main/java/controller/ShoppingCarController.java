@@ -74,13 +74,15 @@ public class ShoppingCarController {
 
     @RequestMapping(value = "/delete",method = RequestMethod.POST)
     @ResponseBody
-    public String delete(@RequestBody List<Object> objectList){
+    public List<ShoppingCart> delete(@RequestBody List<Object> objectList){
         Map<String,Object>objectMap=new HashMap<>();
         objectMap.put("scid",objectList.get(0).toString());
         if (shoppingCartService.delete(objectMap)>0) {
-            return "success";
+            Map<String,Object>objectMap1=new HashMap<>();
+            objectMap1.put("mphone",member.getMphone());
+            return shoppingCartService.selectAllCartByMphone(objectMap1);
         }
-        return "error";
+        return null;
     }
 
     @RequestMapping(value = "/update",method = RequestMethod.POST)
@@ -106,6 +108,7 @@ public class ShoppingCarController {
         Map<String,Object>objectMap=new HashMap<>();
         objectMap.put("sccount",objectList.get(0).toString());
         objectMap.put("scid",objectList.get(1).toString());
+        objectMap.put("sumprice",objectList.get(2).toString());
         if(shoppingCartService.delCount(objectMap)>0){
             Map<String,Object>objectMap1=new HashMap<>();
             objectMap1.put("mphone",member.getMphone());
@@ -123,6 +126,7 @@ public class ShoppingCarController {
         Map<String,Object>objectMap=new HashMap<>();
         objectMap.put("sccount",objectList.get(0).toString());
         objectMap.put("scid",objectList.get(1).toString());
+        objectMap.put("sumprice",objectList.get(2).toString());
         if(shoppingCartService.addCount(objectMap)>0){
             Map<String,Object>objectMap1=new HashMap<>();
             objectMap1.put("mphone",member.getMphone());
