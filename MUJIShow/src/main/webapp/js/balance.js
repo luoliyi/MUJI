@@ -1,6 +1,27 @@
 $(function(){
+
+    /*
+    * 选择更多地址
+    * */
+    $(".chooseMoreAddress").click(function () {
+        $("#maxdivcontainer").css("display","none");
+        $("#gotobuy").css("display","none");
+        $("#controlMyplace").css("display","block");
+    });
+    $(".btnColse").click(function () {
+        $("#maxdivcontainer").css("display","block");
+        $("#controlMyplace").css("display","none");
+        $("#addAndEditPlace").css("display","none");
+        $("#gotobuy").css("display","block");
+    });
+    $("#btnAddNewPlace").click(function () {
+        $("#controlMyplace").css("display","none");
+        $("#addAndEditPlace").css("display","block");
+    });
+
 	$(".chooseOtherPaytype").click(function(){
-		$("#payfordiv").fadeIn(300);
+		$("#CoveringLayer").css("display","block");
+		$("#payfordiv").css("z-index",99999).fadeIn(300);
 		$("#gotobuy").fadeOut()
 	})
 	$("#weixinpay").click(function(){
@@ -15,6 +36,7 @@ $(function(){
 		$("#paytype").html($(this).data("type"));
 	})
 	$("#muclose").click(function(){
+        $("#CoveringLayer").css("display","none");
 		$("#payfordiv").fadeOut(300);
 		$("#gotobuy").fadeIn()
 	})

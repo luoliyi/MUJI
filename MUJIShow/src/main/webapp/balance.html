@@ -35,8 +35,9 @@
 				</div>
 				<!--购物车里面的内容-->
 				<div class="PageCheckoutPartItems">
+
 					<!--一件商品-->
-					<div class="oneGoods">
+					<div class="oneGoods" id="goodCont" style="display: none">
 						<div class="image-wrap">
 							<img src="img/goodsdetails/untitled.png" />
 							<div class="image-wrap-right">
@@ -48,21 +49,6 @@
 							</div>
 						</div>
 					</div>
-										<!--一件商品-->
-					<div class="oneGoods">
-						<div class="image-wrap">
-							<img src="img/goodsdetails/untitled.png" />
-							<div class="image-wrap-right">
-								<span class="title">棉水洗平纹衬衫</span><br />
-								<div class="options">颜色：白色、尺码：男式175/100A</div>
-								<span id="image-wrap-right-pricediv"><span>￥</span><span class="image-wrap-right-price">78</span></span>
-								<!--数量-->
-								<div class="quantity">数量：<span>x</span><span>1</span>
-							</div>
-						</div>
-					</div>
-					<!--一件商品-->
-				</div>
 			</div>
 			
 			<!--配送方式-->
@@ -131,12 +117,166 @@
 				<a id="qrcodesuccess" href="" title="支付完成">我已经完成支付</a>
 			</div>
 		</div>
+
+			<!--
+				收货地址操作
+			-->
+			<!--管理收货地址-->
+			<div id="controlMyplace">
+				<!--关闭按钮-->
+				<div class="divClose">
+					<i class="layui-icon layui-icon-close btnColse" title="返回我的信息"></i>
+				</div>
+
+				<!--我的信息-->
+				<div class="placeitem">
+					<!--姓名-->
+					<div class="subject">
+						罗立一
+					</div>
+					<!--主体-->
+					<div class="placebody">
+						<div class="palcelist">
+							<label>联系方式：</label>
+							<span>13926901506</span>
+							<br />
+							<label>详细地址：</label>
+							<span>广东省珠海市白蕉镇白蕉南路29号南方IT学院</span>
+						</div>
+					</div>
+					<!--设置-->
+					<div class="placeactions">
+							<span class="isdefault" title="设为默认">
+								<i class="layui-icon layui-icon-circle"></i>
+								<span>默认地址</span>
+							</span>
+						<!--删除-->
+						<span class="isEdit">
+								<i class="layui-icon layui-icon-delete"></i>
+								<span title="删除" id="delMyPlace">删除</span>
+							</span>
+						<!--编辑 -->
+						<span class="isEdit">
+								<i class="layui-icon layui-icon-edit"></i>
+								<span title="编辑" id="editMyPlace">编辑</span>
+							</span>
+					</div>
+				</div>
+				<!--这里插入新的地址-->
+
+				<!--新增收货地址-->
+				<div class="footbar-wrap">
+					<div class="action-wrap">
+						<button id="btnAddNewPlace" type="button" class="mu-button">新增收货地址</button>
+					</div>
+				</div>
+			</div>
+
+			<!--新增地址-->
+			<div id="addAndEditPlace">
+				<!--关闭按钮-->
+				<div class="divClose">
+					<i class="layui-icon layui-icon-close btnColse" title="返回我的信息"></i>
+				</div>
+				<!--填写-->
+				<div class="list-group-wrap">
+					<div class="MuListItem has-title has-content">
+						<label>收货客人</label>
+						<input type="text" placeholder="请输入收件人姓名" />
+					</div>
+					<div class="MuListItem has-title has-content">
+						<label>联系电话</label>
+						<input type="text" placeholder="请输入联系电话" />
+					</div>
+					<div class="MuListItem has-title has-content" style="position: relative;">
+						<label>所在地区</label>
+						<div class="info" style="position: absolute;top: 5px;left: 103px;">
+							<select name="province" id="province">
+								<option value="请选择">请选择</option>
+							</select>
+							<select name="city" id="city">
+								<option value="请选择">请选择</option>
+							</select>
+							<select name="town" id="town">
+								<option value="请选择">请选择</option>
+							</select>
+						</div>
+					</div>
+					<div class="MuListItem has-title has-content">
+						<label class="mydetailplace">详细地址</label>
+						<textarea placeholder="请输入详细地址，不少于5个字。"></textarea>
+					</div>
+				</div>
+				<!--设为默认地址-->
+				<div class="MuListItem has-title has-content">
+					<div class="listitem-wrap" title="设为默认地址">
+						<span>设为默认地址</span>
+						<i id="checkDefaultPlace" class="layui-icon layui-icon-circle"></i>
+					</div>
+				</div>
+				<!--保存-->
+				<div class="footbar-wrap">
+					<div class="action-wrap">
+						<button id="btnSaveNewPlace" type="button" class="mu-button" title="保存">保存</button>
+					</div>
+				</div>
+			</div>
+		</div>
 	</body>
 	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
 	<script type="text/javascript" src="js/layui/layui.js"></script>
 	<script type="text/javascript" src="js/balance.js"></script>
 	<script type="text/javascript" src="js/qrcode.min.js"></script>
+	<script type="text/javascript" src="js/area.js"></script>
+	<script type="text/javascript" src="js/select.js"></script>
 	<script>
-		
+		$(function () {
+			/*
+			* 窗体加载，先查询出购物车里面的商品
+			* */
+            var app={
+                selectAllCartsByMphone(){
+                    $.ajax({
+                        url:"shoppingCarController/selectAllCartsByMphone",
+                        contentType:"application/json;charset=utf-8",
+                        type:"post"
+                    }).done(function (jsdata) {
+                        $("#countGoods").html(jsdata.length)
+                        app.renderData(jsdata);
+                    })
+                },
+
+                /*
+                * 渲染数据
+                * */
+                renderData:function(jsdata){
+                    //$(".PageCheckoutPartItems .oneGoods").remove();
+                    console.log(jsdata);
+                    var sumprice=0;
+                    $.each(jsdata,function (index,obj) {
+                        sumprice+=obj.sumprice;
+                        $(
+							"<div class=\"oneGoods\">\n" +
+							"<div class=\"image-wrap\">\n" +
+							"<img src='admin/img/goodsdetails/" + obj.goods.gname + ".jpg'/>\n" +
+							"<div class=\"image-wrap-right\">\n" +
+							"<span class=\"title\">"+obj.goods.gname+"</span><br />\n" +
+							"<div class=\"options\">颜色：白色、尺码：男式175/100A</div>\n" +
+							"<span class=\"image-wrap-right-pricediv\"><span>￥</span><span class=\"image-wrap-right-price\">"+obj.goods.gnowprice+"</span></span>\n" +
+							"<div class=\"quantity\">数量：<span>x</span><span>"+obj.sccount+"</span>\n" +
+							"</div>\n" +
+							"</div>\n" +
+							"</div>"
+						).insertBefore($("#goodCont"));
+                    });
+                    $("#allPrice").html(sumprice+parseInt($("#kuadimoneys").html())+".00");
+                },
+                init(){
+                    app.selectAllCartsByMphone();
+                }
+            };
+            app.init();
+
+        })
 	</script>
 </html>

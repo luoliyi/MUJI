@@ -101,8 +101,8 @@ body {
             #maxdivcontainer #maxdivcontainer .PageCheckoutPartItems .oneGoods .image-wrap .image-wrap-right .quantity {
               width: 100px;
               float: right; }
-          #maxdiv #maxdivcontainer .PageCheckoutPartItems .oneGoods .image-wrap #image-wrap-right-pricediv,
-          #maxdivcontainer #maxdivcontainer .PageCheckoutPartItems .oneGoods .image-wrap #image-wrap-right-pricediv {
+          #maxdiv #maxdivcontainer .PageCheckoutPartItems .oneGoods .image-wrap .image-wrap-right-pricediv,
+          #maxdivcontainer #maxdivcontainer .PageCheckoutPartItems .oneGoods .image-wrap .image-wrap-right-pricediv {
             font-size: 17px;
             line-height: 22px;
             color: #000;
@@ -188,7 +188,7 @@ body {
     #maxdiv #maxdivcontainer #payfordiv,
     #maxdivcontainer #maxdivcontainer #payfordiv {
       width: 99%;
-      height: 420px;
+      height: 100%;
       background: #FFFFFF;
       display: none;
       position: absolute;
@@ -360,6 +360,150 @@ body {
 			    text-align: center;
 			    
       }
+.divClose{
+
+  width: 99%;
+  height: 50px;
+  line-height: 50px;
+  margin-bottom: 20px;
+}
+
+.divClose .btnColse{
+  font-size: 30px!important;
+  color: #7f0019;
+  cursor: pointer;
+  position: relative;
+  left: 20px;
+}
+#btnExit,#btnAddNewPlace,#btnSaveNewPlace{
+  width: 97%;
+  min-height: 44px;
+  border: 0 solid rgba(0,0,0,0);
+  background: #7f0019;
+  font-size: 16px;
+  color: #fff;
+  font-weight: 700;
+  line-height: 22px;
+  border-radius: 22px;
+  cursor: pointer;
+
+}
+.placeitem{
+  background: #fff;
+}
+.subject{
+  padding: 8px 37px 8px 41px;
+  font-size: 14px;
+  color: #000;
+  letter-spacing: 1.17px;
+  font-weight: 700;
+}
+.palcelist{
+  font-size: 12px;
+  color: #585858;
+  line-height: 24px;
+  letter-spacing: -.14px;
+
+}
+.placebody{
+  border-top: 1px solid rgba(188,187,193,.5);
+  padding: 28.5px 41px 24.5px;
+}
+.placeactions{
+  border-top: 1px solid rgba(188,187,193,.5);
+  padding: 18px 37px 17px 41px;
+  border-bottom: 1px solid rgba(188,187,193,.5);
+}
+.isdefault{
+  color: #7f0019;
+  font-size: 15px;
+  line-height: 17px;
+  letter-spacing: 1px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.isEdit{
+  float: right;
+  color: #585858;
+  line-height: 17px;
+  letter-spacing: 1px;
+  font-weight: 300;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.list-group-wrap{
+
+  width: 99%;
+  height: 216px;
+}
+.MuListItem{
+  padding-left: 16px;
+  background: #fff;
+  position: relative;
+  border-top: .5px solid rgba(188,187,193,.5);
+  padding-top: 11px;
+  padding-bottom: 10px;
+  position: relative;
+  padding-left: 16px;
+  background: #fff;
+  overflow: hidden;
+}
+.MuListItem label{
+  margin-right: 30px;
+}
+.MuListItem input[type='text']{
+  font-size: 14px;
+  line-height: 22px;
+  color: #585858;
+  letter-spacing: 1.17px;
+}
+.MuListItem input[type='text'],.MuListItem textarea,.MuListItem select{
+  border: none;
+}
+.MuListItem textarea{
+  width: 85%;
+  margin: 0;
+  padding: 0;
+  border: 0 solid rgba(0,0,0,0);
+  border-radius: 0;
+  font-size: 14px;
+  line-height: 22px;
+  color: #585858;
+  letter-spacing: 1.17px;
+}
+/*详细地址*/
+.mydetailplace{
+  position: relative;
+  top: -28px;
+}
+.sheng{
+  width: 113px;
+}
+.shi{
+  width: 60px;
+}
+.xian{
+  width: 60px;
+}
+#checkDefaultPlace{
+  float: right;
+  color: #7f0019;
+  position: relative;
+  right: 20px;
+}
+/*追加的样式，我的住址*/
+#myinformation,#controlMyplace,#addAndEditPlace{
+
+  width: 99%;
+  height: 99%;
+  /*滚动条*/
+  overflow: auto;
+
+  /*隐藏不可见*/
+  display: none;
+
+}
 
 @media only screen and (max-width: 940px) {
   #maxdiv #maxdivcontainer .section-address .section-address-label,

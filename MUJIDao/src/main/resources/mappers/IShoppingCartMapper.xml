@@ -77,4 +77,13 @@
         update ShoppingCart set sccount=#{sccount},sumprice=#{sumprice} where scid=#{scid};
     </update>
 
+    <!--
+        添加到订单
+    -->
+    <insert id="inserIntoOrder" parameterType="java.util.Map">
+        insert into Orders(mphone,gid,ocount,osumprice,cono) values(
+            #{mphone},#{gid},#{ocount},#{osumprice},#{cono}
+        );
+    </insert>
+
 </mapper>

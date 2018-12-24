@@ -20,7 +20,7 @@ public class QcloudSendMessage {
         String appkey = "d399fed2be08d339d523d4e668f078af";
 
         // 需要发送短信的手机号码
-        String[] phoneNumbers = {"13697703152","13926901506"};
+        String[] phoneNumbers = {"13926901506"};
 
         // 短信模板ID，需要在短信应用中申请
         // NOTE: 这里的模板ID`7839`只是一个示例，

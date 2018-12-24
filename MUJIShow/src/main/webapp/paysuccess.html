@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>移动端支付</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+    <link rel="stylesheet" href="suimobile/css/sm.min.css" />
+    <link rel="stylesheet" href="suimobile/css/sm-extend.min.css" />
+<style type="text/css">
+	*{margin:0}
+</style>
+</head>
+<body style="background: white">
+
+	<!-- <header class="bar bar-nav">
+	  <h1 class='title'>移动端支付界面</h1>
+	</header> -->
+	<div class="content">
+	  <!-- <div class="content-block-title">List block buttons</div> -->
+	  	<!--  放图片-->
+	  	<div>
+			<img id="payimg" style="position: relative;left: 90px;" alt="" src="img/wechatpay.jpg">
+		</div>
+		
+	  <div class="list-block">
+	    <ul>
+	      <li class="item-link list-button">您的订单：<span id="dingdan">2132435665432</span></li>
+	      <li class="item-link list-button">确认支付：<span id="qian">72320</span><span>元</span></li>
+	    </ul>
+	  </div>
+
+	  
+	  <div class="content-block-title">请选择</div>
+	  <div class="content-block">
+	    <div class="row">
+	      <div class="col-50"><a id="paycancel" href="#" class="button button-big button-fill button-danger">取消</a></div>
+	      <div class="col-50"><a id="payok" style="background: green"  class="button button-big button-fill button-success">支付</a></div>
+	    </div>
+	  </div>
+	</div>	
+	
+</body>
+
+<script type='text/javascript' src='suimobile/js/zepto.js' charset='utf-8'></script>
+<script type='text/javascript' src='suimobile/js/sm.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='suimobile/js/sm-extend.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='js/jquery-1.11.3.min.js' charset='utf-8'></script>
+<script type="text/javascript">
+
+	var dingdan=null;
+	var spendmoney=null;
+	$(function(){
+		//获得对象
+		 var url = location.search; //获取url中含"?"符后的字串
+		   var theRequest = new Object();
+		   if (url.indexOf("?") != -1) {
+		      var str = url.substr(1);
+		      strs = str.split("&");
+		      for(var i = 0; i < strs.length; i ++) {
+		         theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
+		      }
+		   }
+		   spendmoney=url.split('=')[2];
+		   dingdan=theRequest.user.split('?')[0];
+		   $("#dingdan").html(dingdan);
+		   $("#qian").html(spendmoney);
+		   
+		   
+	$("#payok").click(function(){
+		//修改数据库订单状态
+		$.ajax({
+			url:"Takeawaycontrol.do?action=checkOut",
+			data:{oNumber:dingdan},
+			success:function(data){
+				console.log(data)
+				//传值
+				window.location.href="paysuccess2.html?fmoney="+spendmoney;
+				}
+			})
+		})
+	})
+	
+</script>
+</html>
