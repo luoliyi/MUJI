@@ -46,14 +46,9 @@ $(function(){
         /*
 		* 调用生成订单的方法
 		* */
-        var objectList=new Array();
-        objectList.push(mydata);
-
         $.ajax({
             url:"admin/createOrdersController/initOneCreateOrders",
-			data:JSON.stringify(objectList),
             type:"post",
-			contentType:"application/json;charset=utf-8"
         }).done(function (msg) {
             if(msg=="success"){
                // $("#CoveringLayer").css("display","none");
@@ -65,7 +60,6 @@ $(function(){
 		/*弹出遮罩层*/
 		$("#CoveringLayer").css("display","block");
 		$("#qrcodebox").css("display","block");
-		
 		$(".qrcodetype").html("请使用"+$("#paytype").html()+"扫描支付");
 
         var url = location.search;

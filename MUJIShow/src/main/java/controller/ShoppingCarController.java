@@ -50,6 +50,7 @@ public class ShoppingCarController {
 
         Map<String,Object>objectMap=new HashMap<>();
         objectMap.put("mphone",member.getMphone());
+        objectMap.put("sctate","0");
         return shoppingCartService.selectAllCartByMphone(objectMap);
     }
 

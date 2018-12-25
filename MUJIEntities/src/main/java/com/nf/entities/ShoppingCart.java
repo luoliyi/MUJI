@@ -60,6 +60,12 @@ public class ShoppingCart {
         this.sumprice = sumprice;
         this.sctate = sctate;
     }
+    public ShoppingCart(String mphone, int gid, int sccount, double sumprice) {
+        this.mphone = mphone;
+        this.gid = gid;
+        this.sccount = sccount;
+        this.sumprice = sumprice;
+    }
 
     public int getScid() {
         return scid;

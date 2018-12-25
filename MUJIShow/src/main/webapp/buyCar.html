@@ -50,6 +50,7 @@
 <div id="maxdiv">
 	<!--容器-->
 	<div id="maxdivcontainer">
+		<h2 id="ifHasGoods" style="display: none">购物车没有商品~</h2>
 		<!--展示商品-->
 		<div class="part_options">
 			<!--一件商品-->
@@ -185,7 +186,6 @@
         * 跳转到结算单
         * */
 
-
     });
 
     /*
@@ -200,6 +200,14 @@
                     type:"post"
                 }).done(function (jsdata) {
                     console.log(jsdata);
+					/*
+					* 如果购物车为空
+					* */
+					if(jsdata.length<=0){
+					    $("#ifHasGoods").css("display","block");
+                        $(".part_options div").remove();
+                        return false;
+                    }
                     app.renderData(jsdata);
                 })
             },

@@ -42,6 +42,9 @@
             <if test="mphone!='' and mphone!=null">
                 c.mphone=#{mphone}
             </if>
+            <if test="sctate!='' and sctate!=null">
+               and c.sctate=#{sctate}
+            </if>
         </where>
     </select>
 
