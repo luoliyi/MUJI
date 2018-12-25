@@ -123,7 +123,7 @@ body {
 		}
 
 		/*追加的样式，我的住址*/
-		#myinformation,#controlMyplace,#addAndEditPlace{
+		#myinformation,#controlMyplace,#addAndEditPlace,#myorderInforation{
 
 			width: 99%;
 			height: 99%;
@@ -296,6 +296,45 @@ body {
 			position: relative;
 			right: 20px;
 		}
+
+		/*
+		我订单的详细信息
+		*/
+
+#maxdiv2{
+	max-width: 1024px;
+	height: 600px;
+	margin: 0 auto;
+	position: relative;
+}
+#maxdivcontainer_details_head{
+	width: 100%;
+	height: 45px;
+	margin: 0 auto;
+	border-bottom: 1px solid #ddd;
+	background: #fff;
+}
+#details_head_li_Container{
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
+	list-style: none;
+	padding: 0;
+	z-index: 1;
+	line-height: 45px;
+}
+#details_head_li_Container li{
+	cursor: pointer;
+	display: inline-block;
+	float: left;
+	width: auto;
+}
+#details_head_li_Container li a {
+	padding: 11px 15px;
+	font-size: 16px;
+	color: #ddd;
+	letter-spacing: .7px;
+}
 
 a{ color:#006600; text-decoration:none;}
 a:hover{color:#990000;}
