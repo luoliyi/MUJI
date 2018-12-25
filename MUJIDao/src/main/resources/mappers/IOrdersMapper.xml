@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nf.interfaces.IOrdersDao">
+
+    <select id="selectAllOrderByMphoneAndState" parameterType="java.util.Map">
+        select * from orders where mphone=#{mphone} and ostate=#{ostate};
+    </select>
+
+    <insert id="insert" parameterType="java.util.Map">
+        insert into Orders(mphone,gid,ocount,osumprice,cono) values(
+            #{mphone},#{gid},#{ocount},#{osumprice},#{cono});
+    </insert>
+
+    <!--
+        ostate=3:已完成
+    -->
+    <update id="update" parameterType="java.util.Map">
+        update Orders set ostate=3 where cono=#{cono};
+    </update>
+
+    <!--
+        删除，实际上是改变购物车状态
+    -->
+    <update id="delete" parameterType="java.util.Map">
+        update  ShoppingCart set sctate=1 where scid=#{scid} ;
+    </update>
+</mapper>

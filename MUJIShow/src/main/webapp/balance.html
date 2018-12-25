@@ -114,7 +114,7 @@
 			<div id="qrcode"></div>
 			<p class="qrcodetype"></p>
 			<div class="qrcodesuccess">
-				<a id="qrcodesuccess" href="" title="支付完成">我已经完成支付</a>
+				<a id="qrcodesuccess" title="支付完成">我已经完成支付</a>
 			</div>
 		</div>
 
@@ -230,6 +230,10 @@
 	<script type="text/javascript" src="js/area.js"></script>
 	<script type="text/javascript" src="js/select.js"></script>
 	<script>
+		/*
+		* 保存数据
+		* */
+		var mydata=[];
 		$(function () {
 			/*
 			* 窗体加载，先查询出购物车里面的商品
@@ -251,10 +255,20 @@
                 * */
                 renderData:function(jsdata){
                     //$(".PageCheckoutPartItems .oneGoods").remove();
-                    console.log(jsdata);
+					console.log(jsdata)
                     var sumprice=0;
                     $.each(jsdata,function (index,obj) {
                         sumprice+=obj.sumprice;
+                        /*
+                        * 添加数据
+                        * */
+                        var arr=new Array();
+                        arr.push(obj.mphone);
+                        arr.push(obj.gid);
+                        arr.push(obj.sccount);
+                        arr.push(obj.sumprice);
+                        mydata.push(arr);
+
                         $(
 							"<div class=\"oneGoods\">\n" +
 							"<div class=\"image-wrap\">\n" +

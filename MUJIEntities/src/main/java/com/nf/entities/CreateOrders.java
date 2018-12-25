@@ -13,10 +13,12 @@ public class CreateOrders {
     * */
 
     private String cono;
-    private Date corderDate;
+    private String corderDate;
     private int coinvoice;
     private String cordesc;
     private int costatus;
+
+    private Orders orders;
 
     @Override
     public String toString() {
@@ -26,7 +28,16 @@ public class CreateOrders {
                 ", coinvoice=" + coinvoice +
                 ", cordesc='" + cordesc + '\'' +
                 ", costatus=" + costatus +
+                ", orders=" + orders +
                 '}';
+    }
+
+    public Orders getOrders() {
+        return orders;
+    }
+
+    public void setOrders(Orders orders) {
+        this.orders = orders;
     }
 
     public String getCono() {
@@ -37,11 +48,11 @@ public class CreateOrders {
         this.cono = cono;
     }
 
-    public Date getCorderDate() {
+    public String getCorderDate() {
         return corderDate;
     }
 
-    public void setCorderDate(Date corderDate) {
+    public void setCorderDate(String corderDate) {
         this.corderDate = corderDate;
     }
 
@@ -69,7 +80,7 @@ public class CreateOrders {
         this.costatus = costatus;
     }
 
-    public CreateOrders(Date corderDate, int coinvoice, String cordesc, int costatus) {
+    public CreateOrders(String corderDate, int coinvoice, String cordesc, int costatus) {
         this.corderDate = corderDate;
         this.coinvoice = coinvoice;
         this.cordesc = cordesc;
@@ -79,7 +90,7 @@ public class CreateOrders {
     public CreateOrders() {
     }
 
-    public CreateOrders(String cono, Date corderDate, int coinvoice, String cordesc, int costatus) {
+    public CreateOrders(String cono, String corderDate, int coinvoice, String cordesc, int costatus) {
         this.cono = cono;
         this.corderDate = corderDate;
         this.coinvoice = coinvoice;

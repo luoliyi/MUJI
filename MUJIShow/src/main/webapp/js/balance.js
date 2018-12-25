@@ -42,12 +42,33 @@ $(function(){
 	})
 	/*去付款*/
 	$("#gotobuy").click(function(){
+
+        /*
+		* 调用生成订单的方法
+		* */
+        var objectList=new Array();
+        objectList.push(mydata);
+
+        $.ajax({
+            url:"admin/createOrdersController/initOneCreateOrders",
+			data:JSON.stringify(objectList),
+            type:"post",
+			contentType:"application/json;charset=utf-8"
+        }).done(function (msg) {
+            if(msg=="success"){
+               // $("#CoveringLayer").css("display","none");
+               // $("#qrcodebox").css("display","none");
+				console.log("createorder success!")
+            }
+        });
 		
 		/*弹出遮罩层*/
 		$("#CoveringLayer").css("display","block");
-		$("#qrcodebox").css("display","block")
+		$("#qrcodebox").css("display","block");
 		
 		$(".qrcodetype").html("请使用"+$("#paytype").html()+"扫描支付");
+
+        var url = location.search;
 		//生成二维码
  	    var qrCode = document.getElementById("qrcode");
           // var txtContent = jsdata;
@@ -55,12 +76,12 @@ $(function(){
         	      render : "canvas",
         	      width:150,
                   height:150,
-                  text:"good afternoon!",
+                  text:"http://172.20.10.5:8080/paysuccess.html",
                   correctLevel:QRCode.CorrectLevel.L,
               });
                    
-          function getCode(content) {
-              qrcode.makeCode(content);
+          function getCode() {
+              qrcode.makeCode();
           } 
 	})
 })

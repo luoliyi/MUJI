@@ -11,9 +11,11 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.xml.crypto.Data;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -31,5 +33,12 @@ public class ICMDDaoTest {
        } catch (IOException e) {
            e.printStackTrace();
        }
+   }
+
+   @Test
+    public void testDaaaa(){
+       String sysdate= String.valueOf(System.currentTimeMillis());
+       String cono=sysdate.substring(0,sysdate.length()-1);
+       System.out.println(cono);
    }
 }

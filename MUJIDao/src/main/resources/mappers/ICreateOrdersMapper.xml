@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nf.interfaces.ICreateOrdersDao">
+
+    <resultMap id="selectCreateOrdersByPhoneMap" type="CreateOrders">
+        <id column="cono" property="cono"></id>
+        <result property="corderDate" column="corderDate"></result>
+        <result property="coinvoice" column="coinvoice"></result>
+        <result property="cordesc" column="cordesc"></result>
+        <result property="costatus" column="costatus"></result>
+        <association property="Orders" javaType="orders">
+            <id column="orderid" property="orderid"></id>
+            <result property="mphone" column="mphone"></result>
+            <result property="gid" column="gid"></result>
+            <result property="ocount" column="ocount"></result>
+            <result property="osumprice" column="osumprice"></result>
+            <result property="cono" column="cono"></result>
+            <result property="ostate" column="ostate"></result>
+        </association>
+    </resultMap>
+
+    <select id="selectCreateOrdersByPhone" resultMap="selectCreateOrdersByPhoneMap" parameterType="java.util.Map">
+        select * from CreateOrders as c join Orders as o on c.cono=o.cono where o.mphone=#{mphone},costatus=#{costatus};
+    </select>
+
+    <insert id="initOneCreateOrders" parameterType="java.util.Map">
+        insert into CreateOrders(cono,cordesc)values(
+            #{cono},#{cordesc}
+        );
+    </insert>
+
+    <!--
+        待发货
+    -->
+    <update id="updatePendingShipmentByCono" parameterType="string">
+        update CreateOrders set costatus=1 where cono=#{cono}
+    </update>
+
+    <!--
+        待收货
+    -->
+    <update id="updatePendingReceiptByCono" parameterType="string">
+        update CreateOrders set costatus=2 where cono=#{cono}
+    </update>
+
+    <!--
+        已完成
+    -->
+    <update id="updateCompletedByCono" parameterType="string">
+        update CreateOrders set costatus=3 where cono=#{cono}
+    </update>
+
+    <!--
+        售后
+    -->
+    <update id="updateAfterSaleByCono" parameterType="string">
+         update CreateOrders set costatus=4 where cono=#{cono}
+    </update>
+</mapper>
