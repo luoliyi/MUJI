@@ -93,7 +93,7 @@ body {
       #maxdivcontainer #maxdivcontainer .listitem-content li {
         display: inline-block;
         float: left;
-        width: 19%;
+        width: 16%;
         height: 56px;
         line-height: 27px;
         cursor: pointer; }
@@ -123,7 +123,7 @@ body {
 		}
 
 		/*追加的样式，我的住址*/
-		#myinformation,#controlMyplace,#addAndEditPlace,#myorderInforation{
+		#myinformation,#controlMyplace,#addAndEditPlace{
 
 			width: 99%;
 			height: 99%;
@@ -133,6 +133,9 @@ body {
 			/*隐藏不可见*/
 			display: none;
 			
+		}
+		#myorderInforation{
+			width: 100%;
 		}
 		
 		.divClose{
@@ -335,6 +338,120 @@ body {
 	color: #ddd;
 	letter-spacing: .7px;
 }
+
+/*
+	订单详细
+*/
+.maxdiv2{
+	padding-left: 15px;
+	position: relative;
+}
+.maxdiv2 div{
+}
+.oneOrder{
+	position: relative;
+}
+.serial{
+	width: 75%;
+	font-size: 14px;
+	color: #999;
+	letter-spacing: 1.17px;
+	font-weight: 300;
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+.order-item-items-item{
+	padding: 21px 37px 21px 8px;
+	border-top: .5px solid #e4e4e6;
+	border-bottom: .5px solid #e4e4e6;
+	overflow: hidden;
+}
+.order-item-items-item img{
+	float: left;
+
+	width: 80px;
+	height: 80px;
+	margin-right: 27px;
+}
+.order-item-heading-wrap{
+	float: left;
+}
+.order-item-heading-wrap .name{
+	font-size: 13px;
+	line-height: 18px;
+	color: #030303;
+	letter-spacing: -.15px;
+}
+.order-item-heading-wrap .option{
+	margin-top: 2px;
+	font-size: 11px;
+	line-height: 16px;
+	color: #999;
+	letter-spacing: -.13px;
+}
+.order-item-price-wrap{
+	width: 1%;
+	margin-top: 12px;
+	font-size: 13px;
+	line-height: 18px;
+	color: #000;
+	letter-spacing: -.15px;
+	font-weight: 500;
+}
+.order-item-quantity-wrap{
+	float: right;
+	width: 26px;
+	text-align: right;
+}
+.order-item-total{
+	padding: 20px 38px 20px 23px;
+}
+.order-item-total .label {
+	width: 50%;
+	font-size: 13px;
+	line-height: 18px;
+	color: #000;
+	letter-spacing: -.15px;
+}
+.order-item-total .primary{
+	font-size: 14px;
+	color: #c72a1c;
+	letter-spacing: -.16px;
+	font-weight: 900;
+	text-align: center;
+	float: right;
+	position: relative;
+	top: -17px;
+	right: 0px;
+}
+.MuOrderItemActions{
+	padding: 9px 15px;
+	border-top: .5px solid #e4e4e6;
+}
+.MuOrderItemActions a{
+	display: inline-block;
+	float: right;
+	min-width: 65px;
+	padding: 5px 11px;
+	border: 1px solid #4a4a4a;
+	border-radius: 15px;
+	font-size: 13px;
+	line-height: 18px;
+	color: #4a4a4a;
+	letter-spacing: 1.08px;
+	text-align: center;
+	margin-right: 10px;
+}
+.MuOrderItemActions{
+	overflow: hidden;
+}
+.MuOrderItemActions .primary{
+	border-color: #7f0019;
+	color: #7f0019;
+}
+
+
+
 
 a{ color:#006600; text-decoration:none;}
 a:hover{color:#990000;}

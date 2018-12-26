@@ -43,6 +43,10 @@
 					<!--订单详情-->
 					<div class="listitem-content">
 						<ul>
+							<li title="全部">
+								<i class="layui-icon layui-icon-rmb"></i>
+								<p>全部</p>
+							</li>
 							<li title="待付款">
 								<i class="layui-icon layui-icon-rmb"></i>
 								<p>待付款</p>
@@ -64,15 +68,6 @@
 								<p>售后</p>
 							</li>
 						</ul>
-					</div>
-					<!--售后-->
-					<div class="MuListItem listitem-wrap">
-						<div class="listitem-title">客服中心</div>
-					</div>
-					<div class="MuListItem has-title" tappable="">
-						<div class="listitem-wrap">
-							<div class="listitem-title">常见问题</div>
-						</div>
 					</div>
 				</div>
 
@@ -211,52 +206,64 @@
 
 				<!--我的订单详情-->
 				<div id="myorderInforation">
-					<div id="maxdiv2">
-						<!--头部导航栏-->
-						<div id="maxdivcontainer_details_head">
-							<ul id="details_head_li_Container">
-								<li class="active" data-gtdid="0"><a>全部</a></li>
-								<li class="">
-									<a>针织衫</a>
-								</li>
-								<li class="">
-									<a>T恤·罩衫</a>
-								</li>
-								<li class="">
-									<a>衬衫</a>
-								</li>
-								<li class="">
-									<a>外套</a>
-								</li>
-								<li class="">
-									<a>裤子</a>
-								</li>
-								<li class="">
-									<a>L A B O</a>
-								</li>
-							</ul>
-						</div>
 
-						<!--maxdivcontainer-->
-						<div id="maxdivcontainer2">
-							<!--商品details-->
-							<div id="maxdivcontainer_details">
-								<ul class="details_list" style="width: 97%!important;">
-									<li>
-                                        <div class="detail_img">
-                                            <img src="img/showType/4550002731878_400.jpg" />
-                                            <p class="title">美利奴羊毛_拉链夹克衫</p>
-                                            <p class="MuPriceTag">
-                                                <span>￥</span>
-                                                <span>548</span>
-                                            </p>
-                                        </div>
-                                    </li>
-								</ul>
+					<div class="maxdiv2">
+						<!--
+							一条订单详情
+						-->
+						<div class="oneOrder">
+							<h3 class="serial">订单号：<span class="UserSelectArea">181107112429483</span></h3>
+							<div class="order-item-items-item">
+								<img src="img/wechat.png">
+								<div class="order-item-heading-wrap">
+									<div class="name">使用防水布带_风帽夹克</div>
+									<div class="options">颜色：深绿色、尺码：男式_S</div>
+									<p class="order-item-price-wrap"><span>$</span><span>349.00</span></p>
+								</div>
+								<div class="order-item-quantity-wrap">
+									×<span>1</span>
+								</div>
 							</div>
-
+							<div class="order-item-items-item">
+								<img src="img/wechat.png">
+								<div class="order-item-heading-wrap">
+									<div class="name">使用防水布带_风帽夹克</div>
+									<div class="options">颜色：深绿色、尺码：男式_S</div>
+									<p class="order-item-price-wrap"><span>$</span><span>349.00</span></p>
+								</div>
+								<div class="order-item-quantity-wrap">
+									×<span>1</span>
+								</div>
+							</div>
+							<!--运费-->
+							<div class="order-item-total">
+								<div class="line">
+									<div class="label">合计（含运费）</div>
+									<div class="value primary"><span>¥</span>408.00</div>
+								</div>
+							</div>
+							<!--订单操作-->
+							<div class="MuOrderItemActions">
+								<a href="javascript:void(0);">删除订单</a>
+								<a href="javascript:void(0);" class="primary">再次购买</a>
+							</div>
 						</div>
+						<!--
+							一条订单详情
+						-->
+
+
+
 					</div>
+				</div>
+			</div>
+			<!--售后-->
+			<div class="MuListItem listitem-wrap">
+				<div class="listitem-title">客服中心</div>
+			</div>
+			<div class="MuListItem has-title" tappable="">
+				<div class="listitem-wrap">
+					<div class="listitem-title">常见问题</div>
 				</div>
 			</div>
 		</div>
