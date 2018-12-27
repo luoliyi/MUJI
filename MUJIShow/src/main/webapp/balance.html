@@ -11,6 +11,7 @@
 		<link rel="shortcut icon" href="//www.suning.com/favicon.ico" type="image/x-icon">
 		<link rel="stylesheet" type="text/css" href="css/balance.css" />
 		<link rel="stylesheet" type="text/css" href="js/layui/css/layui.css" />
+
 		<style>
 			body{
 				font-family: "微软雅黑";
@@ -19,7 +20,7 @@
 		</style>
 	</head>
 
-	<body>
+	<body class="center">
 		<div id="maxdiv">
 			<!--容器-->
 			<div id="maxdivcontainer">
@@ -29,7 +30,7 @@
 					<!--详细-->
 					<div class="section-address-detail"><p><span id="username">罗立一</span>　
 						<span id="userphone">13926901506</span></p> 
-						<p class="EcArea"><span >广东省珠海市 斗门区</span><span>>白蕉镇白蕉南路29号南方IT学院</span</p>
+						<p class="EcArea"><span >广东省珠海市 斗门区</span><span>>白蕉镇白蕉南路29号南方IT学院</span></p>
 							<i class="layui-icon layui-icon-right chooseMoreAddress" title="选择更多地址"></i>  
 					</div>
 				</div>
@@ -57,7 +58,7 @@
 				<div class="section-address-detail"><p><span id="kuaidi">快递</span>
 					<span id="kuaditip">根据收货地区自动分配</span>
 					<p class="EcArea"><span>运费</span><span id="kuadimoney"><span>￥</span>
-						<span id="kuadimoneys">11</span></p>
+					<span id="kuadimoneys">11</span></p>
 				</div>
 			</div>
 			<!--支付方式-->
@@ -106,7 +107,7 @@
 				</div>
 			</div>
 		</div>
-		<button type="button" id="gotobuy" class="mu-button">去付款</button>
+		<button type="button" id="gotobuy" class="mu-button primary">去付款</button>
 		<!--div遮罩层-->
 		<div id="CoveringLayer"></div>
 		<div id="qrcodebox">
@@ -118,6 +119,58 @@
 			</div>
 		</div>
 
+			<!--
+				订单详情
+			-->
+			<div id="checkPay" style="display:none;">
+				<div class="order-pending" style="font-style: normal;">
+					<div class="order-pending-title">等待付款</div>
+					<div class="order-pending-content"><!--剩余：39分15秒-->
+						<input id="orderTime" type="hidden" name="countDown" data-prefix="剩余：	" value="" /><span></span>
+					</div>
+				</div>
+				<!--地址-->
+				<div class="order-address"><div class="order-address-label">收货地址</div>
+					<div class="order-address-detail"><p>罗立一　13926901506</p>
+						<p><span class="EcArea">广东省珠海市 斗门区</span> 白蕉镇白蕉南路29号南方IT学院</p>
+					</div>
+				</div>
+
+				<div class="orderDetails" >
+					<div class="oneDetails">
+						<h3 class="orderNo"><span>订单号：</span>1234567789<span class="orderState">已完成</span></h3>
+						<!--一條商品-->
+						<div class="order-item-items-item">
+							<img src="img/goodsdetails/untitled.png">
+							<div class="order-item-heading-wrap">
+								<div class="name">丝光斜纹棉布直筒裤<span class="count"><span>x</span><span class="orderCount">1</span></span></div>
+								<div class="options">颜色：<span>"+obj1.goods.gcolor+" "+obj1.goods.gsize+"</span></div>
+								<div class="price"><span>￥</span><span class="orderPrice">112.00</span></div>
+							</div>
+						</div>
+						<!--一條商品-->
+						<div class="order-item-items-item">
+							<img src="img/goodsdetails/untitled.png">
+							<div class="order-item-heading-wrap">
+								<div class="name">丝光斜纹棉布直筒裤<span class="count"><span>x</span><span class="orderCount">1</span></span></div>
+								<div class="options">颜色：深米色、尺码：女式155/58A</div>
+								<div class="price"><span>￥</span><span class="orderPrice">112.00</span></div>
+							</div>
+						</div>
+						<!--运费-->
+						<div class="order-item-total">
+							<div class="pay">合计(含运费)<h4 class="orderSumCount">
+								<span>￥</span><span class="orderSumPrice">236.00</span></h4></div>
+						</div>
+						<!--按钮-->
+						<div class="MuOrderItemActions">
+							<a >删除订单</a>
+							<a class="primary" id="gotobuy2">付款</a>
+						</div>
+					</div>
+				</div>
+				<button type="button" class="returnPrev">返回</button>
+			</div>
 			<!--
 				收货地址操作
 			-->
@@ -229,6 +282,7 @@
 	<script type="text/javascript" src="js/qrcode.min.js"></script>
 	<script type="text/javascript" src="js/area.js"></script>
 	<script type="text/javascript" src="js/select.js"></script>
+	<script src="jquerydjs/countDown.js"></script>
 	<script>
 		/*
 		* 保存数据

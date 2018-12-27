@@ -56,4 +56,49 @@
     <update id="updateAfterSaleByCono" parameterType="string">
          update CreateOrders set costatus=4 where cono=#{cono}
     </update>
+
+
+
+
+    <!--
+        查询订单状态
+    -->
+    <resultMap id="selectAllOrderByMphoneAndStateAndLimitMap" type="CreateOrders">
+        <id column="cono" property="cono"></id>
+        <result column="corderDate" property="corderDate"></result>
+        <result column="coinvoice" property="coinvoice"></result>
+        <result column="cordesc" property="cordesc"></result>
+        <result column="costatus" property="costatus"></result>
+        <collection property="ordersList" ofType="Orders">
+            <id property="orderid" column="orderid"></id>
+            <result column="gid" property="gid"></result>
+            <result column="mphone" property="mphone"></result>
+            <result column="ocount" property="ocount"></result>
+            <result column="osumprice" property="osumprice"></result>
+            <result column="cono" property="cono"></result>
+            <result column="ostate" property="ostate"></result>
+            <association property="goods" javaType="Goods">
+                <id column="gid" property="gid"></id>
+                <result property="gno" column="gno"></result>
+                <result property="gname" column="gname"></result>
+                <result property="gcolor" column="gcolor"></result>
+                <result property="gsize" column="gsize"></result>
+                <result property="gpic" column="gpic"></result>
+                <result property="gnowprice" column="gnowprice"></result>
+                <result property="gdesc" column="gdesc"></result>
+            </association>
+        </collection>
+    </resultMap>
+    <select id="selectAllOrderByMphoneAndStateAndLimit" parameterType="java.util.Map" resultMap="selectAllOrderByMphoneAndStateAndLimitMap">
+            select * from createorders as  co join orders as o join goods as g on o.gid=g.gid
+          <where>
+              co.cono=o.cono and o.mphone=#{mphone}
+              <if test="ostate!='' and ostate!=null">
+                  and o.ostate=#{ostate}
+              </if>
+              <if test="cono!='' and cono!=null">
+                  and co.cono=#{cono}
+              </if>
+          </where>
+    </select>
 </mapper>

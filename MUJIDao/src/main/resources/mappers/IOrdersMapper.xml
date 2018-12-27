@@ -19,9 +19,10 @@
     </update>
 
     <!--
-        删除，实际上是改变购物车状态
+        删除
     -->
-    <update id="delete" parameterType="java.util.Map">
-        update  ShoppingCart set sctate=1 where scid=#{scid};
-    </update>
+    <delete id="delete" parameterType="java.util.Map">
+       delete from shoppingcart where scid=#{scid};
+    </delete>
+
 </mapper>

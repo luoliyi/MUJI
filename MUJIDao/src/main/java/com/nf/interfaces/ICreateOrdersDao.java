@@ -17,4 +17,7 @@ public interface ICreateOrdersDao {
     int updateCompletedByCono(String cono);
 
     int updateAfterSaleByCono(String cono);
+
+    List<CreateOrders> selectAllOrderByMphoneAndStateAndLimit(Map<String,Object> objectMap);
+
 }

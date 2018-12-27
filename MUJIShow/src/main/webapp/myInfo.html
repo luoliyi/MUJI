@@ -43,29 +43,38 @@
 					<!--订单详情-->
 					<div class="listitem-content">
 						<ul>
-							<li title="全部">
+							<li data-costate="" title="全部">
 								<i class="layui-icon layui-icon-rmb"></i>
 								<p>全部</p>
+								<!--
+									div提示框
+								-->
+								<div class="tips">10</div>
 							</li>
-							<li title="待付款">
+							<li data-costate="0" title="待付款">
 								<i class="layui-icon layui-icon-rmb"></i>
 								<p>待付款</p>
+								<div class="tips">0</div>
 							</li>
-							<li title="待发货">
+							<li data-costate="1" title="待发货">
 								<i class="layui-icon layui-icon-component"></i>
 								<p>待发货</p>
+								<div class="tips">0</div>
 							</li>
-							<li title="待收货">
+							<li data-costate="2" title="待收货">
 								<i class="layui-icon layui-icon-release"></i>
 								<p>待收货</p>
+								<div class="tips"></div>
 							</li>
-							<li title="已完成">
+							<li data-costate="3" title="已完成">
 								<i class="layui-icon layui-icon-face-smile-fine"></i>
 								<p>已完成</p>
+								<div class="tips"></div>
 							</li>
-							<li title="售后">
+							<li data-costate="4" title="售后">
 								<i class="layui-icon layui-icon-chat"></i>
 								<p>售后</p>
+								<div class="tips"></div>
 							</li>
 						</ul>
 					</div>
@@ -205,7 +214,7 @@
 				</div>
 
 				<!--我的订单详情-->
-				<div id="myorderInforation">
+				<div id="myorderInforation" style="text-indent: 10px;">
 
 					<div class="maxdiv2">
 						<!--
@@ -218,18 +227,7 @@
 								<div class="order-item-heading-wrap">
 									<div class="name">使用防水布带_风帽夹克</div>
 									<div class="options">颜色：深绿色、尺码：男式_S</div>
-									<p class="order-item-price-wrap"><span>$</span><span>349.00</span></p>
-								</div>
-								<div class="order-item-quantity-wrap">
-									×<span>1</span>
-								</div>
-							</div>
-							<div class="order-item-items-item">
-								<img src="img/wechat.png">
-								<div class="order-item-heading-wrap">
-									<div class="name">使用防水布带_风帽夹克</div>
-									<div class="options">颜色：深绿色、尺码：男式_S</div>
-									<p class="order-item-price-wrap"><span>$</span><span>349.00</span></p>
+									<p class="order-item-price-wrap"><span>¥</span><span>349.00</span></p>
 								</div>
 								<div class="order-item-quantity-wrap">
 									×<span>1</span>
@@ -274,6 +272,118 @@
 	<script type="text/javascript" src="js/area.js"></script>
 	<script type="text/javascript" src="js/select.js"></script>
 	<script type="text/javascript">
-	</script>
 
+		$(function () {
+		    var objects=new Array();
+		    objects.push("");
+		    objects.push("");
+			var app={
+			    firstRequest(){
+			        $.ajax({
+						url:"admin/createOrdersController/selectAllOrderByMphoneAndStateAndLimit",
+						data:JSON.stringify(objects),
+						contentType:"application/json;charset=utf-8",
+						type:"post"
+					}).done(function (jsdata) {
+					    app.bindData(jsdata);
+                    })
+				},
+				bindData(jsdata){
+			        console.log(jsdata);
+			        $("#myorderInforation .oneOrder").remove();
+
+                    //全部数量
+                   // $(".tips").css("display","none");
+                    $(".tips:eq(0)").css("diplay","block").html(jsdata.length);
+                    var one=0;var two=0;var three=0;var four=0;var five=0;var six=0;
+                    $.each(jsdata,function (index,obj) {
+						var oneOrder=$("<div class='oneOrder' />");
+						var serial=$("<h3 class='serial' />").html("订单号：<span class='UserSelectArea'>"+obj.cono+"</span>").appendTo(oneOrder);
+						var osumprice=0;
+						$.each(obj.ordersList,function (index1,obj1) {
+						    osumprice+=parseInt(obj1.osumprice);
+							$(
+							    "<div class=\"order-item-items-item\">\n" +
+                                "<img src='admin/img/goodsdetails/" + obj1.goods.gname + ".jpg'/>\n" +
+                                "<div class=\"order-item-heading-wrap\">\n" +
+                                "<div class=\"name\">"+obj1.goods.gname+"</div>\n" +
+                                "<div class=\"options\">颜色：<span>"+obj1.goods.gcolor+" "+obj1.goods.gsize+"</span></div>\n" +
+                                "<p class=\"order-item-price-wrap\"><span>¥</span><span>"+obj1.goods.gnowprice+"</span></p>\n" +
+                                "</div>\n" +
+                                "<div class=\"order-item-quantity-wrap\">\n" +
+                                "×<span>"+obj1.ocount+"</span>\n" +
+                                "</div>\n" +
+                                "</div>"
+							).appendTo(oneOrder);
+                        });
+						$(
+                            "<div class=\"order-item-total\">\n" +
+                            "<div class=\"line\">\n" +
+                            "<div class=\"label\">合计（含运费 ¥11）</div>\n" +
+                            "<div class=\"value primary\"><span>¥</span>"+(osumprice+11)+".00"+"</div>\n" +
+                            "</div>\n" +
+                            "</div>\n" +
+                            "<div class=\"MuOrderItemActions\">\n" +
+                            "<a data-cono="+obj.cono+" href=\"javascript:void(0);\">删除订单</a>\n" +
+                            "<a href=\"javascript:void(0);\" class=\"primary\">再次购买</a>\n" +
+                            "</div>"
+						).appendTo(oneOrder);
+						$("#myorderInforation").append(oneOrder);
+                        if(obj.costatus==0){
+                            one+=1;
+                        }else if(obj.costatus==1){
+                            two+=1;
+                        }else if(obj.costatus==2){
+                            three+=1;
+                        }else if(obj.costatus==3){
+                            four+=1;
+                        }else if(obj.costatus==4){
+                            five+=1;
+                        }else if (obj.costatus==5) {
+                            six+=1;
+						}
+                    });
+                    $(".tips:eq(1)").html(one=="0"?$(".tips:eq(1)").css("display","none"):one);
+                    $(".tips:eq(2)").html(two=="0"?$(".tips:eq(2)").css("display","none"):two);
+                    $(".tips:eq(3)").html(three=="0"?$(".tips:eq(3)").css("display","none"):three);
+                    $(".tips:eq(4)").html(four=="0"?$(".tips:eq(4)").css("display","none"):four);
+                    $(".tips:eq(5)").html(five=="0"?$(".tips:eq(5)").css("display","none"):five);
+				},
+				limitFind(){
+                    var that = $(this);
+                    layui.use('layer', function() {
+                        var layer = layui.layer;
+                        layer.msg($(that).find("p:eq(0)").html(), {
+                            time: 1500
+                        });
+                    });
+                   /* for (var j=0;j<$(".tips").length;j++) {
+                        if ($(".tips:eq(" + j + ")").html() == "0") {
+                            $(".tips:eq(" + j + ")").css("display", "none");
+                        }
+                    }*/
+                    /*
+                    * ajax请求
+                    * */
+                    var costate=$(that).data("costate");
+                    var objects=new Array();
+                    objects.push(costate);
+                    objects.push("");
+                    $.ajax({
+                        url:"admin/createOrdersController/selectAllOrderByMphoneAndStateAndLimit",
+                        data:JSON.stringify(objects),
+                        contentType:"application/json;charset=utf-8",
+                        type:"post"
+                    }).done(function (jsdata) {
+                        app.bindData(jsdata);
+                    })
+				},
+				init(){
+			        app.firstRequest();
+                    $(".listitem-content li").click(app.limitFind);
+				}
+			};
+			app.init();
+        })
+	</script>
 </html>

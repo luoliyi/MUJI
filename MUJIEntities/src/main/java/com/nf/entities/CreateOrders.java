@@ -1,6 +1,7 @@
 package com.nf.entities;
 
 import java.util.Date;
+import java.util.List;
 
 public class CreateOrders {
 
@@ -20,15 +21,27 @@ public class CreateOrders {
 
     private Orders orders;
 
+    private List<Orders> ordersList;
+
+    public List<Orders> getOrdersList() {
+        return ordersList;
+    }
+
+    public void setOrdersList(List<Orders> ordersList) {
+        this.ordersList = ordersList;
+    }
+
+
     @Override
     public String toString() {
         return "CreateOrders{" +
                 "cono='" + cono + '\'' +
-                ", corderDate=" + corderDate +
+                ", corderDate='" + corderDate + '\'' +
                 ", coinvoice=" + coinvoice +
                 ", cordesc='" + cordesc + '\'' +
                 ", costatus=" + costatus +
                 ", orders=" + orders +
+                ", ordersList=" + ordersList +
                 '}';
     }
 

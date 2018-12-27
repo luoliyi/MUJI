@@ -11,4 +11,6 @@ public interface IOrdersDao {
     int insert(Map<String,Object>objectMap);
     int update(Map<String,Object>objectMap);
     int delete(Map<String,Object>objectMap);
+
+
 }

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="FlyTiger">
+    <meta name="keywords" content="jQuery,countDown,倒计时,小插件">
+    <link rel="stylesheet" href="countDown.css">
+  <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+    <script src="countDown.js"></script>
+    <title>jQuery倒计时小插件</title>
+</head>
+<body class="center">
+<p>
+    <input type="hidden" name="countDown" data-prefix="请在" data-suffix="内完成支付" value="2018/11/20 12:25:32"> <span></span>
+</p>
+<p>
+    <input type="hidden" name="countDown" data-prefix="请在" data-suffix="内提交订单" value="2018/11/10 22:10:22"> <span></span>
+</p>
+<p>
+    <input type="hidden" name="countDown" data-prefix="距离活动结束仅有" value="2019/12/01 22:30:27"> <span></span>
+</p>
+<p>
+    <input type="hidden" name="countDown" data-title="抢购结束"  value="2018/12/15 12:24:50"> <span></span>
+</p>
+<p>
+    <input type="hidden" name="countDown"  data-suffix="后将上映大片" value="2018/12/10 23:46:33"> <span></span>
+</p>
+<script>
+    $("input[name='countDown']").each(function () {
+        var time_end=this.value;
+        var con=$(this).next("span");
+        var _=this.dataset;
+        countDown(con,{
+            title:_.title,//优先级最高,填充在prefix位置
+            prefix:_.prefix,//前缀部分
+            suffix:_.suffix,//后缀部分
+            time_end:time_end//要到达的时间
+        })
+        //提供3个事件分别为:启动,重启,停止
+        .on("countDownStarted countDownRestarted  countDownEnded ",function (arguments) {
+            console.info(arguments);
+        });
+    });
+
+</script>
+</body>
+</html>

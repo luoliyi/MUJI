@@ -1,5 +1,6 @@
 package controller;
 
+import com.nf.entities.CreateOrders;
 import com.nf.entities.Member;
 import com.nf.entities.Orders;
 import com.nf.entities.ShoppingCart;
@@ -15,6 +16,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -44,29 +47,32 @@ public class CreateOrdersController {
 
     Member member=null;
 
+    String threeMin="";
+    String mycono="";
     @RequestMapping(value = "/initOneCreateOrders",method = RequestMethod.POST)
     @ResponseBody
-    public String initOneCreateOrders( HttpServletRequest request){
+    public String initOneCreateOrders(HttpServletRequest request){
+
+        Long time = System.currentTimeMillis();//获得系统当前时间的毫秒数
+        System.out.println("获取当前系统时间为："+new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(time));//转换成标准年月日的形式
+        Date date = new Date(time);
+        time +=30*1000*60;//在当前系统时间的基础上往后加30分钟
+        threeMin=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(time);
 
         HttpSession session=request.getSession();
         member= (Member) session.getAttribute("member");
         Map<String,Object>objectMap=new HashMap<>();
         objectMap.put("mphone",member.getMphone());
         List<ShoppingCart>shoppingCarts=shoppingCartService.selectAllCartByMphone(objectMap);
-
-        /*
-        * 随机生成订单号
-        * */
         String sysdate= String.valueOf(System.currentTimeMillis());
         String cono=sysdate.substring(0,sysdate.length()-1);
 
+        mycono=cono;
         Map<String,Object>objectMap1=new HashMap<>();
         objectMap.put("cono",cono);
         objectMap.put("cordesc","");
         if (createOrdersService.initOneCreateOrders(objectMap)>0){
-            /*
-            * 把商品添加到orders表
-            * */
+
             int result=0;
             for (ShoppingCart shoppingCart:shoppingCarts){
 
@@ -80,16 +86,15 @@ public class CreateOrdersController {
                 Map<String,Object>objectMap3=new HashMap<>();
                 objectMap3.put("scid",shoppingCart.getScid());
                 result+=ordersService.insert(objectMap2);
-                /*
-                 * 删除购物车
-                 * */
+
                 ordersService.delete(objectMap3);
             }
             if (result>0){
-                return "success";
+                return threeMin;
             }
         }
-        return "";
+        System.out.println(threeMin);
+        return threeMin;
     }
 
     @RequestMapping(value = "/updatePendingReceiptByCono",method = RequestMethod.POST)
@@ -108,5 +113,17 @@ public class CreateOrdersController {
     @ResponseBody
     public void updateAfterSaleByCono(String cono){
         createOrdersService.updateAfterSaleByCono(cono);
+    }
+
+    @RequestMapping(value = "/selectAllOrderByMphoneAndStateAndLimit",method = RequestMethod.POST)
+    @ResponseBody
+    public List<CreateOrders> selectAllOrderByMphoneAndStateAndLimit(@RequestBody List<Object>objects, HttpServletRequest request){
+
+        Member member= (Member) request.getSession().getAttribute("member");
+        Map<String,Object> objectMap=new HashMap<>();
+        objectMap.put("mphone",member.getMphone());
+        objectMap.put("ostate",objects.get(0).toString());
+        objectMap.put("cono",objects.get(1).toString().equals("")?"":mycono);
+        return createOrdersService.selectAllOrderByMphoneAndStateAndLimit(objectMap);
     }
 }

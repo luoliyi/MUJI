@@ -44,4 +44,9 @@ public class ICreateOrdersImpl implements ICreateOrdersService {
     public int updateAfterSaleByCono(String cono) {
         return ordersDao.updateAfterSaleByCono(cono);
     }
+
+    @Override
+    public List<CreateOrders> selectAllOrderByMphoneAndStateAndLimit(Map<String, Object> objectMap) {
+        return ordersDao.selectAllOrderByMphoneAndStateAndLimit(objectMap);
+    }
 }

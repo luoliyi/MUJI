@@ -19,6 +19,16 @@ public class Orders {
     private String cono;
     private  int ostate;
 
+    private Goods goods;
+
+    public Goods getGoods() {
+        return goods;
+    }
+
+    public void setGoods(Goods goods) {
+        this.goods = goods;
+    }
+
     @Override
     public String toString() {
         return "Orders{" +
@@ -29,6 +39,7 @@ public class Orders {
                 ", osumprice=" + osumprice +
                 ", cono='" + cono + '\'' +
                 ", ostate=" + ostate +
+                ", goods=" + goods +
                 '}';
     }
 
