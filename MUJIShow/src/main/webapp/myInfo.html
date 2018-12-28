@@ -43,14 +43,11 @@
 					<!--订单详情-->
 					<div class="listitem-content">
 						<ul>
-							<li data-costate="" title="全部">
+							<!--<li data-costate="" title="全部">
 								<i class="layui-icon layui-icon-rmb"></i>
 								<p>全部</p>
-								<!--
-									div提示框
-								-->
 								<div class="tips">10</div>
-							</li>
+							</li>-->
 							<li data-costate="0" title="待付款">
 								<i class="layui-icon layui-icon-rmb"></i>
 								<p>待付款</p>
@@ -73,7 +70,7 @@
 							</li>
 							<li data-costate="4" title="售后">
 								<i class="layui-icon layui-icon-chat"></i>
-								<p>售后</p>
+								<p>售后 取消</p>
 								<div class="tips"></div>
 							</li>
 						</ul>
@@ -220,7 +217,7 @@
 						<!--
 							一条订单详情
 						-->
-						<div class="oneOrder">
+						<!--<div class="oneOrder">
 							<h3 class="serial">订单号：<span class="UserSelectArea">181107112429483</span></h3>
 							<div class="order-item-items-item">
 								<img src="img/wechat.png">
@@ -233,19 +230,19 @@
 									×<span>1</span>
 								</div>
 							</div>
-							<!--运费-->
+							&lt;!&ndash;运费&ndash;&gt;
 							<div class="order-item-total">
 								<div class="line">
 									<div class="label">合计（含运费）</div>
 									<div class="value primary"><span>¥</span>408.00</div>
 								</div>
 							</div>
-							<!--订单操作-->
+							&lt;!&ndash;订单操作&ndash;&gt;
 							<div class="MuOrderItemActions">
 								<a href="javascript:void(0);">删除订单</a>
 								<a href="javascript:void(0);" class="primary">再次购买</a>
 							</div>
-						</div>
+						</div>-->
 						<!--
 							一条订单详情
 						-->
@@ -277,6 +274,7 @@
 		    var objects=new Array();
 		    objects.push("");
 		    objects.push("");
+            objects.push("");
 			var app={
 			    firstRequest(){
 			        $.ajax({
@@ -294,8 +292,8 @@
 
                     //全部数量
                    // $(".tips").css("display","none");
-                    $(".tips:eq(0)").css("diplay","block").html(jsdata.length);
-                    var one=0;var two=0;var three=0;var four=0;var five=0;var six=0;
+                   // $(".tips:eq(0)").css("diplay","block").html(jsdata.length);
+                    var fukuan=0;var fahuo=0;var shouhuo=0;var wancheng=0;var quxiao=0;
                     $.each(jsdata,function (index,obj) {
 						var oneOrder=$("<div class='oneOrder' />");
 						var serial=$("<h3 class='serial' />").html("订单号：<span class='UserSelectArea'>"+obj.cono+"</span>").appendTo(oneOrder);
@@ -329,25 +327,25 @@
                             "</div>"
 						).appendTo(oneOrder);
 						$("#myorderInforation").append(oneOrder);
-                        if(obj.costatus==0){
-                            one+=1;
-                        }else if(obj.costatus==1){
-                            two+=1;
-                        }else if(obj.costatus==2){
-                            three+=1;
-                        }else if(obj.costatus==3){
-                            four+=1;
-                        }else if(obj.costatus==4){
-                            five+=1;
-                        }else if (obj.costatus==5) {
-                            six+=1;
-						}
+                        if(obj.paystatus==2){
+                            quxiao+=1;
+                        }else if(obj.paystatus==1){
+                            fukuan+=1;
+                        }else if(obj.paystatus==0){
+                            fahuo+=1;
+                        }
                     });
-                    $(".tips:eq(1)").html(one=="0"?$(".tips:eq(1)").css("display","none"):one);
+                    $(".tips:eq(4)").html(quxiao=="0"?$(".tips:eq(4)").css("display","none"):quxiao);
+                    $(".tips:eq(0)").html(fukuan=="0"?$(".tips:eq(0)").css("display","none"):fukuan);
+                    $(".tips:eq(1)").html(fahuo=="0"?$(".tips:eq(1)").css("display","none"):fahuo);
+                    $(".tips:eq(2)").html(shouhuo=="0"?$(".tips:eq(2)").css("display","none"):shouhuo);
+                    $(".tips:eq(3)").html(wancheng=="0"?$(".tips:eq(3)").css("display","none"):wancheng);
+
+                  /*  $(".tips:eq(1)").html(one=="0"?$(".tips:eq(1)").css("display","none"):one);
                     $(".tips:eq(2)").html(two=="0"?$(".tips:eq(2)").css("display","none"):two);
                     $(".tips:eq(3)").html(three=="0"?$(".tips:eq(3)").css("display","none"):three);
                     $(".tips:eq(4)").html(four=="0"?$(".tips:eq(4)").css("display","none"):four);
-                    $(".tips:eq(5)").html(five=="0"?$(".tips:eq(5)").css("display","none"):five);
+                    */
 				},
 				limitFind(){
                     var that = $(this);
@@ -369,6 +367,7 @@
                     var objects=new Array();
                     objects.push(costate);
                     objects.push("");
+                    objects.push(2);
                     $.ajax({
                         url:"admin/createOrdersController/selectAllOrderByMphoneAndStateAndLimit",
                         data:JSON.stringify(objects),

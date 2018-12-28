@@ -16,6 +16,15 @@ public interface ICreateOrdersService {
 
     int updateCompletedByCono(String cono);
 
+    int cancelOrders(String cono);
+
     int updateAfterSaleByCono(String cono);
+
+    int selectSumPriceByCono(String cono);
+
+    int ordersSuccessPay(String cono);
+
+    String checkOrderPayStatus(String cono);
+
     List<CreateOrders> selectAllOrderByMphoneAndStateAndLimit(Map<String,Object> objectMap);
 }

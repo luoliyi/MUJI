@@ -17,10 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Controller
 @RequestMapping(value = "admin/createOrdersController")
@@ -56,8 +53,10 @@ public class CreateOrdersController {
         Long time = System.currentTimeMillis();//获得系统当前时间的毫秒数
         System.out.println("获取当前系统时间为："+new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(time));//转换成标准年月日的形式
         Date date = new Date(time);
-        time +=30*1000*60;//在当前系统时间的基础上往后加30分钟
+       // time +=30*1000*60;//在当前系统时间的基础上往后加30分钟
+        time +=1*1000*60;
         threeMin=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(time);
+        System.out.println(threeMin);
 
         HttpSession session=request.getSession();
         member= (Member) session.getAttribute("member");
@@ -119,11 +118,87 @@ public class CreateOrdersController {
     @ResponseBody
     public List<CreateOrders> selectAllOrderByMphoneAndStateAndLimit(@RequestBody List<Object>objects, HttpServletRequest request){
 
+        /*
+        * 计算时间
+        * */
+        calcluateConoTime();
         Member member= (Member) request.getSession().getAttribute("member");
         Map<String,Object> objectMap=new HashMap<>();
         objectMap.put("mphone",member.getMphone());
         objectMap.put("ostate",objects.get(0).toString());
         objectMap.put("cono",objects.get(1).toString().equals("")?"":mycono);
+        objectMap.put("paystatus",objects.get(2).toString());
         return createOrdersService.selectAllOrderByMphoneAndStateAndLimit(objectMap);
+    }
+
+    @RequestMapping(value = "/cancelCreateOrder",method = RequestMethod.POST)
+    @ResponseBody
+    public String cancelCreateOrder(){
+        return doCancelOrder();
+    }
+
+    public void calcluateConoTime(){
+        System.out.println("订单时间："+threeMin);
+        Long time = System.currentTimeMillis();//获得系统当前时间的毫秒数
+        System.out.println("系统时间："+new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(time));//转换成标准年月日的形式
+        String nowTime=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(time);
+
+        int res=threeMin.compareTo(nowTime);
+        if(res>0) {
+            System.out.println("str1>str2");
+        }
+        else if(res==0) {
+            System.out.println("str1=str2");
+        }
+        else{
+            System.out.println("str1<str2");
+            /*
+            * 时间已过
+            * */
+            doCancelOrder();
+        }
+    }
+
+    public String doCancelOrder(){
+        if(createOrdersService.cancelOrders(mycono)>0){
+            return "success";
+        }
+        return "error";
+    }
+
+    @RequestMapping(value = "/getMyCono",method = RequestMethod.POST)
+    @ResponseBody
+    public String getMycono(){
+        StringBuffer myConoInfo=new StringBuffer();
+        if(!mycono.equals("")){
+            System.out.println(mycono);
+            myConoInfo.append(mycono);
+            int sumprice=createOrdersService.selectSumPriceByCono(mycono);
+            myConoInfo.append(","+sumprice);
+            return myConoInfo.toString();
+        }
+        return null;
+    }
+
+    /*
+    * 修改订单状态
+    * */
+    @RequestMapping(value = "/ordersSuccessPay",method = RequestMethod.POST)
+    @ResponseBody
+    public String ordersSuccessPay(HttpServletRequest request){
+        String cono=request.getParameter("cono");
+        if(createOrdersService.ordersSuccessPay(cono)>0){
+            return "success";
+        }
+        return "error";
+    }
+
+    /*
+     * 检查订单状态
+     * */
+    @RequestMapping(value = "/checkOrderPayStatus",method = RequestMethod.POST)
+    @ResponseBody
+    public String checkOrderPayStatus(){
+       return createOrdersService.checkOrderPayStatus(mycono);
     }
 }

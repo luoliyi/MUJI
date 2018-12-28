@@ -53,36 +53,36 @@
 
 	var dingdan=null;
 	var spendmoney=null;
-	$(function(){
-		//获得对象
-		 var url = location.search; //获取url中含"?"符后的字串
-		   var theRequest = new Object();
-		   if (url.indexOf("?") != -1) {
-		      var str = url.substr(1);
-		      strs = str.split("&");
-		      for(var i = 0; i < strs.length; i ++) {
-		         theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
-		      }
-		   }
-		   spendmoney=url.split('=')[2];
-		   dingdan=theRequest.user.split('?')[0];
-		   $("#dingdan").html(dingdan);
-		   $("#qian").html(spendmoney);
+	$(function() {
+        //获得对象
+        var url = location.search; //获取url中含"?"符后的字串
+        var theRequest = new Object();
+        if (url.indexOf("?") != -1) {
+            var str = url.substr(1);
+            strs = str.split("&");
+            for (var i = 0; i < strs.length; i++) {
+                theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+            }
+        }
+        spendmoney = url.split('=')[2];
+        dingdan = url.split('=')[1].split('&')[0];
+
+        $("#dingdan").html(dingdan);
+        $("#qian").html(spendmoney);
+    });
 		   
 		   
-	$("#payok").click(function(){
-		//修改数据库订单状态
+	$("#payok").click(function() {
+        //修改数据库订单状态
 		$.ajax({
-			url:"Takeawaycontrol.do?action=checkOut",
-			data:{oNumber:dingdan},
-			success:function(data){
-				console.log(data)
-				//传值
-				window.location.href="paysuccess2.html?fmoney="+spendmoney;
-				}
-			})
-		})
-	})
+			url:"admin/createOrdersController/ordersSuccessPay",
+			type:"post",
+			data:{cono:dingdan},
+		}).done(function (msg) {
+			console.log(msg);
+            window.location.href = "paysuccess2.html?fmoney=" + spendmoney;
+        });
+    })
 	
 </script>
 </html>

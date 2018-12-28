@@ -39,10 +39,39 @@ $(function(){
         $("#CoveringLayer").css("display","none");
 		$("#payfordiv").fadeOut(300);
 		$("#gotobuy").fadeIn()
-	})
+	});
+
+	/*
+	* 检查订单状态
+	* */
+	var timer=null;
+	var checkMycono=false;
+	function checkOrderStatus() {
+	  timer=window.setInterval(function () {
+          $.ajax({
+              url:"admin/createOrdersController/checkOrderPayStatus",
+              type:"post"
+          }).done(function (msg) {
+              if(msg=="0"){
+                  window.clearInterval(timer);
+                  /*
+                  * 跳转到订单
+                  * */
+                  $("#CoveringLayer").css("display","none");
+                  $("#qrcodebox").css("display","none");
+                  checkMycono=true;
+                  $("#center_container iframe:eq(0)",parent.document).attr("src","myInfo.html");
+              }
+          })
+      },2000,false)
+    };
+
 
     var qrcode=null;
     var qrCode=null;
+    var myConoDetails=null;
+    var  myCono=null;
+    var mySumPrice=null;
 	/*去付款*/
 	$("#maxdiv").on("click",".primary",function(){
 
@@ -54,11 +83,21 @@ $(function(){
                 url:"admin/createOrdersController/initOneCreateOrders",
                 type:"post",
             }).done(function (msg) {
-               /* if(msg=="success"){
-                   // $("#CoveringLayer").css("display","none");
-                   // $("#qrcodebox").css("display","none");
-                    console.log("createorder success!")
-                }*/
+                console.log(msg);
+                /*
+                * 获得订单和总价
+                * */
+                $.ajax({
+                    url:"admin/createOrdersController/getMyCono",
+                    type:"post",
+                }).done(function (myconos) {
+                    myConoDetails=myconos;
+
+                    myCono=myConoDetails.split(",")[0];
+                    mySumPrice=parseInt(myConoDetails.split(",")[1]);
+
+                    makeCode();
+                });
 
                 $("#orderTime").val(msg);
                 $("input[name='countDown']").each(function () {
@@ -71,25 +110,39 @@ $(function(){
                         suffix:_.suffix,//后缀部分
                         time_end:time_end//要到达的时间
                     })
-                    //提供3个事件分别为:启动,重启,停止
-                    .on("countDownStarted countDownRestarted  countDownEnded ",function (arguments) {
+                    //提供3个事件分别为:启动,重启,停止countDownStarted countDownRestarted
+                    .on("countDownEnded",function (arguments) {
                         console.info(arguments);
+                        /*
+                        * 计时停止
+                        * */
+                        console.log($(".myCono").html());
+                        /*
+                        * 修改支付状态
+                        * */
+                        $.ajax({
+                            url:"admin/createOrdersController/cancelCreateOrder",
+                            type:"post"
+                        }).done(function (msg) {
+                            console.log(msg);
+                            if(msg=="success"){
+                                $(".orderState").html("已取消");
+                            }
+                        })
                     });
                 });
-
-               console.log(msg);
-
             });
         }
         /*弹出遮罩层*/
 		$("#CoveringLayer").css("display","block");
 		$("#qrcodebox").css("display","block");
 		$(".qrcodetype").html("请使用"+$("#paytype").html()+"扫描支付");
-		makeCode();
-
+        checkOrderStatus();
 	});
 
 	function makeCode(){
+        console.log(myCono);
+        console.log(mySumPrice);
         var url = location.search;
         //生成二维码
         qrCode= document.getElementById("qrcode");
@@ -98,7 +151,7 @@ $(function(){
             render : "canvas",
             width:150,
             height:150,
-            text:"http://172.20.10.2:8081/paysuccess2.html",
+            text:"http://172.20.10.2:8081/paysuccess.html?dingdan="+myCono+"&spendmoney="+(mySumPrice+11),
             correctLevel:QRCode.CorrectLevel.L,
         });
 
@@ -109,7 +162,7 @@ $(function(){
 
 	/*
 	* 支付失败
-	* z*/
+	* */
     $("#qrcodesuccess").css("cursor","pointer").click(function () {
        $("#CoveringLayer").css("display","none") ;
        $("#qrcodebox").css("display","none");
@@ -131,6 +184,7 @@ $(function(){
                 var objects=new Array();
                 objects.push(0);
                 objects.push("cono");
+                objects.push("");
                 $.ajax({
                     url:"admin/createOrdersController/selectAllOrderByMphoneAndStateAndLimit",
                     data:JSON.stringify(objects),
@@ -144,7 +198,7 @@ $(function(){
                     * */
                     $.each(jsdata,function (index,obj) {
                         var oneDetails=$("<div class='oneDetails' />");
-                        var orderNo=$("<h3 class='orderNo' />").html("<span>订单号：</span>"+obj.cono+"<span class='orderState'>待付款</span>").appendTo(oneDetails);
+                        var orderNo=$("<h3 class='orderNo' />").html("<span class='myCono'>订单号:"+obj.cono+"</span><span class='orderState'>待付款</span>").appendTo(oneDetails);
                         var osumprice=0;
                         $.each(obj.ordersList,function (index1,obj1) {
                             osumprice+=parseInt(obj1.osumprice);

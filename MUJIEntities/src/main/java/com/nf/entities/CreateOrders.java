@@ -18,6 +18,7 @@ public class CreateOrders {
     private int coinvoice;
     private String cordesc;
     private int costatus;
+    private int paystatus;
 
     private Orders orders;
 
@@ -40,6 +41,7 @@ public class CreateOrders {
                 ", coinvoice=" + coinvoice +
                 ", cordesc='" + cordesc + '\'' +
                 ", costatus=" + costatus +
+                ", paystatus=" + paystatus +
                 ", orders=" + orders +
                 ", ordersList=" + ordersList +
                 '}';
@@ -51,6 +53,14 @@ public class CreateOrders {
 
     public void setOrders(Orders orders) {
         this.orders = orders;
+    }
+
+    public int getPaystatus() {
+        return paystatus;
+    }
+
+    public void setPaystatus(int paystatus) {
+        this.paystatus = paystatus;
     }
 
     public String getCono() {

@@ -8,6 +8,7 @@
         <result property="coinvoice" column="coinvoice"></result>
         <result property="cordesc" column="cordesc"></result>
         <result property="costatus" column="costatus"></result>
+        <result property="paystatus" column="paystatus"></result>
         <association property="Orders" javaType="orders">
             <id column="orderid" property="orderid"></id>
             <result property="mphone" column="mphone"></result>
@@ -20,7 +21,13 @@
     </resultMap>
 
     <select id="selectCreateOrdersByPhone" resultMap="selectCreateOrdersByPhoneMap" parameterType="java.util.Map">
-        select * from CreateOrders as c join Orders as o on c.cono=o.cono where o.mphone=#{mphone},costatus=#{costatus};
+        select * from CreateOrders as c join Orders as o on c.cono=o.cono
+        <where>
+            o.mphone=#{mphone} and costatus=#{costatus}
+            <if test="paystatus!=null and paystatus!=''">
+                and paystatus=#{paystatus}
+            </if>
+        </where>
     </select>
 
     <insert id="initOneCreateOrders" parameterType="java.util.Map">
@@ -57,6 +64,26 @@
          update CreateOrders set costatus=4 where cono=#{cono}
     </update>
 
+    <!--
+        已取消
+    -->
+    <update id="cancelOrders" parameterType="string">
+         update CreateOrders set paystatus=2 where cono=#{cono}
+    </update>
+
+    <!--
+        已支付
+    -->
+    <update id="ordersSuccessPay" parameterType="string">
+          update CreateOrders set paystatus=0 where cono=#{cono}
+    </update>
+
+    <!--
+        检查订单状态
+    -->
+    <select id="checkOrderPayStatus" parameterType="string" resultType="String">
+        select paystatus from createorders where cono=#{cono};
+    </select>
 
 
 
@@ -69,6 +96,7 @@
         <result column="coinvoice" property="coinvoice"></result>
         <result column="cordesc" property="cordesc"></result>
         <result column="costatus" property="costatus"></result>
+        <result column="paystatus" property="paystatus"></result>
         <collection property="ordersList" ofType="Orders">
             <id property="orderid" column="orderid"></id>
             <result column="gid" property="gid"></result>
@@ -99,6 +127,18 @@
               <if test="cono!='' and cono!=null">
                   and co.cono=#{cono}
               </if>
+              <if test="paystatus!='' and paystatus!=null">
+                  and co.paystatus=#{paystatus}
+              </if>
           </where>
     </select>
+
+    <!--
+        查询该订单下的总价
+    -->
+    <select id="selectSumPriceByCono" parameterType="string" resultType="int">
+        select sum(o.osumprice) from createorders as c join orders as o on c.cono=o.cono where c.cono=#{cono};
+    </select>
+
+
 </mapper>

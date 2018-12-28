@@ -18,6 +18,14 @@ public interface ICreateOrdersDao {
 
     int updateAfterSaleByCono(String cono);
 
+    int cancelOrders(String cono);
+
+    int ordersSuccessPay(String cono);
+
+    int selectSumPriceByCono(String cono);
+
+    String checkOrderPayStatus(String cono);
+
     List<CreateOrders> selectAllOrderByMphoneAndStateAndLimit(Map<String,Object> objectMap);
 
 }

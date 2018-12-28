@@ -41,8 +41,28 @@ public class ICreateOrdersImpl implements ICreateOrdersService {
     }
 
     @Override
+    public int cancelOrders(String cono) {
+        return ordersDao.cancelOrders(cono);
+    }
+
+    @Override
     public int updateAfterSaleByCono(String cono) {
         return ordersDao.updateAfterSaleByCono(cono);
+    }
+
+    @Override
+    public int selectSumPriceByCono(String cono) {
+        return ordersDao.selectSumPriceByCono(cono);
+    }
+
+    @Override
+    public int ordersSuccessPay(String cono) {
+        return  ordersDao.ordersSuccessPay(cono);
+    }
+
+    @Override
+    public String checkOrderPayStatus(String cono) {
+        return ordersDao.checkOrderPayStatus(cono);
     }
 
     @Override

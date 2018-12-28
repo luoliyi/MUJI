@@ -298,7 +298,7 @@
                         contentType:"application/json;charset=utf-8",
                         type:"post"
                     }).done(function (jsdata) {
-                        $("#countGoods").html(jsdata.length)
+                        $("#countGoods").html(jsdata.length);
                         app.renderData(jsdata);
                     })
                 },
@@ -308,7 +308,7 @@
                 * */
                 renderData:function(jsdata){
                     //$(".PageCheckoutPartItems .oneGoods").remove();
-					console.log(jsdata)
+					console.log(jsdata);
                     var sumprice=0;
                     $.each(jsdata,function (index,obj) {
                         sumprice+=obj.sumprice;
@@ -336,7 +336,6 @@
                 }
             };
             app.init();
-
         })
 	</script>
 </html>
