@@ -131,7 +131,7 @@ html, body {
 				border-right: 1.5px solid lightgray;
 				border-bottom: 1.5px solid lightgray;
 	     	top: 45px;
-	     	left: 239px;
+	     	left: 175px!important;
 				z-index: 9;
 				border-radius: 4px;
 				text-align: center;

@@ -295,14 +295,21 @@
                    // $(".tips:eq(0)").css("diplay","block").html(jsdata.length);
                     var fukuan=0;var fahuo=0;var shouhuo=0;var wancheng=0;var quxiao=0;
                     $.each(jsdata,function (index,obj) {
+
 						var oneOrder=$("<div class='oneOrder' />");
 						var serial=$("<h3 class='serial' />").html("订单号：<span class='UserSelectArea'>"+obj.cono+"</span>").appendTo(oneOrder);
 						var osumprice=0;
 						$.each(obj.ordersList,function (index1,obj1) {
 						    osumprice+=parseInt(obj1.osumprice);
-							$(
+                            if(obj1.goods.gpic.indexOf(".jpg")>0) {
+                                var img = obj1.goods.gpic;
+                            }else {
+                                var img = obj1.goods.gpic + ".jpg";
+                            }
+
+                            $(
 							    "<div class=\"order-item-items-item\">\n" +
-                                "<img src='admin/img/goodsdetails/" + obj1.goods.gname + ".jpg'/>\n" +
+                                "<img src='admin/img/goodsdetails/" + img + "'/>\n" +
                                 "<div class=\"order-item-heading-wrap\">\n" +
                                 "<div class=\"name\">"+obj1.goods.gname+"</div>\n" +
                                 "<div class=\"options\">颜色：<span>"+obj1.goods.gcolor+" "+obj1.goods.gsize+"</span></div>\n" +

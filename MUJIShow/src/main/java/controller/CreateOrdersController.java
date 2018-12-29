@@ -54,7 +54,7 @@ public class CreateOrdersController {
         System.out.println("获取当前系统时间为："+new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(time));//转换成标准年月日的形式
         Date date = new Date(time);
        // time +=30*1000*60;//在当前系统时间的基础上往后加30分钟
-        time +=1*1000*60;
+        time +=30*1000*60;
         threeMin=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(time);
         System.out.println(threeMin);
 

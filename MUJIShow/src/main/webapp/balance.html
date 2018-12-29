@@ -311,6 +311,11 @@
 					console.log(jsdata);
                     var sumprice=0;
                     $.each(jsdata,function (index,obj) {
+                        if(obj.goods.gpic.indexOf(".jpg")>0) {
+                            var img = obj.goods.gpic;
+                        }else {
+                            var img = obj.goods.gpic + ".jpg";
+                        }
                         sumprice+=obj.sumprice;
                         /*
                         * 添加数据
@@ -318,10 +323,10 @@
                         $(
 							"<div class=\"oneGoods\">\n" +
 							"<div class=\"image-wrap\">\n" +
-							"<img src='admin/img/goodsdetails/" + obj.goods.gname + ".jpg'/>\n" +
+							"<img src='admin/img/goodsdetails/" + img + "'/>\n" +
 							"<div class=\"image-wrap-right\">\n" +
 							"<span class=\"title\">"+obj.goods.gname+"</span><br />\n" +
-							"<div class=\"options\">颜色：白色、尺码：男式175/100A</div>\n" +
+							"<div class=\"options\">颜色："+obj.goods.gcolor+"<!--、尺码：男式175/100A--></div>\n" +
 							"<span class=\"image-wrap-right-pricediv\"><span>￥</span><span class=\"image-wrap-right-price\">"+obj.goods.gnowprice+"</span></span>\n" +
 							"<div class=\"quantity\">数量：<span>x</span><span>"+obj.sccount+"</span>\n" +
 							"</div>\n" +

@@ -92,11 +92,11 @@ $(function(){
                     type:"post",
                 }).done(function (myconos) {
                     myConoDetails=myconos;
-
                     myCono=myConoDetails.split(",")[0];
                     mySumPrice=parseInt(myConoDetails.split(",")[1]);
 
                     makeCode();
+
                 });
 
                 $("#orderTime").val(msg);
@@ -132,12 +132,15 @@ $(function(){
                     });
                 });
             });
+        }else {
+	        makeCode();
         }
         /*弹出遮罩层*/
 		$("#CoveringLayer").css("display","block");
 		$("#qrcodebox").css("display","block");
 		$(".qrcodetype").html("请使用"+$("#paytype").html()+"扫描支付");
         checkOrderStatus();
+
 	});
 
 	function makeCode(){
@@ -201,10 +204,15 @@ $(function(){
                         var orderNo=$("<h3 class='orderNo' />").html("<span class='myCono'>订单号:"+obj.cono+"</span><span class='orderState'>待付款</span>").appendTo(oneDetails);
                         var osumprice=0;
                         $.each(obj.ordersList,function (index1,obj1) {
+                            if(obj1.goods.gpic.indexOf(".jpg")>0) {
+                                var img = obj1.goods.gpic;
+                            }else {
+                                var img = obj1.goods.gpic + ".jpg";
+                            }
                             osumprice+=parseInt(obj1.osumprice);
                             $(
                                "<div class=\"order-item-items-item\">\n" +
-                                "<img src='admin/img/goodsdetails/" + obj1.goods.gname + ".jpg'/>\n" +
+                                "<img src='admin/img/goodsdetails/" + img + "'/>\n" +
                                 "<div class=\"order-item-heading-wrap\">\n" +
                                 "<div class=\"name\">"+obj1.goods.gname+"<span class=\"count\"><span>x</span><span class=\"orderCount\">"+obj1.ocount+"</span></span></div>\n" +
                                 "<div class=\"options\">颜色：<span>"+obj1.goods.gcolor+" "+obj1.goods.gsize+"</span></div>\n" +

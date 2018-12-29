@@ -487,6 +487,9 @@ a:hover{color:#990000;}
 	.mydetailplace{
 		top: 0px;
 	}
+	.listitem-content li .tips{
+		right: 12px;
+	}
 }		
 
 /*# sourceMappingURL=myinfo.css.map */

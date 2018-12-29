@@ -325,7 +325,11 @@
 						console.log(data);
 						$.each(data,function (index,obj) {
 							var div=$("<div class='arriveOne' title='点击我' />").data("gid",obj.gid);
-							var img=$("<img src='admin/img/goodsdetails/" + obj.gname + ".jpg'/>");
+							if(obj.gpic.indexOf(".jpg")>0) {
+                                var img = $("<img src='admin/img/goodsdetails/" + obj.gpic + "'/>");
+                            }else {
+                                var img = $("<img src='admin/img/goodsdetails/" + obj.gpic + ".jpg'/>");
+							}
 							var br=$("<br/>");
 							var p1=$("<p class='goodsname'>"+obj.gname+"</p>");
                             var p2=$("<p><strong><span>￥</span><span>"+obj.gnowprice+"</span></strong></p>");

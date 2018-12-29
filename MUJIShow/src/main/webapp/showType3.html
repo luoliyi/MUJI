@@ -186,9 +186,14 @@
 
                 $.each(jsdata[0].goodsList, function (index, obj) {
                     var li = $("<li title='click me' />").data("gid", obj.gid);
+                    if(obj.gpic.indexOf(".jpg")>0) {
+                        var img = obj.gpic;
+                    }else {
+                        var img = obj.gpic + ".jpg";
+                    }
                     $(
                         "<div class=\"detail_img\">\n" +
-                        "                      <img src='admin/img/goodsdetails/" + obj.gpic + ".jpg'/>\n" +
+                        "                      <img src='admin/img/goodsdetails/" + img + "'/>\n" +
                         "                        <p class=\"title\">" + obj.gname + "</p>\n" +
                         "                        <p class=\"MuPriceTag\">\n" +
                         "                            <span>￥</span>\n" +

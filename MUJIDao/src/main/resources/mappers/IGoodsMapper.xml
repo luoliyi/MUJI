@@ -102,9 +102,9 @@
     <!--
         这里不做删除操作，只做修改状态
     -->
-    <update id="delete" parameterType="String">
-         update Goods set gstate=1 where gno=#{goodno};
-    </update>
+    <delete id="delete" parameterType="String">
+         delete from Goods where gno=#{goodno};
+    </delete>
 
 
 

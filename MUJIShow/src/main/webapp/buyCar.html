@@ -225,15 +225,20 @@
                 $.each(jsdata,function (index,obj) {
 
                     sumprice+=obj.sumprice;
+                    if(obj.goods.gpic.indexOf(".jpg")>0) {
+                        var img = obj.goods.gpic;
+                    }else {
+                        var img = obj.goods.gpic + ".jpg";
+                    }
 
                     $(
                         "<div class=\"oneGoods\">\n" +
                         "<i data-scid="+obj.scid+"  class=\"layui-icon layui-icon-close-fill deleOne\"></i>\n" +
                         "<div class=\"image-wrap\">\n" +
-                        "<img src='admin/img/goodsdetails/" + obj.goods.gname + ".jpg'/>\n" +
+                        "<img src='admin/img/goodsdetails/" + img+ "'/>\n" +
                         "<div class=\"image-wrap-right\">\n" +
                         "<span class=\"title\">"+obj.goods.gname+"</span><br />\n" +
-                        "<div class=\"options\">颜色：白色、尺码：男式175/100A</div>\n" +
+                        "<div class=\"options\">颜色：白色<!--、尺码：男式175/100A--></div>\n" +
                         "<span><span>￥</span><span class=\"image-wrap-right-price\">"+obj.goods.gnowprice+"</span></span>\n" +
                         "<div class=\"quantity\">数量：\n" +
                         "<button data-gnowprice="+obj.goods.gnowprice+" data-scid="+obj.scid+"  data-ind="+index+" class='btnDelCount'>-</button>\n" +
