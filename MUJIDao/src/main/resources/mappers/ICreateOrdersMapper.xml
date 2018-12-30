@@ -142,4 +142,39 @@
     </select>
 
 
+    <!--
+        后台查询订单以及修改
+    -->
+
+    <resultMap id="backgroundSelectAllOrdersMap" type="OrdersMap">
+        <result column="cono" property="cono"></result>
+        <result column="mphone" property="mphone"></result>
+        <result column="corderDate" property="corderDate"></result>
+        <result column="cordesc" property="cordesc"></result>
+        <result column="coinvoice" property="coinvoice"></result>
+        <result column="costatus" property="costatus"></result>
+        <result column="paystatus" property="paystatus"></result>
+        <result column="osumprice" property="osumprice"></result>
+    </resultMap>
+
+    <select id="backgroundSelectAllOrders" parameterType="java.util.Map" resultMap="backgroundSelectAllOrdersMap">
+        select co.cono,o.mphone,co.corderDate,co.cordesc,coinvoice,co.costatus,co.paystatus,sum(o.osumprice) as osumprice
+        from createorders as co join orders as o on co.cono=o.cono
+        <where>
+            co.paystatus between 0 and 1
+            <if test="cono!='' and cono!=null">
+                 and co.cono=#{cono}
+             </if>
+         </where>
+        group by co.cono order by co.corderDate desc limit #{pageno},#{pagesize};
+    </select>
+
+    <!--
+        发货
+    -->
+    <update id="backgroundUpdateConoStatus" parameterType="java.util.Map">
+        update createorders set costatus=#{costatus} where cono=#{cono}
+    </update>
+
+
 </mapper>

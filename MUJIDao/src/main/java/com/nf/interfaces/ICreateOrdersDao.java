@@ -28,4 +28,8 @@ public interface ICreateOrdersDao {
 
     List<CreateOrders> selectAllOrderByMphoneAndStateAndLimit(Map<String,Object> objectMap);
 
+    List<CreateOrders>backgroundSelectAllOrders(Map<String,Object>objectMap);
+
+    int backgroundUpdateConoStatus(Map<String,Object>objectMap);
+
 }

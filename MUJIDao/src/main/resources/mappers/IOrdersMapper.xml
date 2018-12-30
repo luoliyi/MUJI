@@ -15,7 +15,7 @@
         ostate=3:已完成
     -->
     <update id="update" parameterType="java.util.Map">
-        update Orders set ostate=3 where cono=#{cono};
+        update Orders set ostate=2 where cono=#{cono};
     </update>
 
     <!--
@@ -24,5 +24,32 @@
     <delete id="delete" parameterType="java.util.Map">
        delete from shoppingcart where scid=#{scid};
     </delete>
+
+
+    <resultMap id="selectAllGoodsByConoMap" type="Orders">
+        <id property="orderid" column="orderid"></id>
+        <result column="gid" property="gid"></result>
+        <result column="mphone" property="mphone"></result>
+        <result column="ocount" property="ocount"></result>
+        <result column="osumprice" property="osumprice"></result>
+        <result column="cono" property="cono"></result>
+        <result column="ostate" property="ostate"></result>
+        <association property="goods" javaType="Goods">
+            <id column="gid" property="gid"></id>
+            <result property="gno" column="gno"></result>
+            <result property="gname" column="gname"></result>
+            <result property="gcolor" column="gcolor"></result>
+            <result property="gsize" column="gsize"></result>
+            <result property="gpic" column="gpic"></result>
+            <result property="gnowprice" column="gnowprice"></result>
+            <result property="gdesc" column="gdesc"></result>
+        </association>
+    </resultMap>
+    <!--
+        查询该订单下所有的商品,打印
+    -->
+    <select id="selectAllGoodsByCono" parameterType="java.util.Map" resultMap="selectAllGoodsByConoMap">
+        select * from orders as o join goods as g on o.gid=g.gid where cono=#{cono};
+    </select>
 
 </mapper>

@@ -48,6 +48,11 @@
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-core</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>com.nf.mujisystem</groupId>
+            <artifactId>MUJIEntities</artifactId>
+        </dependency>
     </dependencies>
 
 

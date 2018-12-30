@@ -1,5 +1,8 @@
 package controller;
 
+import com.nf.commons.MyUtils.PrintPdf;
+import com.nf.dao.test.Commodity2;
+import com.nf.dao.test.TestPrinter;
 import com.nf.entities.CreateOrders;
 import com.nf.entities.Member;
 import com.nf.entities.Orders;
@@ -14,8 +17,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.persistence.criteria.Order;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.awt.print.PageFormat;
+import java.awt.print.PrinterException;
+import java.awt.print.PrinterJob;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -200,5 +207,86 @@ public class CreateOrdersController {
     @ResponseBody
     public String checkOrderPayStatus(){
        return createOrdersService.checkOrderPayStatus(mycono);
+    }
+
+
+    /*
+     * 查询所有订单状态总数
+     * */
+    @RequestMapping(value = "/backgroundSelectAllOrdersCount",method = RequestMethod.POST)
+    @ResponseBody
+    public int backgroundSelectAllOrdersCount(){
+
+        Map<String,Object>objectMap=new HashMap<>();
+        objectMap.put("pageno",0);
+        objectMap.put("pagesize",999999);
+        return createOrdersService.backgroundSelectAllOrders(objectMap).size();
+    }
+
+    /*
+    * 查询所有订单状态
+    * */
+    @RequestMapping(value = "/backgroundSelectAllOrders",method = RequestMethod.POST)
+    @ResponseBody
+    public List<CreateOrders> backgroundSelectAllOrders(@RequestBody List<Object>objlist){
+        int page= (int) objlist.get(0);
+
+        int pagesize= (int) objlist.get(1);
+        int pageno=(page-1)*pagesize;
+
+        Map<String,Object>objectMap=new HashMap<>();
+        objectMap.put("pageno",pageno);
+        objectMap.put("pagesize",pagesize);
+        objectMap.put("cono",objlist.get(2).toString());
+        return createOrdersService.backgroundSelectAllOrders(objectMap);
+    }
+
+    /*
+     * 修改订单状态
+     * */
+    @RequestMapping(value = "/backgroundUpdateConoStatus",method = RequestMethod.POST)
+    @ResponseBody
+    public String backgroundUpdateConoStatus(@RequestBody List<Object>objlist){
+
+        Map<String,Object>objectMap=new HashMap<>();
+        objectMap.put("costatus",objlist.get(0).toString());
+        objectMap.put("cono",objlist.get(1).toString());
+
+        if (createOrdersService.backgroundUpdateConoStatus(objectMap)>0){
+            return "success";
+        }
+        return "error";
+    }
+
+
+    /*
+    * 打印订单
+    * */
+    @RequestMapping(value = "/printPdf",method = RequestMethod.POST)
+    @ResponseBody
+    public String printPdf(@RequestBody List<Object>objlist){
+        Map<String ,Object>objectMap=new HashMap<>();
+        objectMap.put("cono",objlist.get(0).toString());
+        List<Orders> ordersList=ordersService.selectAllGoodsByCono(objectMap);
+
+        PrinterJob job = PrinterJob.getPrinterJob();
+        PageFormat pageFormat = job.defaultPage();//得到默认页格式
+        ArrayList<Orders> arrayList=new ArrayList<>();
+        for(int i=0;i<ordersList.size();i++){
+            arrayList.add(ordersList.get(i));
+        }
+        job.setPrintable(new PrintPdf(arrayList));//设置打印类
+        try {
+            //可以用printDialog显示打印对话框，在用户确认后打印；也可以直接打印
+            boolean a=job.printDialog();
+            if(a){
+                job.print();
+            } else{
+                job.cancel();
+            }
+        } catch (PrinterException e) {
+            e.printStackTrace();
+        }
+        return "";
     }
 }

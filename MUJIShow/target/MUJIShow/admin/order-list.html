@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="./css/font.css">
     <link rel="stylesheet" href="./css/xadmin.css">
-    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/jquery-1.11.3.js" charset="utf-8"></script>
     <script type="text/javascript" src="./lib/layui/layui.js" charset="utf-8"></script>
     <script type="text/javascript" src="./js/xadmin.js"></script>
     <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
@@ -69,7 +69,7 @@
       <xblock>
         <button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button>
         <button class="layui-btn" onclick="x_admin_show('添加用户','./order-add.html')"><i class="layui-icon"></i>添加</button>
-        <span class="x-right" style="line-height:40px">共有数据：88 条</span>
+        <span class="x-right" style="line-height:40px">共有数据：<span id="allOrderCount">88</span> 条</span>
       </xblock>
       <table class="layui-table">
         <thead>
@@ -78,20 +78,19 @@
               <div class="layui-unselect header layui-form-checkbox" lay-skin="primary"><i class="layui-icon">&#xe605;</i></div>
             </th>
             <th>订单编号</th>
-            <th>收货人</th>
-            <th>总金额</th>
-            <th>应付金额</th>
-            <th>订单状态</th>
+            <th>联系电话</th>
+            <th>订单金额</th>
             <th>支付状态</th>
-            <th>发货状态</th>
-            <th>支付方式</th>
+            <th>订单状态</th>
+            <th>是否发票</th>
+            <th>订单时间</th>
             <th>配送方式</th>
-            <th>下单时间</th>
+            <th>备注信息</th>
             <th >操作</th>
             </tr>
         </thead>
         <tbody id="tbody">
-          <tr>
+         <!-- <tr>
             <td>
               <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='2'><i class="layui-icon">&#xe605;</i></div>
             </td>
@@ -113,105 +112,156 @@
                 <i class="layui-icon">&#xe640;</i>
               </a>
             </td>
-          </tr>
-        <!--一一条数据-->
-          <tr>
-            <td>
-              <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='2'><i class="layui-icon">&#xe605;</i></div>
-            </td>
-            <td>2017009171822298053</td>
-            <td>老王:18925139194</td>
-            <td>7829.10</td>
-            <td>7854.10</td>
-            <td>待确认</td>
-            <td>未支付</td>
-            <td>未发货</td>
-            <td>其他方式</td>
-            <td>申通物流</td>
-            <td>2017-08-17 18:22</td>
-            <td class="td-manage">
-              <a title="查看"  onclick="x_admin_show('编辑','order-view.html')" href="javascript:;">
-                <i class="layui-icon">&#xe63c;</i>
-              </a>
-              <a title="删除" onclick="member_del(this,'要删除的id')" href="javascript:;">
-                <i class="layui-icon">&#xe640;</i>
-              </a>
-            </td>
-          </tr>
+          </tr>-->
         </tbody>
       </table>
-      <div class="page">
-        <div>
-          <a class="prev" href="">&lt;&lt;</a>
-          <a class="num" href="">1</a>
-          <span class="current">2</span>
-          <a class="num" href="">3</a>
-          <a class="num" href="">489</a>
-          <a class="next" href="">&gt;&gt;</a>
-        </div>
-      </div>
+      <!--分页组件-->
+      <div id="demo2-1"></div>
 
     </div>
     <script>
-      layui.use('laydate', function(){
-        var laydate = layui.laydate;
-        
-        //执行一个laydate实例
-        laydate.render({
-          elem: '#start' //指定元素
-        });
 
-        //执行一个laydate实例
-        laydate.render({
-          elem: '#end' //指定元素
-        });
-      });
+      var app={
 
-       /*用户-停用*/
-      function member_stop(obj,id){
-          layer.confirm('确认要停用吗？',function(index){
+          firstRequest(){
+              $.ajax({
+                  url:"createOrdersController/backgroundSelectAllOrdersCount",
+                  contentType:"application/json;charset=utf-8",
+                  type:"post"
+              }).done(function (count) {
+                  console.log(count);
+                  console.log("sum:"+count);
+                  $("#allOrderCount").html(count);
+                  //分页
+                  layui.use(['laypage', 'layer'], function () {
+                      var laypage = layui.laypage
+                          , layer = layui.layer;
+                      //总页数大于页码总数
+                      laypage.render({
+                          elem: 'demo2-1'
+                          , limit: 4
+                          , count: count //数据总数
+                          //当前页
+                          , curr: location.hash.replace('#!fenye=', '') //获取起始页
+                          , hash: 'fenye' //自定义hash值
+                          , jump: function (obj) {
+                              var objlist = new Array();
+                              objlist.push(obj.curr);
+                              objlist.push(obj.limit);
+                              objlist.push("");
+                              //请求数据
+                              $.ajax({
+                                  url: "createOrdersController/backgroundSelectAllOrders",
+                                  type: "POST",
+                                  contentType: "application/json;charset=utf-8",
+                                  data: JSON.stringify(objlist),
+                                  beforeSend: function () {
 
-              if($(obj).attr('title')=='启用'){
+                                  },
+                                  success: function (jsdata) {
+                                      app.bindData(jsdata);
+                                  }
+                              })
+                          }
+                      });
+                  });
+              })
+          },
+          bindData(jsdata){
+              $("#tbody tr").remove();
+              console.log(jsdata);
+              $.each(jsdata,function (index,obj) {
+                  var con1=obj.paystatus==0?"<span class=\"layui-btn layui-btn-normal layui-btn-mini\">已支付</span>"
+                      :"<span class=\"layui-btn layui-btn-normal layui-btn-warm\">未支付</span>";
+                  var con2=null;
+                  if(obj.costatus==0){
+                      con2="<span class=\"layui-btn layui-btn-normal layui-btn-mini\">未发货</span>";
+                  }else if(obj.costatus==1){
+                      con2="<span class=\"layui-btn layui-btn-normal layui-btn-warm\">已发货</span>";
+                  }else if(obj.costatus==2){
+                      con2="<span class=\"layui-btn layui-btn-normal layui-btn-mini\">已完成</span>";
+                  }
+                  var con3=obj.coinvoice==0?"<span class=\"layui-btn layui-btn-normal layui-btn-mini\">需要发票</span>"
+                      :"<span class=\"layui-btn layui-btn-normal layui-btn-warm\">不需要发票</span>";
 
-                //发异步把用户状态进行更改
-                $(obj).attr('title','停用')
-                $(obj).find('i').html('&#xe62f;');
-
-                $(obj).parents("tr").find(".td-status").find('span').addClass('layui-btn-disabled').html('已停用');
-                layer.msg('已停用!',{icon: 5,time:1000});
-
-              }else{
-                $(obj).attr('title','启用')
-                $(obj).find('i').html('&#xe601;');
-
-                $(obj).parents("tr").find(".td-status").find('span').removeClass('layui-btn-disabled').html('已启用');
-                layer.msg('已启用!',{icon: 5,time:1000});
+                  var tr=$("<tr/>");
+                  var td=$("<td><div class=\"layui-unselect layui-form-checkbox\" lay-skin=\"primary\"><i class=\"layui-icon\">&#xe605;</i></div></td>").appendTo(tr);
+                  $(
+                      "            <td>"+obj.cono+"</td>\n" +
+                      "            <td>"+obj.mphone+"</td>\n" +
+                      "            <td>"+obj.osumprice+"</td>\n" +
+                      "            <td>"+con1+"</td>\n" +
+                      "            <td>"+con2+"</td>\n" +
+                      "            <td>"+con3+"</td>\n" +
+                      "            <td>"+obj.corderDate+"</td>\n" +
+                      "            <td>MUJI配送</td>\n" +
+                      "            <td>"+obj.cordesc+"</td>\n"
+                  ).appendTo(tr);
+                  $(
+                      "<td class=\"td-manage\">\n" +
+                      "              <a title=\"发货\" data-paystatus="+obj.paystatus+" data-cono="+obj.cono+" class='editCono' href=\"javascript:;\">\n" +
+                      "                <i class=\"layui-icon\">&#xe698;</i>\n" +
+                      "              </a>\n" +
+                      "              <a title=\"打印发票\" data-cono="+obj.cono+" class='printPdf' href=\"javascript:;\">\n" +
+                      "                <i class=\"layui-icon\">&#xe629;</i>\n" +
+                      "              </a>\n" +
+                      "            </td>"
+                  ).appendTo(tr);
+                  $("#tbody").append(tr);
+              });
+          },
+          /*
+          * 发货/完成
+          * */
+          update(){
+              var cono=$(this).data("cono");
+              var paystatus=$(this).data("paystatus");
+              if(paystatus==1){
+                  layer.msg('该用户还未支付，您不能发货！',{time:1000});
+                  return false;
               }
-              
-          });
-      }
+              var objlist=new Array();
+              objlist.push(1);
+              objlist.push(cono);
 
-      /*用户-删除*/
-      function member_del(obj,id){
-          layer.confirm('确认要删除吗？',function(index){
-              //发异步删除数据
-              $(obj).parents("tr").remove();
-              layer.msg('已删除!',{icon:1,time:1000});
-          });
-      }
+              $.ajax({
+                  url:"createOrdersController/backgroundUpdateConoStatus",
+                  type:"post",
+                  contentType:"application/json;charset=utf-8",
+                  data:JSON.stringify(objlist)
+              }).done(function (msg) {
+                  if(msg=="success"){
+                      layer.msg('发货成功，用户很快会收到快递！',{time:1000});
+                      app.firstRequest();
+                  }
+              })
+          },
+          /*
+          * 打印
+          * */
+          printPdf(){
+              var cono=$(this).data("cono");
+              var objlist=new Array();
+              objlist.push(cono);
+              $.ajax({
+                  url:"createOrdersController/printPdf",
+                  type:"post",
+                  contentType:"application/json;charset=utf-8",
+                  data:JSON.stringify(objlist)
+              }).done(function (msg) {
+                  if(msg=="success"){
 
+                  }
+              })
+          },
+          init(){
+              app.firstRequest();
+              $("#tbody").on("click",".editCono",app.update);
+              $("#tbody").on("click",".printPdf",app.printPdf);
+          }
+      };
+      app.init();
 
-
-      function delAll (argument) {
-
-        var data = tableCheck.getData();
-  
-        layer.confirm('确认要删除吗？'+data,function(index){
-            //捉到所有被选中的，发异步进行删除
-            layer.msg('删除成功', {icon: 1});
-            $(".layui-form-checked").not('.header').parents('tr').remove();
-        });
-      }
     </script>
     <script>var _hmt = _hmt || []; (function() {
         var hm = document.createElement("script");

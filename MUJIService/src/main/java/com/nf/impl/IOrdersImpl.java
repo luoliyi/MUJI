@@ -1,5 +1,6 @@
 package com.nf.impl;
 
+import com.nf.entities.Orders;
 import com.nf.interfaces.IOrdersDao;
 import com.nf.service.IOrdersService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ public class IOrdersImpl implements IOrdersService {
 
 
     @Override
-    public List<Order> selectAllOrderByMphoneAndState(Map<String, Object> objectMap) {
+    public List<Orders> selectAllOrderByMphoneAndState(Map<String, Object> objectMap) {
         return ordersDao.selectAllOrderByMphoneAndState(objectMap);
     }
 
@@ -34,5 +35,10 @@ public class IOrdersImpl implements IOrdersService {
     @Override
     public int delete(Map<String, Object> objectMap) {
         return ordersDao.delete(objectMap);
+    }
+
+    @Override
+    public List<Orders> selectAllGoodsByCono(Map<String, Object> objectMap) {
+        return ordersDao.selectAllGoodsByCono(objectMap);
     }
 }

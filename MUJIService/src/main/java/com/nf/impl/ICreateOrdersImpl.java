@@ -69,4 +69,14 @@ public class ICreateOrdersImpl implements ICreateOrdersService {
     public List<CreateOrders> selectAllOrderByMphoneAndStateAndLimit(Map<String, Object> objectMap) {
         return ordersDao.selectAllOrderByMphoneAndStateAndLimit(objectMap);
     }
+
+    @Override
+    public List<CreateOrders> backgroundSelectAllOrders(Map<String, Object> objectMap) {
+        return ordersDao.backgroundSelectAllOrders(objectMap);
+    }
+
+    @Override
+    public int backgroundUpdateConoStatus(Map<String, Object> objectMap) {
+        return ordersDao.backgroundUpdateConoStatus(objectMap);
+    }
 }

@@ -341,6 +341,13 @@
                         }else if(obj.paystatus==0){
                             fahuo+=1;
                         }
+
+                        if(obj.costatus==1){
+                            shouhuo+=1;
+                            fahuo-=1;
+						}else if(obj.costatus==2){
+                            wancheng+=1;
+						}
                     });
                     $(".tips:eq(4)").html(quxiao=="0"?$(".tips:eq(4)").css("display","none"):quxiao);
                     $(".tips:eq(0)").html(fukuan=="0"?$(".tips:eq(0)").css("display","none"):fukuan);
