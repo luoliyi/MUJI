@@ -37,8 +37,6 @@ public class UserLoginController {
     public void login(@RequestBody List<String> loginList, HttpServletRequest request, HttpServletResponse response) throws IOException, NoSuchAlgorithmException {
 
 
-        System.out.println("前端："+loginList.get(0)+","+loginList.get(1));
-
         String logId=loginList.get(0);
         String pass=loginList.get(1);
 
@@ -87,4 +85,38 @@ public class UserLoginController {
         return null;
     }
 
+    /*
+    * 短信登录
+    * */
+    @RequestMapping(value = "/shortMessageLogin",method = RequestMethod.POST)
+    @ResponseBody
+    public void shortMessageLogin(@RequestBody List<String> loginList, HttpServletRequest request, HttpServletResponse response) throws IOException, NoSuchAlgorithmException {
+
+        String logId = loginList.get(0);
+
+        Map<String, Object> objectMap = new HashMap<>();
+        objectMap.put("mphone", logId);
+        member = memberService.selectOne(objectMap);
+        /*
+         * 这里别设置返回类型，否则
+         * {readyState: 4, getResponseHeader: ƒ, getAllResponseHeaders: ƒ, setRequestHeader: ƒ, overrideMimeType}
+         * */
+        response.setCharacterEncoding("utf-8");
+        try {
+            request.setCharacterEncoding("utf-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        if(member!=null){
+            HttpSession session=request.getSession();
+            /*
+             * 保存在session中去
+             * */
+            session.setAttribute("member",member);
+            System.out.println("登录成功，欢迎您："+member.getMname());
+            response.getWriter().print("success");
+        }else {
+            response.getWriter().print("error");
+        }
+    }
 }

@@ -41,52 +41,136 @@ $("#gotoreadme").click(function(){
 	$("#regeist").fadeOut();
 	$("#regeistreadme").fadeIn();
 });
+
+
+var shortMessage="";
+
 //登录
 $("#buttonlogin").click(function(){
-	if($("#loginPhone").val()==""||$("#loginPassword").val()==""){
-				layui.use('layer', function(){
-			  var layer = layui.layer;
-			  layer.msg("账号密码不能为空",{time: 1500});
-		});
-		return false;
-	}else {
+
+	/*
+	* 判断是否是数字
+	* */
+	if(isNaN($("#loginPassword").val())) {
+
+        if ($("#loginPhone").val() == "" || $("#loginPassword").val() == "") {
+            layui.use('layer', function () {
+                var layer = layui.layer;
+                layer.msg("账号密码不能为空", {time: 1500});
+            });
+            return false;
+        } else {
+            /*
+            * 发起ajax请求登录判断
+            * */
+            var loginList = new Array();
+            loginList.push($("#loginPhone").val());
+            loginList.push($("#loginPassword").val());
+
+            $.ajax({
+                url: "userloginController/login",
+                data: JSON.stringify(loginList),
+                contentType: "application/json;charset=utf-8",
+                type: "POST"
+            }).done(function (msg) {
+                console.log(msg);
+
+                if (msg == "success") {
+
+                    $("#checkIfSignIn").val($("#loginPhone").val());
+                    $("#login").fadeOut();
+                    $("#center_container_details").css("display", "block");
+
+                    /*赋值*/
+                    $("#loginandregeist").css("border", "none").html($("#checkIfSignIn").val() + ",欢迎您");
+                    /*小标题样式,电话号码*/
+                    $(".userdetailscontent").css("left", "192px");
+                    /*下载移动端隐藏*/
+                    $("#downLoadApp").css("display", "none");
+
+                } else {
+                    layui.use('layer', function () {
+                        var layer = layui.layer;
+                        layer.msg("账号或者密码错误！", {time: 1500});
+                    });
+                    return false;
+                }
+            })
+        }
+    }else {
 		/*
-		* 发起ajax请求登录判断
+		* 短信判断
 		* */
-		var loginList=new Array();
-		loginList.push($("#loginPhone").val());
-        loginList.push($("#loginPassword").val());
-
-		$.ajax({
-			url:"userloginController/login",
-			data:JSON.stringify(loginList),
-			contentType:"application/json;charset=utf-8",
-			type:"POST"
-		}).done(function (msg) {
-			console.log(msg);
-
-			if(msg=="success"){
+		if($("#loginPassword").val()!=shortMessage){
+            layui.use('layer', function () {
+                var layer = layui.layer;
+                layer.msg("验证码错误！", {time: 1500});
+            });
+            return false;
+		}
+        /*
+        * 短信登录
+        * */
+        var loginList=new Array();
+        loginList.push($("#loginPhone").val());
+        $.ajax({
+            url: "userloginController/shortMessageLogin",
+            data: JSON.stringify(loginList),
+            contentType: "application/json;charset=utf-8",
+            type: "POST"
+        }).done(function (msg) {
+        	if(msg=="success"){
 
                 $("#checkIfSignIn").val($("#loginPhone").val());
                 $("#login").fadeOut();
-                $("#center_container_details").css("display","block");
-
+                $("#center_container_details").css("display", "block");
                 /*赋值*/
-                $("#loginandregeist").css("border","none").html($("#checkIfSignIn").val()+",欢迎您");
+                $("#loginandregeist").css("border", "none").html($("#checkIfSignIn").val() + ",欢迎您");
                 /*小标题样式,电话号码*/
-                $(".userdetailscontent").css("left","192px");
+                $(".userdetailscontent").css("left", "192px");
                 /*下载移动端隐藏*/
-                $("#downLoadApp").css("display","none");
-
-			}else {
-                layui.use('layer', function(){
-                    var layer = layui.layer;
-                    layer.msg("账号或者密码错误！",{time: 1500});
-                });
-                return false;
+                $("#downLoadApp").css("display", "none");
 			}
-        })
+		})
     }
+});
+
+//短信登陆
+$("#shortMessageLogin").click(function () {
+	if($("#loginPhone").val()==""){
+        layui.use('layer', function(){
+            var layer = layui.layer;
+            layer.msg("您还未填写手机号码",{time: 1500});
+        });
+		return false;
+	}
+	var time=59;
+	var that=$(this);
+	var timer=window.setInterval(function () {
+		if(time<=0){
+			$(that).html("重新发送");
+			window.clearInterval(timer);
+			return false;
+		}else {
+		}
+		$(that).html(time+"秒");
+		time-=1;
+    },1000,false);
+	/*
+	* 查询短信
+	* */
+	var objects=new Array();
+	objects.push($("#loginPhone").val());
+
+	$.ajax({
+		url:"admin/qcloudSendMessage/sendMessage",
+		data:JSON.stringify(objects),
+		contentType:"application/json;charset=utf-8",
+		type:"post"
+	}).done(function (msg) {
+		console.log(msg);
+		shortMessage=msg;
+    })
 });
 
 //男装

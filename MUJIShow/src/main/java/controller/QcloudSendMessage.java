@@ -6,13 +6,24 @@ import com.github.qcloudsms.SmsSingleSender;
 import com.github.qcloudsms.SmsSingleSenderResult;
 import com.github.qcloudsms.httpclient.HTTPException;
 import org.json.JSONException;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Random;
 
+@Controller
+@RequestMapping(value = "admin/qcloudSendMessage")
 public class QcloudSendMessage {
 
-    public static void main(String[] args) {
+    @RequestMapping(value = "/sendMessage",method = RequestMethod.POST)
+    @ResponseBody
+    public String sendMessage(@RequestBody List<Object>objects){
+
         // 短信应用SDK AppID
         int appid = 1400159819; // 1400开头
 
@@ -20,7 +31,7 @@ public class QcloudSendMessage {
         String appkey = "d399fed2be08d339d523d4e668f078af";
 
         // 需要发送短信的手机号码
-        String[] phoneNumbers = {"13926901506"};
+        String[] phoneNumbers = {objects.get(0).toString()};
 
         // 短信模板ID，需要在短信应用中申请
         // NOTE: 这里的模板ID`7839`只是一个示例，
@@ -37,7 +48,7 @@ public class QcloudSendMessage {
         try {
             SmsSingleSender ssender = new SmsSingleSender(appid, appkey);
             SmsSingleSenderResult result = ssender.send(0, "86", phoneNumbers[0],
-                "【MUJI】您的验证码是: 883329", "", "");
+                    "【MUJI】您的验证码是: 883329", "", "");
             System.out.print("result?:"+result);
         } catch (HTTPException e) {
             // HTTP响应码错误
@@ -52,8 +63,8 @@ public class QcloudSendMessage {
 
         // 指定模板ID单发短信
         /*
-        * 1、验证码 2、参数。占位符
-        * */
+         * 1、验证码 2、参数。占位符
+         * */
         String str="";
         Random random = new Random();
         for (int i = 0; i <6 ; i++) {
@@ -63,7 +74,7 @@ public class QcloudSendMessage {
             String[] params = {str,"1"};
             SmsMultiSender msender = new SmsMultiSender(appid, appkey);
             SmsMultiSenderResult result =  msender.sendWithParam("86", phoneNumbers,
-                templateId, params, smsSign, "", "");  // 签名参数未提供或者为空时，会使用默认签名发送短信
+                    templateId, params, smsSign, "", "");  // 签名参数未提供或者为空时，会使用默认签名发送短信
             System.out.print(result);
         } catch (HTTPException e) {
             // HTTP响应码错误
@@ -75,90 +86,6 @@ public class QcloudSendMessage {
             // 网络IO错误
             e.printStackTrace();
         }
-
-        // 发送语音验证码
-      /*  try {
-            SmsVoiceVerifyCodeSender vvcsender = new SmsVoiceVerifyCodeSender(appid,appkey);
-            SmsVoiceVerifyCodeSenderResult result = vvcsender.send("86", phoneNumbers[0],
-                "1234", 2, "");
-            System.out.print(result);
-        } catch (HTTPException e) {
-            // HTTP响应码错误
-            e.printStackTrace();
-        } catch (JSONException e) {
-            // json解析错误
-            e.printStackTrace();
-        } catch (IOException e) {
-            // 网络IO错误
-            e.printStackTrace();
-        }
-
-        // 发送语音通知
-        try {
-            SmsVoicePromptSender vpsender = new SmsVoicePromptSender(appid, appkey);
-            SmsVoicePromptSenderResult result = vpsender.send("86", phoneNumbers[0],
-                2, 2, "1234", "");
-            System.out.print(result);
-        } catch (HTTPException e) {
-            // HTTP响应码错误
-            e.printStackTrace();
-        } catch (JSONException e) {
-            // json解析错误
-            e.printStackTrace();
-        } catch (IOException e) {
-            // 网络IO错误
-            e.printStackTrace();
-        }
-
-        // 拉取短信回执以及回复
-        try {
-            // Note: 短信拉取功能需要联系腾讯云短信技术支持(QQ:3012203387)开通权限
-            int maxNum = 10;  // 单次拉取最大量
-            SmsStatusPuller spuller = new SmsStatusPuller(appid, appkey);
-
-            // 拉取短信回执
-            SmsStatusPullCallbackResult callbackResult = spuller.pullCallback(maxNum);
-            System.out.println(callbackResult);
-
-            // 拉取回复
-            SmsStatusPullReplyResult replyResult = spuller.pullReply(maxNum);
-            System.out.println(replyResult);
-        } catch (HTTPException e) {
-            // HTTP响应码错误
-            e.printStackTrace();
-        } catch (JSONException e) {
-            // json解析错误
-            e.printStackTrace();
-        } catch (IOException e) {
-            // 网络IO错误
-            e.printStackTrace();
-        }
-
-        // 拉取单个手机短信状态
-        try {
-            int beginTime = 1511125600;  // 开始时间(unix timestamp)
-            int endTime = 1511841600;    // 结束时间(unix timestamp)
-            int maxNum = 10;             // 单次拉取最大量
-            SmsMobileStatusPuller mspuller = new SmsMobileStatusPuller(appid, appkey);
-
-            // 拉取短信回执
-            SmsStatusPullCallbackResult callbackResult = mspuller.pullCallback("86",
-                phoneNumbers[0], beginTime, endTime, maxNum);
-            System.out.println(callbackResult);
-
-            // 拉取回复
-            SmsStatusPullReplyResult replyResult = mspuller.pullReply("86",
-                phoneNumbers[0], beginTime, endTime, maxNum);
-            System.out.println(replyResult);
-        } catch (HTTPException e) {
-            // HTTP响应码错误
-            e.printStackTrace();
-        } catch (JSONException e) {
-            // json解析错误
-            e.printStackTrace();
-        } catch (IOException e) {
-            // 网络IO错误
-            e.printStackTrace();
-        }*/
+        return str;
     }
 }
