@@ -59,7 +59,7 @@ public class IMemberDaoTest {
     public void selectOne() throws UnsupportedEncodingException, NoSuchAlgorithmException {
         Map<String,Object>objectMap=new HashMap<>();
         objectMap.put("mphone","13926901506");
-        objectMap.put("mpassword",MD5Util.EncoderByMd5(".1234567"));
+        objectMap.put("mpassword",MD5Util.EncoderByMd5("luoliyi123"));
         Member member=memberDao.selectOne(objectMap);
         System.out.println(member);
 
