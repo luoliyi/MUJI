@@ -26,7 +26,7 @@ public class MyThread implements Runnable{
         * */
         IOrdersDaoImpl ordersDao =new IOrdersDaoImpl();
         sum=ordersDao.allOrdersCountMonitor();
-        System.out.println("sum:"+sum);
+        System.out.println("sum："+sum);
         WebsocketController wbs=new WebsocketController();
         while(stopMe){
             new_sum=ordersDao.allOrdersCountMonitor();
