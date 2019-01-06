@@ -175,9 +175,9 @@
 					</div>
 					<div class="option-div">
 						<label class="option-label">尺码</label>
-						<span>
-									<a href="javascript:void(0);" class="type-text active carSize">男式XS</a>
-								</span>
+						<span class="sizeContainer">
+							<!--<a href="javascript:void(0);" class="type-text active carSize"></a>-->
+						</span>
 					</div>
 					<div class="option-div">
 						<label class="option-label">数量</label>
@@ -292,8 +292,8 @@
                 /*
                 * 不是衣服
                 * */
-                if(obj.tid==14){
-                    $(".section-description").css("display","none");
+                if (obj.tid == 14) {
+                    $(".section-description").css("display", "none");
                 }
 
                 /*
@@ -309,15 +309,25 @@
                 * 加入购物车
                 * */
                 $("#gid").val(obj.gid);
-                $(".carImg").attr("src",'admin/img/PictureList/' +obj.pictureLists[0].picpath);
+                $(".carImg").attr("src", 'admin/img/PictureList/' + obj.pictureLists[0].picpath);
                 $(".carPrice").html(obj.gnowprice);
-                $(".carSize").html("无");
-                $(".carColor").html(obj.gcolor==""?"无":obj.gcolor);
+                /*
+                * 判断多少个尺码
+                * */
+
+                var arr = obj.gsize.split(',');
+                console.log("arr:" + arr.length);
+                for (var i = 0; i < arr.length; i++) {
+                    $("<a href=\"javascript:void(0);\" class=\"type-text active carSize\">" + arr[i] + "</a>").appendTo($(".sizeContainer"));
+                }
+
+                // $(".carSize").html(obj.gsize);
+                $(".carColor").html(obj.gcolor == "" ? "无" : obj.gcolor);
                 /*
                 * 添加图片
                 * */
-                var  mdiv=$(".dg-wrapper");
-                if(obj.pictureLists) {
+                var mdiv = $(".dg-wrapper");
+                if (obj.pictureLists) {
 
                     $(".dg-wrapper a").remove();
                     $.each(obj.pictureLists, function (index, pic) {
@@ -339,7 +349,7 @@
                         /*
                         * 缩放比例
                         * */
-                        scaleWidth:480,
+                        scaleWidth: 480,
                         background: "#fff",
                         backgroundRepeat: "repeat",
                         shadow: "5px  7px 25px #000",
@@ -348,6 +358,20 @@
                 }
             })
         }
+
+        /*
+        * 点击
+        * */
+        var b=true;
+        $(".sizeContainer").on("click","a",function () {
+            if(b) {
+                $(this).css({"background": "#7f0019", "color": "white"});
+                b=false;
+            }else {
+                $(this).css({"background": "white", "color": "#7f0019"});
+                b=true;
+            }
+        });
 
         /*
         * 加入到购物车

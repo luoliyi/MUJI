@@ -196,6 +196,11 @@ html, body {
     display: inline-block;
     border-radius: 15px;
     border: 1px solid #7f0019;
+    margin-right: 5px;
+}
+.option-div .sizeContainer a:active{
+    background: #7f0019;
+    color: white;
 }
 #chooseCount a{
 	width: 28px;height: 28px;
