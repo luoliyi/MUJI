@@ -1,8 +1,13 @@
 package com.nf.entities;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
+
 import java.util.Date;
 
 public class Administrator {
+
     /*
     * 	aid int primary key auto_increment,
     aphone char(11) not null,
@@ -11,7 +16,6 @@ public class Administrator {
     adesc varchar(256),
     astate bit default 0
     * */
-
     private int aid;
     private String aphone;
     private String aname;

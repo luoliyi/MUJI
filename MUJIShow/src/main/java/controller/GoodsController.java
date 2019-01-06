@@ -15,6 +15,8 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.*;
 
 @Controller
@@ -186,4 +188,37 @@ public class GoodsController {
         return standard;
     }
 
+
+    @RequestMapping(value = "/exploreCsv",method = RequestMethod.GET)
+    @ResponseBody
+    public void joinXml(HttpServletResponse response) throws IOException {
+        Map<String,Object> objectMap=new HashMap<>();
+        String startprice= "0.0";
+        String endprice="9999999.0";
+        int pageno=0;
+        int pagesize=999999;
+        objectMap.put("startprice",startprice);
+        objectMap.put("endprice",endprice);
+        objectMap.put("pageno",pageno);
+        objectMap.put("pagesize",pagesize);
+
+        //先获得所有数据
+        List<Goods> goodsList=goodsService.selectAllGoods(objectMap);
+        response.setHeader("Content-Type","application/octet-stream;charset=utf-8");
+        response.setHeader("Content-Disposition","attachment;filename="+new String("GoodsData".getBytes(),"UTF-8")+".csv");
+        PrintWriter out=response.getWriter();
+        //加上bom头,解决excel打开乱码问题
+        byte[] bomStrByteArr = new byte[] { (byte) 0xef, (byte) 0xbb, (byte) 0xbf };
+        String bomStr = new String(bomStrByteArr, "UTF-8");
+        out.write(bomStr);
+        StringBuffer str=new StringBuffer("");
+        //数据的来源
+        str.append("产品编号,产品名称,产品价格,商品简介,产品类型\r\n");
+        for (Goods item:goodsList) {
+            System.out.println(item);
+            str.append(item.getGid()+","+item.getGname()+","+item.getGnowprice()+","+item.getGdesc()+","
+                    +item.getGoodsType().getTname()+"\r\n");
+        }
+        response.getWriter().write(str.toString());
+    }
 }

@@ -53,6 +53,7 @@ public class CreateOrdersController {
 
     String threeMin="";
     String mycono="";
+
     @RequestMapping(value = "/initOneCreateOrders",method = RequestMethod.POST)
     @ResponseBody
     public String initOneCreateOrders(HttpServletRequest request){
@@ -73,7 +74,7 @@ public class CreateOrdersController {
         String sysdate= String.valueOf(System.currentTimeMillis());
         String cono=sysdate.substring(0,sysdate.length()-1);
 
-        mycono=cono;
+        mycono = cono;
         Map<String,Object>objectMap1=new HashMap<>();
         objectMap.put("cono",cono);
         objectMap.put("cordesc","");

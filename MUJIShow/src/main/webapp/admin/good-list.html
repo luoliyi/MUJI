@@ -269,6 +269,7 @@
     <xblock>
         <button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button>
         <button class="layui-btn" id="showDialog1"><i class="layui-icon"></i>添加</button>
+        <button class="layui-btn layui-btn-warm" id="exportCSV"><i class="layui-icon"></i>导出数据</button>
         <span class="x-right" style="line-height:40px">共有数据：<span id="allGoodsCount">88</span> 条</span>
     </xblock>
     <table class="layui-table">
@@ -323,6 +324,8 @@
     //app封装的增删改查
     var app={
         firstRequest(){
+
+            console.log("ooo")
             var mohuListLimit=new Array();
             mohuListLimit.push($("#goodsname").val());
             mohuListLimit.push($("#selectVal").val());
@@ -369,7 +372,6 @@
                                     contentType: "application/json;charset=utf-8",
                                     data: JSON.stringify(objlist),
                                     beforeSend: function () {
-
                                     },
                                     success: function (jsdata) {
                                         app.showData(jsdata);
@@ -420,6 +422,10 @@
             app.firstRequest();
             $("#btnLimitFind").click(app.firstRequest);
             $("#btnTrueFind").click(app.firstRequest);
+            /*导出CSV*/
+            $("#exportCSV").click(function () {
+                location.href="goodsController/exploreCsv";
+            });
         }
     } ;
     app.init();
