@@ -5,21 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DBUtil {
-
-    //连接对象
-
-    //Statement 命令对象
-
-    //打开连接
-
-    //关闭连接
-
-    //得到一个连接对象
-
-    //查询（有参，无参）
-
-    //修改（有参，无参）
-
     static Connection conn = null;
 
     static Statement stmt = null;
