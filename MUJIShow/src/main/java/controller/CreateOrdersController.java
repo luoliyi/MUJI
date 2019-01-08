@@ -1,8 +1,6 @@
 package controller;
 
 import com.nf.commons.MyUtils.PrintPdf;
-import com.nf.dao.test.Commodity2;
-import com.nf.dao.test.TestPrinter;
 import com.nf.entities.CreateOrders;
 import com.nf.entities.Member;
 import com.nf.entities.Orders;

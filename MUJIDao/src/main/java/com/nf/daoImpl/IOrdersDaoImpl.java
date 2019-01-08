@@ -1,6 +1,7 @@
 package com.nf.daoImpl;
 
 import com.nf.commons.MyUtils.DBUtil;
+import sun.security.pkcs11.Secmod;
 
 import java.sql.ResultSet;
 
@@ -16,6 +17,7 @@ public class IOrdersDaoImpl {
         }catch (Exception e){
             e.printStackTrace();
         }
+        DBUtil.close();
         return  r;
     }
 }

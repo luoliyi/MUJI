@@ -8,7 +8,29 @@
   <component name="ChangeListManager">
     <list default="true" id="f1f2b16c-7c8d-4c1b-8f21-f5f13123e402" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MUJICommons/target/classes/com/nf/commons/MyUtils/MD5Util.class" beforeDir="false" afterPath="$PROJECT_DIR$/MUJICommons/target/classes/com/nf/commons/MyUtils/MD5Util.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/dao/test/Commodity2.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/dao/test/Commodity2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/dao/test/IAdministratorDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/dao/test/IAdministratorDaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/dao/test/ICMDDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/dao/test/ICMDDaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/dao/test/ICreateOrdersDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/dao/test/ICreateOrdersDaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/dao/test/IGoodsDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/dao/test/IGoodsDaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/dao/test/IGoodsTypeDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/dao/test/IGoodsTypeDaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/dao/test/IHistoryOrdersDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/dao/test/IHistoryOrdersDaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/dao/test/IMemberDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/dao/test/IMemberDaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/dao/test/IShoppingCartDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/dao/test/IShoppingCartDaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/dao/test/MD5Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/dao/test/MD5Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/dao/test/TestPrinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/dao/test/TestPrinter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MUJIShow/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/java/controller/CreateOrdersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/java/controller/CreateOrdersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/java/controller/MyThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/java/controller/MyThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/java/controller/WebsocketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/java/controller/WebsocketController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/echa.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/echa.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/myInfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/myInfo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/WEB-INF/lib/MUJICommons-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/WEB-INF/lib/MUJICommons-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/WEB-INF/lib/MUJIDao-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/WEB-INF/lib/MUJIDao-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -32,20 +54,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="goodDetails.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/webapp/goodDetails.html">
+      <file leaf-file-name="dbconfig.properties" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/MUJIDao/src/main/resources/dbconfig.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7728">
-              <caret line="368" column="24" selection-start-line="368" selection-start-column="24" selection-end-line="368" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="buyCar.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/webapp/buyCar.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="244" column="63" selection-start-line="244" selection-start-column="63" selection-end-line="244" selection-end-column="63" />
+            <state relative-caret-position="63">
+              <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="66" />
             </state>
           </provider>
         </entry>
@@ -65,8 +78,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>commodity-meta-wrap</find>
-      <find>image-wrap-right-pricediv</find>
       <find>controlMyplace</find>
       <find>placeactions</find>
       <find>isEdit</find>
@@ -95,6 +106,8 @@
       <find>.listitem-content li .tips</find>
       <find>userdetailscontent</find>
       <find>#center #center_container #center_container_details .PageHomePartNewArrivals .MuSectionWrapper #MuSectionWrapper_details div img</find>
+      <find>webs</find>
+      <find>webso</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -108,9 +121,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/interfaces/ICreateOrdersDao.java" />
-        <option value="$PROJECT_DIR$/MUJIService/src/main/java/com/nf/service/ICreateOrdersService.java" />
-        <option value="$PROJECT_DIR$/MUJIService/src/main/java/com/nf/impl/ICreateOrdersImpl.java" />
         <option value="$PROJECT_DIR$/MUJIEntities/src/main/java/com/nf/entities/OrdersMap.java" />
         <option value="$PROJECT_DIR$/MUJIDao/src/main/resources/mappers/IOrdersMapper.xml" />
         <option value="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/interfaces/IOrdersDao.java" />
@@ -124,7 +134,6 @@
         <option value="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/dao/test/IMemberDaoTest.java" />
         <option value="$PROJECT_DIR$/MUJIShow/src/main/webapp/css/main.css" />
         <option value="$PROJECT_DIR$/MUJIShow/src/main/webapp/js/mainControl.js" />
-        <option value="$PROJECT_DIR$/MUJIShow/src/main/java/controller/CreateOrdersController.java" />
         <option value="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/dailySalesVolume.html" />
         <option value="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/sales.html" />
         <option value="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/interfaces/ISalesDao.java" />
@@ -134,14 +143,10 @@
         <option value="$PROJECT_DIR$/MUJIDao/src/main/resources/mappers/ISalesMapper.xml" />
         <option value="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/dao/test/ICreateOrdersDaoTest.java" />
         <option value="$PROJECT_DIR$/MUJIShow/src/main/java/controller/SalesController.java" />
-        <option value="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/echa.html" />
         <option value="$PROJECT_DIR$/MUJIShow/src/main/webapp/index.html" />
         <option value="$PROJECT_DIR$/MUJIShow/src/main/webapp/main.html" />
-        <option value="$PROJECT_DIR$/MUJIShow/src/main/webapp/myInfo.html" />
         <option value="$PROJECT_DIR$/MUJIShow/src/main/webapp/myOrders.html" />
         <option value="$PROJECT_DIR$/MUJIShow/src/main/webapp/balance.html" />
-        <option value="$PROJECT_DIR$/MUJIShow/src/main/webapp/buyCar.html" />
-        <option value="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/index.html" />
         <option value="$PROJECT_DIR$/MUJIShow/src/main/webapp/showType3.html" />
         <option value="$PROJECT_DIR$/MUJIEntities/src/main/java/com/nf/entities/MyThread.java" />
         <option value="$PROJECT_DIR$/MUJIShow/src/main/java/controller/GoodsController.java" />
@@ -150,15 +155,23 @@
         <option value="$PROJECT_DIR$/MUJIEntities/pom.xml" />
         <option value="$PROJECT_DIR$/MUJIDao/src/main/resources/applicationContext.xml" />
         <option value="$PROJECT_DIR$/MUJIEntities/src/main/java/com/nf/entities/Administrator.java" />
-        <option value="$PROJECT_DIR$/MUJIShow/src/main/java/controller/WebsocketController.java" />
         <option value="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/daoImpl.java" />
         <option value="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/daoImpl/IAdminDao.java" />
-        <option value="$PROJECT_DIR$/MUJICommons/src/main/java/com/nf/commons/MyUtils/DBUtil.java" />
         <option value="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/daoImpl/IOrdersDaoImpl.java" />
-        <option value="$PROJECT_DIR$/MUJIShow/src/main/java/controller/MyThread.java" />
         <option value="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/order-list.html" />
         <option value="$PROJECT_DIR$/MUJIShow/src/main/webapp/css/goodDetails.css" />
         <option value="$PROJECT_DIR$/MUJIShow/src/main/webapp/goodDetails.html" />
+        <option value="$PROJECT_DIR$/MUJIShow/src/main/webapp/buyCar.html" />
+        <option value="$PROJECT_DIR$/MUJICommons/src/main/java/com/nf/commons/MyUtils/MD5Util.java" />
+        <option value="$PROJECT_DIR$/MUJICommons/src/main/java/com/nf/commons/MyUtils/DBUtil.java" />
+        <option value="$PROJECT_DIR$/MUJIShow/src/main/java/controller/WebsocketController.java" />
+        <option value="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/index.html" />
+        <option value="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/echa.html" />
+        <option value="$PROJECT_DIR$/MUJIShow/src/main/java/controller/CreateOrdersController.java" />
+        <option value="$PROJECT_DIR$/MUJIShow/src/main/webapp/myInfo.html" />
+        <option value="$PROJECT_DIR$/MUJIShow/src/main/java/controller/MyThread.java" />
+        <option value="$PROJECT_DIR$/MUJIShow/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -201,7 +214,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -298,7 +310,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="nf" type="462c0819:PsiDirectoryNode" />
-              <item name="interfaces" type="462c0819:PsiDirectoryNode" />
+              <item name="daoImpl" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MUJISystem" type="b2602c69:ProjectViewProjectNode" />
@@ -311,6 +323,13 @@
             <path>
               <item name="MUJISystem" type="b2602c69:ProjectViewProjectNode" />
               <item name="MUJISystem" type="462c0819:PsiDirectoryNode" />
+              <item name="MUJIDao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MUJISystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MUJISystem" type="462c0819:PsiDirectoryNode" />
               <item name="MUJIService" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -342,26 +361,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="nf" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MUJISystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MUJISystem" type="462c0819:PsiDirectoryNode" />
-              <item name="MUJIService" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="nf" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MUJISystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MUJISystem" type="462c0819:PsiDirectoryNode" />
-              <item name="MUJIService" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="nf" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MUJISystem" type="b2602c69:ProjectViewProjectNode" />
@@ -423,29 +422,11 @@
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="admin" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="MUJISystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MUJISystem" type="462c0819:PsiDirectoryNode" />
-              <item name="MUJIShow" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MUJISystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MUJISystem" type="462c0819:PsiDirectoryNode" />
-              <item name="MUJIShow" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-              <item name="goodDetails.scss" type="620a8d5e:NestingTreeNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -458,7 +439,7 @@
     <property name="last_opened_file_path" value="E:/CakesFather" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.5434174" />
     <property name="settings.editor.selected.configurable" value="File.Encoding" />
@@ -467,6 +448,10 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\one\Desktop\MUJISystem\MUJIShow\src\main\webapp\admin" />
       <recent name="C:\Users\one\Desktop\MUJISystem\MUJIShow\src\main\webapp\admin\js" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="testdemo" />
+      <recent name="test" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="controller" />
@@ -497,7 +482,7 @@
   </component>
   <component name="RunManager" selected="Tomcat Server.tomcat 8.5">
     <configuration name="TestPrinter" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.nf.dao.test.TestPrinter" />
+      <option name="MAIN_CLASS_NAME" value="testdemo.test.TestPrinter" />
       <module name="MUJIDao" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
@@ -520,8 +505,8 @@
       </extension>
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.nf.dao.test" />
-      <option name="MAIN_CLASS_NAME" value="com.nf.dao.test.ICMDDaoTest" />
+      <option name="PACKAGE_NAME" value="testdemo.test" />
+      <option name="MAIN_CLASS_NAME" value="testdemo.test.ICMDDaoTest" />
       <option name="METHOD_NAME" value="testDaaaa" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -543,8 +528,8 @@
       </extension>
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.nf.dao.test" />
-      <option name="MAIN_CLASS_NAME" value="com.nf.dao.test.ICreateOrdersDaoTest" />
+      <option name="PACKAGE_NAME" value="testdemo.test" />
+      <option name="MAIN_CLASS_NAME" value="testdemo.test.ICreateOrdersDaoTest" />
       <option name="METHOD_NAME" value="selectAllOrderByMphoneAndStateAndLimit" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -566,8 +551,8 @@
       </extension>
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.nf.dao.test" />
-      <option name="MAIN_CLASS_NAME" value="com.nf.dao.test.ICreateOrdersDaoTest" />
+      <option name="PACKAGE_NAME" value="testdemo.test" />
+      <option name="MAIN_CLASS_NAME" value="testdemo.test.ICreateOrdersDaoTest" />
       <option name="METHOD_NAME" value="selectAllSalesVolume" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -589,8 +574,8 @@
       </extension>
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.nf.dao.test" />
-      <option name="MAIN_CLASS_NAME" value="com.nf.dao.test.IMemberDaoTest" />
+      <option name="PACKAGE_NAME" value="testdemo.test" />
+      <option name="MAIN_CLASS_NAME" value="testdemo.test.IMemberDaoTest" />
       <option name="METHOD_NAME" value="selectOne" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -862,6 +847,15 @@
       <workItem from="1546762662486" duration="279000" />
       <workItem from="1546763004440" duration="3669000" />
       <workItem from="1546766705748" duration="105000" />
+      <workItem from="1546766862265" duration="323000" />
+      <workItem from="1546820849288" duration="1726000" />
+      <workItem from="1546828409458" duration="650000" />
+      <workItem from="1546830961413" duration="273000" />
+      <workItem from="1546831614354" duration="392000" />
+      <workItem from="1546842605412" duration="1151000" />
+      <workItem from="1546852583179" duration="5141000" />
+      <workItem from="1546918760414" duration="396000" />
+      <workItem from="1546929229338" duration="113000" />
     </task>
     <task id="LOCAL-00001" summary="第二次提交，做了数据库备份操作。">
       <created>1543921674276</created>
@@ -1024,7 +1018,21 @@
       <option name="project" value="LOCAL" />
       <updated>1546766749761</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="第八次提交，后台订单做了websocket推送功能。">
+      <created>1546766993149</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1546766993149</updated>
+    </task>
+    <task id="LOCAL-00025" summary="第八次提交，后台订单做了websocket推送功能。">
+      <created>1546767086673</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1546767086673</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1060,13 +1068,14 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="687488000" />
+    <option name="totallyTimeSpent" value="697653000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="846" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="14" sideWeight="0.2513021" side_tool="true" visible="true" weight="0.34552845" />
+      <window_info anchor="bottom" id="Event Log" order="14" sideWeight="0.25455728" side_tool="true" visible="true" weight="0.35636857" />
       <window_info anchor="bottom" id="Application Servers" order="7" weight="0.256651" />
       <window_info anchor="right" id="Maven Projects" order="9" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
@@ -1085,10 +1094,10 @@
       <window_info anchor="bottom" id="Java Enterprise" order="11" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Version Control" order="13" weight="0.3292683" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.74869794" weight="0.34552845" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7454427" weight="0.35636857" />
       <window_info anchor="bottom" id="Spring" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49934897" weight="0.3292683" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49752474" visible="true" weight="0.20703125" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49752474" visible="true" weight="0.18945312" />
       <window_info anchor="right" id="Bean Validation" order="8" />
       <window_info id="Web" order="6" sideWeight="0.50247526" side_tool="true" weight="0.19838946" />
       <window_info anchor="right" id="Theme Preview" order="7" />
@@ -1098,7 +1107,7 @@
       <window_info anchor="right" x="0" y="0" width="295" height="554" id="Documentation" order="12" side_tool="true" weight="0.329429" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.4674479" weight="0.28455284" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.46614584" weight="0.28455284" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3275862" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -1126,41 +1135,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/MUJIService/src/main/java/com/nf/service/ISalesService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MUJIService/src/main/java/com/nf/impl/ISalesImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/sales.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="81" column="14" selection-start-line="81" selection-start-column="14" selection-end-line="81" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/echarts1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="26" selection-start-line="26" selection-end-line="26" selection-end-column="86" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MUJIEntities/src/main/java/com/nf/entities/Sales.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MUJIDao/src/main/resources/mappers/ISalesMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -1179,13 +1153,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="9" column="74" selection-start-line="9" selection-start-column="74" selection-end-line="9" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/webapp/myInfo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="74" selection-start-line="10" selection-start-column="74" selection-end-line="10" selection-end-column="74" />
         </state>
       </provider>
     </entry>
@@ -1214,20 +1181,6 @@
         <state relative-caret-position="-189" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/echa.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="97" column="26" lean-forward="true" selection-start-line="97" selection-start-column="26" selection-end-line="97" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1176">
-          <caret line="11" column="40" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/webapp/showType3.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-113">
@@ -1240,11 +1193,6 @@
         <state relative-caret-position="252">
           <caret line="45" column="18" lean-forward="true" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-659" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MUJIDao/src/main/resources/mappers/IAdministratorMapper.xml">
@@ -1349,9 +1297,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="33">
           <caret line="57" column="61" selection-start-line="57" selection-start-column="61" selection-end-line="57" selection-end-column="61" />
-          <folding>
-            <element signature="e#1322#1336#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1384,13 +1329,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/daoImpl.java" />
-    <entry file="file://$PROJECT_DIR$/MUJIDao/src/main/resources/dbconfig.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" column="15" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/webapp/chat.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
@@ -1399,41 +1337,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/daoImpl/IAdminDao.java" />
-    <entry file="file://$PROJECT_DIR$/MUJICommons/src/main/java/com/nf/commons/MyUtils/DBUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="10" column="20" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/daoImpl/IOrdersDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="9" column="16" lean-forward="true" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/java/controller/WebsocketController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-693">
-          <caret line="21" column="32" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/order-list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="261" column="8" lean-forward="true" selection-start-line="261" selection-start-column="8" selection-end-line="261" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/java/controller/MyThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/webapp/css/goodDetails.scss">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1446,15 +1349,116 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/webapp/goodDetails.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7728">
+        <state relative-caret-position="-739">
           <caret line="368" column="24" selection-start-line="368" selection-start-column="24" selection-end-line="368" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/webapp/buyCar.html">
       <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="240" column="30" selection-start-line="240" selection-start-column="30" selection-end-line="240" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MUJICommons/src/main/java/com/nf/commons/MyUtils/MD5Util.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="32" column="48" lean-forward="true" selection-start-line="32" selection-start-column="48" selection-end-line="32" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MUJICommons/src/main/java/com/nf/commons/MyUtils/PrintPdf.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/echa.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2562">
+          <caret line="122" column="23" selection-start-line="122" selection-start-column="23" selection-end-line="122" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/java/controller/CreateOrdersController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-798">
+          <caret line="46" column="65" selection-start-line="46" selection-start-column="65" selection-end-line="46" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/webapp/myInfo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="296" column="27" selection-start-line="296" selection-start-column="27" selection-end-line="296" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/java/controller/MyThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="28" column="6" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/daoImpl/IOrdersDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/picture-edit.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/order-list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2604">
+          <caret line="124" selection-start-line="124" selection-end-line="124" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="34" column="15" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MUJICommons/src/main/java/com/nf/commons/MyUtils/DBUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
-          <caret line="244" column="63" selection-start-line="244" selection-start-column="63" selection-end-line="244" selection-end-column="63" />
+          <caret line="15" column="52" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MUJIShow/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/java/controller/WebsocketController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="7" column="46" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MUJIDao/src/main/resources/dbconfig.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="66" />
         </state>
       </provider>
     </entry>
@@ -1537,7 +1541,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Maven: com.fasterxml.jackson.core:jackson-databind:2.7.4</last-edited>
+          <last-edited>Maven: org.apache.logging.log4j:log4j-core:2.6.2</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

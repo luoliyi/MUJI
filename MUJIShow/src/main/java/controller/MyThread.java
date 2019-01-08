@@ -9,7 +9,6 @@ public class MyThread implements Runnable{
     /*
     * 线程无法使用spring ioc注入
     * */
-
     private int sum;
     private int new_sum;
     private boolean stopMe = true;
@@ -22,7 +21,7 @@ public class MyThread implements Runnable{
      */
     public void run()  {
         /*
-        * 线程注入：java.lang.NullPointerException
+        * 线程ioc注入会报错：java.lang.NullPointerException
         * */
         IOrdersDaoImpl ordersDao =new IOrdersDaoImpl();
         sum=ordersDao.allOrdersCountMonitor();

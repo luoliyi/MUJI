@@ -1,12 +1,5 @@
 package controller;
 
-import com.nf.impl.IAdministratorImpl;
-import com.nf.service.IAdministratorService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestMapping;
-
 import javax.websocket.*;
 import javax.websocket.server.ServerEndpoint;
 import java.io.IOException;
