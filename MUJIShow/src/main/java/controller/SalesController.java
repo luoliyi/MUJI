@@ -51,4 +51,15 @@ public class SalesController {
         });
         return salesList;
     }
+
+    /*
+    * 查询每日清单情况
+    * */
+    @RequestMapping(value = "/selectOneDaySalesVolume",method = RequestMethod.POST)
+    @ResponseBody
+    public List<DaySales>selectOneDaySalesVolume(@RequestBody List<Object>objects){
+        Map<String,Object>objectMap=new HashMap<>();
+        objectMap.put("myday",objects.get(0).toString());
+        return salesService.selectOneDaySalesVolume(objectMap);
+    }
 }

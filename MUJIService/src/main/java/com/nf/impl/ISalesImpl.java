@@ -1,5 +1,6 @@
 package com.nf.impl;
 
+import com.nf.entities.DaySales;
 import com.nf.entities.Sales;
 import com.nf.interfaces.ISalesDao;
 import com.nf.service.ISalesService;
@@ -20,5 +21,10 @@ public class ISalesImpl implements ISalesService {
     @Override
     public List<Sales> selectAllSalesVolume(Map<String, Object> objectMap) {
         return salesDao.selectAllSalesVolume(objectMap);
+    }
+
+    @Override
+    public List<DaySales> selectOneDaySalesVolume(Map<String, Object> objectMap) {
+        return salesDao.selectOneDaySalesVolume(objectMap);
     }
 }
