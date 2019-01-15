@@ -15,8 +15,9 @@ public interface IPictureService {
 
     int update(Map<String, Object> MemberList);
 
-    int delete(Map<String,Object> objectMap);
+    int delete(Map<String, Object> objectMap);
 
-    List<Goods>selectAllGoods();
+    List<Goods> selectAllGoods();
+
     PictureList selectOnePicture(@Param("picid") String picid);
 }

@@ -8,7 +8,7 @@ import java.awt.print.PrinterJob;
 import java.util.ArrayList;
 import java.util.Calendar;
 
-public class TestPrinter  implements Printable {
+public class TestPrinter implements Printable {
     private ArrayList<Commodity2> list;
     private String cashier;//收银员
     private Font font;
@@ -20,7 +20,7 @@ public class TestPrinter  implements Printable {
 
     // 构造函数
     public TestPrinter(ArrayList<Commodity2> list, String cashier, String orders, String sale_num, String sale_sum,
-                        String practical, String changes) {
+                       String practical, String changes) {
         this.list = list;
         // 收银员编号
         this.cashier = cashier;
@@ -37,9 +37,9 @@ public class TestPrinter  implements Printable {
     }
 
     /**
-     *  Graphic指明打印的图形环境
+     * Graphic指明打印的图形环境
      * PageFormat指明打印页格式（页面大小以点为计量单位，1点为1英才的1/72，1英寸为25.4毫米。A4纸大致为595×
-     *            842点）
+     * 842点）
      * pageIndex指明页号
      **/
     @Override
@@ -55,7 +55,7 @@ public class TestPrinter  implements Printable {
         double y = pageFormat.getImageableY();
 
         // 虚线
-        float[] dash1 = { 4.0f };
+        float[] dash1 = {4.0f};
         // width - 此 BasicStroke 的宽度。此宽度必须大于或等于 0.0f。如果将宽度设置为
         // 0.0f，则将笔划呈现为可用于目标设备和抗锯齿提示设置的最细线条。
         // cap - BasicStroke 端点的装饰
@@ -72,7 +72,7 @@ public class TestPrinter  implements Printable {
         g2.setFont(font);// 设置字体
         float heigth = font.getSize2D();// 字体高度
         // 标题
-        g2.drawString("-----21Cake后台详细订单-----", (float) x+100, (float) y + heigth);
+        g2.drawString("-----21Cake后台详细订单-----", (float) x + 100, (float) y + heigth);
         float line = 2 * heigth;
 
         font = new Font("宋体", Font.PLAIN, 8);
@@ -100,7 +100,7 @@ public class TestPrinter  implements Printable {
         for (int i = 0; i < list.size(); i++) {
 
             Commodity2 commodity = list.get(i);
-            g2.drawString(commodity.getName(), (float) x+20, (float) y + line);
+            g2.drawString(commodity.getName(), (float) x + 20, (float) y + line);
             g2.drawString(commodity.getUnit_price(), (float) x + 60, (float) y + line);
             g2.drawString(commodity.getNum(), (float) x + 90, (float) y + line);
             g2.drawString(commodity.getSum(), (float) x + 120, (float) y + line);
@@ -140,22 +140,21 @@ public class TestPrinter  implements Printable {
         //获取打印服务对象
         PrinterJob job = PrinterJob.getPrinterJob();
         PageFormat pageFormat = job.defaultPage();//得到默认页格式
-        ArrayList<Commodity2> arrayList=new ArrayList<>();
-        arrayList.add(new Commodity2("1","2","4","6"));
-        arrayList.add(new Commodity2("1","2","4","6"));
-        arrayList.add(new Commodity2("1","2","4","6"));
-        arrayList.add(new Commodity2("1","2","4","6"));
-        arrayList.add(new Commodity2("1","2","4","6"));
-        arrayList.add(new Commodity2("1","2","4","6"));
-        arrayList.add(new Commodity2("1","2","4","6"));
-        job.setPrintable(new TestPrinter(arrayList,"2","5","6","7","9","2"));//设置打印类
+        ArrayList<Commodity2> arrayList = new ArrayList<>();
+        arrayList.add(new Commodity2("1", "2", "4", "6"));
+        arrayList.add(new Commodity2("1", "2", "4", "6"));
+        arrayList.add(new Commodity2("1", "2", "4", "6"));
+        arrayList.add(new Commodity2("1", "2", "4", "6"));
+        arrayList.add(new Commodity2("1", "2", "4", "6"));
+        arrayList.add(new Commodity2("1", "2", "4", "6"));
+        arrayList.add(new Commodity2("1", "2", "4", "6"));
+        job.setPrintable(new TestPrinter(arrayList, "2", "5", "6", "7", "9", "2"));//设置打印类
         try {
             //可以用printDialog显示打印对话框，在用户确认后打印；也可以直接打印
-            boolean a=job.printDialog();
-            if(a)
-            {
+            boolean a = job.printDialog();
+            if (a) {
                 job.print();
-            } else{
+            } else {
                 job.cancel();
             }
         } catch (PrinterException e) {

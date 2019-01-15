@@ -6,5 +6,5 @@ import java.util.List;
 import java.util.Map;
 
 public interface IGoodsTypeService {
-    List<GoodsType> selectAllGoodsTypeDetailsByTid(Map<String,Object>objectMap);
+    List<GoodsType> selectAllGoodsTypeDetailsByTid(Map<String, Object> objectMap);
 }

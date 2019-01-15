@@ -7,12 +7,12 @@
     -->
     <select id="selectAllMember" resultType="Member" parameterType="java.util.Map">
         select * from Member
-         <where>
-             <if test="mstate!=null and mstate!=''">
-                 mstate=#{mstate}
-             </if>
-         </where>
-         limit #{pageno},#{pagesize};
+        <where>
+            <if test="mstate!=null and mstate!=''">
+                mstate=#{mstate}
+            </if>
+        </where>
+        limit #{pageno},#{pagesize};
     </select>
 
     <!--查询单个用户-->
@@ -23,17 +23,17 @@
                 mphone=#{mphone}
             </if>
             <if test="mname!=null and mname!=''">
-               and mname=#{mname}
+                and mname=#{mname}
             </if>
             <if test="mpassword!=null and mpassword!=''">
-               and mpassword=#{mpassword}
+                and mpassword=#{mpassword}
             </if>
         </where>
     </select>
 
     <insert id="insert" parameterType="Member">
         insert into Member(mphone,mpassword,mname,mbirthday,msex,mlocation,mpic,mstate)values(
-          #{mphone},#{mpassword},#{mname},#{mbirthday},#{msex},#{mlocation},#{mpic},#{mstate}
+        #{mphone},#{mpassword},#{mname},#{mbirthday},#{msex},#{mlocation},#{mpic},#{mstate}
         );
     </insert>
 
@@ -72,7 +72,7 @@
         这里不做删除操作，只做修改状态
     -->
     <update id="delete" parameterType="String">
-         update Member set mstate=1 where mid=#{mid};
+        update Member set mstate=1 where mid=#{mid};
     </update>
 
 

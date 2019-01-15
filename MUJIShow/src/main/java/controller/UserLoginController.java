@@ -32,25 +32,25 @@ public class UserLoginController {
     @Autowired
     IMemberService memberService;
 
-    Member member=null;
+    Member member = null;
 
-    @RequestMapping(value = "/login",method = RequestMethod.POST)
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
     @ResponseBody
     public void login(@RequestBody List<String> loginList, HttpServletRequest request, HttpServletResponse response) throws IOException, NoSuchAlgorithmException {
 
 
-        String logId=loginList.get(0);
-        String pass=loginList.get(1);
+        String logId = loginList.get(0);
+        String pass = loginList.get(1);
 
-        Map<String,Object>objectMap=new HashMap<>();
-        objectMap.put("mphone",logId);
-        objectMap.put("mpassword",MD5Util.EncoderByMd5(pass));
+        Map<String, Object> objectMap = new HashMap<>();
+        objectMap.put("mphone", logId);
+        objectMap.put("mpassword", MD5Util.EncoderByMd5(pass));
 
-        member=memberService.selectOne(objectMap);
+        member = memberService.selectOne(objectMap);
         /*
-        * 这里别设置返回类型，否则
-        * {readyState: 4, getResponseHeader: ƒ, getAllResponseHeaders: ƒ, setRequestHeader: ƒ, overrideMimeType}
-        * */
+         * 这里别设置返回类型，否则
+         * {readyState: 4, getResponseHeader: ƒ, getAllResponseHeaders: ƒ, setRequestHeader: ƒ, overrideMimeType}
+         * */
         response.setCharacterEncoding("utf-8");
         try {
             request.setCharacterEncoding("utf-8");
@@ -59,38 +59,38 @@ public class UserLoginController {
         }
 
         /*
-        * 获得登录的账号和密码
-        * */
-        if(member!=null){
-            HttpSession session=request.getSession();
+         * 获得登录的账号和密码
+         * */
+        if (member != null) {
+            HttpSession session = request.getSession();
             /*
-            * 保存在session中去
-            * */
-            session.setAttribute("member",member);
-            System.out.println("登录成功，欢迎您："+member.getMname());
+             * 保存在session中去
+             * */
+            session.setAttribute("member", member);
+            System.out.println("登录成功，欢迎您：" + member.getMname());
             response.getWriter().print("success");
-        }else {
+        } else {
             response.getWriter().print("error");
         }
     }
 
     /*
-    * 返回用户的信息
-    * */
-    @RequestMapping(value = "/getMemberInfo",method = RequestMethod.POST)
+     * 返回用户的信息
+     * */
+    @RequestMapping(value = "/getMemberInfo", method = RequestMethod.POST)
     @ResponseBody
-    public Member getMemberInfo(){
+    public Member getMemberInfo() {
         System.out.println("come in!");
-        if(member!=null){
+        if (member != null) {
             return member;
         }
         return null;
     }
 
     /*
-    * 短信登录
-    * */
-    @RequestMapping(value = "/shortMessageLogin",method = RequestMethod.POST)
+     * 短信登录
+     * */
+    @RequestMapping(value = "/shortMessageLogin", method = RequestMethod.POST)
     @ResponseBody
     public void shortMessageLogin(@RequestBody List<String> loginList, HttpServletRequest request, HttpServletResponse response) throws IOException, NoSuchAlgorithmException {
 
@@ -109,15 +109,15 @@ public class UserLoginController {
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
-        if(member!=null){
-            HttpSession session=request.getSession();
+        if (member != null) {
+            HttpSession session = request.getSession();
             /*
              * 保存在session中去
              * */
-            session.setAttribute("member",member);
-            System.out.println("登录成功，欢迎您："+member.getMname());
+            session.setAttribute("member", member);
+            System.out.println("登录成功，欢迎您：" + member.getMname());
             response.getWriter().print("success");
-        }else {
+        } else {
             response.getWriter().print("error");
         }
     }
@@ -125,9 +125,9 @@ public class UserLoginController {
     /*
      * 注册
      * */
-    @RequestMapping(value = "/regsister",method = RequestMethod.POST)
+    @RequestMapping(value = "/regsister", method = RequestMethod.POST)
     @ResponseBody
-    public String regsister(@RequestBody List<Object>objects,HttpServletRequest request,HttpServletResponse response){
+    public String regsister(@RequestBody List<Object> objects, HttpServletRequest request, HttpServletResponse response) {
         try {
             request.setCharacterEncoding("utf-8");
             response.setCharacterEncoding("utf-8");
@@ -136,23 +136,23 @@ public class UserLoginController {
             e.printStackTrace();
         }
 
-        String oPhone=objects.get(0).toString();
-        String oPwd=objects.get(1).toString();
+        String oPhone = objects.get(0).toString();
+        String oPwd = objects.get(1).toString();
         /*
          * 注册前先判断是否有该手机号码
          * */
-        Map<String,Object>objectMap1=new HashMap<>();
-        objectMap1.put("mphone",oPhone);
-        Member m=memberService.selectOne(objectMap1);
-        if (m!=null){
+        Map<String, Object> objectMap1 = new HashMap<>();
+        objectMap1.put("mphone", oPhone);
+        Member m = memberService.selectOne(objectMap1);
+        if (m != null) {
             return "error";
-        }else {
+        } else {
             try {
-                Map<String,Object>objectMap2=new HashMap<>();
-                objectMap2.put("mphone",oPhone);
-                objectMap2.put("mpassword",MD5Util.EncoderByMd5(oPwd));
-                int r=memberService.regsister(objectMap2);
-                if (r>0){
+                Map<String, Object> objectMap2 = new HashMap<>();
+                objectMap2.put("mphone", oPhone);
+                objectMap2.put("mpassword", MD5Util.EncoderByMd5(oPwd));
+                int r = memberService.regsister(objectMap2);
+                if (r > 0) {
                     return oPhone;
                 }
             } catch (NoSuchAlgorithmException e) {

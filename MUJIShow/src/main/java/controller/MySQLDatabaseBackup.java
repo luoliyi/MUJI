@@ -1,4 +1,7 @@
 package controller;
+
+import com.nf.commons.MyUtils.JSONUtil;
+import com.nf.commons.MyUtils.Standard;
 import com.nf.entities.Diary;
 import com.nf.service.IDiaryService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -29,22 +33,22 @@ public class MySQLDatabaseBackup {
     /**
      * Java代码实现MySQL数据库导出
      *
-     * @author GaoHuanjie
-     * @param hostIP MySQL数据库所在服务器地址IP
-     * @param userName 进入数据库所需要的用户名
-     * @param userName 进入数据库所需要的用户名
-     * @param password 进入数据库所需要的密码
-     * @param savePath 数据库导出文件保存路径
-     * @param fileName 数据库导出文件文件名
+     * @param hostIP       MySQL数据库所在服务器地址IP
+     * @param userName     进入数据库所需要的用户名
+     * @param userName     进入数据库所需要的用户名
+     * @param password     进入数据库所需要的密码
+     * @param savePath     数据库导出文件保存路径
+     * @param fileName     数据库导出文件文件名
      * @param databaseName 要导出的数据库名
      * @return 返回true表示导出成功，否则返回false。
+     * @author GaoHuanjie
      */
     public boolean backup(String hostIP, String userName, String password, String savePath, String fileName, String databaseName) throws InterruptedException {
         File saveFile = new File(savePath);
         if (!saveFile.exists()) {// 如果目录不存在
             saveFile.mkdirs();// 创建文件夹
         }
-        if(!savePath.endsWith(File.separator)){
+        if (!savePath.endsWith(File.separator)) {
             savePath = savePath + File.separator;
         }
 
@@ -56,14 +60,14 @@ public class MySQLDatabaseBackup {
             InputStreamReader inputStreamReader = new InputStreamReader(process.getInputStream(), "utf8");
             bufferedReader = new BufferedReader(inputStreamReader);
             String line;
-            while((line = bufferedReader.readLine())!= null){
+            while ((line = bufferedReader.readLine()) != null) {
                 printWriter.println(line);
             }
             printWriter.flush();
-            if(process.waitFor() == 0){//0 表示线程正常终止。
+            if (process.waitFor() == 0) {//0 表示线程正常终止。
                 return true;
             }
-        }catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         } finally {
             try {
@@ -84,30 +88,30 @@ public class MySQLDatabaseBackup {
      * 获取项目路径
      * */
 
-    @RequestMapping(value = "/goToBackup",method = RequestMethod.POST)
+    @RequestMapping(value = "/goToBackup", method = RequestMethod.POST)
     @ResponseBody
-    public List<Object> goToBackup(HttpServletRequest request){
+    public List<Object> goToBackup(HttpServletRequest request) {
 
-        System.out.println("1:"+request.getSession().getServletContext().getRealPath("DataSql"));
+        System.out.println("1:" + request.getSession().getServletContext().getRealPath("DataSql"));
 
         /*
-        * 获得路径
-        * */
-        String basurl=request.getSession().getServletContext().getRealPath("DataSql");
+         * 获得路径
+         * */
+        String basurl = request.getSession().getServletContext().getRealPath("DataSql");
 
-        Map<String,Object>objectMap=new HashMap<>();
-        objectMap.put("daybftime",new Date().toLocaleString());
-        objectMap.put("daypath",basurl);
-        objectMap.put("dayhytime","");
-        objectMap.put("daydesc","备份记录");
+        Map<String, Object> objectMap = new HashMap<>();
+        objectMap.put("daybftime", new Date().toLocaleString());
+        objectMap.put("daypath", basurl);
+        objectMap.put("dayhytime", "");
+        objectMap.put("daydesc", "备份记录");
 
-        List<Object> objects=new ArrayList<>();
+        List<Object> objects = new ArrayList<>();
 
-        SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd-HH时mm分ss秒");
-        String bfday=sdf.format(new Date());
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd-HH时mm分ss秒");
+        String bfday = sdf.format(new Date());
 
         try {
-            if (backup("127.0.0.1", "root", ".asamu.654", basurl, bfday+".sql", "mujisystem")&&diaryService.insert(objectMap)>0) {
+            if (backup("127.0.0.1", "root", ".asamu.654", basurl, bfday + ".sql", "mujisystem") && diaryService.insert(objectMap) > 0) {
                 objects.add("success");
                 objects.add(basurl);
             } else {
@@ -120,7 +124,7 @@ public class MySQLDatabaseBackup {
         return objects;
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
        /* try {
             recover("C:\\Users\\one\\Desktop\\mujisystem2.sql");
@@ -130,10 +134,10 @@ public class MySQLDatabaseBackup {
     }
 
     /*
-    * 還原
-    * */
-    @RequestMapping(value = "/recover",method = RequestMethod.POST)
-    public void recover(String path) throws IOException{
+     * 還原
+     * */
+    @RequestMapping(value = "/recover", method = RequestMethod.POST)
+    public void recover(String path) throws IOException {
         Runtime runtime = Runtime.getRuntime();
         //-u后面是用户名，-p是密码-p后面最好不要有空格，-family是数据库的名字，--default-character-set=utf8，这句话一定的加
         //我就是因为这句话没加导致程序运行成功，但是数据库里面的内容还是以前的内容，最好写上完成的sql放到cmd中一运行才知道报错了
@@ -147,12 +151,12 @@ public class MySQLDatabaseBackup {
         BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(path)));
         String str = null;
         StringBuffer sb = new StringBuffer();
-        while((str = br.readLine()) != null){
-            sb.append(str+"\r\n");
+        while ((str = br.readLine()) != null) {
+            sb.append(str + "\r\n");
         }
         str = sb.toString();
         System.out.println(str);
-        OutputStreamWriter writer = new OutputStreamWriter(outputStream,"utf-8");
+        OutputStreamWriter writer = new OutputStreamWriter(outputStream, "utf-8");
         writer.write(str);
         writer.flush();
         outputStream.close();
@@ -164,44 +168,73 @@ public class MySQLDatabaseBackup {
     /*
      * 查询全部记录
      * */
-    @RequestMapping(value = "/selectAllDiaryCount",method = RequestMethod.POST)
+    @RequestMapping(value = "/selectAllDiaryCount", method = RequestMethod.POST)
     @ResponseBody
-    public int selectAllDiaryCount(@RequestBody List<Object> objectInit){
-        Map<String,Object>objectMap=new HashMap<>();
-        objectMap.put("pageno",0);
-        objectMap.put("pagesize",99999);
+    public int selectAllDiaryCount(@RequestBody List<Object> objectInit) {
+        Map<String, Object> objectMap = new HashMap<>();
+        objectMap.put("pageno", 0);
+        objectMap.put("pagesize", 99999);
 
         return diaryService.selectAllDiary(objectMap).size();
     }
 
     /*
-    * 查询全部记录
-    * */
-    @RequestMapping(value = "/selectAllDiary",method = RequestMethod.POST)
+     * 查询全部记录
+     * */
+    @RequestMapping(value = "/selectAllDiary", method = RequestMethod.POST)
     @ResponseBody
-    public List<Diary>selectAllDiary(@RequestBody List<Object> objlist){
+    public List<Diary> selectAllDiary(@RequestBody List<Object> objlist) {
 
-        int page= (int) objlist.get(0);
-        int size= (int) objlist.get(1);
-        int pageno=(page-1)*size;
+        int page = (int) objlist.get(0);
+        int size = (int) objlist.get(1);
+        int pageno = (page - 1) * size;
 
-        Map<String,Object>objectMap=new HashMap<>();
-        objectMap.put("pageno",pageno);
-        objectMap.put("pagesize",size);
+        Map<String, Object> objectMap = new HashMap<>();
+        objectMap.put("pageno", pageno);
+        objectMap.put("pagesize", size);
         return diaryService.selectAllDiary(objectMap);
     }
 
     /*
-    * 删除
-    * */
-    @RequestMapping(value = "/delete",method = RequestMethod.POST)
+     * 删除
+     * */
+    @RequestMapping(value = "/delete", method = RequestMethod.POST)
     @ResponseBody
-    public String delete(List<Object>objectList){
-        Map<String,Object> objectMap=new HashMap<>();
-        objectMap.put("dayid",objectList.get(0).toString());
-        if(diaryService.delete(objectMap)>0){
+    public String delete(List<Object> objectList) {
+        Map<String, Object> objectMap = new HashMap<>();
+        objectMap.put("dayid", objectList.get(0).toString());
+        if (diaryService.delete(objectMap) > 0) {
             return "success";
         }
         return "error";
+    }
+
+    /*
+    * 记录日志
+    * */
+    @RequestMapping(value = "/getLogInfo",method = RequestMethod.POST)
+    public void getLogInfo(HttpServletRequest request, HttpServletResponse response){
+
+        Standard standard=new Standard();
+
+        String pathname = "C:\\Users\\one\\Desktop\\MUJI无印良品开发资料\\MUJI日志记录表\\info.log";
+        StringBuilder result = new StringBuilder();
+        try{
+            request.setCharacterEncoding("utf-8");
+            response.setCharacterEncoding("utf-8");
+            response.setContentType("application/json;charset=utf-8");
+
+            InputStreamReader isr = new InputStreamReader(new FileInputStream(pathname), "UTF-8");
+            BufferedReader br = new BufferedReader(isr);
+            String s = null;
+            while((s = br.readLine())!=null){//使用readLine方法，一次读一行
+                result.append(System.lineSeparator()+"<br/>"+s);
+            }
+            br.close();
+            standard.put("msg",result.toString());
+            response.getWriter().print(JSONUtil.toJson(standard));
+        }catch(Exception e){
+            e.printStackTrace();
+        }
     }
 }

@@ -13,9 +13,9 @@ public class Logging {
     private String warn;
     private String trace;
 
-    public Logging(){
+    public Logging() {
         //初始化日志对象
-        logger=LogManager.getLogger(Logging.class);
+        logger = LogManager.getLogger(Logging.class);
     }
 
     public String getInfo() {

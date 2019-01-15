@@ -10,23 +10,23 @@
     </select>
     <select id="selectAllAdministrator" resultType="administrator" parameterType="java.util.Map">
         select * from administrator
-         <where>
-             <if test="astate!=null and astate!=''">
-                 astate=#{astate}
-             </if>
-             <if test="aphone!=null and aphone!=''">
-                 and aphone like '%${aphone}%'
-             </if>
-             <if test="adept!=null and adept!=''">
-                 and adept=#{adept}
-             </if>
-             <if test="aname!=null and aname!=''">
-                 and aname like '%${aname}%'
-             </if>
-             <if test="apassword!=null and apassword!=''">
-                 and apassword=#{apassword}
-             </if>
-         </where>
+        <where>
+            <if test="astate!=null and astate!=''">
+                astate=#{astate}
+            </if>
+            <if test="aphone!=null and aphone!=''">
+                and aphone like '%${aphone}%'
+            </if>
+            <if test="adept!=null and adept!=''">
+                and adept=#{adept}
+            </if>
+            <if test="aname!=null and aname!=''">
+                and aname like '%${aname}%'
+            </if>
+            <if test="apassword!=null and apassword!=''">
+                and apassword=#{apassword}
+            </if>
+        </where>
         limit #{pageno},#{pagesize};
     </select>
 
@@ -48,7 +48,7 @@
 
     <insert id="insert" parameterType="administrator">
         insert into administrator(aphone,aname,adept,apassword,apic,aregday,adesc,astate)values(
-          #{aphone},#{aname},#{adept},#{apassword},#{apic},#{aregday},#{adesc},#{astate}
+        #{aphone},#{aname},#{adept},#{apassword},#{apic},#{aregday},#{adesc},#{astate}
         );
     </insert>
 
@@ -81,7 +81,7 @@
         这里不做删除操作，只做修改状态
     -->
     <update id="delete" parameterType="String">
-         update administrator set astate=1 where aid=#{aid};
+        update administrator set astate=1 where aid=#{aid};
     </update>
 
 </mapper>

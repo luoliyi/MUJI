@@ -32,28 +32,28 @@
 
     <select id="selectAllGoods" resultMap="GoodsMap" parameterType="java.util.Map">
         select * from goods as g join GoodsTypeDetails as td on g.gtdid=td.gtdid
-          join GoodsType as t on g.tid=t.tid
-          <where>
-              <if test="goodsname!='' and goodsname!=null">
-                  g.gname like '%${goodsname}%'
-              </if>
-              <if test="trueGoodNo!='' and trueGoodNo!=null">
+        join GoodsType as t on g.tid=t.tid
+        <where>
+            <if test="goodsname!='' and goodsname!=null">
+                g.gname like '%${goodsname}%'
+            </if>
+            <if test="trueGoodNo!='' and trueGoodNo!=null">
                 and g.gno=#{trueGoodNo}
-              </if>
-              <if test="selectVal!=null and selectVal!=''">
-               and t.tname=#{selectVal}
-              </if>
-              <if test="gstate!=null and gstate!=''">
-                  and g.gstate=#{gstate}
-              </if>
-              and g.gnowprice between #{startprice} and #{endprice}
-          </where>
+            </if>
+            <if test="selectVal!=null and selectVal!=''">
+                and t.tname=#{selectVal}
+            </if>
+            <if test="gstate!=null and gstate!=''">
+                and g.gstate=#{gstate}
+            </if>
+            and g.gnowprice between #{startprice} and #{endprice}
+        </where>
         order by g.gid limit #{pageno},#{pagesize};
     </select>
 
     <select id="selectNewGoods" resultMap="GoodsMap" parameterType="java.util.Map">
         select * from goods as g join GoodsTypeDetails as td on g.gtdid=td.gtdid
-        join GoodsType as t on g.tid=t.tid   order by g.gid desc limit #{pageno},#{pagesize};
+        join GoodsType as t on g.tid=t.tid order by g.gid desc limit #{pageno},#{pagesize};
     </select>
 
     <insert id="insert" parameterType="java.util.Map">
@@ -103,9 +103,8 @@
         这里不做删除操作，只做修改状态
     -->
     <delete id="delete" parameterType="String">
-         delete from Goods where gno=#{goodno};
+        delete from Goods where gno=#{goodno};
     </delete>
-
 
 
     <!--

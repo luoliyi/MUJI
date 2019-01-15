@@ -34,19 +34,19 @@ public class IShoppingCartDaoTest {
     ISalesDao salesDao;
 
     @Test
-    public void selectAllCartByMphone(){
-        Map<String,Object>objectMap=new HashMap<>();
-        objectMap.put("mphone","13926901506");
-        List<ShoppingCart> shoppingCarts=shoppingCartDao.selectAllCartByMphone(objectMap);
+    public void selectAllCartByMphone() {
+        Map<String, Object> objectMap = new HashMap<>();
+        objectMap.put("mphone", "13926901506");
+        List<ShoppingCart> shoppingCarts = shoppingCartDao.selectAllCartByMphone(objectMap);
         System.out.println(shoppingCarts);
     }
 
     @Test
-    public void selectOneDaySalesVolume(){
-        Map<String,Object>objectMap=new HashMap<>();
-        objectMap.put("myday","29");
-        List<DaySales> daySales=salesDao.selectOneDaySalesVolume(objectMap);
-        for (DaySales daySales1:daySales){
+    public void selectOneDaySalesVolume() {
+        Map<String, Object> objectMap = new HashMap<>();
+        objectMap.put("myday", "29");
+        List<DaySales> daySales = salesDao.selectOneDaySalesVolume(objectMap);
+        for (DaySales daySales1 : daySales) {
             System.out.println(daySales1);
         }
     }

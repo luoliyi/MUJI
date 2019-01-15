@@ -6,8 +6,9 @@
     <title>欢迎页面-X-admin2.0</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <meta name="viewport"
+          content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi"/>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="./css/font.css">
     <link rel="stylesheet" href="./css/xadmin.css">
     <!--artDialog弹出层-->
@@ -25,59 +26,69 @@
 
     <!--重写部分样式-->
     <style>
-        .layui-input{
-            display: inline!important;
+        .layui-input {
+            display: inline !important;
             width: 15.3% !important;
         }
-        .layui-table td, .layui-table th{
+
+        .layui-table td, .layui-table th {
             padding: 5px 15px !important;
         }
-        #tbody .cw{
-            width: 33px!important;
+
+        #tbody .cw {
+            width: 33px !important;
         }
-        #tbody .desc{
-            width: 190px!important;
+
+        #tbody .desc {
+            width: 190px !important;
         }
-        #tbody img{
+
+        #tbody img {
             width: 50px;
             height: 50px;
         }
-        #imgLoadDiv{
+
+        #imgLoadDiv {
             position: absolute;
             top: 18px;
             left: 450px;
 
         }
-        #dialogdiv .layui-input{
-            width: 190px!important;
+
+        #dialogdiv .layui-input {
+            width: 190px !important;
         }
-        #CoveringLayer{
+
+        #CoveringLayer {
             display: none;
             width: 100%;
             height: 100%;
             position: fixed;
-            background: rgba(0,0,0,.6);
+            background: rgba(0, 0, 0, .6);
             top: 0px;
             right: 0px;
             bottom: 0px;
             left: 0px;
             z-index: 999;
         }
-        #dialogdiv button{
+
+        #dialogdiv button {
             cursor: pointer;
         }
-        .layui-upload-drag{
-            padding: 100px!important;
+
+        .layui-upload-drag {
+            padding: 100px !important;
         }
-        #tbody .goodsno{
-            width: 110px!important;
+
+        #tbody .goodsno {
+            width: 110px !important;
         }
     </style>
 
 </head>
 
 <body>
-<div class="x-body" id="dialogdiv"style="display: none;overflow: auto">
+<div class="x-body" id="dialogdiv" style="display: none;overflow: auto">
     <!--图片上传-->
     <div id="imgLoadDiv" class="layui-form-item">
         <label for="test10">商品图片：</label>
@@ -206,14 +217,15 @@
             商品描述
         </label>
         <div class="layui-input-block">
-            <textarea  placeholder="请输入内容" id="gdesc" name="desc" class="layui-textarea" style="min-height: 70px!important;"></textarea>
+            <textarea placeholder="请输入内容" id="gdesc" name="desc" class="layui-textarea"
+                      style="min-height: 70px!important;"></textarea>
         </div>
     </div>
-    <button  class="layui-btn" lay-filter="add" lay-submit="" id="btnAdd">
+    <button class="layui-btn" lay-filter="add" lay-submit="" id="btnAdd">
         增加
     </button>
 
-    <button  class="layui-btn" lay-filter="add" lay-submit="" id="btnUpd">
+    <button class="layui-btn" lay-filter="add" lay-submit="" id="btnUpd">
         修改
     </button>
 </div>
@@ -227,14 +239,16 @@
         <a>
           <cite>商品列表</cite></a>
       </span>
-    <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" href="javascript:location.replace(location.href);" title="刷新">
+    <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right"
+       href="javascript:location.replace(location.href);" title="刷新">
         <i class="layui-icon" style="line-height:30px">ဂ</i></a>
 </div>
 <div class="x-body">
     <div class="layui-row">
-        <input type="text" name="goodsname" id="goodsname"  placeholder="商品名:(修身裤)" autocomplete="off" class="layui-input">
-        <input type="text" name="startprice" id="startprice"  placeholder="价格范围" autocomplete="off" class="layui-input">
-        <input type="text" name="endprice" id="endprice"   placeholder="价格范围" autocomplete="off" class="layui-input">
+        <input type="text" name="goodsname" id="goodsname" placeholder="商品名:(修身裤)" autocomplete="off"
+               class="layui-input">
+        <input type="text" name="startprice" id="startprice" placeholder="价格范围" autocomplete="off" class="layui-input">
+        <input type="text" name="endprice" id="endprice" placeholder="价格范围" autocomplete="off" class="layui-input">
         <!--状态选择器-->
         <div class="layui-input-inline">
             <select name="contrller" id="selectState" style="height: 39px!important;position: relative;top: -2px;">
@@ -262,9 +276,12 @@
                 <option value="食品">食品</option>
             </select>
         </div>
-        <button class="layui-btn" id="btnLimitFind"  lay-submit="" lay-filter="sreach" style="position: relative;top: -2px"><i class="layui-icon">&#xe615;</i></button>
-        <input type="text" id="trueGoodNo" name="trueGoodNo"  placeholder="请输入商品编号精确查询" autocomplete="off" class="layui-input">
-        <button class="layui-btn" id="btnTrueFind"  lay-submit="" lay-filter="sreach" style="position: relative;top: -2px"><i class="layui-icon">&#xe615;</i></button>
+        <button class="layui-btn" id="btnLimitFind" lay-submit="" lay-filter="sreach"
+                style="position: relative;top: -2px"><i class="layui-icon">&#xe615;</i></button>
+        <input type="text" id="trueGoodNo" name="trueGoodNo" placeholder="请输入商品编号精确查询" autocomplete="off"
+               class="layui-input">
+        <button class="layui-btn" id="btnTrueFind" lay-submit="" lay-filter="sreach"
+                style="position: relative;top: -2px"><i class="layui-icon">&#xe615;</i></button>
     </div>
     <xblock>
         <button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button>
@@ -276,7 +293,8 @@
         <thead>
         <tr>
             <th>
-                <div class="layui-unselect header layui-form-checkbox" lay-skin="primary"><i class="layui-icon">&#xe605;</i></div>
+                <div class="layui-unselect header layui-form-checkbox" lay-skin="primary"><i
+                        class="layui-icon">&#xe605;</i></div>
             </th>
             <th>商品编号</th>
             <th>商品名称</th>
@@ -302,31 +320,31 @@
 
 <script>
 
-    var gpicture="";
+    var gpicture = "";
     /*
      * 文件上传
      * */
-    layui.use('upload', function() {
+    layui.use('upload', function () {
         var $ = layui.jquery
             , upload = layui.upload;
         upload.render({
             elem: '#test10'
-            ,url: 'goodsController/fileSave'
-            ,method:'post'
-            ,done: function(res){
+            , url: 'goodsController/fileSave'
+            , method: 'post'
+            , done: function (res) {
                 console.log(res);
-                $("#test10").css("backgroundImage","url(img/goodsdetails/"+res.data+")");
-                gpicture=res.data;
+                $("#test10").css("backgroundImage", "url(img/goodsdetails/" + res.data + ")");
+                gpicture = res.data;
             }
         });
     });
 
     //app封装的增删改查
-    var app={
-        firstRequest(){
+    var app = {
+        firstRequest() {
 
             console.log("ooo")
-            var mohuListLimit=new Array();
+            var mohuListLimit = new Array();
             mohuListLimit.push($("#goodsname").val());
             mohuListLimit.push($("#selectVal").val());
             mohuListLimit.push($("#startprice").val());
@@ -335,12 +353,12 @@
             mohuListLimit.push($("#selectState").val());
 
             $.ajax({
-                url:"goodsController/selectAllGoodsCount",
-                type:"POST",
-                contentType:"application/json;charset=utf-8",
-                data:JSON.stringify(mohuListLimit),
-                success:function(sum) {
-                    console.log("sum:"+sum);
+                url: "goodsController/selectAllGoodsCount",
+                type: "POST",
+                contentType: "application/json;charset=utf-8",
+                data: JSON.stringify(mohuListLimit),
+                success: function (sum) {
+                    console.log("sum:" + sum);
                     $("#allGoodsCount").html(sum);
                     //分页
                     layui.use(['laypage', 'layer'], function () {
@@ -387,47 +405,47 @@
         /*
         * 渲染数据
         * */
-        ,showData(data){
+        , showData(data) {
             console.log(data);
             $("#tbody tr").remove();
-            $.each(data,function (index,obj) {
-                var tr=$("<tr/>");
+            $.each(data, function (index, obj) {
+                var tr = $("<tr/>");
                 $("<td/>").html("<div class=\"layui-unselect layui-form-checkbox\" lay-skin=\"primary\" data-id='2'><i class=\"layui-icon\">&#xe605;</i></div>").appendTo(tr);
                 $("<td class='goodsno' />").html(obj.gno).appendTo(tr);
                 $("<td/>").html(obj.gname).appendTo(tr);
                 $("<td class='cw' />").html(obj.gcolor).appendTo(tr);
                 $("<td class='cw' />").html(obj.gsize).appendTo(tr);
                 $("<td class='cw' />").html(obj.gnowprice).appendTo(tr);
-                $("<td class='cw' />").html(obj.gprevPrice=="0"?" ":obj.gprevPrice).appendTo(tr);
-                if(obj.gpic.indexOf(".jpg")>1){
+                $("<td class='cw' />").html(obj.gprevPrice == "0" ? " " : obj.gprevPrice).appendTo(tr);
+                if (obj.gpic.indexOf(".jpg") > 1) {
                     console.log("find it ");
-                    $("<td />").append("<img src='img/goodsdetails/"+obj.gpic+"'/>").appendTo(tr);
-                }else {
+                    $("<td />").append("<img src='img/goodsdetails/" + obj.gpic + "'/>").appendTo(tr);
+                } else {
                     $("<td />").append("<img src='img/goodsdetails/" + obj.gpic + ".jpg '/>").appendTo(tr);
                 }
                 $("<td class='desc' />").html(obj.gdesc).appendTo(tr);
-                $("<td class='cw' />").html(obj.gstate=="0"?"<span class=\"layui-btn layui-btn-normal layui-btn-mini\">在售</span>":"<font color='red'>售空</font>").appendTo(tr);
+                $("<td class='cw' />").html(obj.gstate == "0" ? "<span class=\"layui-btn layui-btn-normal layui-btn-mini\">在售</span>" : "<font color='red'>售空</font>").appendTo(tr);
                 $("<td/>").html(
                     "              <a title=\"查看\" class=\"showDialog2\" href=\"javascript:;\">\n" +
                     "                <i class=\"layui-icon\">&#xe63c;</i>\n" +
                     "              </a>\n" +
-                    "              <a title=\"删除\"  onclick=\"member_del(this,"+obj.gno+")\"  href=\"javascript:;\">\n" +
+                    "              <a title=\"删除\"  onclick=\"member_del(this," + obj.gno + ")\"  href=\"javascript:;\">\n" +
                     "                <i class=\"layui-icon\">&#xe640;</i>\n" +
                     "              </a>"
-                ).data("gid",obj.gid).data("obj",obj).appendTo(tr);
+                ).data("gid", obj.gid).data("obj", obj).appendTo(tr);
                 $("#tbody").append(tr);
             })
         }
-        ,init(){
+        , init() {
             app.firstRequest();
             $("#btnLimitFind").click(app.firstRequest);
             $("#btnTrueFind").click(app.firstRequest);
             /*导出CSV*/
             $("#exportCSV").click(function () {
-                location.href="goodsController/exploreCsv";
+                location.href = "goodsController/exploreCsv";
             });
         }
-    } ;
+    };
     app.init();
 
     var addDia;
@@ -437,13 +455,13 @@
         * */
         // $("#CoveringLayer").css("display","block");
 
-        $("#gstate").attr("disabled",true);
+        $("#gstate").attr("disabled", true);
 
         addDia = dialog({
             title: '添加商品',
-            content:$("#dialogdiv"),
-            width:1015,
-            height:550
+            content: $("#dialogdiv"),
+            width: 1015,
+            height: 550
         });
         addDia.show();
     });
@@ -451,9 +469,9 @@
     /*
     * 添加
     * */
-    $("#btnAdd").css("cursor","pointer").click(function () {
+    $("#btnAdd").css("cursor", "pointer").click(function () {
 
-        var list=new Array();
+        var list = new Array();
         list.push($("#gname").val());
         list.push($("#gcolor").val());
         list.push($("#gsize").val());
@@ -468,14 +486,14 @@
         * 提交后台
         * */
         $.ajax({
-            url:"goodsController/insert",
-            type:"post",
-            contentType:"application/json;charset=utf-8",
-            data:JSON.stringify(list),
-            beforeSend(){
+            url: "goodsController/insert",
+            type: "post",
+            contentType: "application/json;charset=utf-8",
+            data: JSON.stringify(list),
+            beforeSend() {
                 console.log(list);
             }
-        }).then(function(msg){
+        }).then(function (msg) {
             app.firstRequest();
             console.log(msg);
             addDia.close().remove();
@@ -486,9 +504,9 @@
             $("#gstyle").val(1);
             $("#gtype").val(1);
             $("#gdesc").val("");
-            gpicture="";
+            gpicture = "";
             $("#test10").css("backgroundImage", "");
-        },function(error){
+        }, function (error) {
             console.log(error);
         })
     });
@@ -497,14 +515,14 @@
     * 修改
     * */
     var updDia;
-    $("#tbody").on("click",".showDialog2",function () {
-        var obj=$(this).closest("td").data("obj");
+    $("#tbody").on("click", ".showDialog2", function () {
+        var obj = $(this).closest("td").data("obj");
         console.log(obj);
         updDia = dialog({
             title: '修改商品',
-            content:$("#dialogdiv"),
-            width:1015,
-            height:550
+            content: $("#dialogdiv"),
+            width: 1015,
+            height: 550
         });
         $("#gname").val(obj.gname);
         $("#gcolor").val(obj.gcolor);
@@ -514,13 +532,13 @@
         $("#gtype").val(obj.goodsType.tid);
         $("#gdesc").val(obj.gdesc);
         $("#gstate").val(obj.gstate);
-        if(obj.gpic.indexOf(".jpg")>1) {
+        if (obj.gpic.indexOf(".jpg") > 1) {
             $("#test10").css("backgroundImage", "url(img/goodsdetails/" + obj.gpic + ")");
-        }else{
+        } else {
             $("#test10").css("backgroundImage", "url(img/goodsdetails/" + obj.gpic + ".jpg)");
         }
         /*保存修改图片路径，方式修改图片时为空*/
-        gpicture=obj.gpic;
+        gpicture = obj.gpic;
 
 
         /*
@@ -531,7 +549,7 @@
         /*
         * 关闭可选状态
         * */
-        $("#gstate").attr("disabled",false);
+        $("#gstate").attr("disabled", false);
         updDia.show();
     });
 
@@ -539,7 +557,7 @@
     * 确定修改
     * */
     $("#btnUpd").click(function () {
-        var list=new Array();
+        var list = new Array();
         list.push($("#gname").val());
         list.push($("#gcolor").val());
         list.push($("#gsize").val());
@@ -558,14 +576,14 @@
         * 提交后台
         * */
         $.ajax({
-            url:"goodsController/update",
-            type:"post",
-            contentType:"application/json;charset=utf-8",
-            data:JSON.stringify(list),
-            beforeSend(){
+            url: "goodsController/update",
+            type: "post",
+            contentType: "application/json;charset=utf-8",
+            data: JSON.stringify(list),
+            beforeSend() {
                 console.log(list);
             }
-        }).then(function(msg){
+        }).then(function (msg) {
             app.firstRequest();
             console.log(msg);
             updDia.close().remove();
@@ -576,14 +594,14 @@
             $("#gstyle").val(1);
             $("#gtype").val(1);
             $("#gdesc").val("");
-            gpicture="";
+            gpicture = "";
             $("#test10").css("backgroundImage", "");
-        },function(error){
+        }, function (error) {
             console.log(error);
         })
     });
 
-    layui.use('laydate', function(){
+    layui.use('laydate', function () {
         var laydate = layui.laydate;
 
         //执行一个laydate实例
@@ -598,60 +616,62 @@
     });
 
     /*用户-停用*/
-    function member_stop(obj,id){
-        layer.confirm('确认要停用吗？',function(index){
+    function member_stop(obj, id) {
+        layer.confirm('确认要停用吗？', function (index) {
 
-            if($(obj).attr('title')=='启用'){
+            if ($(obj).attr('title') == '启用') {
 
                 //发异步把用户状态进行更改
-                $(obj).attr('title','停用')
+                $(obj).attr('title', '停用')
                 $(obj).find('i').html('&#xe62f;');
 
                 $(obj).parents("tr").find(".td-status").find('span').addClass('layui-btn-disabled').html('已停用');
-                layer.msg('已停用!',{icon: 5,time:1000});
+                layer.msg('已停用!', {icon: 5, time: 1000});
 
-            }else{
-                $(obj).attr('title','启用');
+            } else {
+                $(obj).attr('title', '启用');
                 $(obj).find('i').html('&#xe601;');
 
                 $(obj).parents("tr").find(".td-status").find('span').removeClass('layui-btn-disabled').html('已启用');
-                layer.msg('已启用!',{icon: 5,time:1000});
+                layer.msg('已启用!', {icon: 5, time: 1000});
             }
 
         });
     }
-    /*用户-删除*/
-    function member_del(obj,id){
-        layer.confirm('确认要删除吗？',function(index){
 
-            var gno=id;
+    /*用户-删除*/
+    function member_del(obj, id) {
+        layer.confirm('确认要删除吗？', function (index) {
+
+            var gno = id;
             /*
             * ajax传值删除
             * */
 
             $.ajax({
-                url:"goodsController/delete",
-                type:"post",
-                contentType:"application/json;charset=utf-8",
-                data:JSON.stringify(gno),
-                beforeSend:function(){
+                url: "goodsController/delete",
+                type: "post",
+                contentType: "application/json;charset=utf-8",
+                data: JSON.stringify(gno),
+                beforeSend: function () {
                     console.log(gno)
                 },
-                success:function () {
+                success: function () {
                     app.firstRequest();
                 }
             });
 
             //发异步删除数据
             $(obj).parents("tr").remove();
-            layer.msg('已删除!',{icon:1,time:1000});
+            layer.msg('已删除!', {icon: 1, time: 1000});
         });
     }
-    function delAll (argument) {
+
+    function delAll(argument) {
 
         var data = tableCheck.getData();
 
-        layer.confirm('确认要删除吗？'+data,function(index){
+        layer.confirm('确认要删除吗？' + data, function (index) {
             //捉到所有被选中的，发异步进行删除
             console.log(data);
             console.log(index);
@@ -661,7 +681,8 @@
         });
     }
 </script>
-<script>var _hmt = _hmt || []; (function() {
+<script>var _hmt = _hmt || [];
+(function () {
     var hm = document.createElement("script");
     hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
     var s = document.getElementsByTagName("script")[0];

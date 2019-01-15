@@ -30,41 +30,41 @@ public class IAdministratorDaoTest {
 
     @Test
     public void queryAllGoods() throws UnsupportedEncodingException, NoSuchAlgorithmException {
-        Map<String,Object> objectMap=new HashMap<>();
-        objectMap.put("aname","bigone");
-        objectMap.put("aphone","13926901501");
-        objectMap.put("apassword",MD5Util.EncoderByMd5(".asamu.654"));
-        objectMap.put("pageno",0);
-        objectMap.put("pagesize",9999);
-        List<Administrator> administrators=administratorDao.selectAllAdministrator(objectMap);
-        for (Administrator administrator:administrators){
+        Map<String, Object> objectMap = new HashMap<>();
+        objectMap.put("aname", "bigone");
+        objectMap.put("aphone", "13926901501");
+        objectMap.put("apassword", MD5Util.EncoderByMd5(".asamu.654"));
+        objectMap.put("pageno", 0);
+        objectMap.put("pagesize", 9999);
+        List<Administrator> administrators = administratorDao.selectAllAdministrator(objectMap);
+        for (Administrator administrator : administrators) {
             System.out.println(administrator);
         }
     }
 
     @Test
-    public void delete(){
-        int r=administratorDao.delete("1");
-        System.out.println("result:"+r);
+    public void delete() {
+        int r = administratorDao.delete("1");
+        System.out.println("result:" + r);
     }
 
     @Test
-    public void update(){
-        Map<String,Object> map=new HashMap<>();
-        map.put("mid",1);
-        map.put("mphone","12345678901");
-        map.put("msex","女");
-        map.put("mname","大毛");
-        int result=administratorDao.update(map);
+    public void update() {
+        Map<String, Object> map = new HashMap<>();
+        map.put("mid", 1);
+        map.put("mphone", "12345678901");
+        map.put("msex", "女");
+        map.put("mname", "大毛");
+        int result = administratorDao.update(map);
         System.out.println(result);
     }
 
     @Test
     public void selectOne() throws UnsupportedEncodingException, NoSuchAlgorithmException {
-        Map<String,Object> objectMap=new HashMap<>();
-        objectMap.put("aphone","13926901501");
-        objectMap.put("apassword",MD5Util.EncoderByMd5(".asamu.654"));
-        Administrator administrator=administratorDao.selectOne(objectMap);
+        Map<String, Object> objectMap = new HashMap<>();
+        objectMap.put("aphone", "13926901501");
+        objectMap.put("apassword", MD5Util.EncoderByMd5(".asamu.654"));
+        Administrator administrator = administratorDao.selectOne(objectMap);
         System.out.println(administrator);
     }
 }

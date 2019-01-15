@@ -9,7 +9,7 @@ public class Cost {
     *
     * */
 
-    private  int costid;
+    private int costid;
     private Double costprice;
     private String costdesc;
     private int gplaceid;

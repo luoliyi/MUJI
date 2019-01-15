@@ -6,8 +6,9 @@
     <title>欢迎页面-X-admin2.0</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <meta name="viewport"
+          content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi"/>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="./css/font.css">
     <link rel="stylesheet" href="./css/xadmin.css">
     <script src="js/jquery-1.11.3.js"></script>
@@ -20,7 +21,7 @@
     <![endif]-->
 
     <style>
-        #imgLoadDiv{
+        #imgLoadDiv {
             position: absolute;
             top: 18px;
             left: 450px;
@@ -50,9 +51,9 @@
             <input type="text" id="aname" name="username" required="" lay-verify="required"
                    autocomplete="off" class="layui-input">
         </div>
-<!--        <div class="layui-form-mid layui-word-aux">
-            <span class="x-red">*</span>将会成为您唯一的登入名
-        </div>-->
+        <!--        <div class="layui-form-mid layui-word-aux">
+                    <span class="x-red">*</span>将会成为您唯一的登入名
+                </div>-->
     </div>
     <div class="layui-form-item">
         <label for="aphone" class="layui-form-label">
@@ -63,12 +64,13 @@
                    autocomplete="off" class="layui-input">
         </div>
         <!--<div class="layui-form-mid layui-word-aux">-->
-            <!--<span class="x-red">*</span>将会成为您唯一的手机号-->
+        <!--<span class="x-red">*</span>将会成为您唯一的手机号-->
         <!--</div>-->
     </div>
     <div class="layui-form-item">
         <label class="layui-form-label"><span class="x-red">*</span>角色</label>
-        <select id="adept" name="shipping" class="valid" style="width: 190px!important;margin-bottom: 3px!important;height: 38px!important;">
+        <select id="adept" name="shipping" class="valid"
+                style="width: 190px!important;margin-bottom: 3px!important;height: 38px!important;">
             <option value="系统管理员">系统管理员</option>
             <option value="普通管理员">普通管理员</option>
             <option value="宣传人员">宣传人员</option>
@@ -98,28 +100,28 @@
     <div class="layui-form-item">
         <label for="btnAdd" class="layui-form-label">
         </label>
-        <button  id="btnAdd" class="layui-btn" lay-filter="add" lay-submit="">
+        <button id="btnAdd" class="layui-btn" lay-filter="add" lay-submit="">
             增加
         </button>
     </div>
 </div>
 <script>
 
-    var gpicture="";
+    var gpicture = "";
     /*
      * 文件上传
      * */
-    layui.use('upload', function() {
+    layui.use('upload', function () {
         var $ = layui.jquery
             , upload = layui.upload;
         upload.render({
             elem: '#test10'
-            ,url: 'administratorController/fileSave'
-            ,method:'post'
-            ,done: function(res){
+            , url: 'administratorController/fileSave'
+            , method: 'post'
+            , done: function (res) {
                 console.log(res);
-                $("#test10").css("backgroundImage","url(img/adminpic/"+res.data+")");
-                gpicture=res.data;
+                $("#test10").css("backgroundImage", "url(img/adminpic/" + res.data + ")");
+                gpicture = res.data;
             }
         });
     });
@@ -128,7 +130,7 @@
     * 验证操作
     * */
     $("#btnAdd").click(function () {
-        var objectList=new Array();
+        var objectList = new Array();
         objectList.push($("#aname").val());
         objectList.push($("#aphone").val());
         objectList.push($("#adept").val());
@@ -136,15 +138,15 @@
         objectList.push(gpicture);
 
         $.ajax({
-            type:"post",
-            contentType:"application/json;charset=utf-8",
-            url:"administratorController/insert",
-            data:JSON.stringify(objectList),
-            beforeSend:function () {
+            type: "post",
+            contentType: "application/json;charset=utf-8",
+            url: "administratorController/insert",
+            data: JSON.stringify(objectList),
+            beforeSend: function () {
                 console.log(objectList);
             },
-            success:function (msg) {
-                if(msg=="success"){
+            success: function (msg) {
+                if (msg == "success") {
                     // 获得frame索引
                     var index = parent.layer.getFrameIndex(window.name);
                     //表格重载 就相当于 刷新父页面的表格-dataTable是父页面的表格ID属性
@@ -159,7 +161,8 @@
     });
 
 </script>
-<script>var _hmt = _hmt || []; (function() {
+<script>var _hmt = _hmt || [];
+(function () {
     var hm = document.createElement("script");
     hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
     var s = document.getElementsByTagName("script")[0];

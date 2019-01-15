@@ -5,17 +5,18 @@
     <title>后台登录-X-admin2.0</title>
     <meta name="renderer" content="webkit|ie-comp|ie-stand">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
-    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="viewport"
+          content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
 
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="./css/font.css">
     <link rel="stylesheet" href="./css/xadmin.css">
 </head>
 <body>
 <div class="x-body">
     <blockquote class="layui-elem-quote">
-       <h3>年度销售情况数据如下</h3>
+        <h3>年度销售情况数据如下</h3>
     </blockquote>
     <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
     <div id="main" style="width: 100%;height:400px;"></div>
@@ -25,7 +26,7 @@
                 <input class="layui-input" id="test2" type="text" placeholder="选择年份">
             </div>
         </div>
-        <button class="layui-btn"  lay-submit="" lay-filter="sreach"><i class="layui-icon">&#xe615;</i></button>
+        <button class="layui-btn" lay-submit="" lay-filter="sreach"><i class="layui-icon">&#xe615;</i></button>
     </blockquote>
 </div>
 <script type="text/javascript" src="js/jquery-1.11.3.js" charset="utf-8"></script>
@@ -39,69 +40,69 @@
     // 指定图表的配置项和数据
     var option = {
         backgroundColor: 'white',
-         title: {
-             text: '2018年销售情况'
-         },
-         tooltip: {
-             trigger: 'axis'
-         },
-         legend: {
+        title: {
+            text: '2018年销售情况'
+        },
+        tooltip: {
+            trigger: 'axis'
+        },
+        legend: {
             /* data:['邮件营销','联盟广告','视频广告','直接访问','搜索引擎']*/
-             data:['销售金额','销售数量']
-         },
-         grid: {
-             left: '3%',
-             right: '4%',
-             bottom: '3%',
-             containLabel: true
-         },
-       /* color:['#81b22f','#f3d71c','#f4b9a9'],*/
-         toolbox: {
-             feature: {
-                 saveAsImage: {}
-             }
-         },
-         xAxis: {
-             type: 'category',
-             boundaryGap: false,
-             data: ['一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月']
-         },
-         yAxis: {
-             type: 'value'
-         },
-         series: [
-             {
-                 name:'销售金额(元)',
-                 type:'line',
-                 stack: '总量',
-                 data:[100,101,102,103,106,104,199,213,105,115,111,142]
-             },
-             {
-                 name:'销售数量(件)',
-                 type:'line',
-                 stack: '总量',
-                 data:[100,101,102,103,106,104,199,213,105,115,111,142]
-             }
-         ]
+            data: ['销售金额', '销售数量']
+        },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+        },
+        /* color:['#81b22f','#f3d71c','#f4b9a9'],*/
+        toolbox: {
+            feature: {
+                saveAsImage: {}
+            }
+        },
+        xAxis: {
+            type: 'category',
+            boundaryGap: false,
+            data: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月']
+        },
+        yAxis: {
+            type: 'value'
+        },
+        series: [
+            {
+                name: '销售金额(元)',
+                type: 'line',
+                stack: '总量',
+                data: [100, 101, 102, 103, 106, 104, 199, 213, 105, 115, 111, 142]
+            },
+            {
+                name: '销售数量(件)',
+                type: 'line',
+                stack: '总量',
+                data: [100, 101, 102, 103, 106, 104, 199, 213, 105, 115, 111, 142]
+            }
+        ]
     };
     myChart.setOption(option);
 
 
     function seleAllGrow(yourYear) {
-        var objects=new Array();
+        var objects = new Array();
         objects.push(yourYear);
         // 使用刚指定的配置项和数据显示图表。
-        var months=[];    //类别数组（实际用来盛放X轴坐标值）
-        var sumprices=[];    //销量数组（实际用来盛放Y坐标值）
-        var counts=[];
+        var months = [];    //类别数组（实际用来盛放X轴坐标值）
+        var sumprices = [];    //销量数组（实际用来盛放Y坐标值）
+        var counts = [];
         $.ajax({
-            type : "POST",
-            url : "salesController/getAllSalesByMonth",
-            contentType:"application/json;charset=utf-8",
-            ansyc:true,
-            data:JSON.stringify(objects),
-            dataType : "json",
-            success : function(result) {
+            type: "POST",
+            url: "salesController/getAllSalesByMonth",
+            contentType: "application/json;charset=utf-8",
+            ansyc: true,
+            data: JSON.stringify(objects),
+            dataType: "json",
+            success: function (result) {
                 //请求成功时执行该函数内容，result即为服务器返回的json对象
                 if (result) {
                     console.log(result.length);
@@ -109,7 +110,7 @@
                         result=result.splice(1,result.length);
                     }*/
                     for (var i = 0; i < result.length; i++) {
-                        months.push(result[i].saleMonth+"月");
+                        months.push(result[i].saleMonth + "月");
                         counts.push(result[i].saleCount);
                         sumprices.push(result[i].saleSumprice);    //挨个取出销量并填入销量数组
                     }
@@ -122,27 +123,27 @@
                         },
                         series: [
                             {
-                                name:'销售金额',
-                                type:'line',
+                                name: '销售金额',
+                                type: 'line',
                                 stack: '总量',
-                                data:sumprices,
-                                itemStyle : {
-                                    normal : {
-                                        lineStyle:{
-                                            color:'lightblue'
+                                data: sumprices,
+                                itemStyle: {
+                                    normal: {
+                                        lineStyle: {
+                                            color: 'lightblue'
                                         }
                                     }
                                 },
                             },
                             {
-                                name:'销售数量',
-                                type:'line',
+                                name: '销售数量',
+                                type: 'line',
                                 stack: '总量',
-                                data:counts,
-                                itemStyle : {
-                                    normal : {
-                                        lineStyle:{
-                                            color:'#66cb27'
+                                data: counts,
+                                itemStyle: {
+                                    normal: {
+                                        lineStyle: {
+                                            color: '#66cb27'
                                         }
                                     }
                                 },
@@ -153,17 +154,18 @@
             }
         });
     }
+
     seleAllGrow("2018");
 
 </script>
 <script>
-    layui.use('laydate', function() {
+    layui.use('laydate', function () {
         var laydate = layui.laydate;
         laydate.render({
             elem: '#test2'
-            ,type: 'year'
-            ,value:''
-            ,change: function(value, date, endDate){
+            , type: 'year'
+            , value: ''
+            , change: function (value, date, endDate) {
                 console.log(value);
                 seleAllGrow(value);
             }
@@ -171,7 +173,7 @@
     });
 
     var _hmt = _hmt || [];
-    (function() {
+    (function () {
         var hm = document.createElement("script");
         hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
         var s = document.getElementsByTagName("script")[0];

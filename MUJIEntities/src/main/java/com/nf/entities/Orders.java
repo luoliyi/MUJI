@@ -17,7 +17,7 @@ public class Orders {
     private int ocount;
     private double osumprice;
     private String cono;
-    private  int ostate;
+    private int ostate;
 
     private Goods goods;
 

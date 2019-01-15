@@ -7,8 +7,8 @@
         查询表格总数
     -->
     <select id="selectCount" resultType="int">
-         select count(*) from Orders as o join CreateOrders as co on o.cono=co.cono
-         where o.ostate=3 and co.costatus=3 ;
+        select count(*) from Orders as o join CreateOrders as co on o.cono=co.cono
+        where o.ostate=3 and co.costatus=3 ;
     </select>
 
 
@@ -41,8 +41,9 @@
     -->
     <insert id="insert" parameterType="java.util.Map">
         insert into HistoryOrders
-        select o.orderid,o.mphone,o.gid,o.ocount,o.osumprice,o.cono,o.ostate from Orders as o join CreateOrders as co on o.cono=co.cono
-         where o.ostate=3 and co.costatus=3 order by o.orderid desc limit 10,100000;
+        select o.orderid,o.mphone,o.gid,o.ocount,o.osumprice,o.cono,o.ostate from Orders as o join CreateOrders as co on
+        o.cono=co.cono
+        where o.ostate=3 and co.costatus=3 order by o.orderid desc limit 10,100000;
 
     </insert>
 

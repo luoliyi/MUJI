@@ -14,13 +14,13 @@
     <context:component-scan base-package="com.nf.impl,controller"/>
 
     <!-- Spring MVC不处理静态资源 -->
-    <mvc:default-servlet-handler />
+    <mvc:default-servlet-handler/>
 
     <!-- 支持mvc注解驱动 --><!--设置为true-->
     <mvc:annotation-driven enable-matrix-variables="true"/>
 
     <!--开启定时任务注解-->
-<!--    <task:annotation-driven />-->
+    <!--    <task:annotation-driven />-->
 
 
     <!--MVC cors跨域传输协议-->
@@ -36,21 +36,21 @@
     </mvc:cors>
 
     <!-- 视图解析器 -->
-<!--    <bean
-            class="org.springframework.web.servlet.view.InternalResourceViewResolver"
-            id="internalResourceViewResolver">
-        &lt;!&ndash; 前缀 &ndash;&gt;
-        &lt;!&ndash;<property name="prefix" value="/WEB-INF/view/" />&ndash;&gt;
-        <property name="prefix" value="/WEB-INF/view/" />
-        &lt;!&ndash; 后缀 &ndash;&gt;
-        &lt;!&ndash;<property name="suffix" value=".jsp" />&ndash;&gt;
-        <property name="suffix" value=".jsp" />
-    </bean>-->
+    <!--    <bean
+                class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+                id="internalResourceViewResolver">
+            &lt;!&ndash; 前缀 &ndash;&gt;
+            &lt;!&ndash;<property name="prefix" value="/WEB-INF/view/" />&ndash;&gt;
+            <property name="prefix" value="/WEB-INF/view/" />
+            &lt;!&ndash; 后缀 &ndash;&gt;
+            &lt;!&ndash;<property name="suffix" value=".jsp" />&ndash;&gt;
+            <property name="suffix" value=".jsp" />
+        </bean>-->
 
     <!-- 配置映射媒体类型的策略 -->
     <bean
             class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping">
-        <property name="removeSemicolonContent" value="false" />
+        <property name="removeSemicolonContent" value="false"/>
     </bean>
 
     <!--文件上传解析器3.0以上 -->
@@ -59,7 +59,7 @@
     </bean>
     <!--拦截器-->
     <!--配置拦截器 拦截除了exceptUrls内的所有请求-->
-   <mvc:interceptors>
+    <mvc:interceptors>
         <mvc:interceptor>
             <!--http://localhost:8081/-->
             <mvc:mapping path="/admin/*.html"/>
@@ -68,7 +68,7 @@
                     <list>
                         <!--html-->
                         <value>/admin/login.html</value>
-                       <!-- <value>/register.html</value>-->
+                        <!-- <value>/register.html</value>-->
                         <!--controller-->
                         <!--<value>/PeopleServlet/login</value>
                         <value>/PeopleServlet/insertPeople</value>

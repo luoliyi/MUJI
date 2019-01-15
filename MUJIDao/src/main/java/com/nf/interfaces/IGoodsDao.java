@@ -8,15 +8,15 @@ import java.util.Map;
 
 public interface IGoodsDao {
 
-    List<Goods>selectAllGoods(Map<String,Object> goodsLimitMap);
+    List<Goods> selectAllGoods(Map<String, Object> goodsLimitMap);
 
-    int insert(Map<String,Object> objectMap);
+    int insert(Map<String, Object> objectMap);
 
-    int update(Map<String,Object> objectMap);
+    int update(Map<String, Object> objectMap);
 
     int delete(@Param("goodno") String goodno);
 
-    List<Goods>selectNewGoods(Map<String,Object> goodsLimitMap);
+    List<Goods> selectNewGoods(Map<String, Object> goodsLimitMap);
 
     Goods selectOneGood(int gid);
 

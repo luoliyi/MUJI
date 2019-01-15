@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 public interface ISalesDao {
-    List<Sales> selectAllSalesVolume(Map<String,Object>objectMap);
+    List<Sales> selectAllSalesVolume(Map<String, Object> objectMap);
 
-    List<DaySales>selectOneDaySalesVolume(Map<String,Object>objectMap);
+    List<DaySales> selectOneDaySalesVolume(Map<String, Object> objectMap);
 }

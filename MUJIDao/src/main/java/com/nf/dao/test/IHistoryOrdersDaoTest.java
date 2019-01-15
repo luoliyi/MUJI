@@ -23,7 +23,7 @@ import java.util.Map;
 @RunWith(SpringJUnit4ClassRunner.class)
 @Transactional
 @Rollback()  //是否回滚
-public class IHistoryOrdersDaoTest{
+public class IHistoryOrdersDaoTest {
 
     @Autowired
     IHistoryOrdersDao historyOrdersDao;
@@ -31,18 +31,18 @@ public class IHistoryOrdersDaoTest{
     @Test
     public void selectHistoryOrdersDiary() {
 
-        Map<String,Object>objectMap=new HashMap<>();
-        objectMap.put("pageno",0);
-        objectMap.put("pagesize",1000);
-        List<HistoryOrdersDiary>historyOrdersDiaries=historyOrdersDao.selectHistoryOrdersDiary(objectMap);
+        Map<String, Object> objectMap = new HashMap<>();
+        objectMap.put("pageno", 0);
+        objectMap.put("pagesize", 1000);
+        List<HistoryOrdersDiary> historyOrdersDiaries = historyOrdersDao.selectHistoryOrdersDiary(objectMap);
         System.out.println(historyOrdersDiaries);
 
     }
 
     @Test
-    public void selectHistoryOrdersDiaryCount(){
-        Map<String,Object>objectMap=new HashMap<>();
-        int count=historyOrdersDao.selectHistoryOrdersDiaryCount();
+    public void selectHistoryOrdersDiaryCount() {
+        Map<String, Object> objectMap = new HashMap<>();
+        int count = historyOrdersDao.selectHistoryOrdersDiaryCount();
         System.out.println(count);
     }
 }

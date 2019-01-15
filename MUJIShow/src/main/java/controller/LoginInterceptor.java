@@ -9,9 +9,11 @@ import java.util.List;
 
 public class LoginInterceptor extends HandlerInterceptorAdapter {
     private List<String> exceptUrls;
+
     public List<String> getExceptUrls() {
         return exceptUrls;
     }
+
     public void setExceptUrls(List<String> exceptUrls) {
         this.exceptUrls = exceptUrls;
     }
@@ -19,20 +21,20 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
     //执行action之前来执行
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        String requestUri=request.getRequestURI();
-        if(requestUri.startsWith(request.getContextPath())){
+        String requestUri = request.getRequestURI();
+        if (requestUri.startsWith(request.getContextPath())) {
             requestUri = requestUri.substring(request.getContextPath().length(), requestUri.length());
-            System.out.println("requestUri:"+requestUri);
+            System.out.println("requestUri:" + requestUri);
         }
 
         //系统根目录
-        if (StringUtils.equals("/",requestUri)) {
+        if (StringUtils.equals("/", requestUri)) {
             return true;
         }
 
         //放行exceptUrls中配置的url
-        for (String url:exceptUrls) {
-            if(url.endsWith("/**")){
+        for (String url : exceptUrls) {
+            if (url.endsWith("/**")) {
                 if (requestUri.startsWith(url.substring(0, url.length() - 3))) {
                     return true;
                 }
@@ -46,12 +48,12 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
         //在这里我们可以定义一个session来存储登录状态
         //如果没有登录
         //HttpSession session=request.getSession();
-        Object status=request.getSession().getAttribute("loginSuccess");
-       //String status="";
-        System.out.println("status:"+status);
-        if(status=="loginSuccess"){
+        Object status = request.getSession().getAttribute("loginSuccess");
+        //String status="";
+        System.out.println("status:" + status);
+        if (status == "loginSuccess") {
             return true;
-        }else{
+        } else {
             //返回到登录页面
             response.sendRedirect("/admin/login.html");
             return false;

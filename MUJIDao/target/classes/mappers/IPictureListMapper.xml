@@ -3,7 +3,7 @@
 <mapper namespace="com.nf.interfaces.IPictureListDao">
 
     <select id="selectAllPicture" parameterType="String" resultType="PictureList">
-      select * from PictureList where gid=#{gid}
+        select * from PictureList where gid=#{gid}
     </select>
 
     <select id="selectOnePicture" parameterType="String" resultType="PictureList">
@@ -15,7 +15,7 @@
     </select>
 
     <insert id="insert" parameterType="java.util.Map">
-        insert  into PictureList (picpath,picdesc,gid) values (#{picpath},#{picdesc},#{gid})
+        insert into PictureList (picpath,picdesc,gid) values (#{picpath},#{picdesc},#{gid})
     </insert>
 
     <update id="update" parameterType="java.util.Map">

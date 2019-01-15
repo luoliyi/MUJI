@@ -2,8 +2,8 @@ package com.nf.entities;
 
 import java.util.List;
 
-public class Sales{
-    private  int saleMonth;
+public class Sales {
+    private int saleMonth;
     private int saleCount;
     private double saleSumprice;
 
@@ -19,7 +19,13 @@ public class Sales{
 
     private Sales() {
     }
-    public Sales(double saleSumprice) {this.saleSumprice=saleSumprice;};
+
+    public Sales(double saleSumprice) {
+        this.saleSumprice = saleSumprice;
+    }
+
+    ;
+
     public Sales(int saleMonth, double saleSumprice) {
         this.saleMonth = saleMonth;
         this.saleSumprice = saleSumprice;

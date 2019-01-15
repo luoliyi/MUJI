@@ -11,13 +11,13 @@ public interface IPictureListDao {
 
     List<PictureList> selectAllPicture(@Param("gid") String gid);
 
-    List<Goods>selectAllGoods();
+    List<Goods> selectAllGoods();
 
     int insert(Map<String, Object> objectMap);
 
     int update(Map<String, Object> MemberList);
 
-    int delete(Map<String,Object> objectMap);
+    int delete(Map<String, Object> objectMap);
 
     PictureList selectOnePicture(@Param("picid") String picid);
 

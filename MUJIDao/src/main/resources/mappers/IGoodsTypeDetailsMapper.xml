@@ -24,7 +24,8 @@
     <!--
         查询全部商品详细类型下面的商品
     -->
-    <select id="selectAllGoodsTypeDetailsByGtdid" parameterType="java.util.Map" resultMap="allGoodsTypeDetailsByGtdidMap">
+    <select id="selectAllGoodsTypeDetailsByGtdid" parameterType="java.util.Map"
+            resultMap="allGoodsTypeDetailsByGtdidMap">
         select * from GoodsTypeDetails as gt join goods as g on gt.gtdid=g.gtdid
         <where>
             <if test="gtdid!='' and gtdid!=null and gtdid gt 0">

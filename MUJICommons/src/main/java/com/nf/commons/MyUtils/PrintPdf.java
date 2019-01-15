@@ -41,7 +41,7 @@ public class PrintPdf implements Printable {
         double y = pageFormat.getImageableY();
 
         // 虚线
-        float[] dash1 = { 4.0f };
+        float[] dash1 = {4.0f};
         // width - 此 BasicStroke 的宽度。此宽度必须大于或等于 0.0f。如果将宽度设置为
         // 0.0f，则将笔划呈现为可用于目标设备和抗锯齿提示设置的最细线条。
         // cap - BasicStroke 端点的装饰
@@ -59,7 +59,7 @@ public class PrintPdf implements Printable {
         float heigth = font.getSize2D();// 字体高度
         float line = 3 * heigth;
         // 标题
-        g2.drawString("MUJI无印良品----欢迎光临珠海扬名广场2期", (float) x+180, (float) y + heigth);
+        g2.drawString("MUJI无印良品----欢迎光临珠海扬名广场2期", (float) x + 180, (float) y + heigth);
         line += heigth;
         line += heigth;
 
@@ -68,15 +68,15 @@ public class PrintPdf implements Printable {
         heigth = font.getSize2D();// 字体高度
 
         // 显示电话号码和单号
-       // g2.drawString("电话号码：" + ordersArrayList.get(0).getMphone(), (float) x+50, (float) y + line);
-        g2.drawString("发票时间：" + Calendar.getInstance().getTime().toLocaleString(), (float) x+50, (float) y + line);
+        // g2.drawString("电话号码：" + ordersArrayList.get(0).getMphone(), (float) x+50, (float) y + line);
+        g2.drawString("发票时间：" + Calendar.getInstance().getTime().toLocaleString(), (float) x + 50, (float) y + line);
         // 显示订单号
         g2.drawString("订单号：" + ordersArrayList.get(0).getCono(), (float) x + 230, (float) y + line);
         line += heigth;
         line += heigth;
 
         // 显示收银员和POS机
-        g2.drawString("收银员：Jack" , (float) x+50, (float) y + line);
+        g2.drawString("收银员：Jack", (float) x + 50, (float) y + line);
         // 显示订单号
         g2.drawString("POS机：75602", (float) x + 230, (float) y + line);
         line += heigth;
@@ -94,36 +94,36 @@ public class PrintPdf implements Printable {
         line += heigth;
         line += heigth;
 
-        float sumPrice=0;
-        int sumCount=0;
+        float sumPrice = 0;
+        int sumCount = 0;
 
         // 显示内容
         for (int i = 0; i < ordersArrayList.size(); i++) {
-            Orders order=ordersArrayList.get(i);
+            Orders order = ordersArrayList.get(i);
             Goods goods = ordersArrayList.get(i).getGoods();
-            g2.drawString(goods.getGname(), (float) x+50, (float) y + line);
+            g2.drawString(goods.getGname(), (float) x + 50, (float) y + line);
             g2.drawString(String.valueOf(goods.getGnowprice()), (float) x + 230, (float) y + line);
             g2.drawString(String.valueOf(order.getOcount()), (float) x + 280, (float) y + line);
             g2.drawString(String.valueOf(order.getOsumprice()), (float) x + 330, (float) y + line);
-            sumPrice+=order.getOsumprice();
-            sumCount+=order.getOcount();
+            sumPrice += order.getOsumprice();
+            sumCount += order.getOcount();
             line += heigth;
         }
         line += heigth;
 
         /*
-        * drawLine：画横线
-        * */
+         * drawLine：画横线
+         * */
         g2.drawLine((int) x, (int) (y + line), (int) x + 800, (int) (y + line));
         line += heigth;
         line += heigth;
 
-        g2.drawString("售出商品件数：" + sumCount + "件", (float) x+50, (float) y + line);
+        g2.drawString("售出商品件数：" + sumCount + "件", (float) x + 50, (float) y + line);
         g2.drawString("合计：" + sumPrice + "元", (float) x + 230, (float) y + line);
         line += heigth;
         line += heigth;
-        g2.drawString("实收：" + sumPrice  + "元", (float) x+50, (float) y + line);
-       // g2.drawString("找零:" + changes + "元", (float) x + 70, (float) y + line);
+        g2.drawString("实收：" + sumPrice + "元", (float) x + 50, (float) y + line);
+        // g2.drawString("找零:" + changes + "元", (float) x + 70, (float) y + line);
         line += heigth;
         line += heigth;
 
@@ -137,13 +137,13 @@ public class PrintPdf implements Printable {
 
         line += heigth;
         line += heigth;
-        g2.drawString("请仔细核对收银票据、找零以及商品，离柜概不负责。", (float) x+50, (float) y + line);
+        g2.drawString("请仔细核对收银票据、找零以及商品，离柜概不负责。", (float) x + 50, (float) y + line);
         line += heigth;
         line += heigth;
-        g2.drawString("地址：广东省珠海市香洲区凤凰南路1066号扬名广场2期1层", (float) x+50, (float) y + line);
+        g2.drawString("地址：广东省珠海市香洲区凤凰南路1066号扬名广场2期1层", (float) x + 50, (float) y + line);
         line += heigth;
         line += heigth;
-        g2.drawString("网络商城：www.muji.com.cn", (float) x+50, (float) y + line);
+        g2.drawString("网络商城：www.muji.com.cn", (float) x + 50, (float) y + line);
         switch (pageIndex) {
             case 0:
                 return PAGE_EXISTS;

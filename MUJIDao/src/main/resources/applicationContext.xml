@@ -16,18 +16,18 @@
         http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
 
     <!--1 引入属性文件，在配置中占位使用，作用是获取连接数据库配置 -->
-    <context:property-placeholder location="classpath*:dbconfig.properties" />
+    <context:property-placeholder location="classpath*:dbconfig.properties"/>
 
     <!--2 配置C3P0数据源 C3P0，连接池,连接数据库 -->
     <bean id="datasource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
         <!--驱动类名 -->
-        <property name="driverClass" value="${mysql.driver}" />
+        <property name="driverClass" value="${mysql.driver}"/>
         <!-- url -->
-        <property name="jdbcUrl" value="${mysql.url}" />
+        <property name="jdbcUrl" value="${mysql.url}"/>
         <!-- 用户名 -->
-        <property name="user" value="${mysql.username}" />
+        <property name="user" value="${mysql.username}"/>
         <!-- 密码 -->
-        <property name="password" value="${mysql.password}" />
+        <property name="password" value="${mysql.password}"/>
         <!-- 当连接池中的连接耗尽的时候c3p0一次同时获取的连接数  -->
         <property name="acquireIncrement" value="5"></property>
         <!-- 初始连接池大小 -->
@@ -41,7 +41,7 @@
     <!--3 会话工厂bean sqlSessionFactoryBean -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <!--mybatisconf.xml-->
-        <property name="configLocation" value="classpath:mybatisconf.xml" />
+        <property name="configLocation" value="classpath:mybatisconf.xml"/>
         <!-- 数据源 -->
         <property name="dataSource" ref="datasource"></property>
         <!-- 别名 -->

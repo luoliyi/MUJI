@@ -27,42 +27,42 @@ import java.util.Map;
 public class GoodsTypeController {
 
     /*
-    * 类型
-    * */
+     * 类型
+     * */
     @Autowired
     IGoodsTypeService goodsTypeService;
 
     /*
-    * 类型详细
-    * */
+     * 类型详细
+     * */
     @Autowired
     IGoodsTypeDetailsService goodsTypeDetailsService;
 
 
-    @RequestMapping(value = "/selectAllGoodsTypeDetailsByTid",method = RequestMethod.POST)
+    @RequestMapping(value = "/selectAllGoodsTypeDetailsByTid", method = RequestMethod.POST)
     @ResponseBody
-    public List<GoodsType> selectAllGoodsTypeDetailsByTid(@RequestBody List<Object> objectList){
-        Map<String,Object>objectMap=new HashMap<>();
-        String tid=objectList.get(0).toString();
-        objectMap.put("tid",tid);
-       return goodsTypeService.selectAllGoodsTypeDetailsByTid(objectMap);
+    public List<GoodsType> selectAllGoodsTypeDetailsByTid(@RequestBody List<Object> objectList) {
+        Map<String, Object> objectMap = new HashMap<>();
+        String tid = objectList.get(0).toString();
+        objectMap.put("tid", tid);
+        return goodsTypeService.selectAllGoodsTypeDetailsByTid(objectMap);
     }
 
-    @RequestMapping(value = "/selectAllGoodsTypeDetailsByGtdid",method = RequestMethod.POST)
+    @RequestMapping(value = "/selectAllGoodsTypeDetailsByGtdid", method = RequestMethod.POST)
     @ResponseBody
-    public List<GoodsTypeDetails> selectAllGoodsTypeDetailsByGtdid(@RequestBody List<Object> objectList){
-        Map<String,Object>objectMap=new HashMap<>();
-        String gtdid=objectList.get(0).toString();
-        objectMap.put("gtdid",gtdid);
+    public List<GoodsTypeDetails> selectAllGoodsTypeDetailsByGtdid(@RequestBody List<Object> objectList) {
+        Map<String, Object> objectMap = new HashMap<>();
+        String gtdid = objectList.get(0).toString();
+        objectMap.put("gtdid", gtdid);
         return goodsTypeDetailsService.selectAllGoodsTypeDetailsByGtdid(objectMap);
     }
 
-    @RequestMapping(value = "/initSelectAllGoodsTypeDetailsByTid",method = RequestMethod.POST)
+    @RequestMapping(value = "/initSelectAllGoodsTypeDetailsByTid", method = RequestMethod.POST)
     @ResponseBody
-    public List<GoodsTypeDetails> initSelectAllGoodsTypeDetailsByTid(@RequestBody List<Object> objectList){
-        Map<String,Object>objectMap=new HashMap<>();
-        String tid=objectList.get(0).toString();
-        objectMap.put("tid",tid);
+    public List<GoodsTypeDetails> initSelectAllGoodsTypeDetailsByTid(@RequestBody List<Object> objectList) {
+        Map<String, Object> objectMap = new HashMap<>();
+        String tid = objectList.get(0).toString();
+        objectMap.put("tid", tid);
         return goodsTypeDetailsService.selectAllGoodsTypeDetailsByGtdid(objectMap);
     }
 

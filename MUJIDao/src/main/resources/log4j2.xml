@@ -18,7 +18,7 @@
         <Console name="Console" target="SYSTEM_OUT">
             <!-- 控制台只输出level及以上级别的信息(onMatch),其他的直接拒绝(onMismatch) -->
             <ThresholdFilter level="trace" onMatch="ACCEPT"
-                             onMismatch="DENY" />
+                             onMismatch="DENY"/>
             <!-- 输出日志的格式 -->
             <!--
                 %d{yyyy-MM-dd HH:mm:ss, SSS} : 日志生产时间
@@ -32,7 +32,7 @@
                 hostName : 本地机器名
                 hostAddress : 本地ip地址 -->
             <PatternLayout
-                    pattern="${PATTERN}" />
+                    pattern="${PATTERN}"/>
         </Console>
 
         <!--文件会打印出所有信息，这个log每次运行程序会自动清空，由append属性决定，这个也挺有用的，适合临时测试用 -->
@@ -47,14 +47,14 @@
                      filePattern="${LOG_HOME}/$${date:yyyy-MM}/info-%d{yyyy-MM-dd}-%i.log">
             <!--控制台只输出level及以上级别的信息（onMatch），其他的直接拒绝（onMismatch） -->
             <ThresholdFilter level="info" onMatch="ACCEPT"
-                             onMismatch="DENY" />
-            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+                             onMismatch="DENY"/>
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
             <Policies>
                 <!-- 基于时间的滚动策略，interval属性用来指定多久滚动一次，默认是1 hour。 modulate=true用来调整时间：比如现在是早上3am，interval是4，那么第一次滚动是在4am，接着是8am，12am...而不是7am. -->
                 <!-- 关键点在于 filePattern后的日期格式，以及TimeBasedTriggeringPolicy的interval，
                 日期格式精确到哪一位，interval也精确到哪一个单位 -->
                 <!-- log4j2的按天分日志文件 : info-%d{yyyy-MM-dd}-%i.log-->
-                <TimeBasedTriggeringPolicy interval="1" modulate="true" />
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
                 <!-- SizeBasedTriggeringPolicy:Policies子节点， 基于指定文件大小的滚动策略，size属性用来定义每个日志文件的大小. -->
                 <!-- <SizeBasedTriggeringPolicy size="2 kB" />  -->
             </Policies>
@@ -64,39 +64,39 @@
         <RollingFile name="RollingFileWarn" fileName="${WARN_LOG_FILE_NAME}/warn.log"
                      filePattern="${WARN_LOG_FILE_NAME}/$${date:yyyy-MM}/warn-%d{yyyy-MM-dd}-%i.log">
             <ThresholdFilter level="warn" onMatch="ACCEPT"
-                             onMismatch="DENY" />
-            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+                             onMismatch="DENY"/>
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
             <Policies>
-                <TimeBasedTriggeringPolicy />
-                <SizeBasedTriggeringPolicy size="2 kB" />
+                <TimeBasedTriggeringPolicy/>
+                <SizeBasedTriggeringPolicy size="2 kB"/>
             </Policies>
             <!-- DefaultRolloverStrategy属性如不设置，则默认为最多同一文件夹下7个文件，这里设置了20 -->
-            <DefaultRolloverStrategy max="20" />
+            <DefaultRolloverStrategy max="20"/>
         </RollingFile>
 
         <!--输出错误信息-->
         <RollingFile name="RollingFileWarn" fileName="${WARN_LOG_FILE_NAME}/error.log"
                      filePattern="${WARN_LOG_FILE_NAME}/$${date:yyyy-MM}/warn-%d{yyyy-MM-dd}-%i.log">
             <ThresholdFilter level="error" onMatch="ACCEPT"
-                             onMismatch="DENY" />
-            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+                             onMismatch="DENY"/>
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
             <Policies>
-                <TimeBasedTriggeringPolicy />
-                <SizeBasedTriggeringPolicy size="2 kB" />
+                <TimeBasedTriggeringPolicy/>
+                <SizeBasedTriggeringPolicy size="2 kB"/>
             </Policies>
             <!-- DefaultRolloverStrategy属性如不设置，则默认为最多同一文件夹下7个文件，这里设置了20 -->
-            <DefaultRolloverStrategy max="20" />
+            <DefaultRolloverStrategy max="20"/>
         </RollingFile>
 
         <!--输出debug信息-->
         <RollingFile name="RollingFileError" fileName="${ERROR_LOG_FILE_NAME}/debug.log"
                      filePattern="${ERROR_LOG_FILE_NAME}/$${date:yyyy-MM}/error-%d{yyyy-MM-dd-HH-mm}-%i.log">
             <ThresholdFilter level="debug" onMatch="ACCEPT"
-                             onMismatch="DENY" />
-            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+                             onMismatch="DENY"/>
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
             <Policies>
                 <!-- log4j2的按分钟 分日志文件 : warn-%d{yyyy-MM-dd-HH-mm}-%i.log-->
-                <TimeBasedTriggeringPolicy interval="1" modulate="true" />
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
                 <!-- <SizeBasedTriggeringPolicy size="10 MB" /> -->
             </Policies>
         </RollingFile>
@@ -110,12 +110,12 @@
         <logger name="org.mybatis" level="INFO"></logger>
 
         <!-- 第三方日志系统 -->
-        <logger name="org.springframework.core" level="info" />
-        <logger name="org.springframework.beans" level="info" />
-        <logger name="org.springframework.context" level="info" />
-        <logger name="org.springframework.web" level="info" />
-        <logger name="org.jboss.netty" level="warn" />
-        <logger name="org.apache.http" level="warn" />
+        <logger name="org.springframework.core" level="info"/>
+        <logger name="org.springframework.beans" level="info"/>
+        <logger name="org.springframework.context" level="info"/>
+        <logger name="org.springframework.web" level="info"/>
+        <logger name="org.jboss.netty" level="warn"/>
+        <logger name="org.apache.http" level="warn"/>
 
         <!-- 配置日志的根节点 -->
         <root level="all">

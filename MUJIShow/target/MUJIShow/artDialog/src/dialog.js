@@ -12,14 +12,14 @@ var _isMobile = 'createTouch' in document && !('onmousemove' in document) ||
 var _isFixed = !_isIE6 && !_isMobile;
 
 
-var artDialog = function(options, ok, cancel) {
+var artDialog = function (options, ok, cancel) {
 
     var originalOptions = options = options || {};
 
 
     if (typeof options === 'string' || options.nodeType === 1) {
 
-        options = { content: options, fixed: !_isMobile };
+        options = {content: options, fixed: !_isMobile};
     }
 
 
@@ -88,11 +88,12 @@ var artDialog = function(options, ok, cancel) {
     return artDialog.list[id] = new artDialog.create(options);
 };
 
-var popup = function() {};
+var popup = function () {
+};
 popup.prototype = Popup.prototype;
 var prototype = artDialog.prototype = new popup();
 
-artDialog.create = function(options) {
+artDialog.create = function (options) {
     var that = this;
 
     $.extend(this, new Popup());
@@ -105,7 +106,7 @@ artDialog.create = function(options) {
     this._popup = $popup;
 
 
-    $.each(options, function(name, value) {
+    $.each(options, function (name, value) {
         if (typeof that[name] === 'function') {
             that[name](value);
         } else {
@@ -133,7 +134,7 @@ artDialog.create = function(options) {
     this._$('close')
         .css('display', this.cancel === false ? 'none' : '')
         .attr('title', this.cancelValue)
-        .on('click', function(event) {
+        .on('click', function (event) {
             that._trigger('cancel');
             event.preventDefault();
         });
@@ -149,7 +150,7 @@ artDialog.create = function(options) {
         $backdrop
             .on(
                 'onmousedown' in document ? 'mousedown' : 'click',
-                function() {
+                function () {
                     that._trigger('cancel');
                     return false; // 阻止抢夺焦点
                 });
@@ -157,16 +158,16 @@ artDialog.create = function(options) {
 
 
     // 遮罩设置
-    this.addEventListener('show', function() {
+    this.addEventListener('show', function () {
         $backdrop.css({
             opacity: 0,
             background: options.backdropBackground
-        }).animate({ opacity: options.backdropOpacity }, 150);
+        }).animate({opacity: options.backdropOpacity}, 150);
     });
 
 
     // ESC 快捷键关闭对话框
-    this._esc = function(event) {
+    this._esc = function (event) {
         var target = event.target;
         var nodeName = target.nodeName;
         var rinput = /^input|textarea$/i;
@@ -184,7 +185,7 @@ artDialog.create = function(options) {
     };
 
     $(document).on('keydown', this._esc);
-    this.addEventListener('remove', function() {
+    this.addEventListener('remove', function () {
         $(document).off('keydown', this._esc);
         delete artDialog.list[this.id];
     });
@@ -199,7 +200,6 @@ artDialog.create = function(options) {
 
 
 artDialog.create.prototype = prototype;
-
 
 
 $.extend(prototype, {
@@ -303,7 +303,7 @@ $.extend(prototype, {
      * 设置内容
      * @param    {String, HTMLElement}   内容
      */
-    content: function(html) {
+    content: function (html) {
 
         var $content = this._$('content');
 
@@ -311,7 +311,7 @@ $.extend(prototype, {
         if (typeof html === 'object') {
             html = $(html);
             $content.empty('').append(html.show());
-            this.addEventListener('beforeremove', function() {
+            this.addEventListener('beforeremove', function () {
                 $('body').append(html.hide());
             });
             // String
@@ -327,7 +327,7 @@ $.extend(prototype, {
      * 设置标题
      * @param    {String}   标题内容
      */
-    title: function(text) {
+    title: function (text) {
         this._$('title').text(text);
         this._$('header')[text ? 'show' : 'hide']();
         return this;
@@ -335,14 +335,14 @@ $.extend(prototype, {
 
 
     /** 设置宽度 */
-    width: function(value) {
+    width: function (value) {
         this._$('content').css('width', value);
         return this.reset();
     },
 
 
     /** 设置高度 */
-    height: function(value) {
+    height: function (value) {
         this._$('content').css('height', value);
         return this.reset();
     },
@@ -351,9 +351,9 @@ $.extend(prototype, {
     /**
      * 设置按钮组
      * @param   {Array, String}
-     * Options: value, callback, autofocus, disabled 
+     * Options: value, callback, autofocus, disabled
      */
-    button: function(args) {
+    button: function (args) {
         args = args || [];
         var that = this;
         var html = '';
@@ -365,7 +365,7 @@ $.extend(prototype, {
             html = args;
             number++;
         } else {
-            $.each(args, function(i, val) {
+            $.each(args, function (i, val) {
 
                 var id = val.id = val.id || val.value;
                 var style = '';
@@ -390,7 +390,7 @@ $.extend(prototype, {
                     '</button>';
 
                 that._$('button')
-                    .on('click', '[i-id=' + id + ']', function(event) {
+                    .on('click', '[i-id=' + id + ']', function (event) {
                         var $this = $(this);
                         if (!$this.attr('disabled')) { // IE BUG
                             that._trigger(id);
@@ -409,7 +409,7 @@ $.extend(prototype, {
     },
 
 
-    statusbar: function(html) {
+    statusbar: function (html) {
         this._$('statusbar')
             .html(html)[html ? 'show' : 'hide']();
 
@@ -417,13 +417,13 @@ $.extend(prototype, {
     },
 
 
-    _$: function(i) {
+    _$: function (i) {
         return this._popup.find('[i=' + i + ']');
     },
 
 
     // 触发按钮回调函数
-    _trigger: function(id) {
+    _trigger: function (id) {
         var fn = this.callbacks[id];
 
         return typeof fn !== 'function' || fn.call(this) !== false ?
@@ -433,16 +433,13 @@ $.extend(prototype, {
 });
 
 
-
 artDialog.oncreate = $.noop;
 
 
-
 /** 获取最顶层的对话框API */
-artDialog.getCurrent = function() {
+artDialog.getCurrent = function () {
     return Popup.current;
 };
-
 
 
 /**
@@ -450,7 +447,7 @@ artDialog.getCurrent = function() {
  * @param    {String}    对话框 ID
  * @return   {Object}    对话框 API (实例)
  */
-artDialog.get = function(id) {
+artDialog.get = function (id) {
     return id === undefined ?
         artDialog.list :
         artDialog.list[id];
@@ -459,12 +456,10 @@ artDialog.get = function(id) {
 artDialog.list = {};
 
 
-
 /**
  * 默认配置
  */
 artDialog.defaults = defaults;
-
 
 
 module.exports = artDialog;

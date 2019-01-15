@@ -20,9 +20,9 @@ import java.util.Random;
 @RequestMapping(value = "admin/qcloudSendMessage")
 public class QcloudSendMessage {
 
-    @RequestMapping(value = "/sendMessage",method = RequestMethod.POST)
+    @RequestMapping(value = "/sendMessage", method = RequestMethod.POST)
     @ResponseBody
-    public String sendMessage(@RequestBody List<Object>objects){
+    public String sendMessage(@RequestBody List<Object> objects) {
 
         // 短信应用SDK AppID
         int appid = 1400159819; // 1400开头
@@ -49,7 +49,7 @@ public class QcloudSendMessage {
             SmsSingleSender ssender = new SmsSingleSender(appid, appkey);
             SmsSingleSenderResult result = ssender.send(0, "86", phoneNumbers[0],
                     "【MUJI】您的验证码是: 883329", "", "");
-            System.out.print("result?:"+result);
+            System.out.print("result?:" + result);
         } catch (HTTPException e) {
             // HTTP响应码错误
             e.printStackTrace();
@@ -65,15 +65,15 @@ public class QcloudSendMessage {
         /*
          * 1、验证码 2、参数。占位符
          * */
-        String str="";
+        String str = "";
         Random random = new Random();
-        for (int i = 0; i <6 ; i++) {
+        for (int i = 0; i < 6; i++) {
             str += random.nextInt(10);
         }
         try {
-            String[] params = {str,"1"};
+            String[] params = {str, "1"};
             SmsMultiSender msender = new SmsMultiSender(appid, appkey);
-            SmsMultiSenderResult result =  msender.sendWithParam("86", phoneNumbers,
+            SmsMultiSenderResult result = msender.sendWithParam("86", phoneNumbers,
                     templateId, params, smsSign, "", "");  // 签名参数未提供或者为空时，会使用默认签名发送短信
             System.out.print(result);
         } catch (HTTPException e) {

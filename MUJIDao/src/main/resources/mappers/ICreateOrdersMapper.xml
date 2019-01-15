@@ -32,7 +32,7 @@
 
     <insert id="initOneCreateOrders" parameterType="java.util.Map">
         insert into CreateOrders(cono,cordesc)values(
-            #{cono},#{cordesc}
+        #{cono},#{cordesc}
         );
     </insert>
 
@@ -61,21 +61,21 @@
         售后
     -->
     <update id="updateAfterSaleByCono" parameterType="string">
-         update CreateOrders set costatus=4 where cono=#{cono}
+        update CreateOrders set costatus=4 where cono=#{cono}
     </update>
 
     <!--
         已取消
     -->
     <update id="cancelOrders" parameterType="string">
-         update CreateOrders set paystatus=2 where cono=#{cono}
+        update CreateOrders set paystatus=2 where cono=#{cono}
     </update>
 
     <!--
         已支付
     -->
     <update id="ordersSuccessPay" parameterType="string">
-          update CreateOrders set paystatus=0 where cono=#{cono}
+        update CreateOrders set paystatus=0 where cono=#{cono}
     </update>
 
     <!--
@@ -84,7 +84,6 @@
     <select id="checkOrderPayStatus" parameterType="string" resultType="String">
         select paystatus from createorders where cono=#{cono};
     </select>
-
 
 
     <!--
@@ -117,21 +116,22 @@
             </association>
         </collection>
     </resultMap>
-    <select id="selectAllOrderByMphoneAndStateAndLimit" parameterType="java.util.Map" resultMap="selectAllOrderByMphoneAndStateAndLimitMap">
-            select * from createorders as  co join orders as o join goods as g on o.gid=g.gid
-          <where>
-              co.cono=o.cono and o.mphone=#{mphone}
-              <if test="ostate!='' and ostate!=null">
-                  and o.ostate=#{ostate}
-              </if>
-              <if test="cono!='' and cono!=null">
-                  and co.cono=#{cono}
-              </if>
-              <if test="paystatus!='' and paystatus!=null">
-                  and co.paystatus=#{paystatus}
-              </if>
-              order by co.corderDate desc ;
-          </where>
+    <select id="selectAllOrderByMphoneAndStateAndLimit" parameterType="java.util.Map"
+            resultMap="selectAllOrderByMphoneAndStateAndLimitMap">
+        select * from createorders as co join orders as o join goods as g on o.gid=g.gid
+        <where>
+            co.cono=o.cono and o.mphone=#{mphone}
+            <if test="ostate!='' and ostate!=null">
+                and o.ostate=#{ostate}
+            </if>
+            <if test="cono!='' and cono!=null">
+                and co.cono=#{cono}
+            </if>
+            <if test="paystatus!='' and paystatus!=null">
+                and co.paystatus=#{paystatus}
+            </if>
+            order by co.corderDate desc ;
+        </where>
     </select>
 
     <!--
@@ -158,14 +158,15 @@
     </resultMap>
 
     <select id="backgroundSelectAllOrders" parameterType="java.util.Map" resultMap="backgroundSelectAllOrdersMap">
-        select co.cono,o.mphone,co.corderDate,co.cordesc,coinvoice,co.costatus,co.paystatus,sum(o.osumprice) as osumprice
+        select co.cono,o.mphone,co.corderDate,co.cordesc,coinvoice,co.costatus,co.paystatus,sum(o.osumprice) as
+        osumprice
         from createorders as co join orders as o on co.cono=o.cono
         <where>
             co.paystatus between 0 and 1
             <if test="cono!='' and cono!=null">
-                 and co.cono=#{cono}
-             </if>
-         </where>
+                and co.cono=#{cono}
+            </if>
+        </where>
         group by co.cono order by co.corderDate desc limit #{pageno},#{pagesize};
     </select>
 

@@ -18,7 +18,7 @@ public class IGoodsImpl implements IGoodsService {
     IGoodsDao goodsDao;
 
     @Override
-    public List<Goods> selectAllGoods(Map<String,Object> objectMap) {
+    public List<Goods> selectAllGoods(Map<String, Object> objectMap) {
         return goodsDao.selectAllGoods(objectMap);
     }
 

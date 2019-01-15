@@ -18,5 +18,5 @@ public interface IAdministratorDao {
 
     Administrator selectOneAdministrator(@Param("aid") String aid);
 
-    Administrator selectOne(Map<String,Object> objectMap);
+    Administrator selectOne(Map<String, Object> objectMap);
 }

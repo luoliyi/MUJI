@@ -16,9 +16,10 @@ public class MemberLocation {
     private String mldesc;
     private int mid;
 
-    public  MemberLocation(){
+    public MemberLocation() {
 
     }
+
     public MemberLocation(String mlphone, String mlname, String mlocation, String mldesc, int mid) {
         this.mlphone = mlphone;
         this.mlname = mlname;

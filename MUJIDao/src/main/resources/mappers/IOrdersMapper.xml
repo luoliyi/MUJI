@@ -7,8 +7,8 @@
     </select>
 
     <insert id="insert" parameterType="java.util.Map">
-            insert into Orders(mphone,gid,ocount,osumprice,cono) values(
-            #{mphone},#{gid},#{ocount},#{osumprice},#{cono});
+        insert into Orders(mphone,gid,ocount,osumprice,cono) values(
+        #{mphone},#{gid},#{ocount},#{osumprice},#{cono});
     </insert>
 
     <!--
@@ -22,7 +22,7 @@
         删除
     -->
     <delete id="delete" parameterType="java.util.Map">
-       delete from shoppingcart where scid=#{scid};
+        delete from shoppingcart where scid=#{scid};
     </delete>
 
 

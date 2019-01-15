@@ -1,409 +1,415 @@
 <!DOCTYPE html>
 <html>
 
-	<head>
-		<meta charset="utf-8" />
-		<title>无印良品</title>
-		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<head>
+    <meta charset="utf-8"/>
+    <title>无印良品</title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
 
-		<!--图标-->
-		<link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
-		<link rel="stylesheet" type="text/css" href="css/myinfo.css" />
-		<link rel="stylesheet" type="text/css" href="js/layui/css/layui.css" />
-		<style>
-			body{
-				font-family: "微软雅黑";
-				font-weight: 340;
-			}
-		</style>
-	</head>
+    <!--图标-->
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="css/myinfo.css"/>
+    <link rel="stylesheet" type="text/css" href="js/layui/css/layui.css"/>
+    <style>
+        body {
+            font-family: "微软雅黑";
+            font-weight: 340;
+        }
+    </style>
+</head>
 
-	<body>
-		<div id="maxdiv">
-			<!--容器-->
-			<div id="maxdivcontainer">
+<body>
+<div id="maxdiv">
+    <!--容器-->
+    <div id="maxdivcontainer">
 
-				<!--头部-->
-				<div id="myorder">
-					<div class="MuListItem has-content">
-						<!--头像-->
-						<div class="myimg">
-							<img src="img/myinfo/tx2.jpg" />
-						</div>
-						<div class="heading">welcome</div>
-						<!--查看我的信息-->
-						<i id="lookmoremyinfo" class="layui-icon layui-icon-right" title="设置我的信息"></i>
-					</div>
-					<!--我的订单-->
-					<div class="list-group-header">
-						<h2><strong>我的订单</strong></h2>
-						<a id="lookallmyorders" title="查看我的全部订单">查看全部</a>
-					</div>
-					<!--订单详情-->
-					<div class="listitem-content">
-						<ul>
-							<!--<li data-costate="" title="全部">
-								<i class="layui-icon layui-icon-rmb"></i>
-								<p>全部</p>
-								<div class="tips">10</div>
-							</li>-->
-							<li data-costate="0" title="待付款">
-								<i class="layui-icon layui-icon-rmb"></i>
-								<p>待付款</p>
-								<div class="tips">0</div>
-							</li>
-							<li data-costate="1" title="待发货">
-								<i class="layui-icon layui-icon-component"></i>
-								<p>待发货</p>
-								<div class="tips">0</div>
-							</li>
-							<li data-costate="2" title="待收货">
-								<i class="layui-icon layui-icon-release"></i>
-								<p>待收货</p>
-								<div class="tips"></div>
-							</li>
-							<li data-costate="3" title="已完成">
-								<i class="layui-icon layui-icon-face-smile-fine"></i>
-								<p>已完成</p>
-								<div class="tips"></div>
-							</li>
-							<li data-costate="4" title="售后">
-								<i class="layui-icon layui-icon-chat"></i>
-								<p>售后 取消</p>
-								<div class="tips"></div>
-							</li>
-						</ul>
-					</div>
-				</div>
+        <!--头部-->
+        <div id="myorder">
+            <div class="MuListItem has-content">
+                <!--头像-->
+                <div class="myimg">
+                    <img src="img/myinfo/tx2.jpg"/>
+                </div>
+                <div class="heading">welcome</div>
+                <!--查看我的信息-->
+                <i id="lookmoremyinfo" class="layui-icon layui-icon-right" title="设置我的信息"></i>
+            </div>
+            <!--我的订单-->
+            <div class="list-group-header">
+                <h2><strong>我的订单</strong></h2>
+                <a id="lookallmyorders" title="查看我的全部订单">查看全部</a>
+            </div>
+            <!--订单详情-->
+            <div class="listitem-content">
+                <ul>
+                    <!--<li data-costate="" title="全部">
+                        <i class="layui-icon layui-icon-rmb"></i>
+                        <p>全部</p>
+                        <div class="tips">10</div>
+                    </li>-->
+                    <li data-costate="0" title="待付款">
+                        <i class="layui-icon layui-icon-rmb"></i>
+                        <p>待付款</p>
+                        <div class="tips">0</div>
+                    </li>
+                    <li data-costate="1" title="待发货">
+                        <i class="layui-icon layui-icon-component"></i>
+                        <p>待发货</p>
+                        <div class="tips">0</div>
+                    </li>
+                    <li data-costate="2" title="待收货">
+                        <i class="layui-icon layui-icon-release"></i>
+                        <p>待收货</p>
+                        <div class="tips"></div>
+                    </li>
+                    <li data-costate="3" title="已完成">
+                        <i class="layui-icon layui-icon-face-smile-fine"></i>
+                        <p>已完成</p>
+                        <div class="tips"></div>
+                    </li>
+                    <li data-costate="4" title="售后">
+                        <i class="layui-icon layui-icon-chat"></i>
+                        <p>售后 取消</p>
+                        <div class="tips"></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
 
-				<!--设置我的信息-->
-				<div id="myinformation">
-					<!--关闭按钮-->
-					<div class="divClose">
-						<i class="layui-icon layui-icon-close btnColse" title="返回我的信息"></i>
-					</div>
-					<!--地址管理-->
-					<div class="list-group-header">
-						<div class="list-group-title">
-							地址管理
-						</div>
-					</div>
-					<div class="listitem-wrap"><div class="listitem-title" title="编辑我的收货地址">我的收货地址</div>
-						<i class="layui-icon layui-icon-right" id="morePlace"></i>  
-					</div>
-					<!--账户安全-->
-					<div class="list-group-header">
-						<div class="list-group-title">
-							账户与安全
-						</div>
-					</div>
-					<div class="listitem-wrap"><div class="listitem-title" title="设置登录密码">设置登录密码</div>
-						<i class="layui-icon layui-icon-right" id="myloginpwd"></i>  
-					</div>
-					<!--退出登录-->
-					<div class="footbar-wrap">
-						<div class="action-wrap">
-							<button id="btnExit" type="button" class="mu-button">退出登录</button>
-						</div>
-					</div>
-				</div>
-				
-				<!--管理收货地址-->
-				<div id="controlMyplace">
-					<!--关闭按钮-->
-					<div class="divClose">
-						<i class="layui-icon layui-icon-close btnColse" title="返回我的信息"></i>
-					</div>
-					
-					<!--我的信息-->
-					<div class="placeitem">
-						<!--姓名-->
-						<div class="subject">
-							罗立一
-						</div>
-						<!--主体-->
-						<div class="placebody">
-							<div class="palcelist">
-								<label>联系方式：</label>
-								<span>13926901506</span>
-								<br />
-								<label>详细地址：</label>
-								<span>广东省珠海市白蕉镇白蕉南路29号南方IT学院</span>
-							</div>
-						</div>
-						<!--设置-->
-						<div class="placeactions">
+        <!--设置我的信息-->
+        <div id="myinformation">
+            <!--关闭按钮-->
+            <div class="divClose">
+                <i class="layui-icon layui-icon-close btnColse" title="返回我的信息"></i>
+            </div>
+            <!--地址管理-->
+            <div class="list-group-header">
+                <div class="list-group-title">
+                    地址管理
+                </div>
+            </div>
+            <div class="listitem-wrap">
+                <div class="listitem-title" title="编辑我的收货地址">我的收货地址</div>
+                <i class="layui-icon layui-icon-right" id="morePlace"></i>
+            </div>
+            <!--账户安全-->
+            <div class="list-group-header">
+                <div class="list-group-title">
+                    账户与安全
+                </div>
+            </div>
+            <div class="listitem-wrap">
+                <div class="listitem-title" title="设置登录密码">设置登录密码</div>
+                <i class="layui-icon layui-icon-right" id="myloginpwd"></i>
+            </div>
+            <!--退出登录-->
+            <div class="footbar-wrap">
+                <div class="action-wrap">
+                    <button id="btnExit" type="button" class="mu-button">退出登录</button>
+                </div>
+            </div>
+        </div>
+
+        <!--管理收货地址-->
+        <div id="controlMyplace">
+            <!--关闭按钮-->
+            <div class="divClose">
+                <i class="layui-icon layui-icon-close btnColse" title="返回我的信息"></i>
+            </div>
+
+            <!--我的信息-->
+            <div class="placeitem">
+                <!--姓名-->
+                <div class="subject">
+                    罗立一
+                </div>
+                <!--主体-->
+                <div class="placebody">
+                    <div class="palcelist">
+                        <label>联系方式：</label>
+                        <span>13926901506</span>
+                        <br/>
+                        <label>详细地址：</label>
+                        <span>广东省珠海市白蕉镇白蕉南路29号南方IT学院</span>
+                    </div>
+                </div>
+                <!--设置-->
+                <div class="placeactions">
 							<span class="isdefault" title="设为默认">
 								<i class="layui-icon layui-icon-circle"></i> 
 								<span>默认地址</span>
 							</span>
-							<!--删除-->
-							<span class="isEdit">
+                    <!--删除-->
+                    <span class="isEdit">
 								<i class="layui-icon layui-icon-delete"></i> 
 								<span title="删除" id="delMyPlace">删除</span>
 							</span>
-							<!--编辑 -->
-							<span class="isEdit">
+                    <!--编辑 -->
+                    <span class="isEdit">
 								<i class="layui-icon layui-icon-edit"></i> 
 								<span title="编辑" id="editMyPlace">编辑</span>
 							</span>
-						</div>
-					</div>
-					<!--这里插入新的地址-->
-					
-					<!--新增收货地址-->
-					<div class="footbar-wrap">
-						<div class="action-wrap">
-							<button id="btnAddNewPlace" type="button" class="mu-button">新增收货地址</button>
-						</div>
-					</div>
-				</div>
-				
-				<!--新增地址-->
-				<div id="addAndEditPlace">
-					<!--关闭按钮-->
-					<div class="divClose">
-						<i class="layui-icon layui-icon-close btnColse" title="返回我的信息"></i>
-					</div>
-					<!--填写-->
-					<div class="list-group-wrap">
-						<div class="MuListItem has-title has-content">
-							<label>收货客人</label>
-							<input type="text" placeholder="请输入收件人姓名" />
-						</div>
-						<div class="MuListItem has-title has-content">
-							<label>联系电话</label>
-							<input type="text" placeholder="请输入联系电话" />
-						</div>
-						<div class="MuListItem has-title has-content" style="position: relative;">
-							<label>所在地区</label>
-							<div class="info" style="position: absolute;top: 5px;left: 103px;">
-								<select name="province" id="province">
-									<option value="请选择">请选择</option>
-								</select>
-								<select name="city" id="city">
-									<option value="请选择">请选择</option>
-								</select>
-								<select name="town" id="town">
-									<option value="请选择">请选择</option>
-								</select>
-							</div>
-						</div>
-						<div class="MuListItem has-title has-content">
-							<label class="mydetailplace">详细地址</label>
-							<textarea placeholder="请输入详细地址，不少于5个字。"></textarea>
-						</div>
-					</div>
-					<!--设为默认地址-->
-					<div class="MuListItem has-title has-content">
-						<div class="listitem-wrap" title="设为默认地址">
-							<span>设为默认地址</span>
-							<i id="checkDefaultPlace" class="layui-icon layui-icon-circle"></i> 
-						</div>
-					</div>
-					<!--保存-->
-					<div class="footbar-wrap">
-						<div class="action-wrap">
-							<button id="btnSaveNewPlace" type="button" class="mu-button" title="保存">保存</button>
-						</div>
-					</div>
-				</div>
+                </div>
+            </div>
+            <!--这里插入新的地址-->
 
-				<!--我的订单详情-->
-				<div id="myorderInforation" style="text-indent: 10px;">
+            <!--新增收货地址-->
+            <div class="footbar-wrap">
+                <div class="action-wrap">
+                    <button id="btnAddNewPlace" type="button" class="mu-button">新增收货地址</button>
+                </div>
+            </div>
+        </div>
 
-					<div class="maxdiv2">
-						<!--
-							一条订单详情
-						-->
-						<!--<div class="oneOrder">
-							<h3 class="serial">订单号：<span class="UserSelectArea">181107112429483</span></h3>
-							<div class="order-item-items-item">
-								<img src="img/wechat.png">
-								<div class="order-item-heading-wrap">
-									<div class="name">使用防水布带_风帽夹克</div>
-									<div class="options">颜色：深绿色、尺码：男式_S</div>
-									<p class="order-item-price-wrap"><span>¥</span><span>349.00</span></p>
-								</div>
-								<div class="order-item-quantity-wrap">
-									×<span>1</span>
-								</div>
-							</div>
-							&lt;!&ndash;运费&ndash;&gt;
-							<div class="order-item-total">
-								<div class="line">
-									<div class="label">合计（含运费）</div>
-									<div class="value primary"><span>¥</span>408.00</div>
-								</div>
-							</div>
-							&lt;!&ndash;订单操作&ndash;&gt;
-							<div class="MuOrderItemActions">
-								<a href="javascript:void(0);">删除订单</a>
-								<a href="javascript:void(0);" class="primary">再次购买</a>
-							</div>
-						</div>-->
-						<!--
-							一条订单详情
-						-->
+        <!--新增地址-->
+        <div id="addAndEditPlace">
+            <!--关闭按钮-->
+            <div class="divClose">
+                <i class="layui-icon layui-icon-close btnColse" title="返回我的信息"></i>
+            </div>
+            <!--填写-->
+            <div class="list-group-wrap">
+                <div class="MuListItem has-title has-content">
+                    <label>收货客人</label>
+                    <input type="text" placeholder="请输入收件人姓名"/>
+                </div>
+                <div class="MuListItem has-title has-content">
+                    <label>联系电话</label>
+                    <input type="text" placeholder="请输入联系电话"/>
+                </div>
+                <div class="MuListItem has-title has-content" style="position: relative;">
+                    <label>所在地区</label>
+                    <div class="info" style="position: absolute;top: 5px;left: 103px;">
+                        <select name="province" id="province">
+                            <option value="请选择">请选择</option>
+                        </select>
+                        <select name="city" id="city">
+                            <option value="请选择">请选择</option>
+                        </select>
+                        <select name="town" id="town">
+                            <option value="请选择">请选择</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="MuListItem has-title has-content">
+                    <label class="mydetailplace">详细地址</label>
+                    <textarea placeholder="请输入详细地址，不少于5个字。"></textarea>
+                </div>
+            </div>
+            <!--设为默认地址-->
+            <div class="MuListItem has-title has-content">
+                <div class="listitem-wrap" title="设为默认地址">
+                    <span>设为默认地址</span>
+                    <i id="checkDefaultPlace" class="layui-icon layui-icon-circle"></i>
+                </div>
+            </div>
+            <!--保存-->
+            <div class="footbar-wrap">
+                <div class="action-wrap">
+                    <button id="btnSaveNewPlace" type="button" class="mu-button" title="保存">保存</button>
+                </div>
+            </div>
+        </div>
+
+        <!--我的订单详情-->
+        <div id="myorderInforation" style="text-indent: 10px;">
+
+            <div class="maxdiv2">
+                <!--
+                    一条订单详情
+                -->
+                <!--<div class="oneOrder">
+                    <h3 class="serial">订单号：<span class="UserSelectArea">181107112429483</span></h3>
+                    <div class="order-item-items-item">
+                        <img src="img/wechat.png">
+                        <div class="order-item-heading-wrap">
+                            <div class="name">使用防水布带_风帽夹克</div>
+                            <div class="options">颜色：深绿色、尺码：男式_S</div>
+                            <p class="order-item-price-wrap"><span>¥</span><span>349.00</span></p>
+                        </div>
+                        <div class="order-item-quantity-wrap">
+                            ×<span>1</span>
+                        </div>
+                    </div>
+                    &lt;!&ndash;运费&ndash;&gt;
+                    <div class="order-item-total">
+                        <div class="line">
+                            <div class="label">合计（含运费）</div>
+                            <div class="value primary"><span>¥</span>408.00</div>
+                        </div>
+                    </div>
+                    &lt;!&ndash;订单操作&ndash;&gt;
+                    <div class="MuOrderItemActions">
+                        <a href="javascript:void(0);">删除订单</a>
+                        <a href="javascript:void(0);" class="primary">再次购买</a>
+                    </div>
+                </div>-->
+                <!--
+                    一条订单详情
+                -->
 
 
+            </div>
+        </div>
+    </div>
+    <!--售后-->
+    <div class="MuListItem listitem-wrap">
+        <div class="listitem-title">客服中心</div>
+    </div>
+    <div class="MuListItem has-title" tappable="">
+        <div class="listitem-wrap">
+            <div class="listitem-title">常见问题</div>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/layui/layui.js"></script>
+<script type="text/javascript" src="js/myinfo.js"></script>
+<script type="text/javascript" src="js/area.js"></script>
+<script type="text/javascript" src="js/select.js"></script>
+<script type="text/javascript">
 
-					</div>
-				</div>
-			</div>
-			<!--售后-->
-			<div class="MuListItem listitem-wrap">
-				<div class="listitem-title">客服中心</div>
-			</div>
-			<div class="MuListItem has-title" tappable="">
-				<div class="listitem-wrap">
-					<div class="listitem-title">常见问题</div>
-				</div>
-			</div>
-		</div>
-	</body>
-	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
-	<script type="text/javascript" src="js/layui/layui.js"></script>
-	<script type="text/javascript" src="js/myinfo.js"></script>
-	<script type="text/javascript" src="js/area.js"></script>
-	<script type="text/javascript" src="js/select.js"></script>
-	<script type="text/javascript">
+    $(function () {
 
-		$(function () {
+        /*
+        * 头部电话号码
+        * */
+        // $(".heading").html($("#loginandregeist").html(),parent.document);
+        // console.log($("#checkIfSignIn").val(),parent.document);
 
-		    /*
-		    * 头部电话号码
-		    * */
-		   // $(".heading").html($("#loginandregeist").html(),parent.document);
-		   // console.log($("#checkIfSignIn").val(),parent.document);
+        var objects = new Array();
+        objects.push("");
+        objects.push("");
+        objects.push("");
+        var app = {
+            firstRequest() {
+                $.ajax({
+                    url: "admin/createOrdersController/selectAllOrderByMphoneAndStateAndLimit",
+                    data: JSON.stringify(objects),
+                    contentType: "application/json;charset=utf-8",
+                    type: "post"
+                }).done(function (jsdata) {
+                    app.bindData(jsdata);
+                })
+            },
+            bindData(jsdata) {
+                console.log(jsdata);
+                $("#myorderInforation .oneOrder").remove();
 
-		    var objects=new Array();
-		    objects.push("");
-		    objects.push("");
-            objects.push("");
-			var app={
-			    firstRequest(){
-			        $.ajax({
-						url:"admin/createOrdersController/selectAllOrderByMphoneAndStateAndLimit",
-						data:JSON.stringify(objects),
-						contentType:"application/json;charset=utf-8",
-						type:"post"
-					}).done(function (jsdata) {
-					    app.bindData(jsdata);
-                    })
-				},
-				bindData(jsdata){
-			        console.log(jsdata);
-			        $("#myorderInforation .oneOrder").remove();
+                //全部数量
+                // $(".tips").css("display","none");
+                // $(".tips:eq(0)").css("diplay","block").html(jsdata.length);
+                var fukuan = 0;
+                var fahuo = 0;
+                var shouhuo = 0;
+                var wancheng = 0;
+                var quxiao = 0;
+                $.each(jsdata, function (index, obj) {
 
-                    //全部数量
-                   // $(".tips").css("display","none");
-                   // $(".tips:eq(0)").css("diplay","block").html(jsdata.length);
-                    var fukuan=0;var fahuo=0;var shouhuo=0;var wancheng=0;var quxiao=0;
-                    $.each(jsdata,function (index,obj) {
+                    var oneOrder = $("<div class='oneOrder' />");
+                    var serial = $("<h3 class='serial' />").html("订单号：<span class='UserSelectArea'>" + obj.cono + "</span>").appendTo(oneOrder);
+                    var osumprice = 0;
+                    $.each(obj.ordersList, function (index1, obj1) {
+                        osumprice += parseInt(obj1.osumprice);
+                        if (obj1.goods.gpic.indexOf(".jpg") > 0) {
+                            var img = obj1.goods.gpic;
+                        } else {
+                            var img = obj1.goods.gpic + ".jpg";
+                        }
 
-						var oneOrder=$("<div class='oneOrder' />");
-						var serial=$("<h3 class='serial' />").html("订单号：<span class='UserSelectArea'>"+obj.cono+"</span>").appendTo(oneOrder);
-						var osumprice=0;
-						$.each(obj.ordersList,function (index1,obj1) {
-						    osumprice+=parseInt(obj1.osumprice);
-                            if(obj1.goods.gpic.indexOf(".jpg")>0) {
-                                var img = obj1.goods.gpic;
-                            }else {
-                                var img = obj1.goods.gpic + ".jpg";
-                            }
-
-                            $(
-							    "<div class=\"order-item-items-item\">\n" +
-                                "<img src='admin/img/goodsdetails/" + img + "'/>\n" +
-                                "<div class=\"order-item-heading-wrap\">\n" +
-                                "<div class=\"name\">"+obj1.goods.gname+"</div>\n" +
-                                "<div class=\"options\">颜色：<span>"+obj1.goods.gcolor+"</span></div>\n" +
-                                "<p class=\"order-item-price-wrap\"><span>¥</span><span>"+obj1.goods.gnowprice+"</span></p>\n" +
-                                "</div>\n" +
-                                "<div class=\"order-item-quantity-wrap\">\n" +
-                                "×<span>"+obj1.ocount+"</span>\n" +
-                                "</div>\n" +
-                                "</div>"
-							).appendTo(oneOrder);
-                        });
-						$(
-                            "<div class=\"order-item-total\">\n" +
-                            "<div class=\"line\">\n" +
-                            "<div class=\"label\">合计（含运费 ¥11）</div>\n" +
-                            "<div class=\"value primary\"><span>¥</span>"+(osumprice+11)+".00"+"</div>\n" +
+                        $(
+                            "<div class=\"order-item-items-item\">\n" +
+                            "<img src='admin/img/goodsdetails/" + img + "'/>\n" +
+                            "<div class=\"order-item-heading-wrap\">\n" +
+                            "<div class=\"name\">" + obj1.goods.gname + "</div>\n" +
+                            "<div class=\"options\">颜色：<span>" + obj1.goods.gcolor + "</span></div>\n" +
+                            "<p class=\"order-item-price-wrap\"><span>¥</span><span>" + obj1.goods.gnowprice + "</span></p>\n" +
                             "</div>\n" +
+                            "<div class=\"order-item-quantity-wrap\">\n" +
+                            "×<span>" + obj1.ocount + "</span>\n" +
                             "</div>\n" +
-                            "<div class=\"MuOrderItemActions\">\n" +
-                            "<a data-cono="+obj.cono+" href=\"javascript:void(0);\">删除订单</a>\n" +
-                            "<a href=\"javascript:void(0);\" class=\"primary\">再次购买</a>\n" +
                             "</div>"
-						).appendTo(oneOrder);
-						$("#myorderInforation").append(oneOrder);
-                        if(obj.paystatus==2){
-                            quxiao+=1;
-                        }else if(obj.paystatus==1){
-                            fukuan+=1;
-                        }else if(obj.paystatus==0){
-                            fahuo+=1;
-                        }
-
-                        if(obj.costatus==1){
-                            shouhuo+=1;
-                            fahuo-=1;
-						}else if(obj.costatus==2){
-                            wancheng+=1;
-						}
+                        ).appendTo(oneOrder);
                     });
-                    $(".tips:eq(4)").html(quxiao=="0"?$(".tips:eq(4)").css("display","none"):quxiao);
-                    $(".tips:eq(0)").html(fukuan=="0"?$(".tips:eq(0)").css("display","none"):fukuan);
-                    $(".tips:eq(1)").html(fahuo=="0"?$(".tips:eq(1)").css("display","none"):fahuo);
-                    $(".tips:eq(2)").html(shouhuo=="0"?$(".tips:eq(2)").css("display","none"):shouhuo);
-                    $(".tips:eq(3)").html(wancheng=="0"?$(".tips:eq(3)").css("display","none"):wancheng);
+                    $(
+                        "<div class=\"order-item-total\">\n" +
+                        "<div class=\"line\">\n" +
+                        "<div class=\"label\">合计（含运费 ¥11）</div>\n" +
+                        "<div class=\"value primary\"><span>¥</span>" + (osumprice + 11) + ".00" + "</div>\n" +
+                        "</div>\n" +
+                        "</div>\n" +
+                        "<div class=\"MuOrderItemActions\">\n" +
+                        "<a data-cono=" + obj.cono + " href=\"javascript:void(0);\">删除订单</a>\n" +
+                        "<a href=\"javascript:void(0);\" class=\"primary\">再次购买</a>\n" +
+                        "</div>"
+                    ).appendTo(oneOrder);
+                    $("#myorderInforation").append(oneOrder);
+                    if (obj.paystatus == 2) {
+                        quxiao += 1;
+                    } else if (obj.paystatus == 1) {
+                        fukuan += 1;
+                    } else if (obj.paystatus == 0) {
+                        fahuo += 1;
+                    }
 
-                  /*  $(".tips:eq(1)").html(one=="0"?$(".tips:eq(1)").css("display","none"):one);
-                    $(".tips:eq(2)").html(two=="0"?$(".tips:eq(2)").css("display","none"):two);
-                    $(".tips:eq(3)").html(three=="0"?$(".tips:eq(3)").css("display","none"):three);
-                    $(".tips:eq(4)").html(four=="0"?$(".tips:eq(4)").css("display","none"):four);
-                    */
-				},
-				limitFind(){
-                    var that = $(this);
-                    layui.use('layer', function() {
-                        var layer = layui.layer;
-                        layer.msg($(that).find("p:eq(0)").html(), {
-                            time: 1500
-                        });
+                    if (obj.costatus == 1) {
+                        shouhuo += 1;
+                        fahuo -= 1;
+                    } else if (obj.costatus == 2) {
+                        wancheng += 1;
+                    }
+                });
+                $(".tips:eq(4)").html(quxiao == "0" ? $(".tips:eq(4)").css("display", "none") : quxiao);
+                $(".tips:eq(0)").html(fukuan == "0" ? $(".tips:eq(0)").css("display", "none") : fukuan);
+                $(".tips:eq(1)").html(fahuo == "0" ? $(".tips:eq(1)").css("display", "none") : fahuo);
+                $(".tips:eq(2)").html(shouhuo == "0" ? $(".tips:eq(2)").css("display", "none") : shouhuo);
+                $(".tips:eq(3)").html(wancheng == "0" ? $(".tips:eq(3)").css("display", "none") : wancheng);
+
+                /*  $(".tips:eq(1)").html(one=="0"?$(".tips:eq(1)").css("display","none"):one);
+                  $(".tips:eq(2)").html(two=="0"?$(".tips:eq(2)").css("display","none"):two);
+                  $(".tips:eq(3)").html(three=="0"?$(".tips:eq(3)").css("display","none"):three);
+                  $(".tips:eq(4)").html(four=="0"?$(".tips:eq(4)").css("display","none"):four);
+                  */
+            },
+            limitFind() {
+                var that = $(this);
+                layui.use('layer', function () {
+                    var layer = layui.layer;
+                    layer.msg($(that).find("p:eq(0)").html(), {
+                        time: 1500
                     });
-                   /* for (var j=0;j<$(".tips").length;j++) {
-                        if ($(".tips:eq(" + j + ")").html() == "0") {
-                            $(".tips:eq(" + j + ")").css("display", "none");
-                        }
-                    }*/
-                    /*
-                    * ajax请求
-                    * */
-                    var costate=$(that).data("costate");
-                    var objects=new Array();
-                    objects.push(costate);
-                    objects.push("");
-                    objects.push(2);
-                    $.ajax({
-                        url:"admin/createOrdersController/selectAllOrderByMphoneAndStateAndLimit",
-                        data:JSON.stringify(objects),
-                        contentType:"application/json;charset=utf-8",
-                        type:"post"
-                    }).done(function (jsdata) {
-                        app.bindData(jsdata);
-                    })
-				},
-				init(){
-			        app.firstRequest();
-                    $(".listitem-content li").click(app.limitFind);
-				}
-			};
-			app.init();
-        })
-	</script>
+                });
+                /* for (var j=0;j<$(".tips").length;j++) {
+                     if ($(".tips:eq(" + j + ")").html() == "0") {
+                         $(".tips:eq(" + j + ")").css("display", "none");
+                     }
+                 }*/
+                /*
+                * ajax请求
+                * */
+                var costate = $(that).data("costate");
+                var objects = new Array();
+                objects.push(costate);
+                objects.push("");
+                objects.push(2);
+                $.ajax({
+                    url: "admin/createOrdersController/selectAllOrderByMphoneAndStateAndLimit",
+                    data: JSON.stringify(objects),
+                    contentType: "application/json;charset=utf-8",
+                    type: "post"
+                }).done(function (jsdata) {
+                    app.bindData(jsdata);
+                })
+            },
+            init() {
+                app.firstRequest();
+                $(".listitem-content li").click(app.limitFind);
+            }
+        };
+        app.init();
+    })
+</script>
 </html>

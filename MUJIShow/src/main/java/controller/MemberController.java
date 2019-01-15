@@ -22,51 +22,51 @@ public class MemberController {
     IMemberService memberService;
 
     @ResponseBody
-    @RequestMapping(value = "/selectAllMembersCount",method = RequestMethod.POST)
-    public int selectAllMembersCount(@RequestBody List<Object> mohuListLimit){
-        Map<String,Object>objectMap=new HashMap<>();
-        objectMap.put("pageno",0);
-        objectMap.put("pagesize",99999);
-        objectMap.put("mstate",mohuListLimit.get(0).toString());
+    @RequestMapping(value = "/selectAllMembersCount", method = RequestMethod.POST)
+    public int selectAllMembersCount(@RequestBody List<Object> mohuListLimit) {
+        Map<String, Object> objectMap = new HashMap<>();
+        objectMap.put("pageno", 0);
+        objectMap.put("pagesize", 99999);
+        objectMap.put("mstate", mohuListLimit.get(0).toString());
         return memberService.selectAllMember(objectMap).size();
     }
 
     @ResponseBody
-    @RequestMapping(value = "/selectAllMembers",method = RequestMethod.POST)
-    public List<Member> selectAllMembers(@RequestBody List<Object> objectList){
-        Map<String,Object>objectMap=new HashMap<>();
-        objectMap.put("pageno",objectList.get(0));
-        objectMap.put("pagesize",objectList.get(1));
-        objectMap.put("mstate",objectList.get(2).toString());
+    @RequestMapping(value = "/selectAllMembers", method = RequestMethod.POST)
+    public List<Member> selectAllMembers(@RequestBody List<Object> objectList) {
+        Map<String, Object> objectMap = new HashMap<>();
+        objectMap.put("pageno", objectList.get(0));
+        objectMap.put("pagesize", objectList.get(1));
+        objectMap.put("mstate", objectList.get(2).toString());
         return memberService.selectAllMember(objectMap);
     }
 
     @ResponseBody
-    @RequestMapping(value = "/insert",method = RequestMethod.POST)
-    public String insert(@RequestBody List<Object> objectList){
+    @RequestMapping(value = "/insert", method = RequestMethod.POST)
+    public String insert(@RequestBody List<Object> objectList) {
 
-        Map<String,Object>objectMap=new HashMap<>();
+        Map<String, Object> objectMap = new HashMap<>();
 
-        if(memberService.insert(objectMap)>1){
-            return "success";
-        }
-         return "error";
-    }
-
-    @ResponseBody
-    @RequestMapping(value = "/update",method = RequestMethod.POST)
-    public String update(@RequestBody  List<Object> objectList){
-        Map<String,Object>objectMap=new HashMap<>();
-        if(memberService.update(objectMap)>1){
+        if (memberService.insert(objectMap) > 1) {
             return "success";
         }
         return "error";
     }
 
     @ResponseBody
-    @RequestMapping(value = "/delete",method = RequestMethod.POST)
-    public String delete(@RequestBody String mid){
-        if(memberService.delete(mid)>0){
+    @RequestMapping(value = "/update", method = RequestMethod.POST)
+    public String update(@RequestBody List<Object> objectList) {
+        Map<String, Object> objectMap = new HashMap<>();
+        if (memberService.update(objectMap) > 1) {
+            return "success";
+        }
+        return "error";
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/delete", method = RequestMethod.POST)
+    public String delete(@RequestBody String mid) {
+        if (memberService.delete(mid) > 0) {
             return "success";
         }
         return "error";

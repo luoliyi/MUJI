@@ -31,20 +31,20 @@ public class IGoodsTypeDaoTest {
     IGoodsTypeDetailsDao goodsTypeDetailsDao;
 
     @Test
-    public void selectAllGoodsTypeDetailsByTid(){
+    public void selectAllGoodsTypeDetailsByTid() {
 
-        Map<String,Object>objectMap=new HashMap<>();
-        objectMap.put("tid",1);
-        List<GoodsType>goodsTypes=goodsTypeDao.selectAllGoodsTypeDetailsByTid(objectMap);
+        Map<String, Object> objectMap = new HashMap<>();
+        objectMap.put("tid", 1);
+        List<GoodsType> goodsTypes = goodsTypeDao.selectAllGoodsTypeDetailsByTid(objectMap);
         System.out.println(goodsTypes);
 
     }
 
     @Test
     public void selectAllGoodsTypeDetailsByGtdid() {
-        Map<String,Object>objectMap=new HashMap<>();
-        objectMap.put("gtdid",12);
-        List<GoodsTypeDetails>goodsTypeDetails=goodsTypeDetailsDao.selectAllGoodsTypeDetailsByGtdid(objectMap);
+        Map<String, Object> objectMap = new HashMap<>();
+        objectMap.put("gtdid", 12);
+        List<GoodsTypeDetails> goodsTypeDetails = goodsTypeDetailsDao.selectAllGoodsTypeDetailsByGtdid(objectMap);
         System.out.println(goodsTypeDetails);
     }
 

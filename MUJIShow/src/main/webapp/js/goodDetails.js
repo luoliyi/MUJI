@@ -1,5 +1,5 @@
-$(function() {
-    layui.use('carousel', function() {
+$(function () {
+    layui.use('carousel', function () {
         var carousel = layui.carousel;
         //建造实例
         carousel.render({
@@ -11,47 +11,47 @@ $(function() {
             //,anim: 'updown' //切换动画方式
         });
     });
-    layui.use('element', function() {
+    layui.use('element', function () {
         var element = layui.element;
     });
 
     /*加入购物车*/
-    $("#muji_btn_add_commodity_to_cart").click(function() {
+    $("#muji_btn_add_commodity_to_cart").click(function () {
 
         //判断是否登陆
-        if($("#checkIfSignIn",parent.document).val()==""){
-            layui.use('layer', function(){
+        if ($("#checkIfSignIn", parent.document).val() == "") {
+            layui.use('layer', function () {
                 var layer = layui.layer;
-                layer.msg("客官, 请先登录~",{time: 1500});
+                layer.msg("客官, 请先登录~", {time: 1500});
             });
             return false;
         }
 
         //$("#chooseAlltoCar").css("transition", "all .7s").css("height", "445px");
         $("#chooseAlltoCar").css("height", "460px").fadeIn(1000);
-        $("#CoveringLayer").css("display","block");
+        $("#CoveringLayer").css("display", "block");
 
         $(".PageCommodityDetailPartActions").fadeOut(500);
         return false;
     });
-    $("#chooseClose").click(function(){
+    $("#chooseClose").click(function () {
         $("#chooseAlltoCar").fadeOut(500);
         $(".PageCommodityDetailPartActions").fadeIn(500);
-        $("#CoveringLayer").css("display","none");
+        $("#CoveringLayer").css("display", "none");
     });
 
 
-    $("#countAdd").click(function(){
-        var value=parseInt($("#countValue").val());
+    $("#countAdd").click(function () {
+        var value = parseInt($("#countValue").val());
         value++;
         $("#countValue").val(value);
     })
-    $("#countDel").click(function(){
-        var value=parseInt($("#countValue").val());
-        if($("#countValue").val()=="1"){
-            layui.use('layer', function(){
+    $("#countDel").click(function () {
+        var value = parseInt($("#countValue").val());
+        if ($("#countValue").val() == "1") {
+            layui.use('layer', function () {
                 var layer = layui.layer;
-                layer.msg("不能再减啦~",{time: 1500});
+                layer.msg("不能再减啦~", {time: 1500});
             });
             return false;
         }

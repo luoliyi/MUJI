@@ -35,13 +35,13 @@ public class HistoryOrdersController {
 
 
     /*
-    *
-    * 数据迁移之前先查询出当前的条数是多少
-    * */
+     *
+     * 数据迁移之前先查询出当前的条数是多少
+     * */
 
     @ResponseBody
-    @RequestMapping(value = "/selectCount",method = RequestMethod.POST)
-    public int selectCount(){
+    @RequestMapping(value = "/selectCount", method = RequestMethod.POST)
+    public int selectCount() {
         return historyOrdersService.selectCount();
     }
 
@@ -50,64 +50,64 @@ public class HistoryOrdersController {
      * 查询记录表总数
      * */
     @ResponseBody
-    @RequestMapping(value = "/selectHistoryOrdersDiaryCount",method = RequestMethod.POST)
-    public int selectHistoryOrdersDiaryCount(){
+    @RequestMapping(value = "/selectHistoryOrdersDiaryCount", method = RequestMethod.POST)
+    public int selectHistoryOrdersDiaryCount() {
         return historyOrdersService.selectHistoryOrdersDiaryCount();
     }
 
 
     /*
-    * 查询记录表
-    * */
+     * 查询记录表
+     * */
     @ResponseBody
-    @RequestMapping(value = "/selectHistoryOrdersDiary",method = RequestMethod.POST)
-    public List<HistoryOrdersDiary>selectHistoryOrdersDiary(@RequestBody List<Object>objectList){
+    @RequestMapping(value = "/selectHistoryOrdersDiary", method = RequestMethod.POST)
+    public List<HistoryOrdersDiary> selectHistoryOrdersDiary(@RequestBody List<Object> objectList) {
 
-        Map<String,Object>objectMap=new HashMap<>();
-        int page=(int)objectList.get(0);
-        int pagesize=(int)objectList.get(1);
-        int pageno=(page-1)*pagesize;
-        objectMap.put("pageno",pageno);
-        objectMap.put("pagesize",pagesize);
+        Map<String, Object> objectMap = new HashMap<>();
+        int page = (int) objectList.get(0);
+        int pagesize = (int) objectList.get(1);
+        int pageno = (page - 1) * pagesize;
+        objectMap.put("pageno", pageno);
+        objectMap.put("pagesize", pagesize);
 
         return historyOrdersService.selectHistoryOrdersDiary(objectMap);
     }
 
     /*
-    * 开始数据迁移
-    * */
+     * 开始数据迁移
+     * */
     @ResponseBody
-    @RequestMapping(value = "/insert",method = RequestMethod.POST)
-    public int insert(@RequestBody List<Object>objects,HttpServletRequest request){
+    @RequestMapping(value = "/insert", method = RequestMethod.POST)
+    public int insert(@RequestBody List<Object> objects, HttpServletRequest request) {
 
-        Map<String,Object>objectMap=new HashMap<>();
+        Map<String, Object> objectMap = new HashMap<>();
 
-        int movecount=historyOrdersService.insert(objectMap);
+        int movecount = historyOrdersService.insert(objectMap);
         /*
-        * 如果迁移成功
-        * */
-        if(movecount>0){
+         * 如果迁移成功
+         * */
+        if (movecount > 0) {
 
-            HttpSession session=request.getSession();
-            Administrator administrator= (Administrator) session.getAttribute("administrator");
+            HttpSession session = request.getSession();
+            Administrator administrator = (Administrator) session.getAttribute("administrator");
             System.out.println(administrator);
-            Map<String,Object>adminObj=new HashMap<>();
-            adminObj.put("movetime",new Date().toLocaleString());
-            adminObj.put("movecount",movecount);
-            adminObj.put("movestatus","0");
-            adminObj.put("movepeople",administrator.getAname());
+            Map<String, Object> adminObj = new HashMap<>();
+            adminObj.put("movetime", new Date().toLocaleString());
+            adminObj.put("movecount", movecount);
+            adminObj.put("movestatus", "0");
+            adminObj.put("movepeople", administrator.getAname());
 
             /*
-            * 插入迁移记录
-            * */
-           if (historyOrdersService.insertOrdersDiary(adminObj)>0){
-               /*
-               * 删除历史数据
-               * */
-               if (historyOrdersService.delete()>0){
-                   return movecount;
-               }
-           }
+             * 插入迁移记录
+             * */
+            if (historyOrdersService.insertOrdersDiary(adminObj) > 0) {
+                /*
+                 * 删除历史数据
+                 * */
+                if (historyOrdersService.delete() > 0) {
+                    return movecount;
+                }
+            }
 
         }
         return 0;

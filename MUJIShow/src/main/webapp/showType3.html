@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <title>无印良品</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
 
     <!--图标-->
     <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="css/showType.css" />
+    <link rel="stylesheet" type="text/css" href="css/showType.css"/>
     <link rel="stylesheet" type="text/css" href="js/layui/css/layui.css"/>
 
     <style>
-        .details_list img:hover{
-            transform: scale(1.1,1.1);
+        .details_list img:hover {
+            transform: scale(1.1, 1.1);
             cursor: pointer;
         }
-         body{
-             font-family: "微软雅黑";
-             font-weight: 340;
-         }
+
+        body {
+            font-family: "微软雅黑";
+            font-weight: 340;
+        }
     </style>
 </head>
 <body>
@@ -37,7 +39,8 @@
     </div>
     <!--头部导航栏2-->
     <div class="MuCommodityFilterOrderby">
-        <ul><li class="active"><a href="javascript:void(0);">综合排序</a></li>
+        <ul>
+            <li class="active"><a href="javascript:void(0);">综合排序</a></li>
             <li class=""><a href="javascript:void(0);">按新品</a></li>
             <li class=""><a href="javascript:void(0);">按销量</a></li>
             <li class=""><a href="javascript:void(0);">按价格</a></li>
@@ -67,28 +70,28 @@
 <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
 <script type="text/javascript" src="js/layui/layui.js"></script>
 <script type="text/javascript">
-    $(function(){
+    $(function () {
 
-        var tid=$("#saveTid",parent.document).val();
+        var tid = $("#saveTid", parent.document).val();
         /*
         * 拿到tid去做查询
         * */
-        if(tid!=null){
+        if (tid != null) {
             /*
             * ajax请求
             * */
 
-            var objectList=new Array();
+            var objectList = new Array();
             objectList.push(tid);
 
             $.ajax({
-                url:"goodsTypeController/selectAllGoodsTypeDetailsByTid",
-                type:"post",
-                data:JSON.stringify(objectList),
-                contentType:"application/json;charset=utf-8"
+                url: "goodsTypeController/selectAllGoodsTypeDetailsByTid",
+                type: "post",
+                data: JSON.stringify(objectList),
+                contentType: "application/json;charset=utf-8"
             }).done(function (jsdata) {
                 console.log(jsdata);
-                if(jsdata!=""&&jsdata!=null&&jsdata.length>0) {
+                if (jsdata != "" && jsdata != null && jsdata.length > 0) {
                     var ul = $("#details_head_li_Container");
                     $("#details_head_li_Container li:gt(0)").remove();
                     $.each(jsdata[0].goodsTypeDetails, function (index, obj2) {
@@ -101,27 +104,27 @@
                     * */
                     $("#details_head_li_Container li:eq(0)").data("gtdid", tid);
                     initData(tid);
-                }else {
-                    layui.use('layer', function(){
+                } else {
+                    layui.use('layer', function () {
                         var layer = layui.layer;
-                        layer.msg("没有该类型相关数据~",{time: 1500});
+                        layer.msg("没有该类型相关数据~", {time: 1500});
                     });
                     return false;
                 }
             })
 
-        }else {
-            layui.use('layer', function(){
+        } else {
+            layui.use('layer', function () {
                 var layer = layui.layer;
-                layer.msg("没有该类型相关数据~",{time: 1500});
+                layer.msg("没有该类型相关数据~", {time: 1500});
             });
             return false;
         }
         /*
         * 点击查询详细的商品
         * */
-        $("#details_head_li_Container").on("click","li:gt(0)",function () {
-            var gtdid=$(this).data("gtdid");
+        $("#details_head_li_Container").on("click", "li:gt(0)", function () {
+            var gtdid = $(this).data("gtdid");
             console.log(gtdid);
             /*
             * 加减类
@@ -129,21 +132,21 @@
             $("#details_head_li_Container li").removeClass("active");
             $(this).addClass("active");
 
-            var objectList=new Array();
+            var objectList = new Array();
             objectList.push(gtdid);
             $.ajax({
-                url:"goodsTypeController/selectAllGoodsTypeDetailsByGtdid",
-                type:"post",
-                data:JSON.stringify(objectList),
-                contentType:"application/json;charset=utf-8"
+                url: "goodsTypeController/selectAllGoodsTypeDetailsByGtdid",
+                type: "post",
+                data: JSON.stringify(objectList),
+                contentType: "application/json;charset=utf-8"
             }).done(function (jsdata) {
                 showData(jsdata);
 
             })
         });
 
-        $("#details_head_li_Container").on("click","li:eq(0)",function () {
-            var gtdid=$(this).data("gtdid");
+        $("#details_head_li_Container").on("click", "li:eq(0)", function () {
+            var gtdid = $(this).data("gtdid");
             console.log(gtdid);
             /*
             * 加减类
@@ -160,13 +163,13 @@
             /*
                * 默认查询一次
                * */
-            var objectList=new Array();
+            var objectList = new Array();
             objectList.push(tid);
             $.ajax({
-                url:"goodsTypeController/initSelectAllGoodsTypeDetailsByTid",
-                type:"post",
-                data:JSON.stringify(objectList),
-                contentType:"application/json;charset=utf-8"
+                url: "goodsTypeController/initSelectAllGoodsTypeDetailsByTid",
+                type: "post",
+                data: JSON.stringify(objectList),
+                contentType: "application/json;charset=utf-8"
             }).done(function (jsdata) {
                 showData(jsdata);
 
@@ -178,16 +181,16 @@
         * */
         function showData(jsdata) {
             console.log(jsdata);
-            var ul=$(".details_list");
+            var ul = $(".details_list");
 
-            if(jsdata!=""&&jsdata!=null&&jsdata.length==1) {
+            if (jsdata != "" && jsdata != null && jsdata.length == 1) {
                 $(".details_list li").remove();
 
                 $.each(jsdata[0].goodsList, function (index, obj) {
                     var li = $("<li title='click me' />").data("gid", obj.gid);
-                    if(obj.gpic.indexOf(".jpg")>0) {
+                    if (obj.gpic.indexOf(".jpg") > 0) {
                         var img = obj.gpic;
-                    }else {
+                    } else {
                         var img = obj.gpic + ".jpg";
                     }
                     $(
@@ -202,10 +205,10 @@
                     ).appendTo(li);
                     li.appendTo(ul);
                 })
-            }else if(jsdata!=""&&jsdata!=null&&jsdata.length>1){
+            } else if (jsdata != "" && jsdata != null && jsdata.length > 1) {
                 $(".details_list li").remove();
-                for (var i=0;i<jsdata.length;i++){
-                    $.each(jsdata[i].goodsList,function (inx,obj) {
+                for (var i = 0; i < jsdata.length; i++) {
+                    $.each(jsdata[i].goodsList, function (inx, obj) {
                         var li = $("<li/>").data("gid", obj.gid);
 
                         $(
@@ -223,9 +226,9 @@
                 }
             }
             else {
-                layui.use('layer', function(){
+                layui.use('layer', function () {
                     var layer = layui.layer;
-                    layer.msg("没有该类型相关数据~",{time: 1500});
+                    layer.msg("没有该类型相关数据~", {time: 1500});
                 });
                 return false;
             }
@@ -234,10 +237,10 @@
         /*
         * 点击img保存值， 跳转
         * */
-        $(".details_list").on("click","li",function () {
-            var gid=$(this).data("gid");
-            $("#saveGid",parent.document).val(gid);
-            $("#center_container iframe:eq(0)",parent.document).css("display","block").attr("src","goodDetails.html");
+        $(".details_list").on("click", "li", function () {
+            var gid = $(this).data("gid");
+            $("#saveGid", parent.document).val(gid);
+            $("#center_container iframe:eq(0)", parent.document).css("display", "block").attr("src", "goodDetails.html");
         })
     })
 </script>

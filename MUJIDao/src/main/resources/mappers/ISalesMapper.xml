@@ -9,7 +9,8 @@
     </resultMap>
     <!--年度销售情况-->
     <select id="selectAllSalesVolume" parameterType="java.util.Map" resultMap="selectAllSalesVolumeMap">
-        select month(co.corderDate) as saleMonth,sum(o.ocount)  as saleCount,sum(o.osumprice) as saleSumprice from createorders as co join orders as o on co.cono=o.cono
+        select month(co.corderDate) as saleMonth,sum(o.ocount) as saleCount,sum(o.osumprice) as saleSumprice from
+        createorders as co join orders as o on co.cono=o.cono
         where co.paystatus=0 and year(co.corderDate)=#{yourMonth} group by month(co.corderDate);
     </select>
 
@@ -20,7 +21,7 @@
     </resultMap>
     <!--每日销售情况-->
     <select id="selectOneDaySalesVolume" parameterType="java.util.Map" resultMap="selectOneDaySalesVolumeMap">
-        select  g.gname,o.osumprice,co.corderDate from orders as o join goods as g on o.gid=g.gid
+        select g.gname,o.osumprice,co.corderDate from orders as o join goods as g on o.gid=g.gid
         join createorders as co on o.cono=co.cono group by o.cono
         having day(co.corderDate)=#{myday} order by o.osumprice desc limit 0,5;
     </select>

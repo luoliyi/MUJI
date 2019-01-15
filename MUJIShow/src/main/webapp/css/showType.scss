@@ -1,135 +1,142 @@
 * {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+}
 
 ul {
-  list-style: none; }
+  list-style: none;
+}
 
 a {
   text-decoration: none;
-  color: #666; }
+  color: #666;
+}
 
 html, body {
   width: 100%;
-  height: 100%; }
-  
-div{
+  height: 100%;
+}
+
+div {
 
 }
 
-#maxdiv{
-    max-width: 1024px;
-    height: 600px;
+#maxdiv {
+  max-width: 1024px;
+  height: 600px;
+  margin: 0 auto;
+  position: relative;
+  #maxdivcontainer_details_head, .MuCommodityFilterOrderby {
+    width: 100%;
+    height: 45px;
     margin: 0 auto;
-    position: relative;
-        #maxdivcontainer_details_head,.MuCommodityFilterOrderby{
-        width: 100%;
-        height: 45px;
-        margin: 0 auto;
-        border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
     background: #fff;
-        ul{
-            margin: 0 auto;
-            position: relative;
-            overflow: hidden;
-            list-style: none;
-            padding: 0;
-            z-index: 1;
-            line-height: 45px;
-             li{
-                display: inline-block;
-                float: left;
-                width: auto;
-                a{
-                    padding: 11px 15px;
-                    font-size: 16px;
-                    color: #ddd;
-                    letter-spacing: .7px;
-                }
-            }
-            //黑色字体
-            .active a{
-                font-weight: 500;
-                color: #000;
-            }
-        }
-    }
-    .MuCommodityFilterOrderby ul {
-        text-align: center;
-    }
-    #maxdivcontainer{
-        width: 100%;
-        height: 85%;
-        position: relative;
-
-        #maxdivcontainer_details{
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            padding: 30px 0px;
-            position: relative;
-            .details_list{
-                padding-left: 12.5px;
-                padding-right: 12.5px;
-                width: 100%;
-                li{
-
-                    width: 19%;
-                    height: 272px;
-                    float: left;
-                    display: inline-block;
-                    margin-left: 2.5px;
-                    margin-right: 2.5px;
-                    .detail_img{
-                        text-align: center;
-                        img{
-                            width: 100%;
-                             height: 186px;
-                         }
-                         .title{
-                             margin-top: 9px;
-                             font-size: 13px;
-                            color: #030303;
-                            line-height: 18px;
-                            letter-spacing: -.15px;
-                         }
-                         .MuPriceTag{
-                              margin-top: 2px;
-                            font-size: 15px;
-                            line-height: 21px;
-                            color: #000;
-                            letter-spacing: -.17px;
-                            font-weight: 900;
-                         }
-                    }
-
-                }
-            }
-        }
-    }
-}
-//响应式
-@media only screen and (max-width:990px){
-    #maxdiv #maxdivcontainer #maxdivcontainer_details .details_list li{
-        width: 23.7%;
-    }
-}
-@media only screen  and(max-width:769px){
-        #maxdiv #maxdivcontainer #maxdivcontainer_details .details_list li{
-        width: 32%;
-    }
-}
-@media only screen  and(max-width:500px){
-    #maxdiv #maxdivcontainer #maxdivcontainer_details .details_list li{
-        width: 43%;
-    }
-    #maxdiv #maxdivcontainer #maxdivcontainer_details{
-        margin-left: 10px;
-    }
-    #maxdiv #maxdivcontainer_details_head ul li, #maxdiv .MuCommodityFilterOrderby ul li{
+    ul {
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+      list-style: none;
+      padding: 0;
+      z-index: 1;
+      line-height: 45px;
+      li {
+        display: inline-block;
+        float: left;
         width: auto;
+        a {
+          padding: 11px 15px;
+          font-size: 16px;
+          color: #ddd;
+          letter-spacing: .7px;
+        }
+      }
+      //黑色字体
+      .active a {
+        font-weight: 500;
+        color: #000;
+      }
     }
-    #maxdiv #maxdivcontainer_details_head ul li a{
-       padding: 8px;
+  }
+  .MuCommodityFilterOrderby ul {
+    text-align: center;
+  }
+  #maxdivcontainer {
+    width: 100%;
+    height: 85%;
+    position: relative;
+
+    #maxdivcontainer_details {
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      padding: 30px 0px;
+      position: relative;
+      .details_list {
+        padding-left: 12.5px;
+        padding-right: 12.5px;
+        width: 100%;
+        li {
+
+          width: 19%;
+          height: 272px;
+          float: left;
+          display: inline-block;
+          margin-left: 2.5px;
+          margin-right: 2.5px;
+          .detail_img {
+            text-align: center;
+            img {
+              width: 100%;
+              height: 186px;
+            }
+            .title {
+              margin-top: 9px;
+              font-size: 13px;
+              color: #030303;
+              line-height: 18px;
+              letter-spacing: -.15px;
+            }
+            .MuPriceTag {
+              margin-top: 2px;
+              font-size: 15px;
+              line-height: 21px;
+              color: #000;
+              letter-spacing: -.17px;
+              font-weight: 900;
+            }
+          }
+
+        }
+      }
     }
+  }
+}
+
+//响应式
+@media only screen and (max-width: 990px) {
+  #maxdiv #maxdivcontainer #maxdivcontainer_details .details_list li {
+    width: 23.7%;
+  }
+}
+
+@media only screen and(max-width: 769px) {
+  #maxdiv #maxdivcontainer #maxdivcontainer_details .details_list li {
+    width: 32%;
+  }
+}
+
+@media only screen and(max-width: 500px) {
+  #maxdiv #maxdivcontainer #maxdivcontainer_details .details_list li {
+    width: 43%;
+  }
+  #maxdiv #maxdivcontainer #maxdivcontainer_details {
+    margin-left: 10px;
+  }
+  #maxdiv #maxdivcontainer_details_head ul li, #maxdiv .MuCommodityFilterOrderby ul li {
+    width: auto;
+  }
+  #maxdiv #maxdivcontainer_details_head ul li a {
+    padding: 8px;
+  }
 }

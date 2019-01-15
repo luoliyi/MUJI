@@ -7,15 +7,15 @@ import java.util.List;
 import java.util.Map;
 
 public interface IMemberService {
-    List<Member> selectAllMember(Map<String,Object> objectMap);
+    List<Member> selectAllMember(Map<String, Object> objectMap);
 
-    int insert(Map<String,Object> objectMap);
+    int insert(Map<String, Object> objectMap);
 
-    int update(Map<String,Object> objectMap);
+    int update(Map<String, Object> objectMap);
 
     int delete(@Param("mid") String mid);
 
-    Member selectOne(Map<String,Object> objectMap);
+    Member selectOne(Map<String, Object> objectMap);
 
-    int regsister(Map<String,Object>objectMap);
+    int regsister(Map<String, Object> objectMap);
 }

@@ -1,286 +1,146 @@
 * {
-  margin: 0;
-  padding: 0; }
+    margin: 0;
+    padding: 0;
+}
 
 ul {
-  list-style: none; }
+    list-style: none;
+}
 
 a {
-  text-decoration: none;
-  color: #666; }
+    text-decoration: none;
+    color: #666;
+}
 
 html, body {
-  width: 100%;
-  height: 100%; }
+    width: 100%;
+    height: 100%;
+}
 
 #maxdiv, #maxdivcontainer {
-  max-width: 1024px;
-  height: 550px;
-  margin: 0 auto;
-  position: relative; }
-  #maxdiv #maxdivcontainer, #maxdivcontainer #maxdivcontainer {
-    overflow: auto; }
-    #maxdiv #maxdivcontainer #test1, #maxdivcontainer #maxdivcontainer #test1 {
-      width: 414px !important;
-      height: 414px !important;
-      margin: 0px 28% !important; }
-    #maxdiv #maxdivcontainer .commodity-meta-wrap, #maxdivcontainer #maxdivcontainer .commodity-meta-wrap {
-        position: relative;
-        left: -40px;
-      padding-top: 24px;
-      padding-bottom: 18px;
-      padding-left: 15px;
-      padding-right: 15px;
-      text-align: center; }
-      #maxdiv #maxdivcontainer .commodity-meta-wrap .title, #maxdivcontainer #maxdivcontainer .commodity-meta-wrap .title {
-        margin-top: 9px;
-        font-size: 13px;
-        color: #030303;
-        line-height: 18px;
-        letter-spacing: -.15px; }
-      #maxdiv #maxdivcontainer .commodity-meta-wrap .MuPriceTag, #maxdivcontainer #maxdivcontainer .commodity-meta-wrap .MuPriceTag {
-        margin-top: 2px;
-        font-size: 15px;
-        line-height: 21px;
-        color: #000;
-        letter-spacing: -.17px;
-        font-weight: 900; }
-        #maxdiv #maxdivcontainer .commodity-meta-wrap .MuPriceTag .muted, #maxdivcontainer #maxdivcontainer .commodity-meta-wrap .MuPriceTag .muted {
-          display: inline-block;
-          margin-left: 8px;
-          color: #999;
-          text-decoration: line-through; }
-    #maxdiv #maxdivcontainer .section-brief, #maxdivcontainer #maxdivcontainer .section-brief {
-      padding: 15px 18px;
-      background: #f2f2f2; }
-    #maxdiv #maxdivcontainer .section-normal, #maxdivcontainer #maxdivcontainer .section-normal {
-      padding: 9px 15px; }
-      #maxdiv #maxdivcontainer .section-normal a, #maxdivcontainer #maxdivcontainer .section-normal a {
-        padding-top: 11px;
-        padding-bottom: 11px;
-        padding-right: 16px;
-        background-color: rgba(0, 0, 0, 0);
-        background-size: 16px 16px;
-        background-repeat: no-repeat;
-        background-position: 100%;
-        font-size: 16px;
-        line-height: 16px;
-        color: #000; }
-    #maxdiv #maxdivcontainer .section-description, #maxdivcontainer #maxdivcontainer .section-description {
-      border-top: 5px solid #f2f2f2;
-      padding: 9px 0px; }
-      #maxdiv #maxdivcontainer .section-description .specs, #maxdivcontainer #maxdivcontainer .section-description .specs {
-        margin-top: 20px;
-        margin-bottom: 20px;
-        overflow: auto; }
-        #maxdiv #maxdivcontainer .section-description .specs table, #maxdivcontainer #maxdivcontainer .section-description .specs table {
-          margin-left: auto;
-          margin-right: auto;
-          border-collapse: collapse; }
-          #maxdiv #maxdivcontainer .section-description .specs table th, #maxdiv #maxdivcontainer .section-description .specs table td, #maxdivcontainer #maxdivcontainer .section-description .specs table th, #maxdivcontainer #maxdivcontainer .section-description .specs table td {
-            padding: .6em .4em;
-            border: 1px solid #bcbbc1;
-            text-align: center;
-            white-space: nowrap; }
-          #maxdiv #maxdivcontainer .section-description .specs table th, #maxdivcontainer #maxdivcontainer .section-description .specs table th {
-            background: #f2f2f2; }
+    max-width: 1024px;
+    height: 550px;
+    margin: 0 auto;
+    position: relative;
+}
+
+#maxdiv #maxdivcontainer, #maxdivcontainer #maxdivcontainer {
+    overflow: auto;
+}
+
+#maxdiv #maxdivcontainer #test1, #maxdivcontainer #maxdivcontainer #test1 {
+    width: 414px !important;
+    height: 414px !important;
+    margin: 0px 28% !important;
+}
+
+#maxdiv #maxdivcontainer .commodity-meta-wrap, #maxdivcontainer #maxdivcontainer .commodity-meta-wrap {
+    position: relative;
+    left: -40px;
+    padding-top: 24px;
+    padding-bottom: 18px;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center;
+}
+
+#maxdiv #maxdivcontainer .commodity-meta-wrap .title, #maxdivcontainer #maxdivcontainer .commodity-meta-wrap .title {
+    margin-top: 9px;
+    font-size: 13px;
+    color: #030303;
+    line-height: 18px;
+    letter-spacing: -.15px;
+}
+
+#maxdiv #maxdivcontainer .commodity-meta-wrap .MuPriceTag, #maxdivcontainer #maxdivcontainer .commodity-meta-wrap .MuPriceTag {
+    margin-top: 2px;
+    font-size: 15px;
+    line-height: 21px;
+    color: #000;
+    letter-spacing: -.17px;
+    font-weight: 900;
+}
+
+#maxdiv #maxdivcontainer .commodity-meta-wrap .MuPriceTag .muted, #maxdivcontainer #maxdivcontainer .commodity-meta-wrap .MuPriceTag .muted {
+    display: inline-block;
+    margin-left: 8px;
+    color: #999;
+    text-decoration: line-through;
+}
+
+#maxdiv #maxdivcontainer .section-brief, #maxdivcontainer #maxdivcontainer .section-brief {
+    padding: 15px 18px;
+    background: #f2f2f2;
+}
+
+#maxdiv #maxdivcontainer .section-normal, #maxdivcontainer #maxdivcontainer .section-normal {
+    padding: 9px 15px;
+}
+
+#maxdiv #maxdivcontainer .section-normal a, #maxdivcontainer #maxdivcontainer .section-normal a {
+    padding-top: 11px;
+    padding-bottom: 11px;
+    padding-right: 16px;
+    background-color: rgba(0, 0, 0, 0);
+    background-size: 16px 16px;
+    background-repeat: no-repeat;
+    background-position: 100%;
+    font-size: 16px;
+    line-height: 16px;
+    color: #000;
+}
+
+#maxdiv #maxdivcontainer .section-description, #maxdivcontainer #maxdivcontainer .section-description {
+    border-top: 5px solid #f2f2f2;
+    padding: 9px 0px;
+}
+
+#maxdiv #maxdivcontainer .section-description .specs, #maxdivcontainer #maxdivcontainer .section-description .specs {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    overflow: auto;
+}
+
+#maxdiv #maxdivcontainer .section-description .specs table, #maxdivcontainer #maxdivcontainer .section-description .specs table {
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+}
+
+#maxdiv #maxdivcontainer .section-description .specs table th, #maxdiv #maxdivcontainer .section-description .specs table td, #maxdivcontainer #maxdivcontainer .section-description .specs table th, #maxdivcontainer #maxdivcontainer .section-description .specs table td {
+    padding: .6em .4em;
+    border: 1px solid #bcbbc1;
+    text-align: center;
+    white-space: nowrap;
+}
+
+#maxdiv #maxdivcontainer .section-description .specs table th, #maxdivcontainer #maxdivcontainer .section-description .specs table th {
+    background: #f2f2f2;
+}
 
 #footbar-wrap {
-  width: 100%;
-  height: 75px;
-  position: relative; }
-  #footbar-wrap .PageCommodityDetailPartActions {
+    width: 100%;
+    height: 75px;
+    position: relative;
+}
+
+#footbar-wrap .PageCommodityDetailPartActions {
     width: 97%;
     height: 100%;
     position: absolute;
-    padding: 15px; }
-    #footbar-wrap .PageCommodityDetailPartActions .part-actions-wrap p {
-      position: absolute;
-      top: 45px; }
-    #footbar-wrap .PageCommodityDetailPartActions .part-actions-wrap .mu-button {
-      width: 44%;
-      margin-left: 10px;
-      min-height: 44px;
-      border: 0 solid rgba(0, 0, 0, 0);
-      background: #7f0019;
-      font-size: 16px;
-      color: #fff;
-      font-weight: 700;
-      line-height: 22px;
-      border-radius: 22px;
-      cursor: pointer; }
-
-
-@media only screen and (max-width: 480px) {
-	#maxdiv #maxdivcontainer #test1, #maxdivcontainer #maxdivcontainer #test1{
-		margin: 0px !important;
-		width: 415px !important;
-	}
-	#footbar-wrap .PageCommodityDetailPartActions .part-actions-wrap .mu-button{
-		width: 39%;
-	}
-	#footbar-wrap .PageCommodityDetailPartActions{
-		padding: 0px;
-	}
-	#footbar-wrap .PageCommodityDetailPartActions .part-actions-wrap {
-		margin-top: 14px;
-	}
-	#footbar-wrap .PageCommodityDetailPartActions .part-actions-wrap p{
-		left: 5px;
-	}
-	#footbar-wrap .PageCommodityDetailPartActions .part-actions-wrap i{
-		position: relative;
-		left: 5px;
-	}
-
-}
-      /*新写的样式*/
- #footbar-wrap #chooseAlltoCar div{
-
- }
-#footbar-wrap #chooseAlltoCar{
-	background: white;
-	width: 100%;
-	height: 0px;
-
-	position: absolute;
-	bottom: 70px;
-	/*隐藏*/
-	display: none;
-}
-.part_options{
-		width: 98%;
-		height: 160px;
-
-		padding-top: 20px;
-		padding-bottom: 20px;
-		padding-left: 15px;
-
-}
-.image-wrap{
-	width: 120px;
-	height: 120px;
-	margin-right: 25px;
-	
-	position: relative;
-	top: 30px;
-
-}
-.image-wrap	img{
-		width: 100%;
-		height: 100%;
-	}
-.image-wrap-right{
-	width: 200px;
-	height: 45px;
-	position: absolute;
-	top: 45px;
-	left: 160px;
-}
-.part-options-options{
-	    padding: 10px 0px 0px 30px;
-	    width: 98%;
-	    height: 185px;
-}
-.option-div{
-	margin-bottom: 25px;
-
-}
-.option-div a{
-		text-align: center;
-		width: 80px;
-		height: 28px;
-		line-height: 28px;
-    border-color: #7f0019;
-    color: #7f0019;
-    display: inline-block;
-    border-radius: 15px;
-    border: 1px solid #7f0019;
-    margin-right: 5px;
-}
-.option-div .sizeContainer a:active{
-    background: #7f0019;
-    color: white;
-}
-#chooseCount a{
-	width: 28px;height: 28px;
-}
-#countDel{
-		display: inline-block;
-		border-radius: 0;
-    border: 1px solid #999;
-    width: 28px;
-		border-top-left-radius: 14px !important;
-    border-bottom-left-radius: 14px!important;
-    border-right-width: 0!important;
-    font-size: 14px;
-    line-height: 18px;
-    color: #585858;
-    text-align: center;
-	line-height: 28px;
-	margin-right: 0;
-	position: relative;
-	left: 4px;
-	padding: 1px;
-}
-#countValue{
-	width: 48px;
-	height: 27px;
-	line-height: 28px;
-	text-align: center;
-}
-#countAdd{
-			display: inline-block;
-		border-radius: 0;
-    border: 1px solid #999;
-    width: 28px;
-		border-top-right-radius: 14px !important;
-    border-bottom-right-radius: 14px!important;
-    border-left-width:0px !important;
-    font-size: 14px;
-    line-height: 18px;
-    color: #585858;
-    text-align: center;
-	line-height: 28px;
-	margin-right: 0;
-	position: relative;
-	left: -4px;
-	padding: 1px;
+    padding: 15px;
 }
 
-.chooseClose{
-	position: absolute;
-	width: 30px;
-	height: 30px;
-
-	top: 5px;
-	left: 40px;
-	text-align: center;
-	z-index: 9;
+#footbar-wrap .PageCommodityDetailPartActions .part-actions-wrap p {
+    position: absolute;
+    top: 45px;
 }
-#chooseClose{
-	font-size: 30px;
-	color: #7f0019;
-	cursor: pointer;
-    position: relative;
-    top: 10px;
-}
-#chooseAlltoCar_car{
-	width: 100%;
-	height: 50px;
 
-}
-#chooseAlltoCar{
-		position: relative;
-    z-index: 100000;
-    bottom: 0;
-
-}
-#btnChooseAlltoCar_car{
-
-	  width: 90%;
+#footbar-wrap .PageCommodityDetailPartActions .part-actions-wrap .mu-button {
+    width: 44%;
+    margin-left: 10px;
     min-height: 44px;
-    border: 0 solid rgba(0,0,0,0);
+    border: 0 solid rgba(0, 0, 0, 0);
     background: #7f0019;
     font-size: 16px;
     color: #fff;
@@ -288,33 +148,234 @@ html, body {
     line-height: 22px;
     border-radius: 22px;
     cursor: pointer;
-		position: relative;
-		left: 10px;
 }
 
-#CoveringLayer{
-  display: none;
-	width: 100%;
-	height: 100%;
-	position: fixed;
-	background: rgba(0,0,0,.6);
-	top: 0px;
-	right: 0px;
-	bottom: 0px;
-	left: 0px;
-	z-index: 999;
+@media only screen and (max-width: 480px) {
+    #maxdiv #maxdivcontainer #test1, #maxdivcontainer #maxdivcontainer #test1 {
+        margin: 0px !important;
+        width: 415px !important;
+    }
+
+    #footbar-wrap .PageCommodityDetailPartActions .part-actions-wrap .mu-button {
+        width: 39%;
+    }
+
+    #footbar-wrap .PageCommodityDetailPartActions {
+        padding: 0px;
+    }
+
+    #footbar-wrap .PageCommodityDetailPartActions .part-actions-wrap {
+        margin-top: 14px;
+    }
+
+    #footbar-wrap .PageCommodityDetailPartActions .part-actions-wrap p {
+        left: 5px;
+    }
+
+    #footbar-wrap .PageCommodityDetailPartActions .part-actions-wrap i {
+        position: relative;
+        left: 5px;
+    }
+
 }
 
+/*新写的样式*/
+#footbar-wrap #chooseAlltoCar div {
 
-.section-description{
-	width: 100%;
 }
 
+#footbar-wrap #chooseAlltoCar {
+    background: white;
+    width: 100%;
+    height: 0px;
+
+    position: absolute;
+    bottom: 70px;
+    /*隐藏*/
+    display: none;
+}
+
+.part_options {
+    width: 98%;
+    height: 160px;
+
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 15px;
+
+}
+
+.image-wrap {
+    width: 120px;
+    height: 120px;
+    margin-right: 25px;
+
+    position: relative;
+    top: 30px;
+
+}
+
+.image-wrap img {
+    width: 100%;
+    height: 100%;
+}
+
+.image-wrap-right {
+    width: 200px;
+    height: 45px;
+    position: absolute;
+    top: 45px;
+    left: 160px;
+}
+
+.part-options-options {
+    padding: 10px 0px 0px 30px;
+    width: 98%;
+    height: 185px;
+}
+
+.option-div {
+    margin-bottom: 25px;
+
+}
+
+.option-div a {
+    text-align: center;
+    width: 80px;
+    height: 28px;
+    line-height: 28px;
+    border-color: #7f0019;
+    color: #7f0019;
+    display: inline-block;
+    border-radius: 15px;
+    border: 1px solid #7f0019;
+    margin-right: 5px;
+}
+
+.option-div .sizeContainer a:active {
+    background: #7f0019;
+    color: white;
+}
+
+#chooseCount a {
+    width: 28px;
+    height: 28px;
+}
+
+#countDel {
+    display: inline-block;
+    border-radius: 0;
+    border: 1px solid #999;
+    width: 28px;
+    border-top-left-radius: 14px !important;
+    border-bottom-left-radius: 14px !important;
+    border-right-width: 0 !important;
+    font-size: 14px;
+    line-height: 18px;
+    color: #585858;
+    text-align: center;
+    line-height: 28px;
+    margin-right: 0;
+    position: relative;
+    left: 4px;
+    padding: 1px;
+}
+
+#countValue {
+    width: 48px;
+    height: 27px;
+    line-height: 28px;
+    text-align: center;
+}
+
+#countAdd {
+    display: inline-block;
+    border-radius: 0;
+    border: 1px solid #999;
+    width: 28px;
+    border-top-right-radius: 14px !important;
+    border-bottom-right-radius: 14px !important;
+    border-left-width: 0px !important;
+    font-size: 14px;
+    line-height: 18px;
+    color: #585858;
+    text-align: center;
+    line-height: 28px;
+    margin-right: 0;
+    position: relative;
+    left: -4px;
+    padding: 1px;
+}
+
+.chooseClose {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+
+    top: 5px;
+    left: 40px;
+    text-align: center;
+    z-index: 9;
+}
+
+#chooseClose {
+    font-size: 30px;
+    color: #7f0019;
+    cursor: pointer;
+    position: relative;
+    top: 10px;
+}
+
+#chooseAlltoCar_car {
+    width: 100%;
+    height: 50px;
+
+}
+
+#chooseAlltoCar {
+    position: relative;
+    z-index: 100000;
+    bottom: 0;
+
+}
+
+#btnChooseAlltoCar_car {
+
+    width: 90%;
+    min-height: 44px;
+    border: 0 solid rgba(0, 0, 0, 0);
+    background: #7f0019;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 700;
+    line-height: 22px;
+    border-radius: 22px;
+    cursor: pointer;
+    position: relative;
+    left: 10px;
+}
+
+#CoveringLayer {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: rgba(0, 0, 0, .6);
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    z-index: 999;
+}
+
+.section-description {
+    width: 100%;
+}
 
 /*
     聊天窗口
 */
-#chatDiv{
+#chatDiv {
     width: 750px;
     height: 550px;
     border-radius: 10px;
@@ -327,17 +388,20 @@ html, body {
     z-index: 9999;
     box-shadow: 8px 10px 25px #443d3d;
 }
-#chatContainer{
+
+#chatContainer {
     width: 100%;
     height: 60%;
     overflow: auto;
     text-indent: 15px;
 }
-#chatBottomContainer{
+
+#chatBottomContainer {
     width: 100%;
     height: 35%;
 }
-#btnRight{
+
+#btnRight {
     width: 150px;
     height: 35px;
     line-height: 35px;
@@ -346,24 +410,25 @@ html, body {
     right: 30px;
     top: 2px;
 }
-#btnRight button{
+
+#btnRight button {
     text-align: center;
-    padding:3px 11px;
+    padding: 3px 11px;
     cursor: pointer;
     background: transparent;
     border: none;
     color: white;
 }
 
-
-#editor .w-e-text-container{
-    height: 150px!important;
-    border:none!important;
+#editor .w-e-text-container {
+    height: 150px !important;
+    border: none !important;
 }
+
 /*
     关闭
 */
-#closeChat{
+#closeChat {
     float: right;
     position: absolute;
     top: 15px;
@@ -371,14 +436,18 @@ html, body {
     font-size: 22px;
     color: white;
 }
-#editor .w-e-toolbar{
-    background-color:transparent !important;
-    border: none!important;
+
+#editor .w-e-toolbar {
+    background-color: transparent !important;
+    border: none !important;
 }
-#editor .w-e-menu i{
-    color:#000000ad !important;
+
+#editor .w-e-menu i {
+    color: #000000ad !important;
 }
-#editor .w-e-text{
-    color: white!important;
+
+#editor .w-e-text {
+    color: white !important;
 }
+
 /*# sourceMappingURL=goodDetails.css.map */

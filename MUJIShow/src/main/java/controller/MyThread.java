@@ -2,16 +2,17 @@ package controller;
 
 import com.nf.daoImpl.IOrdersDaoImpl;
 
-public class MyThread implements Runnable{
+public class MyThread implements Runnable {
 
     /*@Autowired
     IAdministratorService administratorService;*/
     /*
-    * 线程无法使用spring ioc注入
-    * */
+     * 线程无法使用spring ioc注入
+     * */
     private int sum;
     private int new_sum;
     private boolean stopMe = true;
+
     public void stopMe() {
         stopMe = false;
     }
@@ -19,19 +20,19 @@ public class MyThread implements Runnable{
     /* (non-Javadoc)
      * @see java.lang.Runnable#run()
      */
-    public void run()  {
+    public void run() {
         /*
-        * 线程ioc注入会报错：java.lang.NullPointerException
-        * */
-        IOrdersDaoImpl ordersDao =new IOrdersDaoImpl();
-        sum=ordersDao.allOrdersCountMonitor();
-        System.out.println("sum："+sum);
-        WebsocketController wbs=new WebsocketController();
-        while(stopMe){
-            new_sum=ordersDao.allOrdersCountMonitor();
-            if(sum!=new_sum){
+         * 线程ioc注入会报错：java.lang.NullPointerException
+         * */
+        IOrdersDaoImpl ordersDao = new IOrdersDaoImpl();
+        sum = ordersDao.allOrdersCountMonitor();
+        System.out.println("sum：" + sum);
+        WebsocketController wbs = new WebsocketController();
+        while (stopMe) {
+            new_sum = ordersDao.allOrdersCountMonitor();
+            if (sum != new_sum) {
                 System.out.println("change");
-                sum=new_sum;
+                sum = new_sum;
                 wbs.onMessage(sum);
             }
             try {

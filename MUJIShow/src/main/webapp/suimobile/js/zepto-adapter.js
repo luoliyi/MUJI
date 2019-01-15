@@ -1,12 +1,12 @@
 /* global WebKitCSSMatrix:true */
 
-(function($) {
+(function ($) {
     "use strict";
-    ['width', 'height'].forEach(function(dimension) {
-        var  Dimension = dimension.replace(/./, function(m) {
+    ['width', 'height'].forEach(function (dimension) {
+        var Dimension = dimension.replace(/./, function (m) {
             return m[0].toUpperCase();
         });
-        $.fn['outer' + Dimension] = function(margin) {
+        $.fn['outer' + Dimension] = function (margin) {
             var elem = this;
             if (elem) {
                 var size = elem[dimension]();
@@ -14,7 +14,7 @@
                     'width': ['left', 'right'],
                     'height': ['top', 'bottom']
                 };
-                sides[dimension].forEach(function(side) {
+                sides[dimension].forEach(function (side) {
                     if (margin) size += parseInt(elem.css('margin-' + side), 10);
                 });
                 return size;
@@ -25,7 +25,7 @@
     });
 
     //support
-    $.support = (function() {
+    $.support = (function () {
         var support = {
             touch: !!(('ontouchstart' in window) || window.DocumentTouch && document instanceof window.DocumentTouch)
         };
@@ -101,7 +101,7 @@
     };
     /* jshint ignore:end */
 
-    $.fn.dataset = function() {
+    $.fn.dataset = function () {
         var dataset = {},
             ds = this[0].dataset;
         for (var key in ds) { // jshint ignore:line
@@ -113,7 +113,7 @@
         // mixin dataset and __eleData
         return $.extend({}, dataset, this[0].__eleData);
     };
-    $.fn.data = function(key, value) {
+    $.fn.data = function (key, value) {
         var tmpData = $(this).dataset();
         if (!key) {
             return tmpData;
@@ -144,6 +144,7 @@
             return this;
         }
     };
+
     function __dealCssEvent(eventNameArr, callback) {
         var events = eventNameArr,
             i, dom = this;// jshint ignore:line
@@ -156,21 +157,23 @@
                 dom.off(events[i], fireCallBack);
             }
         }
+
         if (callback) {
             for (i = 0; i < events.length; i++) {
                 dom.on(events[i], fireCallBack);
             }
         }
     }
-    $.fn.animationEnd = function(callback) {
+
+    $.fn.animationEnd = function (callback) {
         __dealCssEvent.call(this, ['webkitAnimationEnd', 'animationend'], callback);
         return this;
     };
-    $.fn.transitionEnd = function(callback) {
+    $.fn.transitionEnd = function (callback) {
         __dealCssEvent.call(this, ['webkitTransitionEnd', 'transitionend'], callback);
         return this;
     };
-    $.fn.transition = function(duration) {
+    $.fn.transition = function (duration) {
         if (typeof duration !== 'string') {
             duration = duration + 'ms';
         }
@@ -180,7 +183,7 @@
         }
         return this;
     };
-    $.fn.transform = function(transform) {
+    $.fn.transform = function (transform) {
         for (var i = 0; i < this.length; i++) {
             var elStyle = this[i].style;
             elStyle.webkitTransform = elStyle.MozTransform = elStyle.transform = transform;
@@ -194,7 +197,7 @@
         while (el.previousElementSibling) {
             var prev = el.previousElementSibling;
             if (selector) {
-                if($(prev).is(selector)) prevEls.push(prev);
+                if ($(prev).is(selector)) prevEls.push(prev);
             }
             else prevEls.push(prev);
             el = prev;
@@ -208,7 +211,7 @@
         while (el.nextElementSibling) {
             var next = el.nextElementSibling;
             if (selector) {
-                if($(next).is(selector)) nextEls.push(next);
+                if ($(next).is(selector)) nextEls.push(next);
             }
             else nextEls.push(next);
             el = next;
@@ -217,8 +220,9 @@
     };
 
     //重置zepto的show方法，防止有些人引用的版本中 show 方法操作 opacity 属性影响动画执行
-    $.fn.show = function(){
+    $.fn.show = function () {
         var elementDisplay = {};
+
         function defaultDisplay(nodeName) {
             var element, display;
             if (!elementDisplay[nodeName]) {
@@ -232,9 +236,9 @@
             return elementDisplay[nodeName];
         }
 
-        return this.each(function(){
+        return this.each(function () {
             this.style.display === "none" && (this.style.display = '');
-            if (getComputedStyle(this, '').getPropertyValue("display") === "none");
+            if (getComputedStyle(this, '').getPropertyValue("display") === "none") ;
             this.style.display = defaultDisplay(this.nodeName);
         });
     };

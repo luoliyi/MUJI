@@ -20,20 +20,20 @@ public class MainController {
     @Autowired
     IGoodsService goodsService;
 
-    @RequestMapping(value = "/getNewGoods",method = RequestMethod.POST)
+    @RequestMapping(value = "/getNewGoods", method = RequestMethod.POST)
     @ResponseBody
-    public List<Goods> getNewGoods(){
+    public List<Goods> getNewGoods() {
 
-        Map<String,Object>objectMap=new HashMap<>();
+        Map<String, Object> objectMap = new HashMap<>();
 
-        objectMap.put("pageno",0);
-        objectMap.put("pagesize",6);
+        objectMap.put("pageno", 0);
+        objectMap.put("pagesize", 6);
         return goodsService.selectNewGoods(objectMap);
     }
 
-    @RequestMapping(value = "/getOneGood",method = RequestMethod.POST)
+    @RequestMapping(value = "/getOneGood", method = RequestMethod.POST)
     @ResponseBody
-    public Goods getOneGood(@RequestBody Integer gid){
+    public Goods getOneGood(@RequestBody Integer gid) {
 
         System.out.println(gid);
 

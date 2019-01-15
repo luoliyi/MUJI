@@ -1,4 +1,4 @@
-!(function() {
+!(function () {
 
     window.console = window.console || {
         log: $.noop
@@ -8,12 +8,12 @@
     var codes = {};
     var debug = location.href.indexOf('Users/tangbin') !== -1;
 
-    $(function() {
+    $(function () {
 
         console.log('你可以在调试器中粘贴本页示例代码运行');
 
         var RE = /[\n\s\t]*?\/\/\.\.[\r\n]/;
-        $('pre code').each(function(index) {
+        $('pre code').each(function (index) {
             var $this = $(this);
             var code = $this.text();
 
@@ -37,7 +37,7 @@
 
         // 回到顶部
         var $top = $('<a class="doc-gotop" href="javascript:;">TOP</a>')
-            .on('click', function() {
+            .on('click', function () {
                 $(window).scrollTop(0);
                 return false;
             });
@@ -45,7 +45,7 @@
     });
 
 
-    var runCode = function(id) {
+    var runCode = function (id) {
         codes[id]();
 
         var api = dialog.getCurrent();
@@ -55,7 +55,7 @@
     };
 
 
-    $(document).on('click', 'button[data-code]', function() {
+    $(document).on('click', 'button[data-code]', function () {
         var id = $(this).data('code');
         runCode(id);
         return false;

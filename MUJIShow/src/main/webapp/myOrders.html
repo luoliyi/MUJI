@@ -1,101 +1,103 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8" />
-		<title>无印良品</title>
-		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<head>
+    <meta charset="utf-8"/>
+    <title>无印良品</title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
 
-		<!--图标-->
-		<link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
-		<link rel="stylesheet" type="text/css" href="css/myOrders.css" />
-		<link rel="stylesheet" type="text/css" href="js/layui/css/layui.css" />
-		<style>
-			body{
-				font-family: "微软雅黑";
-				font-weight: 340;
-			}
-		</style>
-	</head>
-	<body>
-		<div id="maxdiv">
-			<!--容器-->
-			<div id="maxdivcontainer">
-				<!--订单头部-->
-				<div class="swiper-container swiper-container-horizontal">
-					<ul>
-						<li class="active"><a >全部订单</a></li>
-						<li><a >待付款</a></li>
-						<li><a >待发货</a></li>
-						<li><a >待收货</a></li>
-						<li><a >已完成</a></li>
-					</ul>
-				</div>
-				<!--订单详情-->
-				<div class="orderDetails">
-					<!--一件订单-->
-					<div class="oneDetails">
-						<h3 class="orderNo"><span>订单号：</span>1234567789<span class="orderState">已完成</span></h3>
-						<div class="order-item-items-item">
-							<img src="img/goodsdetails/untitled.png">
-							<div class="order-item-heading-wrap">
-								<div class="name">丝光斜纹棉布直筒裤<span class="count"><span>x</span><span class="orderCount">1</span></span></div>
-								<div class="options">颜色：深米色、尺码：女式155/58A</div>
-								<div class="price"><span>￥</span><span class="orderPrice">112.00</span></div>
-							</div>
-						</div>
-						<!--运费-->
-						<div class="order-item-total">
-							<div class="pay">合计(含运费)<h4 class="orderSumCount">
-								<span>￥</span><span class="orderSumPrice">236.00</span></h4></div>
-						</div>
-						<!--按钮-->
-						<div class="MuOrderItemActions">
-							<a href="javascript:void(0);">删除订单</a> 
-							<a href="javascript:void(0);" class="primary">再次购买</a>
-						</div>
-					</div>
-					
-					<!--一件订单-->
-					<div class="oneDetails">
-						<h3 class="orderNo"><span>订单号：</span>1234567789<span class="orderState">已完成</span></h3>
-						<div class="order-item-items-item">
-							<img src="img/goodsdetails/untitled.png">
-							<div class="order-item-heading-wrap">
-								<div class="name">丝光斜纹棉布直筒裤<span class="count"><span>x</span><span class="orderCount">1</span></span></div>
-								<div class="options">颜色：深米色、尺码：女式155/58A</div>
-								<div class="price"><span>￥</span><span class="orderPrice">112.00</span></div>
-							</div>
-						</div>
-						<!--运费-->
-						<div class="order-item-total">
-							<div class="pay">合计(含运费)<h4 class="orderSumCount">
-								<span>￥</span><span class="orderSumPrice">236.00</span></h4></div>
-						</div>
-						<!--按钮-->
-						<div class="MuOrderItemActions">
-							<a href="javascript:void(0);">删除订单</a> 
-							<a href="javascript:void(0);" class="primary">再次购买</a>
-						</div>
-					</div>
-					
-					
-					
-				</div>
-			</div>
-		</div>
-	</body>
-	<script type="text/javascript" src="js/jquery-1.11.3.min.js" ></script>
-	<script type="text/javascript" src="js/layui/layui.js"></script>
-	<script>
-		$(function(){
-			$(".swiper-container li").on("click","a",function(){
-				var that=$(this);
-				layui.use('layer', function(){
-					  var layer = layui.layer;
-					  layer.msg($(that).html(),{time: 1500});
-				});
-			})
-		})
-	</script>
+    <!--图标-->
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="css/myOrders.css"/>
+    <link rel="stylesheet" type="text/css" href="js/layui/css/layui.css"/>
+    <style>
+        body {
+            font-family: "微软雅黑";
+            font-weight: 340;
+        }
+    </style>
+</head>
+<body>
+<div id="maxdiv">
+    <!--容器-->
+    <div id="maxdivcontainer">
+        <!--订单头部-->
+        <div class="swiper-container swiper-container-horizontal">
+            <ul>
+                <li class="active"><a>全部订单</a></li>
+                <li><a>待付款</a></li>
+                <li><a>待发货</a></li>
+                <li><a>待收货</a></li>
+                <li><a>已完成</a></li>
+            </ul>
+        </div>
+        <!--订单详情-->
+        <div class="orderDetails">
+            <!--一件订单-->
+            <div class="oneDetails">
+                <h3 class="orderNo"><span>订单号：</span>1234567789<span class="orderState">已完成</span></h3>
+                <div class="order-item-items-item">
+                    <img src="img/goodsdetails/untitled.png">
+                    <div class="order-item-heading-wrap">
+                        <div class="name">丝光斜纹棉布直筒裤<span class="count"><span>x</span><span
+                                class="orderCount">1</span></span></div>
+                        <div class="options">颜色：深米色、尺码：女式155/58A</div>
+                        <div class="price"><span>￥</span><span class="orderPrice">112.00</span></div>
+                    </div>
+                </div>
+                <!--运费-->
+                <div class="order-item-total">
+                    <div class="pay">合计(含运费)<h4 class="orderSumCount">
+                        <span>￥</span><span class="orderSumPrice">236.00</span></h4></div>
+                </div>
+                <!--按钮-->
+                <div class="MuOrderItemActions">
+                    <a href="javascript:void(0);">删除订单</a>
+                    <a href="javascript:void(0);" class="primary">再次购买</a>
+                </div>
+            </div>
+
+            <!--一件订单-->
+            <div class="oneDetails">
+                <h3 class="orderNo"><span>订单号：</span>1234567789<span class="orderState">已完成</span></h3>
+                <div class="order-item-items-item">
+                    <img src="img/goodsdetails/untitled.png">
+                    <div class="order-item-heading-wrap">
+                        <div class="name">丝光斜纹棉布直筒裤<span class="count"><span>x</span><span
+                                class="orderCount">1</span></span></div>
+                        <div class="options">颜色：深米色、尺码：女式155/58A</div>
+                        <div class="price"><span>￥</span><span class="orderPrice">112.00</span></div>
+                    </div>
+                </div>
+                <!--运费-->
+                <div class="order-item-total">
+                    <div class="pay">合计(含运费)<h4 class="orderSumCount">
+                        <span>￥</span><span class="orderSumPrice">236.00</span></h4></div>
+                </div>
+                <!--按钮-->
+                <div class="MuOrderItemActions">
+                    <a href="javascript:void(0);">删除订单</a>
+                    <a href="javascript:void(0);" class="primary">再次购买</a>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/layui/layui.js"></script>
+<script>
+    $(function () {
+        $(".swiper-container li").on("click", "a", function () {
+            var that = $(this);
+            layui.use('layer', function () {
+                var layer = layui.layer;
+                layer.msg($(that).html(), {time: 1500});
+            });
+        })
+    })
+</script>
 </html>

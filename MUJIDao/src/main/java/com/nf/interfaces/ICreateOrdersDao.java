@@ -6,9 +6,9 @@ import java.util.List;
 import java.util.Map;
 
 public interface ICreateOrdersDao {
-    List<CreateOrders> selectCreateOrdersByPhone(Map<String,Object>objectMap);
+    List<CreateOrders> selectCreateOrdersByPhone(Map<String, Object> objectMap);
 
-    int initOneCreateOrders(Map<String,Object>objectMap);
+    int initOneCreateOrders(Map<String, Object> objectMap);
 
     int updatePendingShipmentByCono(String cono);
 
@@ -26,10 +26,10 @@ public interface ICreateOrdersDao {
 
     String checkOrderPayStatus(String cono);
 
-    List<CreateOrders> selectAllOrderByMphoneAndStateAndLimit(Map<String,Object> objectMap);
+    List<CreateOrders> selectAllOrderByMphoneAndStateAndLimit(Map<String, Object> objectMap);
 
-    List<CreateOrders>backgroundSelectAllOrders(Map<String,Object>objectMap);
+    List<CreateOrders> backgroundSelectAllOrders(Map<String, Object> objectMap);
 
-    int backgroundUpdateConoStatus(Map<String,Object>objectMap);
+    int backgroundUpdateConoStatus(Map<String, Object> objectMap);
 
 }

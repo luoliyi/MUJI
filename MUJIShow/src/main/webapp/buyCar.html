@@ -2,176 +2,204 @@
 <html>
 
 <head>
-	<meta charset="utf-8" />
-	<title>无印良品</title>
-	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta charset="utf-8"/>
+    <title>无印良品</title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
 
-	<!--图标-->
-	<link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
-	<link rel="stylesheet" type="text/css" href="css/buyCar.css" />
-	<link rel="stylesheet" type="text/css" href="js/layui/css/layui.css" />
+    <!--图标-->
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="css/buyCar.css"/>
+    <link rel="stylesheet" type="text/css" href="js/layui/css/layui.css"/>
 
-	<style>
-		.quantity input{
-			width: 50px;
-			border: none;
-			background: #f2f2f2;
-			text-align: center;
-		}
-		.oneGoods{
-			font-family: "微软雅黑";
-			font-weight: 340;
-		}
-		.oneGoods i{
-			cursor: pointer;
-			color: #7f0019c9;
-			position: relative;
-			top: 17px;
-			font-size: 20px;
-		}
-		#selectAll{
-			font-size: 20px;
-			cursor: pointer;
-			color: #7f0019c9;
-		}
-		.quantity button{
-			border: none;
-			width: 10px;
-			background: #f2f2f2;
-			cursor: pointer;
-			font-size: 14px;
-			color: #7f0019c9;
-		}
-	</style>
+    <style>
+        .quantity input {
+            width: 50px;
+            border: none;
+            background: #f2f2f2;
+            text-align: center;
+        }
+
+        .oneGoods {
+            font-family: "微软雅黑";
+            font-weight: 340;
+        }
+
+        .oneGoods i {
+            cursor: pointer;
+            color: #7f0019c9;
+            position: relative;
+            top: 17px;
+            font-size: 20px;
+        }
+
+        #selectAll {
+            font-size: 20px;
+            cursor: pointer;
+            color: #7f0019c9;
+        }
+
+        .quantity button {
+            border: none;
+            width: 10px;
+            background: #f2f2f2;
+            cursor: pointer;
+            font-size: 14px;
+            color: #7f0019c9;
+        }
+    </style>
 </head>
 
 <body>
 <div id="maxdiv">
-	<!--容器-->
-	<div id="maxdivcontainer">
-		<h2 id="ifHasGoods" style="display: none">购物车没有商品~</h2>
-		<!--展示商品-->
-		<div class="part_options">
-			<!--一件商品-->
-			<div class="oneGoods">
-				<i class="layui-icon layui-icon-circle checkBuy"></i>
-				<div class="image-wrap">
-					<img src="img/goodsdetails/untitled.png" />
-					<div class="image-wrap-right">
-						<span class="title">棉水洗平纹衬衫</span><br />
-						<div class="options">颜色：白色、尺码：男式175/100A</div>
-						<span><span>￥</span><span class="image-wrap-right-price">78</span></span>
-						<div class="quantity">数量：<span>1</span>
-							<i class="layui-icon layui-icon-down quantityNumber"></i>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+    <!--容器-->
+    <div id="maxdivcontainer">
+        <h2 id="ifHasGoods" style="display: none">购物车没有商品~</h2>
+        <!--展示商品-->
+        <div class="part_options">
+            <!--一件商品-->
+            <div class="oneGoods">
+                <i class="layui-icon layui-icon-circle checkBuy"></i>
+                <div class="image-wrap">
+                    <img src="img/goodsdetails/untitled.png"/>
+                    <div class="image-wrap-right">
+                        <span class="title">棉水洗平纹衬衫</span><br/>
+                        <div class="options">颜色：白色、尺码：男式175/100A</div>
+                        <span><span>￥</span><span class="image-wrap-right-price">78</span></span>
+                        <div class="quantity">数量：<span>1</span>
+                            <i class="layui-icon layui-icon-down quantityNumber"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-		<!--隐藏总价-->
-		<!--<input type="hidden" id="hideSumPrice" value="0">-->
+        <!--隐藏总价-->
+        <!--<input type="hidden" id="hideSumPrice" value="0">-->
 
-		<!--推荐商品-->
-		<h3 style="text-indent: 17px;">推荐商品</h3><br />
-		<!--推荐商品-->
-		<div class="newItemWrapper">
-			<ul class="newItemUl">
-				<li>
-					<a href="//www.muji.com.cn/cn/store/goods/173159"><span class="thumb"><img src="img/main/4547315901166_400.jpg" data-bd-imgshare-binded="1"></span><span class="name">凝胶墨水圆珠笔</span></a>
-					<strong><p><span>￥</span><span>8</span></p></strong>
-				</li>
-				<li>
-					<a href="//www.muji.com.cn/cn/store/goods/149918"><span class="thumb"><img src="img/main/xiangpi.jpg" data-bd-imgshare-binded="1"></span><span class="name">塑料橡皮</span> </a>
-					<strong><p><span>￥</span><span>4</span></p></strong>
-				</li>
-				<li>
-					<a href="//www.muji.com.cn/cn/store/goods/137530"><span class="thumb"><img src="img/main/bijiben.jpg" data-bd-imgshare-binded="1"></span><span class="name">原浆纸笔记本5册组</span> </a>
-					<strong><p><span>￥</span><span>23</span></p></strong>
-				</li>
-				<li>
-					<a href="//www.muji.com.cn/cn/store/goods/172679"><span class="thumb"><img src="img/main/mian.jpg" data-bd-imgshare-binded="1"></span><span class="name">迷你脆脆面_焦香酱油味</span> </a>
-					<strong><p><span>￥</span><span>3</span></p></strong>
-				</li>
-				<li>
-					<a href="//www.muji.com.cn/cn/store/goods/155053"><span class="thumb"><img src="img/main/mian2.jpg" data-bd-imgshare-binded="1"></span><span>迷你脆脆面_鸡汁味</span> </a>
-					<strong><p><span>￥</span><span>3</span></p></strong>
-				</li>
-				<li class="lastchid">
-					<a href="//www.muji.com.cn/cn/store/goods/167067"><span class="thumb"><img src="img/main/yijia.jpg" data-bd-imgshare-binded="1"></span><span class="name">PP洗涤用衣架·衬衫用·3个装</span> </a>
-					<strong><p><span>￥</span><span>16</span></p></strong>
-				</li>
-			</ul>
-			<ul class="newItemUl">
-				<li>
-					<a href="//www.muji.com.cn/cn/store/goods/173159"><span class="thumb"><img src="img/Picture/4550002509668_400.jpg" data-bd-imgshare-binded="1"></span><span class="name">米果组合</span> </a>
-					<strong><p><span>￥</span><span>18</span></p></strong>
-				</li>
-				<li>
-					<a href="//www.muji.com.cn/cn/store/goods/149918"><span class="thumb"><img src="img/Picture/4549738673095_400.jpg" data-bd-imgshare-binded="1"></span><span class="name">柚子金桔夹心棉花糖</span> </a>
-					<strong><p><span>￥</span><span>22</span></p></strong>
-				</li>
-				<li>
-					<a href="//www.muji.com.cn/cn/store/goods/137530"><span class="thumb"><img src="img/Picture/4549738330165_400.jpg" data-bd-imgshare-binded="1"></span><span class="name">芝士味玉米片</span> </a>
-					<strong><p><span>￥</span><span>10</span></p></strong>
-				</li>
-				<li>
-					<a href="//www.muji.com.cn/cn/store/goods/172679"><span class="thumb"><img src="img/Picture/4550002460433_400.jpg" data-bd-imgshare-binded="1"></span><span class="name">棉圆领短袖T恤</span> </a>
-					<strong><p><span>￥</span><span>80</span></p></strong>
-				</li>
-				<li>
-					<a href="//www.muji.com.cn/cn/store/goods/155053"><span class="thumb"><img src="img/Picture/4549738857877_400.jpg" data-bd-imgshare-binded="1"></span><span>棉_七分袖T恤</span> </a>
-					<strong><p><span>￥</span><span>88</span></p></strong>
-				</li>
-				<li class="lastchid">
-					<a href="//www.muji.com.cn/cn/store/goods/167067"><span class="thumb"><img src="img/Picture/4550002279868_400.jpg" data-bd-imgshare-binded="1"></span><span class="name">棉圆领短袖T恤</span> </a>
-					<strong><p><span>￥</span><span>68</span></p></strong>
-				</li>
-			</ul>
-		</div>
-	</div>
-	<!--底部-->
-	<div id="footbar-wrap">
-		<!--选择框-->
-		<div id="chooseAlltoCar"></div>
-		<div class="PageCommodityDetailPartActions">
-			<!--加入购物车-->
-			<div class="part-actions-wrap">
-				<div class="chooseSelectAll">
-					<!--全选-->
-				<!--	<i id="selectAll" class="layui-icon layui-icon-circle"></i>-->
-					<!--<span>全选</span>--><span id="countGoods">1</span><span>件商品</span>
-					<!--总价-->
-					<span class="allPrice">
+        <!--推荐商品-->
+        <h3 style="text-indent: 17px;">推荐商品</h3><br/>
+        <!--推荐商品-->
+        <div class="newItemWrapper">
+            <ul class="newItemUl">
+                <li>
+                    <a href="//www.muji.com.cn/cn/store/goods/173159"><span class="thumb"><img
+                            src="img/main/4547315901166_400.jpg" data-bd-imgshare-binded="1"></span><span class="name">凝胶墨水圆珠笔</span></a>
+                    <strong><p><span>￥</span><span>8</span></p></strong>
+                </li>
+                <li>
+                    <a href="//www.muji.com.cn/cn/store/goods/149918"><span class="thumb"><img
+                            src="img/main/xiangpi.jpg" data-bd-imgshare-binded="1"></span><span class="name">塑料橡皮</span>
+                    </a>
+                    <strong><p><span>￥</span><span>4</span></p></strong>
+                </li>
+                <li>
+                    <a href="//www.muji.com.cn/cn/store/goods/137530"><span class="thumb"><img
+                            src="img/main/bijiben.jpg" data-bd-imgshare-binded="1"></span><span
+                            class="name">原浆纸笔记本5册组</span> </a>
+                    <strong><p><span>￥</span><span>23</span></p></strong>
+                </li>
+                <li>
+                    <a href="//www.muji.com.cn/cn/store/goods/172679"><span class="thumb"><img src="img/main/mian.jpg"
+                                                                                               data-bd-imgshare-binded="1"></span><span
+                            class="name">迷你脆脆面_焦香酱油味</span> </a>
+                    <strong><p><span>￥</span><span>3</span></p></strong>
+                </li>
+                <li>
+                    <a href="//www.muji.com.cn/cn/store/goods/155053"><span class="thumb"><img src="img/main/mian2.jpg"
+                                                                                               data-bd-imgshare-binded="1"></span><span>迷你脆脆面_鸡汁味</span>
+                    </a>
+                    <strong><p><span>￥</span><span>3</span></p></strong>
+                </li>
+                <li class="lastchid">
+                    <a href="//www.muji.com.cn/cn/store/goods/167067"><span class="thumb"><img src="img/main/yijia.jpg"
+                                                                                               data-bd-imgshare-binded="1"></span><span
+                            class="name">PP洗涤用衣架·衬衫用·3个装</span> </a>
+                    <strong><p><span>￥</span><span>16</span></p></strong>
+                </li>
+            </ul>
+            <ul class="newItemUl">
+                <li>
+                    <a href="//www.muji.com.cn/cn/store/goods/173159"><span class="thumb"><img
+                            src="img/Picture/4550002509668_400.jpg" data-bd-imgshare-binded="1"></span><span
+                            class="name">米果组合</span> </a>
+                    <strong><p><span>￥</span><span>18</span></p></strong>
+                </li>
+                <li>
+                    <a href="//www.muji.com.cn/cn/store/goods/149918"><span class="thumb"><img
+                            src="img/Picture/4549738673095_400.jpg" data-bd-imgshare-binded="1"></span><span
+                            class="name">柚子金桔夹心棉花糖</span> </a>
+                    <strong><p><span>￥</span><span>22</span></p></strong>
+                </li>
+                <li>
+                    <a href="//www.muji.com.cn/cn/store/goods/137530"><span class="thumb"><img
+                            src="img/Picture/4549738330165_400.jpg" data-bd-imgshare-binded="1"></span><span
+                            class="name">芝士味玉米片</span> </a>
+                    <strong><p><span>￥</span><span>10</span></p></strong>
+                </li>
+                <li>
+                    <a href="//www.muji.com.cn/cn/store/goods/172679"><span class="thumb"><img
+                            src="img/Picture/4550002460433_400.jpg" data-bd-imgshare-binded="1"></span><span
+                            class="name">棉圆领短袖T恤</span> </a>
+                    <strong><p><span>￥</span><span>80</span></p></strong>
+                </li>
+                <li>
+                    <a href="//www.muji.com.cn/cn/store/goods/155053"><span class="thumb"><img
+                            src="img/Picture/4549738857877_400.jpg"
+                            data-bd-imgshare-binded="1"></span><span>棉_七分袖T恤</span> </a>
+                    <strong><p><span>￥</span><span>88</span></p></strong>
+                </li>
+                <li class="lastchid">
+                    <a href="//www.muji.com.cn/cn/store/goods/167067"><span class="thumb"><img
+                            src="img/Picture/4550002279868_400.jpg" data-bd-imgshare-binded="1"></span><span
+                            class="name">棉圆领短袖T恤</span> </a>
+                    <strong><p><span>￥</span><span>68</span></p></strong>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--底部-->
+    <div id="footbar-wrap">
+        <!--选择框-->
+        <div id="chooseAlltoCar"></div>
+        <div class="PageCommodityDetailPartActions">
+            <!--加入购物车-->
+            <div class="part-actions-wrap">
+                <div class="chooseSelectAll">
+                    <!--全选-->
+                    <!--	<i id="selectAll" class="layui-icon layui-icon-circle"></i>-->
+                    <!--<span>全选</span>--><span id="countGoods">1</span><span>件商品</span>
+                    <!--总价-->
+                    <span class="allPrice">
 						<span>合计</span><span>￥</span><span id="allPrice">0.00</span>
 					</span>
-				</div>
-				<button type="button" class="mu-button">去结算</button>
-			</div>
-		</div>
-	</div>
+                </div>
+                <button type="button" class="mu-button">去结算</button>
+            </div>
+        </div>
+    </div>
 </div>
 </div>
 </body>
 <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
 <script type="text/javascript" src="js/layui/layui.js"></script>
 <script>
-    var i=0;
-    var j=0;
-    $("#selectAll").click(function(){
-        if(j==0){
-            $(this).attr("class","layui-icon layui-icon-radio");
-            $(".part_options .oneGoods .checkBuy").attr("class","layui-icon layui-icon-radio checkBuy");
-            j=1;
+    var i = 0;
+    var j = 0;
+    $("#selectAll").click(function () {
+        if (j == 0) {
+            $(this).attr("class", "layui-icon layui-icon-radio");
+            $(".part_options .oneGoods .checkBuy").attr("class", "layui-icon layui-icon-radio checkBuy");
+            j = 1;
             /*
             * 计算总价
             * */
-            $("#allPrice").html($("#hideSumPrice").val()+".00");
-        }else{
-            $(this).attr("class","layui-icon layui-icon-circle");
-            $(".part_options .oneGoods .checkBuy").attr("class","layui-icon layui-icon-circle checkBuy");
-            j=0;
+            $("#allPrice").html($("#hideSumPrice").val() + ".00");
+        } else {
+            $(this).attr("class", "layui-icon layui-icon-circle");
+            $(".part_options .oneGoods .checkBuy").attr("class", "layui-icon layui-icon-circle checkBuy");
+            j = 0;
             /*
             * 计算总价
             * */
@@ -180,8 +208,8 @@
     });
 
     /*跳转到订单页面*/
-    $(".mu-button").click(function(){
-        $("#iframe1:eq(0)",parent.document).attr("src","balance.html");
+    $(".mu-button").click(function () {
+        $("#iframe1:eq(0)", parent.document).attr("src", "balance.html");
         /*
         * 跳转到结算单
         * */
@@ -192,19 +220,19 @@
     * 窗体加载
     * */
     $(function () {
-        var app={
-            selectAllCartsByMphone(){
+        var app = {
+            selectAllCartsByMphone() {
                 $.ajax({
-                    url:"shoppingCarController/selectAllCartsByMphone",
-                    contentType:"application/json;charset=utf-8",
-                    type:"post"
+                    url: "shoppingCarController/selectAllCartsByMphone",
+                    contentType: "application/json;charset=utf-8",
+                    type: "post"
                 }).done(function (jsdata) {
                     console.log(jsdata);
-					/*
-					* 如果购物车为空
-					* */
-					if(jsdata.length<=0){
-					    $("#ifHasGoods").css("display","block");
+                    /*
+                    * 如果购物车为空
+                    * */
+                    if (jsdata.length <= 0) {
+                        $("#ifHasGoods").css("display", "block");
                         $(".part_options div").remove();
                         return false;
                     }
@@ -212,38 +240,38 @@
                 })
             },
 
-			/*
-			* 渲染数据
-			* */
-			renderData:function(jsdata){
+            /*
+            * 渲染数据
+            * */
+            renderData: function (jsdata) {
                 /*
 				  * 多少件商品
 				  * */
                 $("#countGoods").html(jsdata.length);
                 $(".part_options div").remove();
-                var sumprice=0;
-                $.each(jsdata,function (index,obj) {
+                var sumprice = 0;
+                $.each(jsdata, function (index, obj) {
 
-                    sumprice+=obj.sumprice;
-                    if(obj.goods.gpic.indexOf(".jpg")>0) {
+                    sumprice += obj.sumprice;
+                    if (obj.goods.gpic.indexOf(".jpg") > 0) {
                         var img = obj.goods.gpic;
-                    }else {
+                    } else {
                         var img = obj.goods.gpic + ".jpg";
                     }
 
                     $(
                         "<div class=\"oneGoods\">\n" +
-                        "<i data-scid="+obj.scid+"  class=\"layui-icon layui-icon-close-fill deleOne\"></i>\n" +
+                        "<i data-scid=" + obj.scid + "  class=\"layui-icon layui-icon-close-fill deleOne\"></i>\n" +
                         "<div class=\"image-wrap\">\n" +
-                        "<img src='admin/img/goodsdetails/" + img+ "'/>\n" +
+                        "<img src='admin/img/goodsdetails/" + img + "'/>\n" +
                         "<div class=\"image-wrap-right\">\n" +
-                        "<span class=\"title\">"+obj.goods.gname+"</span><br />\n" +
+                        "<span class=\"title\">" + obj.goods.gname + "</span><br />\n" +
                         "<div class=\"options\"><!--颜色：白色--><!--、尺码：男式175/100A--></div>\n" +
-                        "<span><span>￥</span><span class=\"image-wrap-right-price\">"+obj.goods.gnowprice+"</span></span>\n" +
+                        "<span><span>￥</span><span class=\"image-wrap-right-price\">" + obj.goods.gnowprice + "</span></span>\n" +
                         "<div class=\"quantity\">数量：\n" +
-                        "<button data-gnowprice="+obj.goods.gnowprice+" data-scid="+obj.scid+"  data-ind="+index+" class='btnDelCount'>-</button>\n" +
-                        "<input type=\"text\" class='countVal' readonly='readonly' value="+obj.sccount+" />\n" +
-                        "<button data-gnowprice="+obj.goods.gnowprice+" data-scid="+obj.scid+" data-ind="+index+" class='btnAddCount'>+</button>\n" +
+                        "<button data-gnowprice=" + obj.goods.gnowprice + " data-scid=" + obj.scid + "  data-ind=" + index + " class='btnDelCount'>-</button>\n" +
+                        "<input type=\"text\" class='countVal' readonly='readonly' value=" + obj.sccount + " />\n" +
+                        "<button data-gnowprice=" + obj.goods.gnowprice + " data-scid=" + obj.scid + " data-ind=" + index + " class='btnAddCount'>+</button>\n" +
                         /*"<i class=\"layui-icon layui-icon-cancel\"></i>"+*/
                         "</div>\n" +
                         "</div>\n" +
@@ -253,82 +281,82 @@
                 /*
                 * 总价
                 * */
-                $("#allPrice").html(sumprice+".00")
-			},
+                $("#allPrice").html(sumprice + ".00")
+            },
 
-			/*
-			* 减数量
-			* */
-			delCount:function(){
-			    var gnowprice=$(this).data("gnowprice");
+            /*
+            * 减数量
+            * */
+            delCount: function () {
+                var gnowprice = $(this).data("gnowprice");
 
-                var scid=$(this).data("scid");
-			    var ind=$(this).data("ind");
-			    var countval=$(".countVal:eq("+ind+")").val();
+                var scid = $(this).data("scid");
+                var ind = $(this).data("ind");
+                var countval = $(".countVal:eq(" + ind + ")").val();
 
-			    if(countval<=1){
-                    layui.use('layer', function(){
+                if (countval <= 1) {
+                    layui.use('layer', function () {
                         var layer = layui.layer;
-                        layer.msg("不能再减啦~",{time: 1500});
-				    });
+                        layer.msg("不能再减啦~", {time: 1500});
+                    });
                     return false;
-				}
+                }
 
-                countval-=1;
-                $(".countVal:eq("+ind+")").val(countval);
-                var sumprice=parseInt(gnowprice)*countval;
+                countval -= 1;
+                $(".countVal:eq(" + ind + ")").val(countval);
+                var sumprice = parseInt(gnowprice) * countval;
                 //console.log("countval:"+countval);
-               //console.log("sumprice:"+sumprice);
+                //console.log("sumprice:"+sumprice);
 
                 /*
                 * 发ajax请求
                 * */
-                var objectList=new Array();
+                var objectList = new Array();
                 objectList.push(countval);
                 objectList.push(scid);
                 objectList.push(sumprice);
 
                 $.ajax({
-					url:"shoppingCarController/delCount",
-					type:"post",
-					contentType:"application/json;charset=utf-8",
-					data:JSON.stringify(objectList)
-				}).done(function (data) {
-				    console.log(data);
-				    /*
-				    * 成功
-				    * */
-					app.renderData(data);
+                    url: "shoppingCarController/delCount",
+                    type: "post",
+                    contentType: "application/json;charset=utf-8",
+                    data: JSON.stringify(objectList)
+                }).done(function (data) {
+                    console.log(data);
+                    /*
+                    * 成功
+                    * */
+                    app.renderData(data);
                 })
 
-			},
+            },
             /*
 			* 加数量
 			* */
-            addCount:function(){
-                var gnowprice=$(this).data("gnowprice");
-                var scid=$(this).data("scid");
-                var ind=$(this).data("ind");
-                var countval=parseInt($(".countVal:eq("+ind+")").val());
-                countval+=1;
-                $(".countVal:eq("+ind+")").val(countval);
-                var sumprice=parseInt(gnowprice)*countval;
+            addCount: function () {
+                var gnowprice = $(this).data("gnowprice");
+                var scid = $(this).data("scid");
+                var ind = $(this).data("ind");
+                var countval = parseInt($(".countVal:eq(" + ind + ")").val());
+                countval += 1;
+                $(".countVal:eq(" + ind + ")").val(countval);
+                var sumprice = parseInt(gnowprice) * countval;
 
                 //console.log("countval:"+countval);
                 //console.log("sumprice:"+sumprice);
                 /*
 				 * 发ajax请求
 				 * */
-                var objectList=new Array();
+                var objectList = new Array();
                 objectList.push(countval);
                 objectList.push(scid);
                 objectList.push(sumprice);
 
                 $.ajax({
-                    url:"shoppingCarController/addCount",
-                    type:"post",
-                    contentType:"application/json;charset=utf-8",
-                    data:JSON.stringify(objectList)
+                    url: "shoppingCarController/addCount",
+                    type: "post",
+                    contentType: "application/json;charset=utf-8",
+                    data: JSON.stringify(objectList)
                 }).done(function (data) {
                     console.log(data);
                     /*
@@ -339,29 +367,29 @@
 
             },
 
-			/*
-			* 删除一个商品
-			* */
-			delOneGood:function(){
-			    var scid=$(this).data("scid");
-			    console.log(scid);
+            /*
+            * 删除一个商品
+            * */
+            delOneGood: function () {
+                var scid = $(this).data("scid");
+                console.log(scid);
 
-                layui.use('layer', function(){
+                layui.use('layer', function () {
                     var layer = layui.layer;
                     layer.confirm('确认要删除该商品吗?', {
-                        btn : [ '确定', '取消' ]//按钮
-                    }, function(index) {
+                        btn: ['确定', '取消']//按钮
+                    }, function (index) {
                         layer.close(index);
                         /*
                         * ajax删除
                         * */
-                        var objectList=new Array();
+                        var objectList = new Array();
                         objectList.push(scid);
                         $.ajax({
-                            url:"shoppingCarController/delete",
-                            type:"post",
-                            contentType:"application/json;charset=utf-8",
-                            data:JSON.stringify(objectList)
+                            url: "shoppingCarController/delete",
+                            type: "post",
+                            contentType: "application/json;charset=utf-8",
+                            data: JSON.stringify(objectList)
                         }).done(function (data) {
                             console.log(data);
                             /*
@@ -373,11 +401,11 @@
                     });
                 });
             },
-            init(){
+            init() {
                 app.selectAllCartsByMphone();
-                $(".part_options").on("click",".btnDelCount",app.delCount);
-                $(".part_options").on("click",".btnAddCount",app.addCount);
-                $(".part_options").on("click",".deleOne",app.delOneGood);
+                $(".part_options").on("click", ".btnDelCount", app.delCount);
+                $(".part_options").on("click", ".btnAddCount", app.addCount);
+                $(".part_options").on("click", ".deleOne", app.delOneGood);
             }
         };
         app.init();

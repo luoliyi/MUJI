@@ -48,7 +48,7 @@ public class Standard extends HashMap<String, Object> {
     }
 
     public static Standard ok(Object data) {
-        return new Standard().put("data",data);
+        return new Standard().put("data", data);
     }
 
     @Override

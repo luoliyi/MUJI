@@ -10,7 +10,7 @@ public class Evaluate {
 
     private int eid;
     private String cono;
-    private  int eminute;
+    private int eminute;
     private String edesc;
 
     public Evaluate() {

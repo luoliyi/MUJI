@@ -11,7 +11,7 @@ function Popup() {
 
 
     this.__popup = $('<div />')
-        /*使用 <dialog /> 元素可能导致 z-index 永远置顶的问题(chrome)*/
+    /*使用 <dialog /> 元素可能导致 z-index 永远置顶的问题(chrome)*/
         .css({
             display: 'none',
             position: 'absolute',
@@ -126,7 +126,7 @@ $.extend(Popup.prototype, {
      * 显示浮层
      * @param   {HTMLElement, Event}  指定位置（可选）
      */
-    show: function(anchor) {
+    show: function (anchor) {
 
         if (this.destroyed) {
             return this;
@@ -182,7 +182,7 @@ $.extend(Popup.prototype, {
 
                 backdrop
                     .css(backdropCss)
-                    .attr({ tabindex: '0' })
+                    .attr({tabindex: '0'})
                     .on('focus', $.proxy(this.focus, this));
 
                 // 锁定 tab 的焦点操作
@@ -220,14 +220,14 @@ $.extend(Popup.prototype, {
 
 
     /** 显示模态浮层。参数参见 show() */
-    showModal: function() {
+    showModal: function () {
         this.modal = true;
         return this.show.apply(this, arguments);
     },
 
 
     /** 关闭浮层 */
-    close: function(result) {
+    close: function (result) {
 
         if (!this.destroyed && this.open) {
 
@@ -247,7 +247,7 @@ $.extend(Popup.prototype, {
 
 
     /** 销毁浮层 */
-    remove: function() {
+    remove: function () {
 
         if (this.destroyed) {
             return this;
@@ -282,7 +282,7 @@ $.extend(Popup.prototype, {
 
 
     /** 重置位置 */
-    reset: function() {
+    reset: function () {
 
         var elem = this.follow;
 
@@ -299,7 +299,7 @@ $.extend(Popup.prototype, {
 
 
     /** 让浮层获取焦点 */
-    focus: function() {
+    focus: function () {
 
         var node = this.node;
         var popup = this.__popup;
@@ -337,7 +337,7 @@ $.extend(Popup.prototype, {
 
 
     /** 让浮层失去焦点。将焦点退还给之前的元素，照顾视力障碍用户 */
-    blur: function() {
+    blur: function () {
 
         var activeElement = this.__activeElement;
         var isBlur = arguments[0];
@@ -360,7 +360,7 @@ $.extend(Popup.prototype, {
      * @param   {String}    事件类型
      * @param   {Function}  监听函数
      */
-    addEventListener: function(type, callback) {
+    addEventListener: function (type, callback) {
         this.__getEventListener(type).push(callback);
         return this;
     },
@@ -371,7 +371,7 @@ $.extend(Popup.prototype, {
      * @param   {String}    事件类型
      * @param   {Function}  监听函数
      */
-    removeEventListener: function(type, callback) {
+    removeEventListener: function (type, callback) {
         var listeners = this.__getEventListener(type);
         for (var i = 0; i < listeners.length; i++) {
             if (callback === listeners[i]) {
@@ -383,7 +383,7 @@ $.extend(Popup.prototype, {
 
 
     // 获取事件缓存
-    __getEventListener: function(type) {
+    __getEventListener: function (type) {
         var listener = this.__listener;
         if (!listener) {
             listener = this.__listener = {};
@@ -396,7 +396,7 @@ $.extend(Popup.prototype, {
 
 
     // 派发事件
-    __dispatchEvent: function(type) {
+    __dispatchEvent: function (type) {
         var listeners = this.__getEventListener(type);
 
         if (this['on' + type]) {
@@ -410,7 +410,7 @@ $.extend(Popup.prototype, {
 
 
     // 对元素安全聚焦
-    __focus: function(elem) {
+    __focus: function (elem) {
         // 防止 iframe 跨域无权限报错
         // 防止 IE 不可见元素报错
         try {
@@ -418,23 +418,25 @@ $.extend(Popup.prototype, {
             if (this.autofocus && !/^iframe$/i.test(elem.nodeName)) {
                 elem.focus();
             }
-        } catch (e) {}
+        } catch (e) {
+        }
     },
 
 
     // 获取当前焦点的元素
-    __getActive: function() {
+    __getActive: function () {
         try { // try: ie8~9, iframe #26
             var activeElement = document.activeElement;
             var contentDocument = activeElement.contentDocument;
             var elem = contentDocument && contentDocument.activeElement || activeElement;
             return elem;
-        } catch (e) {}
+        } catch (e) {
+        }
     },
 
 
     // 居中浮层
-    __center: function() {
+    __center: function () {
 
         var popup = this.__popup;
         var $window = $(window);
@@ -457,7 +459,7 @@ $.extend(Popup.prototype, {
 
 
     // 指定位置 @param    {HTMLElement, Event}  anchor
-    __follow: function(anchor) {
+    __follow: function (anchor) {
 
         var $elem = anchor.parentNode && $(anchor);
         var popup = this.__popup;
@@ -507,8 +509,8 @@ $.extend(Popup.prototype, {
         var css = {};
         var align = this.align.split(' ');
         var className = this.className + '-';
-        var reverse = { top: 'bottom', bottom: 'top', left: 'right', right: 'left' };
-        var name = { top: 'top', bottom: 'top', left: 'left', right: 'left' };
+        var reverse = {top: 'bottom', bottom: 'top', left: 'right', right: 'left'};
+        var name = {top: 'top', bottom: 'top', left: 'left', right: 'left'};
 
 
         var temp = [{
@@ -537,7 +539,7 @@ $.extend(Popup.prototype, {
 
 
         // 超出可视区域重新适应位置
-        $.each(align, function(i, val) {
+        $.each(align, function (i, val) {
 
             // 超出右或下边界：使用左或者上边对齐
             if (temp[i][val] > range[name[val]][1]) {
@@ -579,7 +581,7 @@ $.extend(Popup.prototype, {
 
     // 获取元素相对于页面的位置（包括iframe内的元素）
     // 暂时不支持两层以上的 iframe 套嵌
-    __offset: function(anchor) {
+    __offset: function (anchor) {
 
         var isNode = anchor.parentNode;
         var offset = isNode ? $(anchor).offset() : {

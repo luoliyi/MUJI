@@ -43,14 +43,14 @@
                 c.mphone=#{mphone}
             </if>
             <if test="sctate!='' and sctate!=null">
-               and c.sctate=#{sctate}
+                and c.sctate=#{sctate}
             </if>
         </where>
     </select>
 
     <insert id="insert" parameterType="java.util.Map">
         insert into ShoppingCart(mphone,gid,sccount,sumprice,sctate)values(
-            #{mphone},#{gid},#{sccount},#{sumprice},#{sctate}
+        #{mphone},#{gid},#{sccount},#{sumprice},#{sctate}
         );
     </insert>
 
@@ -62,7 +62,7 @@
         删除，实际上是改变购物车状态
     -->
     <delete id="delete" parameterType="java.util.Map">
-        delete  from ShoppingCart where scid=#{scid} ;
+        delete from ShoppingCart where scid=#{scid} ;
     </delete>
 
 
@@ -85,7 +85,7 @@
     -->
     <insert id="inserIntoOrder" parameterType="java.util.Map">
         insert into Orders(mphone,gid,ocount,osumprice,cono) values(
-            #{mphone},#{gid},#{ocount},#{osumprice},#{cono}
+        #{mphone},#{gid},#{ocount},#{osumprice},#{cono}
         );
     </insert>
 

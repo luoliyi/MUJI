@@ -28,22 +28,22 @@ public class SalesController {
     @Autowired
     ISalesService salesService;
 
-    @RequestMapping(value = "/getAllSalesByMonth",method = RequestMethod.POST)
+    @RequestMapping(value = "/getAllSalesByMonth", method = RequestMethod.POST)
     @ResponseBody
-    public List<Sales> getAllSalesByMonth(@RequestBody List<Object>objects){
-        Map<String,Object>objectMap=new HashMap<>();
-        objectMap.put("yourMonth",objects.get(0).toString());
-        List<Sales> salesList=salesService.selectAllSalesVolume(objectMap);
-        for (int i=1;i<=12-salesList.size();i++) {
-            if(salesList.size()!=12){
+    public List<Sales> getAllSalesByMonth(@RequestBody List<Object> objects) {
+        Map<String, Object> objectMap = new HashMap<>();
+        objectMap.put("yourMonth", objects.get(0).toString());
+        List<Sales> salesList = salesService.selectAllSalesVolume(objectMap);
+        for (int i = 1; i <= 12 - salesList.size(); i++) {
+            if (salesList.size() != 12) {
                 salesList.add(new Sales(i, 0));
             }
         }
         //按月份正序排序
-        Collections.sort(salesList, new Comparator<Sales>(){
+        Collections.sort(salesList, new Comparator<Sales>() {
             @Override
             public int compare(Sales o1, Sales o2) {
-                if(o1.getSaleMonth()>o2.getSaleMonth()){
+                if (o1.getSaleMonth() > o2.getSaleMonth()) {
                     return 1;
                 }
                 return -1;
@@ -53,13 +53,13 @@ public class SalesController {
     }
 
     /*
-    * 查询每日清单情况
-    * */
-    @RequestMapping(value = "/selectOneDaySalesVolume",method = RequestMethod.POST)
+     * 查询每日清单情况
+     * */
+    @RequestMapping(value = "/selectOneDaySalesVolume", method = RequestMethod.POST)
     @ResponseBody
-    public List<DaySales>selectOneDaySalesVolume(@RequestBody List<Object>objects){
-        Map<String,Object>objectMap=new HashMap<>();
-        objectMap.put("myday",objects.get(0).toString());
+    public List<DaySales> selectOneDaySalesVolume(@RequestBody List<Object> objects) {
+        Map<String, Object> objectMap = new HashMap<>();
+        objectMap.put("myday", objects.get(0).toString());
         return salesService.selectOneDaySalesVolume(objectMap);
     }
 }

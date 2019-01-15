@@ -3,17 +3,17 @@ package com.nf.entities;
 import java.util.Date;
 
 public class Member {
-/*
-*     mid int primary key auto_increment,
-    mphone char(11) not null,
-    mpassword varchar(20) not null,
-    mname varchar(20),
-    Mbirthday date,
-    msex varchar(5) default'男',
-    mlocation varchar(256),
-    mpic Text,
-    mstate bit default 0
-* */
+    /*
+    *     mid int primary key auto_increment,
+        mphone char(11) not null,
+        mpassword varchar(20) not null,
+        mname varchar(20),
+        Mbirthday date,
+        msex varchar(5) default'男',
+        mlocation varchar(256),
+        mpic Text,
+        mstate bit default 0
+    * */
     private int mid;
     private String mphone;
     private String mpassword;

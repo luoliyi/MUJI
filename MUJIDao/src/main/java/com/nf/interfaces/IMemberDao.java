@@ -8,15 +8,15 @@ import java.util.List;
 import java.util.Map;
 
 public interface IMemberDao {
-    List<Member> selectAllMember(Map<String,Object> objectMap);
+    List<Member> selectAllMember(Map<String, Object> objectMap);
 
-    int insert(Map<String,Object> objectMap);
+    int insert(Map<String, Object> objectMap);
 
-    int update(Map<String,Object> MemberList);
+    int update(Map<String, Object> MemberList);
 
     int delete(@Param("mid") String mid);
 
-    Member selectOne(Map<String,Object> objectMap);
+    Member selectOne(Map<String, Object> objectMap);
 
-    int regsister(Map<String,Object>objectMap);
+    int regsister(Map<String, Object> objectMap);
 }

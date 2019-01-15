@@ -36,7 +36,7 @@ public class IPictureImpl implements IPictureService {
 
 
     @Override
-    public int delete(Map<String,Object> objectMap) {
+    public int delete(Map<String, Object> objectMap) {
         return pictureListDao.delete(objectMap);
     }
 

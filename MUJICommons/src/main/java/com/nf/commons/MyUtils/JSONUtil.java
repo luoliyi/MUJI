@@ -8,7 +8,7 @@ import java.text.SimpleDateFormat;
 public class JSONUtil {
     /**
      * 序列化成json
-     * */
+     */
     public static String toJson(Object obj) {
         // 对象映射器
         ObjectMapper mapper = new ObjectMapper();
@@ -27,14 +27,14 @@ public class JSONUtil {
 
     /**
      * 反序列化成对象
-     * */
-    public static <T> T toObject(String json,Class<T> valueType) {
+     */
+    public static <T> T toObject(String json, Class<T> valueType) {
         //对象映射器
-        ObjectMapper mapper=new ObjectMapper();
-        T result=null;
+        ObjectMapper mapper = new ObjectMapper();
+        T result = null;
         try {
-            result=mapper.readValue(json,valueType);
-        }catch (Exception e) {
+            result = mapper.readValue(json, valueType);
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return result;

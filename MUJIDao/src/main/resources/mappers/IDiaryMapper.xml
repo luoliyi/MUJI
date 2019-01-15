@@ -7,7 +7,7 @@
     </select>
 
     <delete id="delete" parameterType="java.util.Map">
-        delete  from Diary where dayid=#{dayid};
+        delete from Diary where dayid=#{dayid};
     </delete>
 
     <!--修改还原时间-->

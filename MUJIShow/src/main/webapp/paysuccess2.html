@@ -1,45 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1"/>
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
 
-    <link rel="stylesheet" href="suimobile/css/sm.min.css" />
-    <link rel="stylesheet" href="suimobile/css/sm-extend.min.css" />
-<style type="text/css">
-	*{margin:0}
-</style>
+    <link rel="stylesheet" href="suimobile/css/sm.min.css"/>
+    <link rel="stylesheet" href="suimobile/css/sm-extend.min.css"/>
+    <style type="text/css">
+        * {
+            margin: 0
+        }
+    </style>
 </head>
 <body style="background: white">
 
-	<!--  <header class="bar bar-nav" style="background: black;">
-	  <h1 class='title' style="color: white;">交易详情</h1>
-	</header>  -->
-	<div class="content">
-	 <!--  <div class="content-block-title">List block buttons</div> -->
-	  	<!--  放图片-->
-	  	<div>
-			<img id="payimg" style="position: relative;left: 80px" alt="" src="img/checktrue.jpg">
-		</div>
-		
-	  <div class="list-block" style="text-align: center;">
-	   <h2>支付成功</h2>
-	   <p>待商家确认收钱</p>
-	   <h1 style="font-size:60px">￥<span id="qian2" style="font-size:60px">2.00</span></h1>
-	  </div>	
+<!--  <header class="bar bar-nav" style="background: black;">
+  <h1 class='title' style="color: white;">交易详情</h1>
+</header>  -->
+<div class="content">
+    <!--  <div class="content-block-title">List block buttons</div> -->
+    <!--  放图片-->
+    <div>
+        <img id="payimg" style="position: relative;left: 80px" alt="" src="img/checktrue.jpg">
+    </div>
 
-	  
-	 <!--  <div class="content-block-title">请选择</div> -->
-	  <div class="content-block">
-	    <div class="row">
-	      <div class="col-50" style="width:100%;"><a style="background: green;" id="paysucc" class="button button-big button-fill button-danger">完成</a></div>
-	    </div>
-	  </div>
-	</div>	
-	
+    <div class="list-block" style="text-align: center;">
+        <h2>支付成功</h2>
+        <p>待商家确认收钱</p>
+        <h1 style="font-size:60px">￥<span id="qian2" style="font-size:60px">2.00</span></h1>
+    </div>
+
+
+    <!--  <div class="content-block-title">请选择</div> -->
+    <div class="content-block">
+        <div class="row">
+            <div class="col-50" style="width:100%;"><a style="background: green;" id="paysucc"
+                                                       class="button button-big button-fill button-danger">完成</a></div>
+        </div>
+    </div>
+</div>
+
 </body>
 
 <script type='text/javascript' src='suimobile/js/zepto.js' charset='utf-8'></script>
@@ -47,25 +50,25 @@
 <script type='text/javascript' src='suimobile/js/sm-extend.min.js' charset='utf-8'></script>
 <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
 <script type="text/javascript">
-$("#paysucc").click(function(){
-	window.close();
-});
-var spendmoney=null;
-$(function(){
-		//获得对象
-		 var url = location.search; //获取url中含"?"符后的字串
-		   var theRequest = new Object();
-		   if (url.indexOf("?") != -1) {
-		      var str = url.substr(1);
-		      strs = str.split("&");
-		      for(var i = 0; i < strs.length; i ++) {
-		         theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
-		      }
-		   }
-		   spendmoney=theRequest.fmoney.split('?')[0];
-		   console.log(spendmoney)
-		   $("#qian2").html(spendmoney)
+    $("#paysucc").click(function () {
+        window.close();
+    });
+    var spendmoney = null;
+    $(function () {
+        //获得对象
+        var url = location.search; //获取url中含"?"符后的字串
+        var theRequest = new Object();
+        if (url.indexOf("?") != -1) {
+            var str = url.substr(1);
+            strs = str.split("&");
+            for (var i = 0; i < strs.length; i++) {
+                theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+            }
+        }
+        spendmoney = theRequest.fmoney.split('?')[0];
+        console.log(spendmoney)
+        $("#qian2").html(spendmoney)
 
-	})
+    })
 </script>
 </html>

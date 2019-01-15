@@ -32,35 +32,35 @@ public class ICreateOrdersDaoTest {
     ISalesDao salesDao;
 
     @Test
-    public void selectAllOrderByMphoneAndStateAndLimit(){
-        Map<String,Object>objectMap=new HashMap<>();
-        objectMap.put("mphone","13926901506");
-        objectMap.put("ostate",0);
+    public void selectAllOrderByMphoneAndStateAndLimit() {
+        Map<String, Object> objectMap = new HashMap<>();
+        objectMap.put("mphone", "13926901506");
+        objectMap.put("ostate", 0);
         List<CreateOrders> createOrders = createOrdersDao.selectAllOrderByMphoneAndStateAndLimit(objectMap);
         System.out.println(createOrders);
     }
 
     @Test
-    public void selectAllSalesVolume(){
-        Map<String,Object>objectMap=new HashMap<>();
-        objectMap.put("yourMonth","2018");
-        List<Sales> salesList=salesDao.selectAllSalesVolume(objectMap);
-        for (int i=1;i<=12;i++) {
-            if(salesList.size()!=12){
+    public void selectAllSalesVolume() {
+        Map<String, Object> objectMap = new HashMap<>();
+        objectMap.put("yourMonth", "2018");
+        List<Sales> salesList = salesDao.selectAllSalesVolume(objectMap);
+        for (int i = 1; i <= 12; i++) {
+            if (salesList.size() != 12) {
                 salesList.add(new Sales(i, 0));
             }
         }
         /*排序*/
-        Collections.sort(salesList, new Comparator<Sales>(){
+        Collections.sort(salesList, new Comparator<Sales>() {
             @Override
             public int compare(Sales o1, Sales o2) {
-                if(o1.getSaleMonth()>o2.getSaleMonth()){
+                if (o1.getSaleMonth() > o2.getSaleMonth()) {
                     return 1;
                 }
                 return -1;
             }
         });
-        for (Sales sales:salesList){
+        for (Sales sales : salesList) {
             System.out.println(sales);
         }
     }

@@ -5,15 +5,15 @@
 </head>
 <body>
 <h4>chatting</h4>
-<br />
-<input id="text" type="text" />
+<br/>
+<input id="text" type="text"/>
 <button onclick="send()">发送消息</button>
      
-<hr />
+<hr/>
      
 <button onclick="closeWebSocket()">关闭WebSocket连接</button>
      
-<hr />
+<hr/>
      
 <div id="message"></div>
 </body>
@@ -39,7 +39,7 @@
     //接收到消息的回调方法
     websocket.onmessage = function (event) {
         console.log(event.data);
-        if(event.data=="1"){
+        if (event.data == "1") {
             console.log("数据更新啦");
         }
     };
@@ -51,6 +51,7 @@
     window.onbeforeunload = function () {
         closeWebSocket();
     };
+
     //关闭WebSocket连接
     function closeWebSocket() {
         websocket.close();

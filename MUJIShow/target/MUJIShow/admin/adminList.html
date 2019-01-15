@@ -6,8 +6,9 @@
     <title>欢迎页面-X-admin2.0</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <meta name="viewport"
+          content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi"/>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="./css/font.css">
     <link rel="stylesheet" href="./css/xadmin.css">
     <script type="text/javascript" src="js/jquery-1.11.3.js"></script>
@@ -20,33 +21,39 @@
     <![endif]-->
 
     <style>
-        .layui-input,#astate{
-            display: inline!important;
+        .layui-input, #astate {
+            display: inline !important;
             width: 18% !important;
-            height: 38px!important;
+            height: 38px !important;
         }
+
         #astate {
             position: relative;
             top: -2px;
         }
-        #tbody img{
+
+        #tbody img {
             width: 50px;
             height: 50px;
         }
-        #imgLoadDiv{
+
+        #imgLoadDiv {
             position: absolute;
             top: 18px;
             left: 450px;
 
         }
-        #dialogdiv .layui-input{
-            width: 190px!important;
+
+        #dialogdiv .layui-input {
+            width: 190px !important;
         }
-        #dialogdiv button{
+
+        #dialogdiv button {
             cursor: pointer;
         }
-        .layui-table td, .layui-table th{
-            padding: 15px 15px!important;
+
+        .layui-table td, .layui-table th {
+            padding: 15px 15px !important;
         }
     </style>
 </head>
@@ -59,26 +66,30 @@
         <a>
           <cite>管理员列表</cite></a>
       </span>
-    <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" href="javascript:location.replace(location.href);" title="刷新">
+    <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right"
+       href="javascript:location.replace(location.href);" title="刷新">
         <i class="layui-icon" style="line-height:30px">ဂ</i></a>
 </div>
 <div class="x-body">
     <div class="layui-row">
         <input class="layui-input" placeholder="姓名(模糊查询)" name="start" id="aname">
         <input class="layui-input" placeholder="电话号码" name="end" id="aphone">
-        <select id="adept" name="shipping" class="valid" style="width: 200px!important;margin-bottom: 3px!important;height: 38px!important;">
+        <select id="adept" name="shipping" class="valid"
+                style="width: 200px!important;margin-bottom: 3px!important;height: 38px!important;">
             <option value="">--角色--</option>
             <option value="系统管理员">系统管理员</option>
             <option value="普通管理员">普通管理员</option>
             <option value="宣传人员">宣传人员</option>
         </select>
-        <select id="astate" name="shipping" class="valid" style="width: 200px!important;margin-bottom: 3px!important;height: 38px!important;">
+        <select id="astate" name="shipping" class="valid"
+                style="width: 200px!important;margin-bottom: 3px!important;height: 38px!important;">
             <option value="">--状态--</option>
             <option value="0">启用</option>
             <option value="1">停用</option>
         </select>
 
-        <button id="btnMohuFind" style="margin-bottom: 7px" class="layui-btn"  lay-submit="" lay-filter="sreach"><i class="layui-icon">&#xe615;</i></button>
+        <button id="btnMohuFind" style="margin-bottom: 7px" class="layui-btn" lay-submit="" lay-filter="sreach"><i
+                class="layui-icon">&#xe615;</i></button>
     </div>
     <xblock>
         <button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button>
@@ -89,7 +100,8 @@
         <thead>
         <tr>
             <th>
-                <div class="layui-unselect header layui-form-checkbox" lay-skin="primary"><i class="layui-icon">&#xe605;</i></div>
+                <div class="layui-unselect header layui-form-checkbox" lay-skin="primary"><i
+                        class="layui-icon">&#xe605;</i></div>
             </th>
             <th>登录名</th>
             <th>手机</th>
@@ -103,7 +115,8 @@
         <tbody id="tbody">
         <tr>
             <td>
-                <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='2'><i class="layui-icon">&#xe605;</i></div>
+                <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='2'><i class="layui-icon">&#xe605;</i>
+                </div>
             </td>
             <td>1</td>
             <td>admin</td>
@@ -115,10 +128,10 @@
                 <span class="layui-btn layui-btn-normal layui-btn-mini">已启用</span>
             </td>
             <td class="td-manage">
-                <a onclick="member_stop(this,'10001')" href="javascript:;"  title="启用">
+                <a onclick="member_stop(this,'10001')" href="javascript:;" title="启用">
                     <i class="layui-icon">&#xe601;</i>
                 </a>
-                <a title="编辑"  onclick="x_admin_show('编辑','admin-edit.html')" href="javascript:;">
+                <a title="编辑" onclick="x_admin_show('编辑','admin-edit.html')" href="javascript:;">
                     <i class="layui-icon">&#xe642;</i>
                 </a>
                 <a title="删除" onclick="member_del(this,'要删除的id')" href="javascript:;">
@@ -136,20 +149,20 @@
 <script>
 
     //app封装的增删改查
-    var app={
-        firstRequest(){
-            var mohuListLimit=new Array();
+    var app = {
+        firstRequest() {
+            var mohuListLimit = new Array();
             mohuListLimit.push($("#astate").val());
             mohuListLimit.push($("#adept").val());
             mohuListLimit.push($("#aname").val());
             mohuListLimit.push($("#aphone").val());
             $.ajax({
-                url:"administratorController/selectAllAdministratorCount",
-                type:"POST",
-                contentType:"application/json;charset=utf-8",
-                data:JSON.stringify(mohuListLimit),
-                success:function(sum) {
-                    console.log("sum:"+sum);
+                url: "administratorController/selectAllAdministratorCount",
+                type: "POST",
+                contentType: "application/json;charset=utf-8",
+                data: JSON.stringify(mohuListLimit),
+                success: function (sum) {
+                    console.log("sum:" + sum);
                     $("#allAdminCount").html(sum);
                     //分页
                     layui.use(['laypage', 'layer'], function () {
@@ -195,7 +208,7 @@
         /*
         * 渲染数据
         * */
-        ,showData(data) {
+        , showData(data) {
             console.log(data);
             $("#tbody tr").remove();
             $.each(data, function (index, obj) {
@@ -224,7 +237,7 @@
                 $("#tbody").append(tr);
             })
         }
-        ,init(){
+        , init() {
             app.firstRequest();
             $("#btnMohuFind").click(app.firstRequest);
         }
@@ -232,7 +245,7 @@
     app.init();
 
 
-    layui.use('laydate', function(){
+    layui.use('laydate', function () {
         var laydate = layui.laydate;
 
         //执行一个laydate实例
@@ -247,50 +260,51 @@
     });
 
     /*用户-停用*/
-    function member_stop(obj,id){
-        layer.confirm('确认要停用吗？',function(index){
+    function member_stop(obj, id) {
+        layer.confirm('确认要停用吗？', function (index) {
 
-            if($(obj).attr('title')=='启用'){
+            if ($(obj).attr('title') == '启用') {
 
                 //发异步把用户状态进行更改
-                $(obj).attr('title','停用');
+                $(obj).attr('title', '停用');
                 $(obj).find('i').html('&#xe62f;');
 
                 $(obj).parents("tr").find(".td-status").find('span').addClass('layui-btn-disabled').html('已停用');
-                layer.msg('已停用!',{icon: 5,time:1000});
+                layer.msg('已停用!', {icon: 5, time: 1000});
 
-            }else{
-                $(obj).attr('title','启用');
+            } else {
+                $(obj).attr('title', '启用');
                 $(obj).find('i').html('&#xe601;');
 
                 $(obj).parents("tr").find(".td-status").find('span').removeClass('layui-btn-disabled').html('已启用');
-                layer.msg('已启用!',{icon: 5,time:1000});
+                layer.msg('已启用!', {icon: 5, time: 1000});
             }
 
         });
     }
 
     /*用户-删除*/
-    function member_del(obj,id){
-        layer.confirm('确认要删除吗？',function(index){
+    function member_del(obj, id) {
+        layer.confirm('确认要删除吗？', function (index) {
             //发异步删除数据
             $(obj).parents("tr").remove();
-            layer.msg('已删除!',{icon:1,time:1000});
+            layer.msg('已删除!', {icon: 1, time: 1000});
         });
     }
 
-    function delAll (argument) {
+    function delAll(argument) {
 
         var data = tableCheck.getData();
 
-        layer.confirm('确认要删除吗？'+data,function(index){
+        layer.confirm('确认要删除吗？' + data, function (index) {
             //捉到所有被选中的，发异步进行删除
             layer.msg('删除成功', {icon: 1});
             $(".layui-form-checked").not('.header').parents('tr').remove();
         });
     }
 </script>
-<script>var _hmt = _hmt || []; (function() {
+<script>var _hmt = _hmt || [];
+(function () {
     var hm = document.createElement("script");
     hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
     var s = document.getElementsByTagName("script")[0];

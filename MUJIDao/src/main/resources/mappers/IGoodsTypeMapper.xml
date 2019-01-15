@@ -19,11 +19,11 @@
     -->
     <select id="selectAllGoodsTypeDetailsByTid" resultMap="GoodsTypeDetailsMap" parameterType="java.util.Map">
         select * from goodstype as t join GoodsTypeDetails as d on t.tid=d.tid
-          <where>
-              <if test="tid!='' and tid!=null">
-                  t.tid=#{tid};
-              </if>
-          </where>
+        <where>
+            <if test="tid!='' and tid!=null">
+                t.tid=#{tid};
+            </if>
+        </where>
     </select>
 
 </mapper>

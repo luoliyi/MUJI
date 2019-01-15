@@ -141,7 +141,7 @@
     white-space: nowrap;
 }
 
-.ui-dialog-footer button+button {
+.ui-dialog-footer button + button {
     margin-bottom: 0;
     margin-left: 5px;
 }
@@ -438,11 +438,11 @@
 }
 
 .ui-dialog-loading {
-    width: 100%\9;
-    text-indent: 0\9;
-    line-height: 32px\9;
-    text-align: center\9;
-    font-size: 12px\9;
+    width: 100% \9;
+    text-indent: 0 \9;
+    line-height: 32px \9;
+    text-align: center \9;
+    font-size: 12px \9;
 }
 
 .ui-dialog-loading::after {
@@ -457,5 +457,5 @@
     -webkit-animation: ui-dialog-loading 1.5s infinite linear;
     transform: rotate(360deg);
     animation: ui-dialog-loading 1.5s infinite linear;
-    display: none\9;
+    display: none \9;
 }

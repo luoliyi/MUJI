@@ -35,8 +35,8 @@ public class Goods {
     private GoodsType goodsType;
 
     /*
-    * 多张图片
-    * */
+     * 多张图片
+     * */
     private List<PictureList> pictureLists;
 
     public List<PictureList> getPictureLists() {

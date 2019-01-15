@@ -17,17 +17,17 @@ var types = {
 };
 
 
-var getEvent = isTouch ? function(event) {
+var getEvent = isTouch ? function (event) {
     if (!event.touches) {
         event = event.originalEvent.touches.item(0);
     }
     return event;
-} : function(event) {
+} : function (event) {
     return event;
 };
 
 
-var DragEvent = function() {
+var DragEvent = function () {
     this.start = $.proxy(this.start, this);
     this.over = $.proxy(this.over, this);
     this.end = $.proxy(this.end, this);
@@ -38,7 +38,7 @@ DragEvent.types = types;
 
 DragEvent.prototype = {
 
-    start: function(event) {
+    start: function (event) {
         event = this.startFix(event);
 
         $document
@@ -49,13 +49,13 @@ DragEvent.prototype = {
         return false;
     },
 
-    over: function(event) {
+    over: function (event) {
         event = this.overFix(event);
         this.onover(event);
         return false;
     },
 
-    end: function(event) {
+    end: function (event) {
         event = this.endFix(event);
 
         $document
@@ -66,11 +66,11 @@ DragEvent.prototype = {
         return false;
     },
 
-    startFix: function(event) {
+    startFix: function (event) {
         event = getEvent(event);
 
         this.target = $(event.target);
-        this.selectstart = function() {
+        this.selectstart = function () {
             return false;
         };
 
@@ -91,12 +91,12 @@ DragEvent.prototype = {
         return event;
     },
 
-    overFix: function(event) {
+    overFix: function (event) {
         event = getEvent(event);
         return event;
     },
 
-    endFix: function(event) {
+    endFix: function (event) {
         event = getEvent(event);
 
         $document
@@ -124,11 +124,12 @@ DragEvent.prototype = {
  * @param   {HTMLElement}   被拖拽的元素
  * @param   {Event} 触发拖拽的事件对象。可选，若无则监听 elem 的按下事件启动
  */
-DragEvent.create = function(elem, event) {
+DragEvent.create = function (elem, event) {
     var $elem = $(elem);
     var dragEvent = new DragEvent();
     var startType = DragEvent.types.start;
-    var noop = function() {};
+    var noop = function () {
+    };
     var className = elem.className
         .replace(/^\s|\s.*/g, '') + '-drag-start';
 
@@ -141,13 +142,13 @@ DragEvent.create = function(elem, event) {
         onstart: noop,
         onover: noop,
         onend: noop,
-        off: function() {
+        off: function () {
             $elem.off(startType, dragEvent.start);
         }
     };
 
 
-    dragEvent.onstart = function(event) {
+    dragEvent.onstart = function (event) {
         var isFixed = $elem.css('position') === 'fixed';
         var dl = $document.scrollLeft();
         var dt = $document.scrollTop();
@@ -171,7 +172,7 @@ DragEvent.create = function(elem, event) {
     };
 
 
-    dragEvent.onover = function(event) {
+    dragEvent.onover = function (event) {
         var left = event.clientX - this.clientX + this.startLeft;
         var top = event.clientY - this.clientY + this.startTop;
         var style = $elem[0].style;
@@ -186,7 +187,7 @@ DragEvent.create = function(elem, event) {
     };
 
 
-    dragEvent.onend = function(event) {
+    dragEvent.onend = function (event) {
         var position = $elem.position();
         var left = position.left;
         var top = position.top;
@@ -195,7 +196,7 @@ DragEvent.create = function(elem, event) {
     };
 
 
-    dragEvent.off = function() {
+    dragEvent.off = function () {
         $elem.off(startType, dragEvent.start);
     };
 

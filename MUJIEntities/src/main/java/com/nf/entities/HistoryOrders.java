@@ -17,7 +17,7 @@ public class HistoryOrders {
     private int ocount;
     private double osumprice;
     private String cono;
-    private  int ostate;
+    private int ostate;
 
     @Override
     public String toString() {

@@ -10,7 +10,7 @@ public class Gplace {
     * */
     private int gplaceid;
     private String gplacelocation;
-    private  String gplacephone;
+    private String gplacephone;
 
     public Gplace(int gplaceid, String gplacelocation, String gplacephone) {
         this.gplaceid = gplaceid;

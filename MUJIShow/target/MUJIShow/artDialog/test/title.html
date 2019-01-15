@@ -9,7 +9,7 @@
         body {
             height: 100%;
         }
-        
+
         #fixed {
             position: fixed;
             bottom: 0;
@@ -19,21 +19,21 @@
 </head>
 
 <body>
-    <button id="test">title('hello world')</button>
-    <script src="../lib/jquery-1.10.2.js"></script>
-    <script src="../dist/dialog.js"></script>
+<button id="test">title('hello world')</button>
+<script src="../lib/jquery-1.10.2.js"></script>
+<script src="../dist/dialog.js"></script>
 
-    <script>
-        var d = dialog({
-            title: 'loading..'
-        });
+<script>
+    var d = dialog({
+        title: 'loading..'
+    });
 
-        d.show();
+    d.show();
 
-        $('#test').on('click', function() {
-            d.title('hello world');
-        });
-    </script>
+    $('#test').on('click', function () {
+        d.title('hello world');
+    });
+</script>
 </body>
 
 </html>

@@ -8,6 +8,6 @@ import java.util.Map;
 
 public interface IGoodsTypeDetailsDao {
 
-  List<GoodsTypeDetails> selectAllGoodsTypeDetailsByGtdid(Map<String, Object> objectMap);
+    List<GoodsTypeDetails> selectAllGoodsTypeDetailsByGtdid(Map<String, Object> objectMap);
 
 }

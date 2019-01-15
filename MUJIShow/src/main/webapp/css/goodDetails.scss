@@ -1,136 +1,141 @@
 * {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+}
 
 ul {
-  list-style: none; }
+  list-style: none;
+}
 
 a {
   text-decoration: none;
-  color: #666; }
+  color: #666;
+}
 
 html, body {
   width: 100%;
-  height: 100%; }
- 
-div{
+  height: 100%;
+}
+
+div {
 
 }
-#maxdiv,#maxdivcontainer{
+
+#maxdiv, #maxdivcontainer {
   max-width: 1024px;
   height: 550px;
   margin: 0 auto;
-  position: relative; 
-  #maxdivcontainer{
+  position: relative;
+  #maxdivcontainer {
 
-      //超出部分滚动条
-      overflow: auto;
-      #test1{
-          width: 414px !important;
-          height: 414px!important;
-          margin: 0px 28% !important;
+    //超出部分滚动条
+    overflow: auto;
+    #test1 {
+      width: 414px !important;
+      height: 414px !important;
+      margin: 0px 28% !important;
     }
-    .commodity-meta-wrap{
-        padding-top: 24px;
-        padding-bottom: 18px;
-        padding-left: 15px;
-        padding-right: 15px;
-        text-align: center;
-          .title{
-             margin-top: 9px;
-             font-size: 13px;
-            color: #030303;
-            line-height: 18px;
-            letter-spacing: -.15px;
-         }
-         .MuPriceTag{
-              margin-top: 2px;
-            font-size: 15px;
-            line-height: 21px;
-            color: #000;
-            letter-spacing: -.17px;
-            font-weight: 900;
-            .muted{
-                display: inline-block;
-                margin-left: 8px;
-                color: #999;
-                text-decoration: line-through;
-            }
-         }
-    }
-    .section-brief{
-        padding: 15px 18px;
-        background: #f2f2f2;
-    }
-    .section-normal{
-        padding: 9px 15px;
-        a{
-            padding-top: 11px;
-             padding-bottom: 11px;
-            padding-right: 16px;
-            background-color: rgba(0,0,0,0);
-
-            background-size: 16px 16px;
-            background-repeat: no-repeat;
-            background-position: 100%;
-            font-size: 16px;
-            line-height: 16px;
-            color: #000;
+    .commodity-meta-wrap {
+      padding-top: 24px;
+      padding-bottom: 18px;
+      padding-left: 15px;
+      padding-right: 15px;
+      text-align: center;
+      .title {
+        margin-top: 9px;
+        font-size: 13px;
+        color: #030303;
+        line-height: 18px;
+        letter-spacing: -.15px;
+      }
+      .MuPriceTag {
+        margin-top: 2px;
+        font-size: 15px;
+        line-height: 21px;
+        color: #000;
+        letter-spacing: -.17px;
+        font-weight: 900;
+        .muted {
+          display: inline-block;
+          margin-left: 8px;
+          color: #999;
+          text-decoration: line-through;
         }
+      }
     }
-    .section-description{
-            border-top: 5px solid #f2f2f2;
-            padding: 9px 15px;
-            .specs{
-                margin-top: 20px;
-                margin-bottom: 20px;
-                overflow: auto;
-                table{
-                    margin-left: auto;
-                    margin-right: auto;
-                    border-collapse: collapse;
-                    th,td{
-                        padding: .6em .4em;
-                        border: 1px solid #bcbbc1;
-                        text-align: center;
-                        white-space: nowrap;
-                    }
-                    th{
-                        background: #f2f2f2;
-                    }
-                }
-            }
+    .section-brief {
+      padding: 15px 18px;
+      background: #f2f2f2;
+    }
+    .section-normal {
+      padding: 9px 15px;
+      a {
+        padding-top: 11px;
+        padding-bottom: 11px;
+        padding-right: 16px;
+        background-color: rgba(0, 0, 0, 0);
+
+        background-size: 16px 16px;
+        background-repeat: no-repeat;
+        background-position: 100%;
+        font-size: 16px;
+        line-height: 16px;
+        color: #000;
+      }
+    }
+    .section-description {
+      border-top: 5px solid #f2f2f2;
+      padding: 9px 15px;
+      .specs {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        overflow: auto;
+        table {
+          margin-left: auto;
+          margin-right: auto;
+          border-collapse: collapse;
+          th, td {
+            padding: .6em .4em;
+            border: 1px solid #bcbbc1;
+            text-align: center;
+            white-space: nowrap;
+          }
+          th {
+            background: #f2f2f2;
+          }
+        }
+      }
     }
   }
 }
 
-#footbar-wrap{
+#footbar-wrap {
+  width: 100%;
+  height: 75px;
+  position: relative;
+  .PageCommodityDetailPartActions {
     width: 100%;
-    height: 75px;
-    position: relative;
-    .PageCommodityDetailPartActions{
-        width: 100%;
-        height: 100%;
+    height: 100%;
+    position: absolute;
+    padding: 15px;
+    .part-actions-wrap {
+      p {
         position: absolute;
-        padding: 15px;
-        .part-actions-wrap{
-            p{
-                position: absolute;
-                top: 45px;
-            }
-            .mu-button{
-                width: 44%;
-                margin-left: 10px;
-                min-height: 44px;
-                border: 0 solid rgba(0,0,0,0);
-                background: #7f0019;
-                font-size: 16px;
-                color: #fff;
-                font-weight: 700;
-                line-height: 22px;
-                border-radius: 22px;
-                cursor: pointer;
-            }
-        }
+        top: 45px;
+      }
+      .mu-button {
+        width: 44%;
+        margin-left: 10px;
+        min-height: 44px;
+        border: 0 solid rgba(0, 0, 0, 0);
+        background: #7f0019;
+        font-size: 16px;
+        color: #fff;
+        font-weight: 700;
+        line-height: 22px;
+        border-radius: 22px;
+        cursor: pointer;
+      }
     }
+  }
 }

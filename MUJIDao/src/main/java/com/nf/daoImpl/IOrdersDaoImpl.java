@@ -8,17 +8,17 @@ import java.sql.ResultSet;
 
 public class IOrdersDaoImpl {
 
-    public int allOrdersCountMonitor(){
-        int r=0;
-        ResultSet resultSet= DBUtil.executeQuery("select count(*) from createorders");
+    public int allOrdersCountMonitor() {
+        int r = 0;
+        ResultSet resultSet = DBUtil.executeQuery("select count(*) from createorders");
         try {
-            if (resultSet.next()){
-                r=resultSet.getInt(1);
+            if (resultSet.next()) {
+                r = resultSet.getInt(1);
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         DBUtil.close();
-        return  r;
+        return r;
     }
 }

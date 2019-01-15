@@ -24,7 +24,7 @@ import java.util.Map;
 public class MD5Test {
 
     @Test
-    public void testMD5(){
+    public void testMD5() {
         try {
             System.out.println(MD5Util.EncoderByMd5(".asamu.654"));
         } catch (NoSuchAlgorithmException e) {

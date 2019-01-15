@@ -9,7 +9,7 @@ import java.util.Map;
 
 public interface IGoodsTypeDao {
 
-  List<GoodsType> selectAllGoodsTypeDetailsByTid(Map<String,Object>objectMap);
+    List<GoodsType> selectAllGoodsTypeDetailsByTid(Map<String, Object> objectMap);
 
 
 }

@@ -10,11 +10,11 @@ body {
     padding: 30px;
 }
 
-body>*:first-child {
+body > *:first-child {
     margin-top: 0 !important;
 }
 
-body>*:last-child {
+body > *:last-child {
     margin-bottom: 0 !important;
 }
 
@@ -128,25 +128,25 @@ hr {
     padding: 0;
 }
 
-body>h2:first-child {
+body > h2:first-child {
     margin-top: 0;
     padding-top: 0;
 }
 
-body>h1:first-child {
+body > h1:first-child {
     margin-top: 0;
     padding-top: 0;
 }
 
-body>h1:first-child+h2 {
+body > h1:first-child + h2 {
     margin-top: 0;
     padding-top: 0;
 }
 
-body>h3:first-child,
-body>h4:first-child,
-body>h5:first-child,
-body>h6:first-child {
+body > h3:first-child,
+body > h4:first-child,
+body > h5:first-child,
+body > h6:first-child {
     margin-top: 0;
     padding-top: 0;
 }
@@ -211,11 +211,11 @@ blockquote {
     color: #777777;
 }
 
-blockquote> :first-child {
+blockquote > :first-child {
     margin-top: 0;
 }
 
-blockquote> :last-child {
+blockquote > :last-child {
     margin-bottom: 0;
 }
 
@@ -311,7 +311,6 @@ pre tt {
     }
 }
 
-
 /*-------------------------------*/
 
 .doc-line {
@@ -333,7 +332,6 @@ h5 span[id],
 h6 span[id] {
     cursor: pointer;
 }
-
 
 /*避免对话框样式被工具生成的全局样式污染*/
 

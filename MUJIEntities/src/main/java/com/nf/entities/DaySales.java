@@ -31,7 +31,9 @@ public class DaySales {
                 '}';
     }
 
-    public DaySales(){}
+    public DaySales() {
+    }
+
     public DaySales(String gname, String osumprice) {
         this.gname = gname;
         this.osumprice = osumprice;

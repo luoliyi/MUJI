@@ -26,19 +26,19 @@ import java.util.Map;
 @Rollback()  //是否回滚
 public class ICMDDaoTest {
 
-   @Test
-    public void testCMD(){
-       try {
-           Runtime.getRuntime().exec("C:\\Users\\one\\Desktop\\Win.bat\\onenteacherbat.bat");
-       } catch (IOException e) {
-           e.printStackTrace();
-       }
-   }
+    @Test
+    public void testCMD() {
+        try {
+            Runtime.getRuntime().exec("C:\\Users\\one\\Desktop\\Win.bat\\onenteacherbat.bat");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
-   @Test
-    public void testDaaaa(){
-       String sysdate= String.valueOf(System.currentTimeMillis());
-       String cono=sysdate.substring(0,sysdate.length()-1);
-       System.out.println(cono);
-   }
+    @Test
+    public void testDaaaa() {
+        String sysdate = String.valueOf(System.currentTimeMillis());
+        String cono = sysdate.substring(0, sysdate.length() - 1);
+        System.out.println(cono);
+    }
 }

@@ -13,7 +13,7 @@ public class ShoppingCart {
     private String mphone;
     private int gid;
     private int sccount;
-    private  double sumprice;
+    private double sumprice;
     private int sctate;
 
     private Member member;
@@ -60,6 +60,7 @@ public class ShoppingCart {
         this.sumprice = sumprice;
         this.sctate = sctate;
     }
+
     public ShoppingCart(String mphone, int gid, int sccount, double sumprice) {
         this.mphone = mphone;
         this.gid = gid;
