@@ -244,7 +244,7 @@ html, body {
             display: inline-block;
             float: left;
             width: 15%;
-            height: 210px;
+            height: 235px;
             text-align: center;
             font-family: "微软雅黑";
             font-size: 15px;
@@ -308,6 +308,7 @@ html, body {
         #center #center_container #center_container_details .PageHomePartNewArrivals #newItem .newItemWrapper {
           width: 100%;
           overflow: hidden;
+          text-indent: 7px;
           max-width: 1024px;
           margin: 0 auto; }
           #center #center_container #center_container_details .PageHomePartNewArrivals #newItem .newItemWrapper .newItemUl {
@@ -498,6 +499,14 @@ html, body {
  		margin-top: 0px;
  	}
  }
-
+@media only screen and (min-width: 510px) and (max-width: 840px){
+  #center #center_container #center_container_details .PageHomePartNewArrivals .MuSectionWrapper #MuSectionWrapper_details div{
+    width: 23%;
+    height: 260px;
+  }
+  #center #center_container #center_container_details .PageHomePartNewArrivals .MuSectionWrapper #MuSectionWrapper_details div img{
+    height: 165px;
+  }
+}
 
 /*# sourceMappingURL=main.css.map */

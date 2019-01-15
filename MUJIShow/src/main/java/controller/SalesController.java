@@ -34,7 +34,7 @@ public class SalesController {
         Map<String,Object>objectMap=new HashMap<>();
         objectMap.put("yourMonth",objects.get(0).toString());
         List<Sales> salesList=salesService.selectAllSalesVolume(objectMap);
-        for (int i=1;i<=12;i++) {
+        for (int i=1;i<=12-salesList.size();i++) {
             if(salesList.size()!=12){
                 salesList.add(new Sales(i, 0));
             }

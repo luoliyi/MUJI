@@ -42,4 +42,9 @@ public class IMemberImpl implements IMemberService {
     public Member selectOne(Map<String, Object> objectMap) {
         return memberDao.selectOne(objectMap);
     }
+
+    @Override
+    public int regsister(Map<String, Object> objectMap) {
+        return memberDao.regsister(objectMap);
+    }
 }

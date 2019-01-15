@@ -1,6 +1,9 @@
 package controller;
 
+import com.nf.Readme;
+import com.nf.commons.MyUtils.Logging;
 import com.nf.commons.MyUtils.Standard;
+import com.nf.entities.Administrator;
 import com.nf.entities.Goods;
 import com.nf.service.IGoodsService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,14 +26,22 @@ import java.util.*;
 @RequestMapping(value = "admin/goodsController")
 public class GoodsController {
 
+
+    Logging logging=new Logging();
+
     @Autowired
     IGoodsService goodsService;
 
     @ResponseBody
     @RequestMapping(value = "/selectAllGoodsCount",method = RequestMethod.POST)
-    public int selectAllGoodsCount(@RequestBody List<Object> mohuListLimit){
+    @Readme("查询所有商品总数的方法")
+    public int selectAllGoodsCount(@RequestBody List<Object> mohuListLimit,HttpServletRequest request){
+        Administrator administrator= (Administrator) request.getSession().getAttribute("administrator");
+        long start = System.currentTimeMillis();
+        logging.setInfo("管理员："+administrator.getAname()+"，开始执行：selectAllGoodsCount（查询所有商品总数的方法）");
+
         String startprice= "0.0";
-        String endprice="99999999.0";
+        String endprice="9999999.0";
 
         System.out.println("mohuListLimit:"+mohuListLimit);
 
@@ -55,13 +66,15 @@ public class GoodsController {
         objectMap.put("pagesize",9999999);
         objectMap.put("gstate",mohuListLimit.get(5).toString());
 
+        Long span = System.currentTimeMillis() - start;
+        logging.setInfo("管理员："+administrator.getAname()+"，结束执行：selectAllGoodsCount（查询所有商品的方法）,共耗时："+span+"毫秒");
        return goodsService.selectAllGoods(objectMap).size();
     }
 
 
     @ResponseBody
     @RequestMapping(value = "/selectAllGoods",method = RequestMethod.POST)
-    public List<Goods> selectAllGoods(@RequestBody List<Object> objlist){
+    public List<Goods> selectAllGoods(@RequestBody List<Object> objlist,HttpServletRequest request){
 
         String startprice= "0.0";
         String endprice="99999999.0";
@@ -99,8 +112,13 @@ public class GoodsController {
 
     @ResponseBody
     @RequestMapping(value = "/insert",method = RequestMethod.POST)
-    public String insert(@RequestBody List<Object> list){
-       // Set<String> rnm = new HashSet<String>();
+    public String insert(@RequestBody List<Object> list,HttpServletRequest request){
+
+        Administrator administrator= (Administrator) request.getSession().getAttribute("administrator");
+        long start = System.currentTimeMillis();
+        logging.setInfo("管理员："+administrator.getAname()+"，开始执行：insert（新增一条商品的方法）");
+
+        // Set<String> rnm = new HashSet<String>();
       //  int n = 15;
        // for (int i = 0; i < n; i++) {
         /*随机生成商品编号*/
@@ -122,6 +140,9 @@ public class GoodsController {
         objectMap.put("gdesc",list.get(6).toString());
         objectMap.put("gpic",list.get(7).toString());
         objectMap.put("gstate",list.get(8).toString());
+
+        Long span = System.currentTimeMillis() - start;
+        logging.setInfo("管理员："+administrator.getAname()+"，结束执行：insert（新增一条商品的方法）,共耗时："+span+"毫秒");
         if(goodsService.insert(objectMap)>1){
             return "success";
         }
@@ -155,7 +176,9 @@ public class GoodsController {
 
     @ResponseBody
     @RequestMapping(value = "/delete",method = RequestMethod.POST)
-    public String delete(@RequestBody String goodno ){
+    @Readme("删除方法")
+    public String delete(@RequestBody String goodno,HttpServletRequest request ){
+        Administrator administrator= (Administrator) request.getSession().getAttribute("administrator");
 
         System.out.println("goodno:"+goodno);
 

@@ -69,4 +69,32 @@
     <!--6 容器自动扫描IOC组件  -->
     <context:component-scan base-package="com.nf.interfaces,com.nf.dao.test"></context:component-scan>
 
+    <!--7 aop记录日常日志-->
+    <!--被代理的目标对象用扫描 -->
+    <context:component-scan base-package="com.nf.dao"></context:component-scan>
+    <!-- 通知 -->
+    <bean id="advices" class="com.nf.commons.SpringAop.Advices"></bean>
+    <!-- AOP配置 -->
+    <!-- proxy-target-class属性表示被代理的类是否为一个没有实现接口的类，Spring会依据实现了接口则使用JDK内置的动态代理，如果未实现接口则使用cglib -->
+    <aop:config proxy-target-class="true">
+        <!-- 切面配置 -->
+        <!--ref表示通知对象的引用 -->
+        <aop:aspect ref="advices">
+            <!-- 配置切入点(横切逻辑将注入的精确位置) -->
+            <aop:pointcut expression="execution(public * com.nf.interfaces..*(..))" id="pointcut1"/>
+            <!--指明多个切入点······· -->
+            <aop:pointcut id="" expression=""></aop:pointcut>
+            <aop:pointcut id="" expression=""></aop:pointcut>
+            <aop:pointcut id="" expression=""></aop:pointcut>
+
+            <!--声明通知，method指定通知类型，pointcut指定切点，就是该通知应该注入那些方法中 -->
+            <aop:before method="beforeMethod" pointcut-ref="pointcut1"></aop:before>
+            <aop:after method="afterMethod" pointcut-ref="pointcut1"></aop:after>
+            <!--  <aop:around method="aroundMethod" pointcut="execution(public * Entities..*.sing*(..))" pointcut-ref="pointcut1"/>-->
+            <aop:around method="aroundMethod" pointcut-ref="pointcut1"/>
+            <aop:after-throwing method="afterThrowing" pointcut-ref="pointcut1" throwing="ex"/>
+            <aop:after-returning method="afterReturning" pointcut-ref="pointcut1" returning="result"/>
+        </aop:aspect>
+    </aop:config>
+
 </beans>

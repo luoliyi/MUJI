@@ -16,4 +16,6 @@ public interface IMemberService {
     int delete(@Param("mid") String mid);
 
     Member selectOne(Map<String,Object> objectMap);
+
+    int regsister(Map<String,Object>objectMap);
 }

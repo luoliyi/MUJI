@@ -3,6 +3,7 @@ package controller;
 import com.nf.commons.MyUtils.MD5Util;
 import com.nf.entities.Administrator;
 import com.nf.entities.Member;
+import com.nf.entities.Sales;
 import com.nf.service.IAdministratorService;
 import com.nf.service.IMemberService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import sun.nio.cs.ext.MacArabic;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -118,5 +120,47 @@ public class UserLoginController {
         }else {
             response.getWriter().print("error");
         }
+    }
+
+    /*
+     * 注册
+     * */
+    @RequestMapping(value = "/regsister",method = RequestMethod.POST)
+    @ResponseBody
+    public String regsister(@RequestBody List<Object>objects,HttpServletRequest request,HttpServletResponse response){
+        try {
+            request.setCharacterEncoding("utf-8");
+            response.setCharacterEncoding("utf-8");
+            response.setContentType("application/json;charset=utf-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+
+        String oPhone=objects.get(0).toString();
+        String oPwd=objects.get(1).toString();
+        /*
+         * 注册前先判断是否有该手机号码
+         * */
+        Map<String,Object>objectMap1=new HashMap<>();
+        objectMap1.put("mphone",oPhone);
+        Member m=memberService.selectOne(objectMap1);
+        if (m!=null){
+            return "error";
+        }else {
+            try {
+                Map<String,Object>objectMap2=new HashMap<>();
+                objectMap2.put("mphone",oPhone);
+                objectMap2.put("mpassword",MD5Util.EncoderByMd5(oPwd));
+                int r=memberService.regsister(objectMap2);
+                if (r>0){
+                    return oPhone;
+                }
+            } catch (NoSuchAlgorithmException e) {
+                e.printStackTrace();
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            }
+        }
+        return "";
     }
 }

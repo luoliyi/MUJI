@@ -104,6 +104,10 @@
             success : function(result) {
                 //请求成功时执行该函数内容，result即为服务器返回的json对象
                 if (result) {
+                    console.log(result.length);
+                    /*if(result[0].saleMonth==1){
+                        result=result.splice(1,result.length);
+                    }*/
                     for (var i = 0; i < result.length; i++) {
                         months.push(result[i].saleMonth+"月");
                         counts.push(result[i].saleCount);
@@ -158,7 +162,7 @@
         laydate.render({
             elem: '#test2'
             ,type: 'year'
-            ,value:new Date().getFullYear()
+            ,value:''
             ,change: function(value, date, endDate){
                 console.log(value);
                 seleAllGrow(value);

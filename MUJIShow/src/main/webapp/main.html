@@ -20,7 +20,6 @@
 	<body>
 		<!--用一个input来保存是否登录-->
 		<input type="hidden" value="" id="checkIfSignIn" />
-		
 		<header id="header">
 			<div class="headerWrap">
 				<div class="icon">
@@ -294,9 +293,9 @@
 					      注册<br>商城账号
 					    </div>
 					    <div class="form-wrap">
-					    	<input type="tel" class="MuInput" placeholder="输入手机号">
-					    	<input type="password" class="MuInput" placeholder="请输入密码">
-					    	<input type="password" class="MuInput" placeholder="请再次确认密码">
+					    	<input type="tel" id="regPhone" class="MuInput" placeholder="输入手机号">
+					    	<input type="password" id="regPwd" class="MuInput" placeholder="请输入密码">
+					    	<input type="password" id="regrePwd" class="MuInput" placeholder="请再次确认密码">
 					    	<input id="successregeist" type="button" class="MuInput muinputbutton" value="注册">
 					    </div>
 					</div>
@@ -315,7 +314,9 @@
 	<script type="text/javascript" src="js/mainControl.js"></script>
 	<script>
 		$(function(){
-
+            layui.use('layer', function(){
+                var layer = layui.layer;
+            });
 		    var app={
 				getNewGoods(){
 					$.ajax({
@@ -336,9 +337,44 @@
                             div.append(img).append(br).append(p1).append(p2).appendTo($("#MuSectionWrapper_details"));
                         })
                     })
-				}
+				},
+				regsiter:function () {
+					var objects=new Array();
+					if($("#regPhone").val()==""||$("#regPhone").val().length!=11||isNaN($("#regPhone").val())){
+                        layer.msg("手机号码格式错误",{time: 1500});
+                        return false;
+					}else {
+                        objects.push($("#regPhone").val());
+					}
+					if($("#regrePwd").val()!=$("#regPwd").val()){
+                        layer.msg("两次密码不相等",{time: 1500});
+					    return false;
+					}else if ($("#regrePwd").val()==""||$("#regPwd").val()==""){
+                        layer.msg("密码不能为空",{time: 1500});
+					    return false;
+					} else {
+                        objects.push($("#regrePwd").val());
+					}
+					$.ajax({
+						url:"userloginController/regsister",
+						type:"post",
+						contentType:"application/json;charset=utf-8",
+						data:JSON.stringify(objects)
+					}).done(function (msg) {
+					    if(msg!="error"&&msg!=""){
+                            layer.msg("注册成功，现在您可以登陆啦~",{time: 1500});
+                            $("#login").fadeIn(300);
+                            $("#loginPhone").val(msg);
+                            $("#regeist").fadeOut();
+
+						}else {
+                            layer.msg("该号码已被注册",{time: 1500});
+                        }
+                    })
+                }
 				,init(){
 				    app.getNewGoods();
+				    $("#successregeist").click(app.regsiter);
 				}
 			};
 			app.init();

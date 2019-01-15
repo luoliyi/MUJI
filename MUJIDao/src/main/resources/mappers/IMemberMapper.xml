@@ -75,4 +75,10 @@
          update Member set mstate=1 where mid=#{mid};
     </update>
 
+
+    <!--注册-->
+    <insert id="regsister" parameterType="java.util.Map">
+        insert into member(mphone,mpassword)values(#{mphone},#{mpassword});
+    </insert>
+
 </mapper>
