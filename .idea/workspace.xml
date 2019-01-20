@@ -8,362 +8,15 @@
   <component name="ChangeListManager">
     <list default="true" id="f1f2b16c-7c8d-4c1b-8f21-f5f13123e402" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJICommons/src/main/java/com/nf/commons/MyUtils/DBUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJICommons/src/main/java/com/nf/commons/MyUtils/DBUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJICommons/src/main/java/com/nf/commons/MyUtils/JSONUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJICommons/src/main/java/com/nf/commons/MyUtils/JSONUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJICommons/src/main/java/com/nf/commons/MyUtils/Logging.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJICommons/src/main/java/com/nf/commons/MyUtils/Logging.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJICommons/src/main/java/com/nf/commons/MyUtils/MD5Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJICommons/src/main/java/com/nf/commons/MyUtils/MD5Util.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJICommons/src/main/java/com/nf/commons/MyUtils/PrintPdf.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJICommons/src/main/java/com/nf/commons/MyUtils/PrintPdf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJICommons/src/main/java/com/nf/commons/MyUtils/Standard.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJICommons/src/main/java/com/nf/commons/MyUtils/Standard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJICommons/src/main/java/com/nf/commons/SpringAop/Advices.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJICommons/src/main/java/com/nf/commons/SpringAop/Advices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/dao/test/IAdministratorDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/dao/test/IAdministratorDaoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/dao/test/ICMDDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/dao/test/ICMDDaoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/dao/test/ICreateOrdersDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/dao/test/ICreateOrdersDaoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/dao/test/IGoodsDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/dao/test/IGoodsDaoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/dao/test/IGoodsTypeDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/dao/test/IGoodsTypeDaoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/dao/test/IHistoryOrdersDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/dao/test/IHistoryOrdersDaoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/dao/test/IMemberDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/dao/test/IMemberDaoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/dao/test/IShoppingCartDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/dao/test/IShoppingCartDaoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/dao/test/MD5Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/dao/test/MD5Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/dao/test/TestPrinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/dao/test/TestPrinter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/daoImpl/IOrdersDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/daoImpl/IOrdersDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/interfaces/IAdministratorDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/interfaces/IAdministratorDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/interfaces/ICreateOrdersDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/interfaces/ICreateOrdersDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/interfaces/IDiaryDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/interfaces/IDiaryDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/interfaces/IGoodsDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/interfaces/IGoodsDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/interfaces/IGoodsTypeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/interfaces/IGoodsTypeDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/interfaces/IGoodsTypeDetailsDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/interfaces/IGoodsTypeDetailsDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/interfaces/IHistoryOrdersDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/interfaces/IHistoryOrdersDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/interfaces/IMemberDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/interfaces/IMemberDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/interfaces/IOrdersDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/interfaces/IOrdersDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/interfaces/IPictureListDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/interfaces/IPictureListDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/interfaces/ISalesDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/interfaces/ISalesDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/interfaces/IShoppingCartDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/interfaces/IShoppingCartDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIDao/src/main/resources/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIDao/src/main/resources/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIDao/src/main/resources/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIDao/src/main/resources/log4j.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIDao/src/main/resources/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIDao/src/main/resources/log4j2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIDao/src/main/resources/mappers/IAdministratorMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIDao/src/main/resources/mappers/IAdministratorMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIDao/src/main/resources/mappers/ICreateOrdersMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIDao/src/main/resources/mappers/ICreateOrdersMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIDao/src/main/resources/mappers/IDiaryMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIDao/src/main/resources/mappers/IDiaryMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIDao/src/main/resources/mappers/IGoodsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIDao/src/main/resources/mappers/IGoodsMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIDao/src/main/resources/mappers/IGoodsTypeDetailsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIDao/src/main/resources/mappers/IGoodsTypeDetailsMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIDao/src/main/resources/mappers/IGoodsTypeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIDao/src/main/resources/mappers/IGoodsTypeMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIDao/src/main/resources/mappers/IHistoryOrdersMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIDao/src/main/resources/mappers/IHistoryOrdersMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIDao/src/main/resources/mappers/IMemberMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIDao/src/main/resources/mappers/IMemberMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIDao/src/main/resources/mappers/IOrdersMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIDao/src/main/resources/mappers/IOrdersMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIDao/src/main/resources/mappers/IPictureListMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIDao/src/main/resources/mappers/IPictureListMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIDao/src/main/resources/mappers/ISalesMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIDao/src/main/resources/mappers/ISalesMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIDao/src/main/resources/mappers/IShoppingCartMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIDao/src/main/resources/mappers/IShoppingCartMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIDao/target/classes/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIDao/target/classes/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIDao/target/classes/com/nf/dao/test/IMemberDaoTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIDao/target/classes/com/nf/dao/test/IMemberDaoTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIDao/target/classes/mappers/IAdministratorMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIDao/target/classes/mappers/IAdministratorMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIDao/target/classes/mappers/IGoodsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIDao/target/classes/mappers/IGoodsMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIDao/target/classes/mappers/IMemberMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIDao/target/classes/mappers/IMemberMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIDao/target/classes/mappers/IPictureListMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIDao/target/classes/mappers/IPictureListMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIEntities/src/main/java/com/nf/entities/Cost.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIEntities/src/main/java/com/nf/entities/Cost.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIEntities/src/main/java/com/nf/entities/DaySales.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIEntities/src/main/java/com/nf/entities/DaySales.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIEntities/src/main/java/com/nf/entities/Evaluate.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIEntities/src/main/java/com/nf/entities/Evaluate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIEntities/src/main/java/com/nf/entities/Goods.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIEntities/src/main/java/com/nf/entities/Goods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIEntities/src/main/java/com/nf/entities/Gplace.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIEntities/src/main/java/com/nf/entities/Gplace.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIEntities/src/main/java/com/nf/entities/HistoryOrders.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIEntities/src/main/java/com/nf/entities/HistoryOrders.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIEntities/src/main/java/com/nf/entities/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIEntities/src/main/java/com/nf/entities/Member.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIEntities/src/main/java/com/nf/entities/MemberLocation.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIEntities/src/main/java/com/nf/entities/MemberLocation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIEntities/src/main/java/com/nf/entities/Orders.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIEntities/src/main/java/com/nf/entities/Orders.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIEntities/src/main/java/com/nf/entities/Sales.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIEntities/src/main/java/com/nf/entities/Sales.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIEntities/src/main/java/com/nf/entities/ShoppingCart.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIEntities/src/main/java/com/nf/entities/ShoppingCart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIEntities/target/classes/com/nf/entities/MemberLocation.class" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIEntities/target/classes/com/nf/entities/MemberLocation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIEntities/target/classes/com/nf/entities/ShoppingCart.class" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIEntities/target/classes/com/nf/entities/ShoppingCart.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIService/src/main/java/com/nf/impl/ICreateOrdersImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIService/src/main/java/com/nf/impl/ICreateOrdersImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIService/src/main/java/com/nf/impl/IGoodsImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIService/src/main/java/com/nf/impl/IGoodsImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIService/src/main/java/com/nf/impl/IPictureImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIService/src/main/java/com/nf/impl/IPictureImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIService/src/main/java/com/nf/service/IAdministratorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIService/src/main/java/com/nf/service/IAdministratorService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIService/src/main/java/com/nf/service/ICreateOrdersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIService/src/main/java/com/nf/service/ICreateOrdersService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIService/src/main/java/com/nf/service/IDiaryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIService/src/main/java/com/nf/service/IDiaryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIService/src/main/java/com/nf/service/IGoodsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIService/src/main/java/com/nf/service/IGoodsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIService/src/main/java/com/nf/service/IGoodsTypeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIService/src/main/java/com/nf/service/IGoodsTypeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIService/src/main/java/com/nf/service/IHistoryOrdersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIService/src/main/java/com/nf/service/IHistoryOrdersService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIService/src/main/java/com/nf/service/IMemberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIService/src/main/java/com/nf/service/IMemberService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIService/src/main/java/com/nf/service/IOrdersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIService/src/main/java/com/nf/service/IOrdersService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIService/src/main/java/com/nf/service/IPictureService.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIService/src/main/java/com/nf/service/IPictureService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIService/src/main/java/com/nf/service/ISalesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIService/src/main/java/com/nf/service/ISalesService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIService/src/main/java/com/nf/service/IShoppingCartService.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIService/src/main/java/com/nf/service/IShoppingCartService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/java/controller/AdministratorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/java/controller/AdministratorController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/java/controller/CreateOrdersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/java/controller/CreateOrdersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/java/controller/GetIp.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/java/controller/GetIp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/java/controller/GoodsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/java/controller/GoodsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/java/controller/GoodsTypeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/java/controller/GoodsTypeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/java/controller/HistoryOrdersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/java/controller/HistoryOrdersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/java/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/java/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/java/controller/LoginInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/java/controller/LoginInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/java/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/java/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/java/controller/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/java/controller/MemberController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/java/controller/MySQLDatabaseBackup.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/java/controller/MySQLDatabaseBackup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/java/controller/MyThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/java/controller/MyThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/java/controller/PictureListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/java/controller/PictureListController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/java/controller/QcloudSendMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/java/controller/QcloudSendMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/java/controller/SalesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/java/controller/SalesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/java/controller/ShoppingCarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/java/controller/ShoppingCarController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/java/controller/UserLoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/java/controller/UserLoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/java/controller/WebsocketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/java/controller/WebsocketController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/resources/springmvc-servlet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/resources/springmvc-servlet.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/3DGallery/css/demo.css" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/3DGallery/css/demo.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/3DGallery/css/fonts/BebasNeue-webfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/3DGallery/css/fonts/BebasNeue-webfont.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/3DGallery/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/3DGallery/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/3DGallery/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/3DGallery/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/3DGallery/index2.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/3DGallery/index2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/3DGallery/index3.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/3DGallery/index3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/3DGallery/js/jquery.gallery.js" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/3DGallery/js/jquery.gallery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/Clock.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/Clock.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/admin-cate.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/admin-cate.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/admin-edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/admin-edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/admin-role.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/admin-role.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/admin-rule.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/admin-rule.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/adminAdd.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/adminAdd.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/adminList.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/adminList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/cate.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/cate.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/city.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/city.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/css/font.css" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/css/font.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/css/xadmin.css" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/css/xadmin.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/databaseBackup.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/databaseBackup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/databaseMove.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/databaseMove.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/diary.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/diary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/echa.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/echa.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/echarts1.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/echarts1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/echarts2.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/echarts2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/echarts3.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/echarts3.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/echarts4.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/echarts4.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/echarts5.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/echarts5.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/echarts6.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/echarts6.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/echarts7.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/echarts7.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/echarts8.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/echarts8.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/fonts/iconfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/fonts/iconfont.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/good-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/good-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/goodsControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/goodsControl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/img/Images/2d57cfae7da4eae2e1677e6163b57dad.svg" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/img/Images/2d57cfae7da4eae2e1677e6163b57dad.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/img/Images/5ee914b5c0299c6ec54ad7d65d20282c.svg" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/img/Images/5ee914b5c0299c6ec54ad7d65d20282c.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/img/Images/5f29b6fc0dd60b714bfc4f629afecfa9.svg" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/img/Images/5f29b6fc0dd60b714bfc4f629afecfa9.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/img/Images/70e47b18c2f5253278287f4d893e0061.svg" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/img/Images/70e47b18c2f5253278287f4d893e0061.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/img/Images/878c182532d1d272f99fe02b828dda5f.svg" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/img/Images/878c182532d1d272f99fe02b828dda5f.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/img/Images/9c244f400de68dbc2c70e835042424cb.svg" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/img/Images/9c244f400de68dbc2c70e835042424cb.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/img/Images/b01b8bf6a63701cfbc41751450268f37.svg" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/img/Images/b01b8bf6a63701cfbc41751450268f37.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/img/Images/c43071d94c476fb4da3090532f70a3f7.svg" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/img/Images/c43071d94c476fb4da3090532f70a3f7.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/js/echart.json" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/js/echart.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/js/jquery-1.11.3.js" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/js/jquery-1.11.3.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/js/xadmin.js" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/js/xadmin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/js/xcity.js" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/js/xcity.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/lib/layui/font/iconfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/lib/layui/font/iconfont.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/member-add.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/member-add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/member-control.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/member-control.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/member-del.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/member-del.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/member-edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/member-edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/member-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/member-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/member-password.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/member-password.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/order-add.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/order-add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/order-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/order-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/picture-edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/picture-edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/pictureList.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/pictureList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/redisData.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/redisData.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/role-add.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/role-add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/unicode.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/unicode.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/user.json" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/user.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/welcome.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/welcome.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/css/dialog.css" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/css/dialog.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/doc/build/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/doc/build/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/doc/css/doc.css" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/doc/css/doc.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/doc/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/doc/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/doc/js/doc.js" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/doc/js/doc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/doc/template/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/doc/template/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/src/dialog-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/src/dialog-config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/src/dialog-plus.js" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/src/dialog-plus.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/src/dialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/src/dialog.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/src/drag.js" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/src/drag.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/src/popup.js" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/src/popup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/test/align-overflow.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/test/align-overflow.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/test/align.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/test/align.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/test/button.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/test/button.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/test/close.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/test/close.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/test/content-element.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/test/content-element.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/test/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/test/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/test/dialog-drag.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/test/dialog-drag.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/test/fixed.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/test/fixed.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/test/focus.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/test/focus.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/test/follow.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/test/follow.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/test/iframe.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/test/iframe.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/test/iframe/dialog-content.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/test/iframe/dialog-content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/test/iframe/dialog-input.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/test/iframe/dialog-input.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/test/iframe/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/test/iframe/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/test/iframe/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/test/iframe/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/test/loading.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/test/loading.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/test/quickClose.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/test/quickClose.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/test/show-element.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/test/show-element.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/test/show-event.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/test/show-event.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/test/show.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/test/show.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/test/showModal.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/test/showModal.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/test/title.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/artDialog/test/title.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/balance.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/balance.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/buyCar.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/buyCar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/chat.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/chat.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/css/balance.css" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/css/balance.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/css/balance.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/css/balance.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/css/balance.scss" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/css/balance.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/css/buyCar.css" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/css/buyCar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/css/buyCar.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/css/buyCar.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/css/buyCar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/css/buyCar.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/css/goodDetails.css" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/css/goodDetails.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/css/goodDetails.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/css/goodDetails.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/css/goodDetails.scss" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/css/goodDetails.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/css/index.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/css/index.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/css/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/css/index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/css/main.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/css/main.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/css/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/css/main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/css/myOrders.css" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/css/myOrders.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/css/myOrders.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/css/myOrders.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/css/myOrders.scss" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/css/myOrders.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/css/myinfo.css" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/css/myinfo.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/css/myinfo.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/css/myinfo.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/css/myinfo.scss" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/css/myinfo.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/css/showType.css" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/css/showType.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/css/showType.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/css/showType.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/css/showType.scss" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/css/showType.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/glass/css/default.css" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/glass/css/default.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/glass/fonts/icomoon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/glass/fonts/icomoon.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/glass/js/okzoom.js" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/glass/js/okzoom.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/glass/spec/javascripts/helpers/jasmine-jquery-1.3.1.js" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/glass/spec/javascripts/helpers/jasmine-jquery-1.3.1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/glass/spec/javascripts/okzoomSpec.js" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/glass/spec/javascripts/okzoomSpec.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/glass/spec/javascripts/vendor/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/glass/spec/javascripts/vendor/jquery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/goodDetails.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/goodDetails.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/img/Images/2d57cfae7da4eae2e1677e6163b57dad.svg" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/img/Images/2d57cfae7da4eae2e1677e6163b57dad.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/img/Images/5ee914b5c0299c6ec54ad7d65d20282c.svg" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/img/Images/5ee914b5c0299c6ec54ad7d65d20282c.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/img/Images/5f29b6fc0dd60b714bfc4f629afecfa9.svg" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/img/Images/5f29b6fc0dd60b714bfc4f629afecfa9.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/img/Images/70e47b18c2f5253278287f4d893e0061.svg" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/img/Images/70e47b18c2f5253278287f4d893e0061.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/img/Images/878c182532d1d272f99fe02b828dda5f.svg" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/img/Images/878c182532d1d272f99fe02b828dda5f.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/img/Images/9c244f400de68dbc2c70e835042424cb.svg" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/img/Images/9c244f400de68dbc2c70e835042424cb.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/img/Images/b01b8bf6a63701cfbc41751450268f37.svg" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/img/Images/b01b8bf6a63701cfbc41751450268f37.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/img/Images/c43071d94c476fb4da3090532f70a3f7.svg" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/img/Images/c43071d94c476fb4da3090532f70a3f7.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/jquerydjs/countDown.css" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/jquerydjs/countDown.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/jquerydjs/countDown.js" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/jquerydjs/countDown.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/jquerydjs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/jquerydjs/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/js/area.js" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/js/area.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/js/balance.js" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/js/balance.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/js/chat.js" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/js/chat.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/js/goodDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/js/goodDetails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/js/jquery-1.11.3.js" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/js/jquery-1.11.3.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/js/jquery.lazyload.js" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/js/jquery.lazyload.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/js/layui/font/iconfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/js/layui/font/iconfont.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/js/mainControl.js" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/js/mainControl.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/js/myinfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/js/myinfo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/js/select.js" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/js/select.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/js/wangEditor.js" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/js/wangEditor.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/myInfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/myInfo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/myOrders.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/myOrders.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/paysuccess.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/paysuccess.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/paysuccess2.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/paysuccess2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/showType3.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/showType3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/suimobile/css/font_1433401008_2229297.svg" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/suimobile/css/font_1433401008_2229297.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/suimobile/css/ratchicons.svg" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/suimobile/css/ratchicons.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/suimobile/css/sm-extend.css" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/suimobile/css/sm-extend.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/suimobile/css/sm.css" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/suimobile/css/sm.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/suimobile/js/sm-city-picker.js" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/suimobile/js/sm-city-picker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/suimobile/js/sm-extend.js" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/suimobile/js/sm-extend.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/suimobile/js/zepto-adapter.js" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/suimobile/js/zepto-adapter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/src/main/webapp/suimobile/js/zepto.js" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/src/main/webapp/suimobile/js/zepto.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/WEB-INF/classes/controller/LoginInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/WEB-INF/classes/controller/LoginInterceptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/WEB-INF/classes/springmvc-servlet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/WEB-INF/classes/springmvc-servlet.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/WEB-INF/lib/MUJICommons-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/WEB-INF/lib/MUJICommons-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/WEB-INF/lib/MUJIDao-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/WEB-INF/lib/MUJIDao-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/WEB-INF/lib/MUJIEntities-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/WEB-INF/lib/MUJIEntities-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/WEB-INF/lib/MUJIService-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/WEB-INF/lib/MUJIService-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/admin-cate.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/admin-cate.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/admin-edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/admin-edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/admin-role.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/admin-role.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/admin-rule.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/admin-rule.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/adminAdd.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/adminAdd.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/adminList.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/adminList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/cate.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/cate.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/city.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/city.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/css/font.css" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/css/font.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/css/xadmin.css" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/css/xadmin.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/databaseBackup.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/databaseBackup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/echarts1.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/echarts1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/echarts2.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/echarts2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/echarts3.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/echarts3.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/echarts4.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/echarts4.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/echarts5.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/echarts5.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/echarts6.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/echarts6.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/echarts7.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/echarts7.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/echarts8.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/echarts8.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/fonts/iconfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/fonts/iconfont.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/good-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/good-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/goodsControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/goodsControl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/img/Images/2d57cfae7da4eae2e1677e6163b57dad.svg" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/img/Images/2d57cfae7da4eae2e1677e6163b57dad.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/img/Images/5ee914b5c0299c6ec54ad7d65d20282c.svg" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/img/Images/5ee914b5c0299c6ec54ad7d65d20282c.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/img/Images/5f29b6fc0dd60b714bfc4f629afecfa9.svg" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/img/Images/5f29b6fc0dd60b714bfc4f629afecfa9.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/img/Images/70e47b18c2f5253278287f4d893e0061.svg" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/img/Images/70e47b18c2f5253278287f4d893e0061.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/img/Images/878c182532d1d272f99fe02b828dda5f.svg" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/img/Images/878c182532d1d272f99fe02b828dda5f.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/img/Images/9c244f400de68dbc2c70e835042424cb.svg" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/img/Images/9c244f400de68dbc2c70e835042424cb.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/img/Images/b01b8bf6a63701cfbc41751450268f37.svg" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/img/Images/b01b8bf6a63701cfbc41751450268f37.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/img/Images/c43071d94c476fb4da3090532f70a3f7.svg" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/img/Images/c43071d94c476fb4da3090532f70a3f7.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/js/jquery-1.11.3.js" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/js/jquery-1.11.3.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/js/xadmin.js" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/js/xadmin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/js/xcity.js" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/js/xcity.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/lib/layui/font/iconfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/lib/layui/font/iconfont.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/member-add.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/member-add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/member-control.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/member-control.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/member-del.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/member-del.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/member-edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/member-edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/member-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/member-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/member-password.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/member-password.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/order-add.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/order-add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/order-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/order-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/picture-edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/picture-edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/role-add.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/role-add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/unicode.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/unicode.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/user.json" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/user.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/welcome.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/admin/welcome.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/css/dialog.css" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/css/dialog.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/doc/build/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/doc/build/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/doc/css/doc.css" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/doc/css/doc.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/doc/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/doc/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/doc/js/doc.js" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/doc/js/doc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/doc/template/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/doc/template/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/src/dialog-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/src/dialog-config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/src/dialog-plus.js" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/src/dialog-plus.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/src/dialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/src/dialog.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/src/drag.js" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/src/drag.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/src/popup.js" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/src/popup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/test/align-overflow.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/test/align-overflow.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/test/align.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/test/align.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/test/button.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/test/button.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/test/close.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/test/close.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/test/content-element.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/test/content-element.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/test/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/test/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/test/dialog-drag.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/test/dialog-drag.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/test/fixed.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/test/fixed.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/test/focus.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/test/focus.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/test/follow.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/test/follow.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/test/iframe.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/test/iframe.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/test/iframe/dialog-content.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/test/iframe/dialog-content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/test/iframe/dialog-input.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/test/iframe/dialog-input.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/test/iframe/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/test/iframe/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/test/iframe/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/test/iframe/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/test/loading.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/test/loading.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/test/quickClose.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/test/quickClose.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/test/show-element.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/test/show-element.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/test/show-event.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/test/show-event.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/test/show.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/test/show.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/test/showModal.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/test/showModal.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/test/title.html" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/MUJIShow/artDialog/test/title.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/classes/controller/LoginInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/classes/controller/LoginInterceptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MUJIShow/target/classes/springmvc-servlet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MUJIShow/target/classes/springmvc-servlet.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -387,23 +40,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GoodsController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/java/controller/GoodsController.java">
+      <file leaf-file-name="welcome.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/welcome.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-542">
-              <caret line="142" lean-forward="true" selection-start-line="142" selection-end-line="142" />
+            <state relative-caret-position="252">
+              <caret line="156" column="8" lean-forward="true" selection-start-line="156" selection-start-column="8" selection-end-line="156" selection-end-column="8" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="diary.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/diary.html">
+      <file leaf-file-name="main.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/webapp/main.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="69" column="14" lean-forward="true" selection-start-line="69" selection-start-column="14" selection-end-line="69" selection-end-column="14" />
+            <state relative-caret-position="1764">
+              <caret line="84" column="19" selection-start-line="84" selection-start-column="19" selection-end-line="84" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WebsocketController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/java/controller/WebsocketController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1281">
+              <caret line="64" selection-start-line="64" selection-end-line="64" />
               <folding>
-                <element signature="n#style#0;n#h3#0;n#xblock#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -468,24 +129,18 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/MUJIEntities/src/main/java/com/nf/entities/MyThread.java" />
-        <option value="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/good-list.html" />
         <option value="$PROJECT_DIR$/MUJIShow/src/main/webapp/chat.html" />
         <option value="$PROJECT_DIR$/MUJIEntities/pom.xml" />
         <option value="$PROJECT_DIR$/MUJIEntities/src/main/java/com/nf/entities/Administrator.java" />
         <option value="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/daoImpl.java" />
         <option value="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/daoImpl/IAdminDao.java" />
-        <option value="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/order-list.html" />
         <option value="$PROJECT_DIR$/MUJIShow/src/main/webapp/css/goodDetails.css" />
         <option value="$PROJECT_DIR$/MUJIShow/src/main/webapp/goodDetails.html" />
         <option value="$PROJECT_DIR$/MUJIShow/src/main/webapp/buyCar.html" />
         <option value="$PROJECT_DIR$/MUJICommons/src/main/java/com/nf/commons/MyUtils/MD5Util.java" />
-        <option value="$PROJECT_DIR$/MUJICommons/src/main/java/com/nf/commons/MyUtils/DBUtil.java" />
-        <option value="$PROJECT_DIR$/MUJIShow/src/main/java/controller/WebsocketController.java" />
         <option value="$PROJECT_DIR$/MUJIShow/src/main/java/controller/MyThread.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/echarts3.html" />
-        <option value="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/index.html" />
         <option value="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/daoImpl/IOrdersDaoImpl.java" />
         <option value="$PROJECT_DIR$/MUJIEntities/src/main/java/com/nf/entities/DiarySales.java" />
         <option value="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/interfaces/ISalesDao.java" />
@@ -500,11 +155,9 @@
         <option value="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/interfaces/IMemberDao.java" />
         <option value="$PROJECT_DIR$/MUJIService/src/main/java/com/nf/service/IMemberService.java" />
         <option value="$PROJECT_DIR$/MUJIService/src/main/java/com/nf/impl/IMemberImpl.java" />
-        <option value="$PROJECT_DIR$/MUJIShow/src/main/webapp/main.html" />
         <option value="$PROJECT_DIR$/MUJIShow/src/main/java/controller/UserLoginController.java" />
         <option value="$PROJECT_DIR$/MUJIShow/src/main/webapp/myInfo.html" />
         <option value="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/echa.html" />
-        <option value="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/echarts4.html" />
         <option value="$PROJECT_DIR$/MUJIShow/src/main/java/controller/SalesController.java" />
         <option value="$PROJECT_DIR$/MUJIShow/src/main/webapp/css/main.css" />
         <option value="$PROJECT_DIR$/MUJIShow/src/main/webapp/showType3.html" />
@@ -515,10 +168,18 @@
         <option value="$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/Readme.java" />
         <option value="$PROJECT_DIR$/MUJICommons/src/main/java/com/nf/commons/SpringAop/Advices.java" />
         <option value="$PROJECT_DIR$/MUJIDao/src/main/resources/applicationContext.xml" />
-        <option value="$PROJECT_DIR$/MUJIShow/src/main/java/controller/CreateOrdersController.java" />
         <option value="$PROJECT_DIR$/MUJIShow/src/main/java/controller/MySQLDatabaseBackup.java" />
         <option value="$PROJECT_DIR$/MUJIShow/src/main/java/controller/GoodsController.java" />
         <option value="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/diary.html" />
+        <option value="$PROJECT_DIR$/MUJIShow/src/main/java/controller/CreateOrdersController.java" />
+        <option value="$PROJECT_DIR$/MUJIShow/src/main/java/controller/WebsocketController.java" />
+        <option value="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/order-list.html" />
+        <option value="$PROJECT_DIR$/MUJICommons/src/main/java/com/nf/commons/MyUtils/DBUtil.java" />
+        <option value="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/echarts4.html" />
+        <option value="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/index.html" />
+        <option value="$PROJECT_DIR$/MUJIShow/src/main/webapp/main.html" />
+        <option value="$PROJECT_DIR$/MUJIShow/src/main/webapp/index.html" />
+        <option value="$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/welcome.html" />
       </list>
     </option>
   </component>
@@ -561,8 +222,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -628,6 +290,93 @@
             <path>
               <item name="MUJISystem" type="b2602c69:ProjectViewProjectNode" />
               <item name="MUJISystem" type="462c0819:PsiDirectoryNode" />
+              <item name="MUJIDao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MUJISystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MUJISystem" type="462c0819:PsiDirectoryNode" />
+              <item name="MUJIDao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MUJISystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MUJISystem" type="462c0819:PsiDirectoryNode" />
+              <item name="MUJIDao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MUJISystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MUJISystem" type="462c0819:PsiDirectoryNode" />
+              <item name="MUJIDao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MUJISystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MUJISystem" type="462c0819:PsiDirectoryNode" />
+              <item name="MUJIDao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="nf" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MUJISystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MUJISystem" type="462c0819:PsiDirectoryNode" />
+              <item name="MUJIDao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="nf" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MUJISystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MUJISystem" type="462c0819:PsiDirectoryNode" />
+              <item name="MUJIDao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="nf" type="462c0819:PsiDirectoryNode" />
+              <item name="daoImpl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MUJISystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MUJISystem" type="462c0819:PsiDirectoryNode" />
+              <item name="MUJIDao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="nf" type="462c0819:PsiDirectoryNode" />
+              <item name="interfaces" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MUJISystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MUJISystem" type="462c0819:PsiDirectoryNode" />
+              <item name="MUJIDao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MUJISystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MUJISystem" type="462c0819:PsiDirectoryNode" />
+              <item name="MUJIDao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="mappers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MUJISystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MUJISystem" type="462c0819:PsiDirectoryNode" />
+              <item name="MUJIEntities" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MUJISystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MUJISystem" type="462c0819:PsiDirectoryNode" />
               <item name="MUJIShow" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -668,29 +417,10 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="MUJISystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MUJISystem" type="462c0819:PsiDirectoryNode" />
-              <item name="MUJIShow" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MUJISystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MUJISystem" type="462c0819:PsiDirectoryNode" />
-              <item name="MUJIShow" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -699,16 +429,17 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
-    <property name="last_opened_file_path" value="E:/CakesFather" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/SSMP" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.5434174" />
     <property name="settings.editor.selected.configurable" value="File.Encoding" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\one\IdeaProjects\MUJISystem\MUJIShow\src\main\webapp\img\main" />
       <recent name="C:\Users\one\Desktop\MUJISystem\MUJIShow\src\main\webapp\admin" />
       <recent name="C:\Users\one\Desktop\MUJISystem\MUJIShow\src\main\webapp\admin\js" />
     </key>
@@ -1164,7 +895,24 @@
       <workItem from="1547531772945" duration="735000" />
       <workItem from="1547536599764" duration="35000" />
       <workItem from="1547538270381" duration="2179000" />
-      <workItem from="1547547479758" duration="5388000" />
+      <workItem from="1547547479758" duration="5875000" />
+      <workItem from="1547593142337" duration="73000" />
+      <workItem from="1547636881680" duration="304000" />
+      <workItem from="1547637862922" duration="1359000" />
+      <workItem from="1547710687282" duration="2503000" />
+      <workItem from="1547724114805" duration="622000" />
+      <workItem from="1547730812237" duration="3000" />
+      <workItem from="1547731014016" duration="422000" />
+      <workItem from="1547771442529" duration="239000" />
+      <workItem from="1547792848313" duration="487000" />
+      <workItem from="1547812727219" duration="1792000" />
+      <workItem from="1547815092247" duration="1285000" />
+      <workItem from="1547816530198" duration="4173000" />
+      <workItem from="1547853257564" duration="66000" />
+      <workItem from="1547853524278" duration="5797000" />
+      <workItem from="1547860886692" duration="1247000" />
+      <workItem from="1547866396754" duration="1103000" />
+      <workItem from="1547948257572" duration="363000" />
     </task>
     <task id="LOCAL-00001" summary="第二次提交，做了数据库备份操作。">
       <created>1543921674276</created>
@@ -1369,7 +1117,21 @@
       <option name="project" value="LOCAL" />
       <updated>1547531871920</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="第九次提交，后台管理员做了记录日志功能。">
+      <created>1547553245665</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1547553245665</updated>
+    </task>
+    <task id="LOCAL-00031" summary="第九次提交，后台管理员做了记录日志功能。">
+      <created>1547553469283</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1547553469283</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1405,14 +1167,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="748301000" />
+    <option name="totallyTimeSpent" value="770626000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="846" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="14" sideWeight="0.13020833" side_tool="true" visible="true" weight="0.35365853" />
+      <window_info anchor="bottom" id="Event Log" order="14" sideWeight="0.13997395" side_tool="true" visible="true" weight="0.33333334" />
       <window_info anchor="bottom" id="Application Servers" order="7" weight="0.256651" />
       <window_info anchor="right" id="Maven Projects" order="9" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
@@ -1432,10 +1193,10 @@
       <window_info anchor="bottom" id="Java Enterprise" order="11" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Version Control" order="13" sideWeight="0.49934897" weight="0.3292683" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.8697917" visible="true" weight="0.35365853" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.86002606" visible="true" weight="0.33333334" />
       <window_info anchor="bottom" id="Spring" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49934897" weight="0.3292683" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49752474" visible="true" weight="0.18880208" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49752474" visible="true" weight="0.203125" />
       <window_info anchor="right" id="Bean Validation" order="8" />
       <window_info id="Web" order="6" sideWeight="0.50247526" side_tool="true" weight="0.19838946" />
       <window_info anchor="right" id="Theme Preview" order="7" />
@@ -1445,7 +1206,7 @@
       <window_info anchor="right" x="0" y="0" width="295" height="554" id="Documentation" order="12" side_tool="true" weight="0.329429" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3275862" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49934897" weight="0.32655826" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
     </layout>
@@ -1473,181 +1234,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/echarts4.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="798">
-          <caret line="38" column="32" lean-forward="true" selection-start-line="38" selection-start-column="32" selection-end-line="38" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/webapp/main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1197">
-          <caret line="57" column="52" lean-forward="true" selection-start-line="57" selection-start-column="52" selection-end-line="57" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/webapp/myInfo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="903">
-          <caret line="43" column="50" lean-forward="true" selection-start-line="43" selection-start-column="50" selection-end-line="43" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/webapp/main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="609">
-          <caret line="29" column="20" lean-forward="true" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/java/controller/CreateOrdersController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3171">
-          <caret line="151" column="44" lean-forward="true" selection-start-line="151" selection-start-column="44" selection-end-line="151" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/webapp/main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="20" column="27" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/java/controller/CreateOrdersController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3444">
-          <caret line="164" column="9" lean-forward="true" selection-start-line="147" selection-start-column="8" selection-end-line="164" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/webapp/main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="36" lean-forward="true" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/webapp/main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/java/controller/ShoppingCarController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/interfaces/IMemberDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MUJIService/src/main/java/com/nf/service/IMemberService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MUJIDao/src/main/resources/mappers/IMemberMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="80" column="43" selection-start-line="80" selection-start-column="34" selection-end-line="80" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/webapp/buyCar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="269" column="20" selection-start-line="269" selection-start-column="20" selection-end-line="272" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MUJIService/src/main/java/com/nf/impl/IMemberImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="601">
-          <caret line="47" column="46" selection-start-line="47" selection-start-column="46" selection-end-line="47" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/java/controller/UserLoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-18">
-          <caret line="136" column="9" lean-forward="true" selection-start-line="136" selection-start-column="9" selection-end-line="136" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/webapp/main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/echa.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="109" column="23" lean-forward="true" selection-start-line="109" selection-start-column="23" selection-end-line="109" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/java/controller/SalesController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="48" column="26" lean-forward="true" selection-start-line="48" selection-start-column="26" selection-end-line="48" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/webapp/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="230" column="51" selection-start-line="230" selection-start-column="51" selection-end-line="230" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/webapp/showType3.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="205" column="47" lean-forward="true" selection-start-line="205" selection-start-column="47" selection-end-line="205" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/echarts4.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="43" column="21" lean-forward="true" selection-start-line="43" selection-start-column="21" selection-end-line="43" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MUJICommons/src/main/java/com/nf/commons/MyUtils/Logging.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-105">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/dao/test/IAdministratorDaoTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="65" column="30" selection-start-line="65" selection-start-column="30" selection-end-line="65" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/dao/test/TestPrinter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2058">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/dao/test/IShoppingCartDaoTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="281">
@@ -1675,16 +1261,6 @@
           <caret line="68" column="47" selection-start-line="68" selection-start-column="34" selection-end-line="68" selection-end-column="47" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/java/controller/AdministratorController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="34" column="87" lean-forward="true" selection-start-line="34" selection-start-column="87" selection-end-line="34" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MUJIDao/src/main/resources/dbconfig.properties">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/Readme.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1757,9 +1333,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/index.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.scripthost.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
@@ -1781,10 +1354,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-5630">
           <caret line="114" column="11" selection-start-line="114" selection-start-column="11" selection-end-line="114" selection-end-column="11" />
-          <folding>
-            <element signature="e#3011#3012#0" expanded="true" />
-            <element signature="e#3058#3059#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1802,28 +1371,199 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/java/controller/CreateOrdersController.java">
+    <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/diary.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1869">
-          <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
+        <state relative-caret-position="210">
+          <caret line="38" column="45" lean-forward="true" selection-start-line="38" selection-start-column="45" selection-end-line="38" selection-end-column="45" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/java/controller/GoodsController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-542">
-          <caret line="142" lean-forward="true" selection-start-line="142" selection-end-line="142" />
+        <state relative-caret-position="319">
+          <caret line="135" column="48" selection-start-line="135" selection-start-column="48" selection-end-line="135" selection-end-column="48" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/diary.html">
+    <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/webapp/css/main.min.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/webapp/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="69" column="14" lean-forward="true" selection-start-line="69" selection-start-column="14" selection-end-line="69" selection-end-column="14" />
+        <state relative-caret-position="-8611">
+          <caret line="230" lean-forward="true" selection-start-line="230" selection-end-line="230" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/webapp/css/buyCar.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3914" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/webapp/css/balance.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/webapp/css/balance.scss">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/webapp/css/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="691" column="1" selection-start-line="691" selection-start-column="1" selection-end-line="691" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MUJIDao/src/main/resources/dbconfig.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="10" lean-forward="true" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/webapp/js/area.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8310" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/java/controller/CreateOrdersController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1512">
+          <caret line="49" column="25" selection-start-line="49" selection-start-column="25" selection-end-line="49" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/java/controller/SalesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="48" column="26" lean-forward="true" selection-start-line="48" selection-start-column="26" selection-end-line="48" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/webapp/chat.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-504" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/webapp/goodDetails.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-693" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/java/controller/AdministratorController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1575">
+          <caret line="97" selection-start-line="97" selection-end-line="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MUJIDao/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="74" column="20" lean-forward="true" selection-start-line="74" selection-start-column="20" selection-end-line="74" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/java/controller/MyThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="777">
+          <caret line="39" column="46" selection-start-line="39" selection-start-column="46" selection-end-line="39" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MUJIDao/src/main/java/com/nf/daoImpl/IOrdersDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MUJIShow/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-420">
+          <caret line="76" column="27" lean-forward="true" selection-start-line="76" selection-start-column="27" selection-end-line="76" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4767">
+          <caret line="227" column="24" selection-start-line="227" selection-start-column="24" selection-end-line="227" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MUJICommons/src/main/java/com/nf/commons/MyUtils/DBUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="38" column="29" lean-forward="true" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MUJICommons/pom.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MUJIDao/src/main/resources/mappers/IGoodsMapper.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MUJIDao/src/main/resources/mappers/ISalesMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="20" column="16" lean-forward="true" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/order-list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="275" column="32" selection-start-line="275" selection-start-column="32" selection-end-line="275" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6342">
+          <caret line="303" column="31" selection-start-line="303" selection-start-column="31" selection-end-line="303" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/echarts4.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="188" column="11" selection-start-line="188" selection-start-column="11" selection-end-line="188" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/java/controller/WebsocketController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1281">
+          <caret line="64" selection-start-line="64" selection-end-line="64" />
           <folding>
-            <element signature="n#style#0;n#h3#0;n#xblock#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/webapp/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1764">
+          <caret line="84" column="19" selection-start-line="84" selection-start-column="19" selection-end-line="84" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/webapp/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="693">
+          <caret line="364" column="52" selection-start-line="364" selection-start-column="52" selection-end-line="364" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MUJIShow/src/main/webapp/admin/welcome.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="156" column="8" lean-forward="true" selection-start-line="156" selection-start-column="8" selection-end-line="156" selection-end-column="8" />
         </state>
       </provider>
     </entry>

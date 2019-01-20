@@ -48,10 +48,8 @@ public class CreateOrdersController {
     }
 
     Member member = null;
-
     String threeMin = "";
     String mycono = "";
-
     @RequestMapping(value = "/initOneCreateOrders", method = RequestMethod.POST)
     @ResponseBody
     public String initOneCreateOrders(HttpServletRequest request) {
