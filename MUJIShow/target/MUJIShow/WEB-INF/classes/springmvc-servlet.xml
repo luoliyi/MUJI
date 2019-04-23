@@ -27,11 +27,13 @@
     <!--
          allowed-origins：授权源控制
     -->
+    <!--跨域请求-->
     <mvc:cors>
-        <mvc:mapping path="/**"
-                     allowed-origins="http://127.0.0.1:8020"
-                     allowed-methods="*"
-                     allowed-headers="*"
+        <!--拦截路径 一个 *-->
+        <mvc:mapping path="/*"
+                     allowed-origins="*"
+                     allowed-methods="POST,GET, OPTIONS,DELETE,PUT"
+                     allowed-headers="Content-Type,ContentType,Access-Control-Allow-Headers, Authorization, X-Requested-With"
                      allow-credentials="true"/>
     </mvc:cors>
 
@@ -48,8 +50,7 @@
         </bean>-->
 
     <!-- 配置映射媒体类型的策略 -->
-    <bean
-            class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping">
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping">
         <property name="removeSemicolonContent" value="false"/>
     </bean>
 
@@ -57,6 +58,7 @@
     <bean id="multipartResolver"
           class="org.springframework.web.multipart.support.StandardServletMultipartResolver">
     </bean>
+
     <!--拦截器-->
     <!--配置拦截器 拦截除了exceptUrls内的所有请求-->
     <mvc:interceptors>

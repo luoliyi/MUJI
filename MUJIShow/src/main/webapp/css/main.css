@@ -616,6 +616,10 @@ html, body {
     cursor: pointer;
 }
 
+
+/*
+    响应式
+*/
 @media only screen and (max-width: 769px) {
     #header .headerWrap {
         display: none;

@@ -19,6 +19,7 @@
         <result property="gname" column="gname"></result>
         <result property="osumprice" column="osumprice"></result>
     </resultMap>
+
     <!--每日销售情况-->
     <select id="selectOneDaySalesVolume" parameterType="java.util.Map" resultMap="selectOneDaySalesVolumeMap">
         select g.gname,o.osumprice,co.corderDate from orders as o join goods as g on o.gid=g.gid

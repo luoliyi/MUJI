@@ -23,14 +23,14 @@ public class Advices {
         System.out.println("--------------------前置通知--------------------");
         System.out.println("方法名：" + joinPoint.getSignature().getName() + "，参数：" + joinPoint.getArgs().length + "，被代理对象：" + joinPoint.getTarget().getClass().getName());
 
-        //logging.setInfo("开始写入日志...,方法是："+joinPoint.getSignature().getName());
+        logging.setInfo("开始写入日志...,方法是："+joinPoint.getSignature().getName());
     }
 
     //后置通知
     public void afterMethod(JoinPoint joinPoint) {
         System.out.println("--------------------后置通知--------------------");
 
-        //logging.setInfo("写入日志完成...");
+        logging.setInfo("写入日志完成...");
     }
 
     //返回值通知

@@ -155,7 +155,7 @@ $(function () {
             render: "canvas",
             width: 150,
             height: 150,
-            text: "http://172.20.10.2:8081/paysuccess.html?dingdan=" + myCono + "&spendmoney=" + (mySumPrice + 11),
+            text:"http://172.20.10.3:8081/paysuccess.html?dingdan=" + myCono + "&spendmoney=" + (mySumPrice + 11),
             correctLevel: QRCode.CorrectLevel.L,
         });
 

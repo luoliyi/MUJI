@@ -208,6 +208,8 @@ public class GoodsController {
     public Standard fileSave(MultipartFile file, HttpServletRequest request, HttpServletResponse response) throws Exception {
         //文件存放的位置
         String path = request.getServletContext().getRealPath("/admin/img/goodsdetails");
+
+        System.out.println(path);
         File fi = new File(path);
         if (!fi.exists()) {
             fi.mkdir();

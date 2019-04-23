@@ -4,6 +4,7 @@ import com.nf.commons.MyUtils.Standard;
 import com.nf.entities.Goods;
 import com.nf.entities.PictureList;
 import com.nf.service.IPictureService;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -35,8 +36,16 @@ public class PictureListController {
     @RequestMapping(value = "/selectAllPicByGid", method = RequestMethod.POST)
     @ResponseBody
     public List<PictureList> selectAllPicByGid(@RequestBody List<Object> objectList) {
-
         return pictureService.selectAllPicture((String) objectList.get(0));
+    }
+
+    /*
+    * vue 跨域接受参数
+    * */
+    @RequestMapping(value = "/selectAllPicByGid2", method = RequestMethod.POST)
+    @ResponseBody
+    public List<PictureList> selectAllPicByGid2(@Param("gid") String gid) {
+        return pictureService.selectAllPicture(gid);
     }
 
     @RequestMapping(value = "/selectOnePicture", method = RequestMethod.POST)
